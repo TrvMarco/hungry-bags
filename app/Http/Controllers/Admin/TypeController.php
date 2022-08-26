@@ -8,6 +8,10 @@ use App\Type;
 
 class TypeController extends Controller
 {
+    private $validation = [
+        'name' => 'required|string|max:100'
+    ];
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +19,8 @@ class TypeController extends Controller
      */
     public function index()
     {
-        return view('admin.types.index');
+        $types = Type::all();
+        return view('admin.types.index', compact('types'));
     }
 
     /**
@@ -36,7 +41,17 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //VALIDAZIONE REQUEST
+        $request->validate($this->validation);
+
+        // CREAZIONE NUOVO VALORE SU TYPE 
+        $data = $request->all();
+        $newType = new Type();
+        $newType->name = $data['name'];
+        $newType->save();
+
+        // REINDIRIZZAMENTO ALLA PAGINA DI TUTTE LE TIPOLOGIE
+        return redirect()->route('admin.types.index');
     }
 
     /**
