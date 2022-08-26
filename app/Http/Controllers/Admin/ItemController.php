@@ -15,7 +15,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.items.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.items.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.items.show');
     }
 
     /**
@@ -58,7 +58,7 @@ class ItemController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.items.edit');
     }
 
     /**
