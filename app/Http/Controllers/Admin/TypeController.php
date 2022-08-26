@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Item;
+use App\Type;
 
-class ItemsController extends Controller
+class TypeController extends Controller
 {
     /**
      * Display a listing of the resource.
