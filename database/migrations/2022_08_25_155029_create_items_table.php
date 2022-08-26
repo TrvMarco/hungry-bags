@@ -16,8 +16,8 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('image');
-            $table->string('name');
+            $table->text('image')->nullable();
+            $table->string('name', 100);
             $table->text('description');
             $table->float('pirce');
             $table->boolean('is_visible')->default(true);

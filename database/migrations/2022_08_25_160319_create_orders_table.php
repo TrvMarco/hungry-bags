@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
 		    $table->string('client_name', 100);
 		    $table->string('client_surname', 100);
 		    $table->string('address', 200);
-		    $table->string('phone', 80); 
+		    $table->string('phone', 20); 
             $table->timestamps();
         });
     }
