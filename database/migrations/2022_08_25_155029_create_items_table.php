@@ -19,7 +19,7 @@ class CreateItemsTable extends Migration
             $table->text('image')->nullable();
             $table->string('name', 100);
             $table->text('description');
-            $table->float('pirce');
+            $table->float('price');
             $table->boolean('is_visible')->default(true);
             $table->timestamps();
         });
