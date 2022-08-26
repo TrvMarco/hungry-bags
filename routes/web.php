@@ -24,6 +24,9 @@ Route::middleware('auth')
     ->prefix('admin')
     ->group(function(){
         Route::get('/home', 'HomeController@index')->name('home');
+        Route::resource('items', 'ItemsController');
+        Route::resource('orders', 'OrdersController');
+        Route::resource('types', 'TypesController');
     });
 
     // frontoffice
