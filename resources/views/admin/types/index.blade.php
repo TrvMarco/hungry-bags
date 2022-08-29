@@ -1,7 +1,13 @@
-@extends('layouts.base')
+@extends('layouts.app')
 
 @section('content')
     <h1>vista tutte tipologie</h1>
+    @if ($types->isEmpty())
+        <H1>NON CI SONO ELEMENTI </H1>
+        <a href="{{route('admin.types.create')}}">Scegli la tipologia del tuo ristorante</a>
+        <br>
+        <a href="{{route('admin.home')}}">Torna alla pagina Home</a>
+    @endif
     <ul>
         @foreach($types as $type)
             <li>
@@ -17,4 +23,6 @@
             </li>
         @endforeach
     </ul>
+
+
 @endsection
