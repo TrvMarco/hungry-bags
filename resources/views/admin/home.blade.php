@@ -27,7 +27,8 @@
                         @foreach ($types as $type)
                             <li>{{$type->name}}</li>
                         @endforeach
-                            <a href="{{route('admin.types.index')}}">Modifica le tipologie del tuo ristorante</a>
+                            <a href="{{route('admin.types.index')}}">Modifica le tipologie del tuo ristorante</a> <br>
+                            <a href="{{route('admin.types.create')}}">Inserisci una tipologia per il tuo ristorante</a>
                     @endif
 
     
