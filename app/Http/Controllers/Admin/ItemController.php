@@ -68,8 +68,8 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        dd($item);
-        return view('admin.items.show');
+        
+        return view('admin.items.show', compact('item'));
     }
 
     /**
@@ -101,8 +101,9 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Item $item)
     {
-        //
+        $item->delete();
+        return redirect()->route('admin.items.index');
     }
 }

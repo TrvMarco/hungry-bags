@@ -36,6 +36,15 @@
                     @endif
                 </div>
             </div>
+
+            <div class="card">
+                <div class="card-header">{{ __('il tuo menù') }}</div>
+                <div class="card-body">
+                    <a href="{{route('admin.items.index')}}">visualizza menu</a>
+                    <br>
+                    <a href="{{route('admin.items.create')}}">inserisci il tuo piatto</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
