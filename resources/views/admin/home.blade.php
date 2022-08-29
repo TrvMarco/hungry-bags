@@ -22,13 +22,15 @@
                 <div class="card-body">
                     @if ($types->isEmpty())
                             <h2>NON HAI ANCORA INSERITO UNA TIPOLOGIA RISTORANTE!</h2>
-                            <a href="{{route('admin.types.create')}}">Scegli la tipologia del tuo ristorante</a>
+                            <a href="{{route('admin.users.edit', $user)}}">Scegli la tipologia del tuo ristorante</a>
                     @else
                         @foreach ($types as $type)
                             <li>{{$type->name}}</li>
                         @endforeach
                             <a href="{{route('admin.types.index')}}">Modifica le tipologie del tuo ristorante</a> <br>
+                            <a href="{{route('admin.users.edit', $user)}}">Scegli la tipologia del tuo ristorante</a>
                             <a href="{{route('admin.types.create')}}">Inserisci una tipologia per il tuo ristorante</a>
+                            
                     @endif
 
     

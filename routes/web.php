@@ -27,6 +27,7 @@ Route::middleware('auth')
         Route::resource('items', 'ItemController');
         Route::resource('orders', 'OrderController');
         Route::resource('types', 'TypeController');
+        Route::resource('users', 'UserController');
     });
 
     // frontoffice

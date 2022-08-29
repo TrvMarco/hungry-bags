@@ -20,6 +20,6 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         $types = $user->types;
-        return view('admin.home', compact('types'));
+        return view('admin.home', compact('types', 'user'));
     }
 }

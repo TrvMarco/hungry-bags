@@ -10,8 +10,8 @@
 
             @foreach ($types as $type)
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="name" value="name" name="types[]" {{in_array($type->id, old('types', [])) ? 'checked' : ''}}>
-                <label class="form-check-label" for="name">{{$type->name}}</label>
+                <input class="form-check-input" type="checkbox" id="{{$type->id}}" value="{{$type->id}}" name="types[]" {{in_array($type->id, old('types', [])) ? 'checked' : ''}}>
+                <label class="form-check-label" for="{{$type->id}}">{{$type->name}}</label>
             </div>
             @endforeach
             @error('types')
