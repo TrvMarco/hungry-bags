@@ -30,21 +30,8 @@
                             <a href="{{route('admin.types.index')}}">Modifica le tipologie del tuo ristorante</a> <br>
                             <a href="{{route('admin.types.create')}}">Inserisci una tipologia per il tuo ristorante</a>
                     @endif
-
-    
                 </div>
             </div>
-
-            {{-- INSERISCI TIPOLOGIA RISTORANTE --}}
-            {{-- <div class="card">
-                <div class="card-header">{{ __('Inserisci la tipologia del tuo ristorante') }}</div>
-                <div class="card-body">
-                    <ul>
-                        <li><a href="{{route('admin.types.create')}}">Scegli la tipologia del tuo ristorante</a></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div> --}}
         </div>
     </div>
 </div>
