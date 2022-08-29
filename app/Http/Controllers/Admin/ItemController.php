@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Item;
+use Illuminate\Support\Facades\Auth;
 
 class ItemController extends Controller
 {
@@ -15,7 +16,9 @@ class ItemController extends Controller
      */
     public function index()
     {
-        return view('admin.items.index');
+        $user= Auth::user();
+        $items = $user->items;
+        return view('admin.items.index', compact('items'));
     }
 
     /**
