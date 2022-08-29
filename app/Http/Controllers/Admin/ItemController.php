@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Item;
+use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ItemController extends Controller
 {
@@ -39,7 +41,23 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:100',
+            'image' => 'nullable|mimes:png,jpeg,jpg',
+            'description' => 'required|string|max:65535',
+            'price' => 'required|numeric|between:0,200',
+            'is_visible' => 'sometimes|accepted'
+        ]);
+
+        $data = $request->all();
+        $newItem = new Item();
+        $newItem->fill($data);
+        $newItem->is_visible = isset($data['is_visible']);
+        // $newItem->image = Storage::put('uploads', $data['image']);
+        $newItem->user_id = Auth::id();
+        $newItem->save();
+
+        return redirect()->route('admin.items.show', $newItem->id);
     }
 
     /**
@@ -48,8 +66,9 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Item $item)
     {
+        dd($item);
         return view('admin.items.show');
     }
 

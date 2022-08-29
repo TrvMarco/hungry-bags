@@ -37,7 +37,7 @@
                 <label for="image">Immagine:</label>
                 <input type="file" class="form-control-file @error('image') is-invalid @enderror" id="image" name="image" value="{{old('image')}}">
                 @error('image')
-                            <div class="alert alert-danger">{{ $message }}</div>
+                        <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
 
