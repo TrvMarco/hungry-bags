@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Type;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -16,7 +18,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $types = Type::all();
+        $user = Auth::user();
+        $types = $user->types;
         return view('admin.home', compact('types'));
     }
 }

@@ -16,15 +16,34 @@
                     {{ __('You are logged in!') }}
                 </div>
             </div>
+
             <div class="card">
+                <div class="card-header">{{ __('Le tipologie del tuo ristorante') }}</div>
+                <div class="card-body">
+                    @if ($types->isEmpty())
+                            <h2>NON HAI ANCORA INSERITO UNA TIPOLOGIA RISTORANTE!</h2>
+                            <a href="{{route('admin.types.create')}}">Scegli la tipologia del tuo ristorante</a>
+                    @else
+                        @foreach ($types as $type)
+                            <li>{{$type->name}}</li>
+                        @endforeach
+                            <a href="{{route('admin.types.index')}}">Modifica le tipologie del tuo ristorante</a>
+                    @endif
+
+    
+                </div>
+            </div>
+
+            {{-- INSERISCI TIPOLOGIA RISTORANTE --}}
+            {{-- <div class="card">
                 <div class="card-header">{{ __('Inserisci la tipologia del tuo ristorante') }}</div>
                 <div class="card-body">
                     <ul>
                         <li><a href="{{route('admin.types.create')}}">Scegli la tipologia del tuo ristorante</a></li>
-                        <li><a href="{{route('admin.types.index')}}">Modifica la tipologia del tuo ristorante</a></li>
+                        <li></li>
                     </ul>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
