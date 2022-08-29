@@ -4,12 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Type;
+use App\User;
+
 
 class TypeController extends Controller
 {
     private $validation = [
-        'name' => 'required|string|max:100'
+        'name' => 'nullable|string|max:100'
     ];
 
     /**
@@ -19,7 +22,8 @@ class TypeController extends Controller
      */
     public function index()
     {
-        $types = Type::all();
+        $user = Auth::user();
+        $types = $user->types;
         return view('admin.types.index', compact('types'));
     }
 
@@ -30,7 +34,8 @@ class TypeController extends Controller
      */
     public function create()
     {
-        return view('admin.types.create');
+        $types = Type::all();
+        return view('admin.types.create', compact('types'));
     }
 
     /**
@@ -43,12 +48,14 @@ class TypeController extends Controller
     {
         //VALIDAZIONE REQUEST
         $request->validate($this->validation);
+        
 
         // CREAZIONE NUOVO VALORE SU TYPE 
         $data = $request->all();
         $newType = new Type();
         $newType->name = $data['name'];
         $newType->save();
+        $newType->users()->attach(Auth::id());
 
         // REINDIRIZZAMENTO ALLA PAGINA DI TUTTE LE TIPOLOGIE
         return redirect()->route('admin.types.index');
