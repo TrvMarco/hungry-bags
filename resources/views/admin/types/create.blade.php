@@ -7,25 +7,13 @@
         @method('POST')
         <div class="form-group">
             <p>Tipologie</p>
-
-            @foreach ($types as $type)
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="{{$type->id}}" value="{{$type->id}}" name="types[]" {{in_array($type->id, old('types', [])) ? 'checked' : ''}}>
-                <label class="form-check-label" for="{{$type->id}}">{{$type->name}}</label>
-            </div>
-            @endforeach
-            @error('types')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-        </div>
         <div class="form-group">
-            <label for="name">Aggiungi tipologia</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{old('name')}}" >
             @error('name')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
-        <button type="submit" class="btn btn-primary">Crea Tipologia</button>
+        <button type="submit" class="btn btn-primary">Aggiungi</button>
     </form>
 </div>
 @endsection
