@@ -46,6 +46,7 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
+        
         //VALIDAZIONE REQUEST
         $request->validate($this->validation);
         
@@ -92,7 +93,7 @@ class TypeController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        dd($request);
+        //
     }
 
     /**
