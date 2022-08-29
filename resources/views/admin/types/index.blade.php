@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
+    
     <h1>vista tutte tipologie</h1>
     @if ($types->isEmpty())
         <H1>NON CI SONO ELEMENTI </H1>
@@ -10,10 +12,11 @@
     @endif
     <ul>
         @foreach($types as $type)
-            <li>
+            <li class="d-flex">
                 {{-- bottone modifica --}}
                 {{$type->name}}
-                <a href="{{route('admin.types.edit', $type->id)}}" class="btn btn-warning">Modifica</a>
+                
+                <a href="{{route('admin.types.edit', $type->id)}}" class="btn btn-warning mx-2">Modifica</a>
                 {{-- bottone elimina --}}
                 <form action="{{route('admin.types.destroy', $type->id)}}" method="POST">
                     @csrf
@@ -23,6 +26,7 @@
             </li>
         @endforeach
     </ul>
+</div>
 
 
 @endsection
