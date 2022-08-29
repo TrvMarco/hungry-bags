@@ -84,7 +84,7 @@ class UserController extends Controller
         $types = isset($data['types']) ? $data['types'] : [];
         $user->types()->sync($types);
 
-        return redirect()->route('admin.types.index');
+        return redirect()->route('admin.home');
 
     }
 
