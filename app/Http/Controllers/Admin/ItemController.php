@@ -53,7 +53,7 @@ class ItemController extends Controller
         $newItem = new Item();
         $newItem->fill($data);
         $newItem->is_visible = isset($data['is_visible']);
-        // $newItem->image = Storage::put('uploads', $data['image']);
+        $newItem->image = Storage::put('uploads', $data['image']);
         $newItem->user_id = Auth::id();
         $newItem->save();
 

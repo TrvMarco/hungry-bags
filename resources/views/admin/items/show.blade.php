@@ -8,8 +8,8 @@
             <div class="item-name">
                 <h1>{{$item->name}}</h1>
             </div>
-            <div class="item-image ">
-                <img src="https://www.pacifictrellisfruit.com/wp-content/uploads/2016/04/default-placeholder-300x300.png" alt="">
+            <div class="item-image" style="width: 300px">
+                <img class="img-fluid" src="{{ asset('storage/' . $item->image)}}" alt="Item Image">
             </div>
             <div class="item-description">
                 <p> <strong>Descrizione piatto : </strong> {{$item->description}}</p>
