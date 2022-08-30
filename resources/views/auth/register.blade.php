@@ -9,15 +9,16 @@
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
+                        
                         @csrf
 
                         {{-- NOME --}}
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome Attività*') }}</label>
-
+                            
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
+                                <p class="campo-obbligatorio">Campo obbligatorio</p>
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -33,7 +34,7 @@
                             
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-                                
+                                <p class="campo-obbligatorio">Campo obbligatorio</p>
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -48,7 +49,7 @@
                             
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
+                                <p class="campo-obbligatorio">Campo obbligatorio</p>
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -63,16 +64,17 @@
                             
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <p class="campo-obbligatorio">Campo obbligatorio</p>
                             </div>
                         </div>
 
                         {{-- VAT --}}
                         <div class="form-group row">
                             <label for="vat" class="col-md-4 col-form-label text-md-right">{{ __('P.iva*') }}</label>
-
+                            
                             <div class="col-md-6">
                                 <input id="vat" type="text" class="form-control @error('vat') is-invalid @enderror" name="vat" value="{{ old('vat') }}" required autocomplete="vat" autofocus>
-
+                                <p class="campo-obbligatorio">Campo obbligatorio</p>
                                 @error('vat')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -84,10 +86,11 @@
                         {{-- ADDRESS --}}
                         <div class="form-group row">
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo*') }}</label>
+                            
 
                             <div class="col-md-6">
                                 <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
-
+                                <p class="campo-obbligatorio">Campo obbligatorio</p>
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -125,4 +128,5 @@
         </div>
     </div>
 </div>
+
 @endsection

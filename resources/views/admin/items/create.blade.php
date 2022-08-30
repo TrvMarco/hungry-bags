@@ -8,7 +8,7 @@
             {{-- NOME PIATTO --}}
             <div class="form-group">
                 <label for="name">Nome del piatto:</label>
-                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{old('name')}}" >
+                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Inserisci il nome del piatto" value="{{old('name')}}" >
                 @error('name')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -17,7 +17,7 @@
             {{-- DESCRIZIONE --}}
             <div class="form-group">
                 <label for="description">Descizione:</label>
-                <textarea class="form-control  @error('description') is-invalid @enderror" name="description" id="description" cols="30" rows="5" name="description">{{old('description')}}</textarea>
+                <textarea class="form-control  @error('description') is-invalid @enderror" name="description" id="description" placeholder="Inserisci una descrizione" cols="30" rows="5" name="description">{{old('description')}}</textarea>
                 @error('description')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -25,8 +25,8 @@
 
             {{-- PREZZO --}}
             <div class="form-group">
-                <label for="price">Prezzo:</label>
-                <input class="form-control  @error('price') is-invalid @enderror" type="number" min="1" step="any" name="price"/>
+                <label for="price">Prezzo: (€)</label>
+                <input class="form-control  @error('price') is-invalid @enderror" type="number" min="1" placeholder="Inserisci il prezzo" step="any" name="price"/>
                 @error('price')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
