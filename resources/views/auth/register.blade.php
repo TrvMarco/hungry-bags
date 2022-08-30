@@ -108,6 +108,7 @@
                         </div>
 
                         {{-- TIPOLOGIES --}}
+                        
                         <div class="form-group row">
                             <label for="types" class="col-md-4 col-form-label text-md-right">{{ __('Tipologie') }}</label>
                             <div class="col-md-6">

@@ -68,7 +68,7 @@
                                     </form>
 
                                     {{-- EDIT PROFILE --}}
-                                    <a class="dropdown-item" href="{{ route('admin.users.edit', $user) }}">
+                                    <a class="dropdown-item" href="{{ route('admin.users.edit', $user->id) }}">
                                         {{ __('Modifica Profilo') }}
                                     </a>
                                 </div>
