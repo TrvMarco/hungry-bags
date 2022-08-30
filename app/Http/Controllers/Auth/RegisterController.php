@@ -82,6 +82,10 @@ class RegisterController extends Controller
 
         $newUser->save();
 
+        if(isset($data['types'])) {
+            $newUser->types()->sync($data['types']);
+        }
+
         // $user =  User::create([
         //     'name' => $data['name'],
         //     'image' => Storage::put('uploads', $data['image']),
@@ -93,5 +97,11 @@ class RegisterController extends Controller
 
         return $newUser;
 
+    }
+
+    public function showRegistrationForm()
+    {
+        $types = Type::all();
+        return view('auth.register', compact('types'));
     }
 }
