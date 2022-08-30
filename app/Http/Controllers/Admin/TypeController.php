@@ -4,10 +4,17 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Item;
+use Illuminate\Support\Facades\Auth;
+use App\Type;
+use App\User;
 
-class ItemsController extends Controller
+
+class TypeController extends Controller
 {
+    private $validation = [
+        'name' => 'nullable|string|max:100'
+    ];
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +22,9 @@ class ItemsController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $types = $user->types;
+        return view('admin.types.index', compact('types'));
     }
 
     /**
@@ -25,7 +34,8 @@ class ItemsController extends Controller
      */
     public function create()
     {
-        //
+        $types = Type::all();
+        return view('admin.types.create', compact('types'));
     }
 
     /**
@@ -36,7 +46,19 @@ class ItemsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //VALIDAZIONE REQUEST
+        $request->validate($this->validation);
+        
+
+        // CREAZIONE NUOVO VALORE SU TYPE 
+        $data = $request->all();
+        $newType = new Type();
+        $newType->name = $data['name'];
+        $newType->save();
+        $newType->users()->attach(Auth::id());
+
+        // REINDIRIZZAMENTO ALLA PAGINA DI TUTTE LE TIPOLOGIE
+        return redirect()->route('admin.home');
     }
 
     /**
@@ -47,7 +69,7 @@ class ItemsController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.types.show');
     }
 
     /**
@@ -58,7 +80,7 @@ class ItemsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.types.edit');
     }
 
     /**
@@ -68,7 +90,7 @@ class ItemsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -79,8 +101,9 @@ class ItemsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Type $type)
     {
-        //
+        $type->delete();
+        return redirect()->route('admin.types.index');
     }
 }

@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\User;
 use App\Type;
 
-class TypesController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,9 @@ class TypesController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+
+        return view('admin.users.index', compact('users'));
     }
 
     /**
@@ -56,9 +59,13 @@ class TypesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        $types = Type::all();
+        $userType = $user->types->map(function($type) {
+            return $type->id;
+        })->toArray();
+        return view('admin.users.edit', compact('user', 'types', 'userType'));
     }
 
     /**
@@ -68,9 +75,17 @@ class TypesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $data = $request->all();
+        $user->fill($data);
+        $user->save();
+         
+        $types = isset($data['types']) ? $data['types'] : [];
+        $user->types()->sync($types);
+
+        return redirect()->route('admin.home');
+
     }
 
     /**
