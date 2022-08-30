@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>modifica il piatto</h1>
+        <h1>Modifica il piatto</h1>
         <div class="container">
             <form action="{{ route('admin.items.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf

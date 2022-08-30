@@ -2,23 +2,23 @@
 
 @section('content')
     <div class="container">
-        <h1>vista singolo piatto</h1>
+        <h1>Vista singolo piatto</h1>
         <div class="item-box d-flex flex-column align-items-center  ">
 
             <div class="item-name">
                 <h1>{{$item->name}}</h1>
             </div>
             <div class="item-image ">
-                <img src="https://via.placeholder.com/300.png/09f/fff" alt="">
+                <img src="https://www.pacifictrellisfruit.com/wp-content/uploads/2016/04/default-placeholder-300x300.png" alt="">
             </div>
             <div class="item-description">
-                <p> <strong>descrizione piatto : </strong> {{$item->description}}</p>
+                <p> <strong>Descrizione piatto : </strong> {{$item->description}}</p>
             </div>
             <div class="item-price">
                 <p><strong>Prezzo:</strong> € {{$item->price}}</p>
             </div>
         </div>
-        <a href="{{route('admin.items.index')}}">torna al menu</a>
+        <a href="{{route('admin.items.index')}}">Torna al menu</a>
         <br>
         <a href="{{route('admin.home')}}">Home</a>
         
