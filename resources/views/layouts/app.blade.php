@@ -54,16 +54,23 @@
                                     {{ Auth::user()->name }}
                                 </a>
 
+                                {{-- MENU PROFILE  --}}
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
+                                    
+                                    {{-- LOGOUT  --}}
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+
+                                    {{-- EDIT PROFILE --}}
+                                    <a class="dropdown-item" href="{{ route('admin.users.edit', $user) }}">
+                                        {{ __('Modifica Profilo') }}
+                                    </a>
                                 </div>
                             </li>
                         @endguest
