@@ -14,6 +14,13 @@
                     @endif
                 
                     {{ __('You are logged in!') }}
+
+                    {{-- !PROVVISIORIO IMG RISTORANTE DA AGGIUNGERE UPLOAD IN SEGUITO SE NULL --}}
+                    @if($user->image)
+                        <div>
+                            <img class="img-fluid" src="{{ asset('storage/' . $user->image)}}" alt="Restaurant picture">
+                        </div>
+                    @endif
                 </div>
             </div>
 
