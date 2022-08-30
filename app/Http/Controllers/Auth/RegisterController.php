@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use App\Type;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -68,13 +69,29 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'image' => Storage::put('uploads', $data['image']),
-            'vat' => $data['vat'],
-            'address' => $data['address'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $newUser = new User();
+
+        $newUser -> name = $data['name'];
+        if(isset($data['image'])){
+            $newUser->image = Storage::put('uploads', $data['image']);
+        }
+        $newUser -> vat = $data['vat'];
+        $newUser -> address = $data['address'];
+        $newUser -> email = $data['email'];
+        $newUser -> password = Hash::make($data['password']);
+
+        $newUser->save();
+
+        // $user =  User::create([
+        //     'name' => $data['name'],
+        //     'image' => Storage::put('uploads', $data['image']),
+        //     'vat' => $data['vat'],
+        //     'address' => $data['address'],
+        //     'email' => $data['email'],
+        //     'password' => Hash::make($data['password']),
+        // ]);
+
+        return $newUser;
+
     }
 }

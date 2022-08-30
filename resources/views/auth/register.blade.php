@@ -95,7 +95,7 @@
                                 @enderror
                             </div>
                         </div>
-
+                      
                         {{-- IMMAGINE --}} 
                         <div class="form-group row">
                             <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine') }}</label>
