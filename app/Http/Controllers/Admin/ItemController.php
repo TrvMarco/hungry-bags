@@ -68,7 +68,9 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        
+        if($item->user_id !== Auth::id()) {
+            abort(403);
+        } 
         return view('admin.items.show', compact('item'));
     }
 
@@ -80,6 +82,9 @@ class ItemController extends Controller
      */
     public function edit($id)
     {
+        if($item->user_id !== Auth::id()) {
+            abort(403);
+        } 
         return view('admin.items.edit');
     }
 
@@ -92,7 +97,9 @@ class ItemController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if($item->user_id !== Auth::id()) {
+            abort(403);
+        } 
     }
 
     /**
@@ -103,6 +110,9 @@ class ItemController extends Controller
      */
     public function destroy(Item $item)
     {
+        if($item->user_id !== Auth::id()) {
+            abort(403);
+        } 
         $item->delete();
         return redirect()->route('admin.items.index');
     }
