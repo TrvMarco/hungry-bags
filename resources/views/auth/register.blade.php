@@ -107,6 +107,7 @@
                             </div>
                         </div>
 
+                        {{-- TIPOLOGIES --}}
                         <div class="form-group row">
                             <label for="types" class="col-md-4 col-form-label text-md-right">{{ __('Tipologie') }}</label>
                             <div class="col-md-6">
@@ -118,20 +119,6 @@
                                 @endforeach
                             </div>
                         </div>
-
-                        {{-- TIPOLOGIES --}}
-                        {{-- <div class="form-group row">
-                            <label for="types" class="col-md-4 col-form-label text-md-right">{{ __('Tipologie') }}</label>
-                            @foreach ($types as $type)
-                            <div class="form-check col-md-6">
-                                    <input class="form-check-input" type="checkbox" id="{{$type->id}}" value="{{$type->id}}" name="types[]" {{in_array($type->id, old('types', [])) ? 'checked' : ''}}>
-                                    <label class="form-check-label" for="{{$type->id}}">{{$type->name}}</label>
-                                </div>
-                                @endforeach
-                            @error('types')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div> --}}
 
                         {{-- REGISTER BUTTON --}}
                         <div class="form-group row mb-0">
