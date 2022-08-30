@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
-    protected $guarded = [];
+    protected $guarded = ['image'];
     
     public function orders()
     {
