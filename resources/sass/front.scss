@@ -2,3 +2,11 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Questrial&display=swap');
+
+* {
+    
+    font-family: 'Lato', sans-serif;
+    font-family: 'Questrial', sans-serif;
+}
