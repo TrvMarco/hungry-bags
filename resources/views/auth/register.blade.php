@@ -121,7 +121,7 @@
                         
                         <div class="form-group row">
                             <label for="types" class="col-md-4 col-form-label text-md-right">{{ __('Tipologie') }}</label>
-                            <div class="col-md-6">
+                            <div class="col-md-6 type_checkbox">
                                 @foreach ($types as $type)
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="{{$type->id}}" value="{{$type->id}}" name="types[]" {{in_array($type->id, old('types', [])) ? 'checked' : ''}}>
