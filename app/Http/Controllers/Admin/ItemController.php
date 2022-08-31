@@ -121,6 +121,8 @@ class ItemController extends Controller
             }
             $item->image = Storage::put('uploads', $data['image']);
         }
+
+        $item->is_visible = isset($data['is_visible']);
         $item->save();
         
 
