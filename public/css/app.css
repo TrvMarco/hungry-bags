@@ -44,18 +44,6 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-/* CLASSI FRONT */
-
-.campo-obbligatorio {
-  color: grey;
-  font-size: 10px;
-  margin-bottom: 10px;
-}
-
-/* ---------- */
-
-
-
 *,
 *::before,
 *::after {
