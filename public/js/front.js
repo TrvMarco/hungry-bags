@@ -2041,7 +2041,34 @@ var render = function render() {
 
   return _c("header", {
     staticClass: "header"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+  }, [_c("div", {
+    staticClass: "header__top"
+  }, [_c("router-link", {
+    attrs: {
+      to: {
+        name: "home"
+      }
+    }
+  }, [_c("img", {
+    staticClass: "logo-header",
+    attrs: {
+      src: __webpack_require__(/*! ./img/logo-busta-blu.png */ "./resources/js/components/macro/img/logo-busta-blu.png"),
+      alt: ""
+    }
+  })]), _vm._v(" "), _c("router-link", {
+    staticClass: "container-router",
+    attrs: {
+      to: {
+        name: "home"
+      }
+    }
+  }, [_c("img", {
+    staticClass: "name-header",
+    attrs: {
+      src: __webpack_require__(/*! ./img/hb-text-logo.png */ "./resources/js/components/macro/img/hb-text-logo.png"),
+      alt: ""
+    }
+  })]), _vm._v(" "), _vm._m(0)], 1), _vm._v(" "), _c("div", {
     staticClass: "header__bottom"
   }, [_c("a", {
     staticClass: "link",
@@ -2058,7 +2085,7 @@ var render = function render() {
     attrs: {
       href: "/admin/home"
     }
-  }, [_vm._v("Area Ristoratori")]), _vm._v(" "), _c("router-link", {
+  }, [_vm._v("LOGIN")]), _vm._v(" "), _c("router-link", {
     attrs: {
       to: {
         name: "restaurant-area"
@@ -2072,26 +2099,12 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "header__top"
-  }, [_c("img", {
-    staticClass: "logo-header",
-    attrs: {
-      src: __webpack_require__(/*! ./img/logo-busta-blu.png */ "./resources/js/components/macro/img/logo-busta-blu.png"),
-      alt: ""
-    }
-  }), _vm._v(" "), _c("img", {
-    staticClass: "name-header",
-    attrs: {
-      src: __webpack_require__(/*! ./img/hb-text-logo.png */ "./resources/js/components/macro/img/hb-text-logo.png"),
-      alt: ""
-    }
-  }), _vm._v(" "), _c("div", {
     staticClass: "cart-btn"
   }, [_c("div", {
     staticClass: "circle-black"
   }, [_c("i", {
     staticClass: "cart-img fa-solid fa-cart-shopping container-fluid"
-  })])])]);
+  })])]);
 }];
 render._withStripped = true;
 
@@ -2342,7 +2355,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".header {\n  min-height: 100px;\n}\n.header .logo-header {\n  width: 65px;\n  margin-bottom: 10px;\n  margin-left: 10px;\n  cursor: pointer;\n}\n.header .logo-header:hover {\n  -webkit-animation: shake 0.5s;\n          animation: shake 0.5s;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n}\n@-webkit-keyframes shake {\n0% {\n    transform: translate(1px, 1px) rotate(0deg);\n}\n10% {\n    transform: translate(-1px, -2px) rotate(-1deg);\n}\n20% {\n    transform: translate(-3px, 0px) rotate(1deg);\n}\n30% {\n    transform: translate(3px, 2px) rotate(0deg);\n}\n40% {\n    transform: translate(1px, -1px) rotate(1deg);\n}\n50% {\n    transform: translate(-1px, 2px) rotate(-1deg);\n}\n60% {\n    transform: translate(-3px, 1px) rotate(0deg);\n}\n70% {\n    transform: translate(3px, 1px) rotate(-1deg);\n}\n80% {\n    transform: translate(-1px, -1px) rotate(1deg);\n}\n90% {\n    transform: translate(1px, 2px) rotate(0deg);\n}\n100% {\n    transform: translate(1px, -2px) rotate(-1deg);\n}\n}\n@keyframes shake {\n0% {\n    transform: translate(1px, 1px) rotate(0deg);\n}\n10% {\n    transform: translate(-1px, -2px) rotate(-1deg);\n}\n20% {\n    transform: translate(-3px, 0px) rotate(1deg);\n}\n30% {\n    transform: translate(3px, 2px) rotate(0deg);\n}\n40% {\n    transform: translate(1px, -1px) rotate(1deg);\n}\n50% {\n    transform: translate(-1px, 2px) rotate(-1deg);\n}\n60% {\n    transform: translate(-3px, 1px) rotate(0deg);\n}\n70% {\n    transform: translate(3px, 1px) rotate(-1deg);\n}\n80% {\n    transform: translate(-1px, -1px) rotate(1deg);\n}\n90% {\n    transform: translate(1px, 2px) rotate(0deg);\n}\n100% {\n    transform: translate(1px, -2px) rotate(-1deg);\n}\n}\n.header .name-header {\n  width: 43%;\n  cursor: pointer;\n}\n.header .cart-btn {\n  cursor: pointer;\n  margin-right: 10px;\n}\n.header .cart-btn .circle-black {\n  background: black;\n  width: 70px;\n  height: 70px;\n  border-radius: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0;\n  cursor: pointer;\n}\n.header .cart-btn .cart-img {\n  color: var(--secondary-color);\n  font-size: 30px;\n  margin: 3px 0px 0px 3px;\n}\n.header .cart-btn .cart-img:hover {\n  color: rgb(255, 230, 0);\n}\n.header__top {\n  height: 130px;\n  width: 100%;\n  background: var(--primary-color);\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.header__bottom {\n  min-height: 40px;\n  width: 100%;\n  background: var(--secondary-color);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap;\n}\n.header__bottom .link {\n  color: black;\n  font-size: 22px;\n  text-decoration: none;\n  color: inherit;\n  margin: 5px 25px 0px 25px;\n  border-bottom: 5px solid var(--secondary-color);\n}\n.header__bottom .link:hover {\n  border-bottom: 5px solid var(--primary-color);\n}", ""]);
+exports.push([module.i, ".header {\n  min-height: 100px;\n}\n.header .logo-header {\n  width: 65px;\n  margin-bottom: 10px;\n  margin-left: 10px;\n  cursor: pointer;\n}\n.header .container-router {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.header .logo-header:hover {\n  -webkit-animation: shake 0.5s;\n          animation: shake 0.5s;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n}\n@-webkit-keyframes shake {\n0% {\n    transform: translate(1px, 1px) rotate(0deg);\n}\n10% {\n    transform: translate(-1px, -2px) rotate(-1deg);\n}\n20% {\n    transform: translate(-3px, 0px) rotate(1deg);\n}\n30% {\n    transform: translate(3px, 2px) rotate(0deg);\n}\n40% {\n    transform: translate(1px, -1px) rotate(1deg);\n}\n50% {\n    transform: translate(-1px, 2px) rotate(-1deg);\n}\n60% {\n    transform: translate(-3px, 1px) rotate(0deg);\n}\n70% {\n    transform: translate(3px, 1px) rotate(-1deg);\n}\n80% {\n    transform: translate(-1px, -1px) rotate(1deg);\n}\n90% {\n    transform: translate(1px, 2px) rotate(0deg);\n}\n100% {\n    transform: translate(1px, -2px) rotate(-1deg);\n}\n}\n@keyframes shake {\n0% {\n    transform: translate(1px, 1px) rotate(0deg);\n}\n10% {\n    transform: translate(-1px, -2px) rotate(-1deg);\n}\n20% {\n    transform: translate(-3px, 0px) rotate(1deg);\n}\n30% {\n    transform: translate(3px, 2px) rotate(0deg);\n}\n40% {\n    transform: translate(1px, -1px) rotate(1deg);\n}\n50% {\n    transform: translate(-1px, 2px) rotate(-1deg);\n}\n60% {\n    transform: translate(-3px, 1px) rotate(0deg);\n}\n70% {\n    transform: translate(3px, 1px) rotate(-1deg);\n}\n80% {\n    transform: translate(-1px, -1px) rotate(1deg);\n}\n90% {\n    transform: translate(1px, 2px) rotate(0deg);\n}\n100% {\n    transform: translate(1px, -2px) rotate(-1deg);\n}\n}\n.header .name-header {\n  width: 80%;\n  cursor: pointer;\n}\n.header .cart-btn {\n  cursor: pointer;\n  margin-right: 10px;\n}\n.header .cart-btn .circle-black {\n  background: black;\n  width: 70px;\n  height: 70px;\n  border-radius: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0;\n  cursor: pointer;\n}\n.header .cart-btn .cart-img {\n  color: var(--secondary-color);\n  font-size: 30px;\n  margin: 3px 0px 0px 3px;\n}\n.header .cart-btn .cart-img:hover {\n  color: rgb(255, 230, 0);\n}\n.header__top {\n  height: 130px;\n  width: 100%;\n  background: var(--primary-color);\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.header__bottom {\n  min-height: 40px;\n  width: 100%;\n  background: var(--secondary-color);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap;\n}\n.header__bottom .link {\n  color: black;\n  font-size: 22px;\n  text-decoration: none;\n  color: inherit;\n  margin: 5px 25px 0px 25px;\n  border-bottom: 5px solid var(--secondary-color);\n}\n.header__bottom .link:hover {\n  border-bottom: 5px solid var(--primary-color);\n}", ""]);
 
 // exports
 

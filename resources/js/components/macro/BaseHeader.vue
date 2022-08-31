@@ -2,9 +2,17 @@
     <header class="header">
         <div class="header__top">
             <!-- LOGO busta header -->
+            <router-link :to="{name:'home'}">
+
             <img class="logo-header" src="./img/logo-busta-blu.png" alt="">
+
+            </router-link>
             <!-- Scritta HB LOGO header -->
+            <router-link class="container-router" :to="{name:'home'}">
+
             <img class="name-header" src="./img/hb-text-logo.png" alt="">
+
+            </router-link>
             <!-- CARRELLO header -->
             <div class="cart-btn">
                 <div class="circle-black">
@@ -16,7 +24,7 @@
         <div class="header__bottom">
             <a class="link" href="#">Chi siamo</a>
             <a class="link" href="#">Contattaci</a>
-            <a class="link" href="/admin/home">Area Ristoratori</a>
+            <a class="link" href="/admin/home">LOGIN</a>
             <router-link :to="{name:'restaurant-area'}">Area Ristoratori</router-link>
         </div>
     </header>
@@ -41,6 +49,13 @@ export default {
             cursor: pointer;
         }
 
+        .container-router {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+        }
+
         // Questo fa tremare la busta dell'header
         .logo-header:hover {
             animation: shake 0.5s;
@@ -62,7 +77,7 @@ export default {
         }
 
         .name-header {
-            width: 43%;
+            width: 80%;
             cursor: pointer;
         }
 
