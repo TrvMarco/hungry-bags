@@ -1,5 +1,5 @@
 <template>
-  <h1>ciao</h1>
+  <h1>Questa e' l'area ristoratori</h1>
 </template>
 
 <script>
