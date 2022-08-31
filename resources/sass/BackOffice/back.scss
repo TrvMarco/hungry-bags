@@ -1,0 +1,42 @@
+@import '../variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
+//      ----------------        RESET 
+ul{
+    padding-left: 0;
+}
+
+//      ----------------        CONTAINERS
+.backoffice_container, main{
+    background: linear-gradient(45deg,var(--third-color), var(--primary-color));
+}
+
+.backoffice_navbar{
+    background-color: #202020;
+}
+//      ----------------        HOME BLADE
+.card_image{
+    width: 1.875rem;
+}
+
+.item_img_preview_box{
+    width: 1.875rem;
+    height: 1.875rem;
+}
+
+
+//      ----------------        ITEM INDEX
+.menu_item_img{
+    height: 2.5rem
+}
+
+.menu_eye_green{
+    color: rgb(0, 212, 0);
+}
+
+.menu_eye_red{
+    color: rgb(163, 19, 19);
+}

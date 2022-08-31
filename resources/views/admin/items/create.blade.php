@@ -67,7 +67,12 @@
             
             <hr>
 
-            <div class="mb-3"><small>I campi contrassegnati con * sono obbligatori</small></div>
+            {{-- CAMPI OBBLIGATORI --}}
+            <div class="form-group row">
+                <div class="col-md-6 text-muted">
+                    <small>I campi contrassegnati con * sono obbligatori.</small>
+                </div>
+            </div>
 
             <button type="submit" class="btn btn-primary">Crea piatto</button>
             

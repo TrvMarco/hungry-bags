@@ -8,7 +8,7 @@
     <title>{{config('app.name', 'HungryBags')}}</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container backoffice_container">
         @yield('content')
     </div>
     <script src="{{asset('js/app.js')}}"></script>

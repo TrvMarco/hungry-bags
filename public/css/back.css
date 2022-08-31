@@ -10978,6 +10978,15 @@ ul {
   padding-left: 0;
 }
 
+.backoffice_container,
+main {
+  background: linear-gradient(45deg, var(--third-color), var(--primary-color));
+}
+
+.backoffice_navbar {
+  background-color: #202020;
+}
+
 .card_image {
   width: 1.875rem;
 }
