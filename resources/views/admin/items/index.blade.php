@@ -17,8 +17,8 @@
               <tr>
                 <th scope="col">Foto del piatto</th>
                 <th scope="col">Nome del piatto</th>
-                <th scope="col">Visibile nel Menù</th>
-                <th scope="col">Azioni</th>
+                <th scope="col" class="text-center">Visibile nel Menù</th>
+                <th scope="col" class="text-center">Azioni</th>
               </tr>
             </thead>
             <tbody>
@@ -33,7 +33,7 @@
                       
                     </th>
                     <td>{{$item->name}}</td>
-                    <td class="d-flex justify-content-center">
+                    <td class="text-center">
                       @if ($item->is_visible)
                         <div class="menu_eye_green"><i class="fa-solid fa-eye"></i></div>
                       @else
@@ -41,7 +41,7 @@
                       @endif
                     </td>
                     <td>
-                        <div class="d-flex">
+                        <div class="d-flex justify-content-center">
                             <a href="{{route('admin.items.show', $item->id)}}" class="btn btn-primary mx-2 btn-sm">Visualizza</a>
                             <a href="{{route('admin.items.edit', $item->id)}}" class="btn btn-warning mx-2 btn-sm">Modifica</a>
                              {{-- bottone elimina --}}

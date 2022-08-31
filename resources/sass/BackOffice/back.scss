@@ -14,13 +14,9 @@ ul{
     background: linear-gradient(45deg,var(--third-color), var(--primary-color));
 }
 
-.backoffice_navbar{
-    height: 4.1875rem;
-}
-
-.backoffice_navbar{
-    background-color: #202020;
-}
+// .backoffice_navbar{
+//     height: 4.1875rem;
+// }
 
 .backoffice_maincontainer, .backoffice_container{
     min-height: calc(100vh - 4.1875rem);
