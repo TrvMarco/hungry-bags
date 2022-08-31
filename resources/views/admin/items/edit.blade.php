@@ -76,7 +76,7 @@
 
         <div class="mb-3"><small>I campi contrassegnati con * sono obbligatori</small></div>
 
-        <button type="submit" class="btn btn-primary">Crea piatto</button>
+        <button type="submit" class="btn btn-warning">Modifica piatto</button>
         
     </form>
 </div>
