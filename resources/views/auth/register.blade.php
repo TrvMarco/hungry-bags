@@ -72,7 +72,7 @@
                             <label for="vat" class="col-md-4 col-form-label text-md-right">{{ __('P.iva*') }}</label>
                             
                             <div class="col-md-6">
-                                <input id="vat" type="text" class="form-control @error('vat') is-invalid @enderror" name="vat" value="{{ old('vat') }}" required autocomplete="vat" autofocus>
+                                <input id="vat" type="text" maxlength="11" class="form-control @error('vat') is-invalid @enderror" name="vat" value="{{ old('vat') }}" required autocomplete="vat" autofocus>
                                 <p class="campo-obbligatorio">Campo obbligatorio</p>
                                 @error('vat')
                                     <span class="invalid-feedback" role="alert">
@@ -124,6 +124,9 @@
                                     <label class="form-check-label" for="{{$type->id}}">{{$type->name}}</label>
                                 </div>
                                 @endforeach
+                                @error('types')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
 

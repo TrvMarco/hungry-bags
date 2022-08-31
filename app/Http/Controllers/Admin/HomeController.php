@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Type;
 use App\User;
+use App\Item;
 
 class HomeController extends Controller
 {
@@ -17,9 +18,10 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
+    {   
         $user = Auth::user();
+        $items = $user->items;
         $types = $user->types;
-        return view('admin.home', compact('types', 'user'));
+        return view('admin.home', compact('types', 'user', 'items'));
     }
 }

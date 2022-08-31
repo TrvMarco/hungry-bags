@@ -1,16 +1,22 @@
 <template>
   
   <div class="main">
+    <h2 class="text-register">Se sei già registrato:</h2>
+    <div class="container accedi">
+      <a class="link" href="/login">
+        Accedi
+      </a>
 
+    </div>
+    
+    <h1>Altrimenti:</h1>
+    <div class="container registrati">
 
-      <div class="container accedi">
-        <a class="link" href="/login">LOGIN</a>
-      </div>
+      <a class="link" href="/register">
+        Registrati
+      </a>
 
-
-      <div class="container registrati">
-        <a class="link" href="/register">REGISTRATI</a>
-      </div>
+    </div>
 
   </div>
 
@@ -31,33 +37,33 @@ export default {
     align-items: center;
     justify-content: center;
 
-    .container{
-      background: var(--primary-color);
-    }
-
     .accedi, .registrati {
       margin: 10px;
       height: 40px;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      
     }
 
-    .accedi {
-      margin-top: 30px;
+    .accedi{
+      background: var(--primary-color);
     }
 
     .registrati {
       background: var(--secondary-color);
-      
     }
 
     .link {
       text-decoration: none;
       color: inherit;
+      width: 100%;
+      text-align: center;
     }
+
+    .text-register {
+      margin: 50px 0px 0px 0px;
+    }
+
   }
 
 </style>
