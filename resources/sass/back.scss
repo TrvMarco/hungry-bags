@@ -3,6 +3,9 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+ul{
+    padding-left: 0;
+}
 
 // HOME BLADE
 .card_image{
@@ -16,10 +19,14 @@
 
 
 // ITEM INDEX
-.menu_row{
-    height: 3.125rem;
+.menu_item_img{
+    height: 2.5rem
+}
 
-    .menu_item_img{
-        height: 2.5rem
-    }
+.menu_eye_green{
+    color: rgb(0, 212, 0);
+}
+
+.menu_eye_red{
+    color: rgb(163, 19, 19);
 }

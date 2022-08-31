@@ -10974,6 +10974,10 @@ a.text-dark:focus {
   }
 }
 
+ul {
+  padding-left: 0;
+}
+
 .card_image {
   width: 1.875rem;
 }
@@ -10983,11 +10987,15 @@ a.text-dark:focus {
   height: 1.875rem;
 }
 
-.menu_row {
-  height: 3.125rem;
+.menu_item_img {
+  height: 2.5rem;
 }
 
-.menu_row .menu_item_img {
-  height: 2.5rem;
+.menu_eye_green {
+  color: rgb(0, 212, 0);
+}
+
+.menu_eye_red {
+  color: rgb(163, 19, 19);
 }
 
