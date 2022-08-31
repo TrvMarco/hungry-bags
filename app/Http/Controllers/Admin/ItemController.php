@@ -69,10 +69,11 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
+        $user= Auth::user();
         if($item->user_id !== Auth::id()) {
             abort(403);
         } 
-        return view('admin.items.show', compact('item'));
+        return view('admin.items.show', compact('item', 'user'));
     }
 
     /**
