@@ -12,8 +12,11 @@
                     @if ($user->image)
                         <img class="card-img-top " src="{{ asset('storage/' . $user->image)}}" alt="Card image cap">
                     @else
-                        <a href="{{route('admin.users.edit', $user)}}"><img src="https://placehold.jp/150x150.png" alt=""></a>
-                        <small>clicca per inserire immagine</small>
+                        <a href="{{route('admin.users.edit', $user)}}">
+                            <img src="https://placehold.jp/150x150.png" alt="">
+                            <small>clicca per inserire immagine</small>
+                        </a>
+                       
                     @endif
                     <h5 class="card-title"><strong>{{ $user->name }}</strong></h5>
                     <p class="card-text"><strong>Indirizzo:</strong> {{ $user->address}}</p>

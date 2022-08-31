@@ -9,7 +9,15 @@
                 <h1>{{$item->name}}</h1>
             </div>
             <div class="item-image" style="width: 300px">
+                @if ($item->image)
                 <img class="img-fluid" src="{{ asset('storage/' . $item->image)}}" alt="Item Image">
+                    
+                @else
+                <a href="{{route('admin.items.edit', $item->id)}}">
+                    <img src="https://placehold.jp/300x300.png" alt=""> 
+                    <small>clicca per aggiungere immagine</small>
+                </a>
+                @endif
             </div>
             <div class="item-description">
                 <p> <strong>Descrizione piatto : </strong> {{$item->description}}</p>
