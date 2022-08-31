@@ -1,15 +1,32 @@
 <template>
-  <div>
-    <h1>Frontoffice</h1>
+
+  <div id="app">
+    <BaseHeader/>
+    <BaseMain/>
+    <BaseFooter/>
   </div>
+
 </template>
 
 <script>
+ 
+import BaseHeader from '../components/macro/BaseHeader.vue'
+import BaseMain from '../components/macro/BaseMain.vue'
+import BaseFooter from '../components/macro/BaseFooter.vue'
+
 export default {
-    name:'App'
+  name: 'App',
+  components: {
+    BaseHeader,
+    BaseMain,
+    BaseFooter,
+  }
 }
 </script>
 
-<style>
+<style lang="scss">
+
+// @import './assets/style/global.scss';
+// @import'~bootstrap/dist/css/bootstrap.css';
 
 </style>
