@@ -11,6 +11,13 @@ use Illuminate\Support\Facades\Storage;
 
 class ItemController extends Controller
 {
+    private $validation = [
+        'name' => 'required|string|max:100',
+        'image' => 'nullable|mimes:png,jpeg,jpg',
+        'description' => 'required|string|max:65535',
+        'price' => 'required|numeric|between:0,200',
+        'is_visible' => 'sometimes|accepted',
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -83,11 +90,12 @@ class ItemController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Item $item)
-    {
+    {   
+        $user= Auth::user();
         if($item->user_id !== Auth::id()) {
             abort(403);
         } 
-        return view('admin.items.edit', compact('item'));
+        return view('admin.items.edit', compact('item','user'));
     }
 
     /**
@@ -97,11 +105,28 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Item $item)
     {
         if($item->user_id !== Auth::id()) {
             abort(403);
         } 
+
+        $data = $request->validate($this->validation);
+
+        $item->fill($data);
+
+        if(isset($data['image'])) {
+            if($item->image){
+                Storage::delete($item->image);
+            }
+            $item->image = Storage::put('uploads', $data['image']);
+        }
+
+        $item->is_visible = isset($data['is_visible']);
+        $item->save();
+        
+
+        return redirect()->route('admin.items.index');
     }
 
     /**
