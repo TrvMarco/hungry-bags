@@ -2,7 +2,7 @@
     <main class="main">
 
         <!-- cuore -->
-        <img class="cuore-img container" id="mainButton" src="img/cuore-posate.png" alt="">
+        <img class="cuore-img container" id="mainButton" src="../components/macro/img/cuore-posate.png" alt="">
         <!-- Cosa vuoi mangiare? -->
         <h1 class="question container">Cosa vuoi mangiare?</h1>
             <!-- Cerchi blu rossi con img food e scritta -->
@@ -10,69 +10,69 @@
 
             <div class="cerchio-e-scritta">
                 <div class="circle-red">
-                    <img class="food-img" src="img/indiano.png" alt="">
+                    <img class="food-img" src="../components/macro/img/indiano.png" alt="">
                 </div>
                 <p class="testo-food">Indiano</p>
             </div>
 
             <div class="cerchio-e-scritta">
                 <div class="circle-blu">
-                    <img class="food-img sushi-fix"  src="img/sushi.png" alt="">
+                    <img class="food-img sushi-fix"  src="../components/macro/img/sushi.png" alt="">
                 </div>
                 <p class="testo-food">Sushi</p>
             </div>
 
             <div class="cerchio-e-scritta">
                 <div class="circle-red">
-                    <img class="food-img panino-fix" src="img/panino.png" alt="">
+                    <img class="food-img panino-fix" src="../components/macro/img/panino.png" alt="">
                 </div>
                 <p class="testo-food">Panino</p>
             </div>
 
             <div class="cerchio-e-scritta">
                 <div class="circle-blu">
-                    <img class="food-img pizza-fix" src="img/pizza.png" alt="">
+                    <img class="food-img pizza-fix" src="../components/macro/img/pizza.png" alt="">
                 </div>
                 <p class="testo-food">Pizza</p>
             </div>
 
             <div class="cerchio-e-scritta">
                 <div class="circle-red">
-                    <img class="food-img poke-fix" src="img/poke.png" alt="">
+                    <img class="food-img poke-fix" src="../components/macro/img/poke.png" alt="">
                 </div>
                 <p class="testo-food">Pokè</p>
             </div>
 
             <div class="cerchio-e-scritta">
                 <div class="circle-blu">
-                    <img class="food-img" src="img/pollo.png" alt="">
+                    <img class="food-img" src="../components/macro/img/pollo.png" alt="">
                 </div>
                 <p class="testo-food">Pollo</p>
             </div>
 
             <div class="cerchio-e-scritta">
                 <div class="circle-red">
-                    <img class="food-img" src="img/cinese.png" alt="">
+                    <img class="food-img" src="../components/macro/img/cinese.png" alt="">
                 </div>
                 <p class="testo-food">Cinese</p>
             </div>
 
             <div class="cerchio-e-scritta">
                 <div class="circle-blu">
-                    <img class="food-img carne-fix" src="img/carne.png" alt="">
+                    <img class="food-img carne-fix" src="../components/macro/img/carne.png" alt="">
                 </div>
                 <p class="testo-food">Carne</p>
             </div>
 
             <div class="cerchio-e-scritta">
                 <div class="circle-red">
-                    <img class="food-img" src="img/pesce2.png" alt="">
+                    <img class="food-img" src="../components/macro/img/pesce2.png" alt="">
                 </div>
                 <p class="testo-food">Pesce</p>
             </div>
         </div>
         <!-- Immagine Raider -->
-        <img class="raider-img container" src="img/raider-header.png" alt="">
+        <img class="raider-img container" src="../components/macro/img/raider-header.png" alt="">
         
     </main>
 </template>

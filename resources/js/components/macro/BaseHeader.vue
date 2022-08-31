@@ -2,9 +2,9 @@
     <header class="header">
         <div class="header__top">
             <!-- LOGO busta header -->
-            <img class="logo-header" src="img/logo-busta-blu.png" alt="">
+            <img class="logo-header" src="./img/logo-busta-blu.png" alt="">
             <!-- Scritta HB LOGO header -->
-            <img class="name-header" src="img/hb-text-logo.png" alt="">
+            <img class="name-header" src="./img/hb-text-logo.png" alt="">
             <!-- CARRELLO header -->
             <div class="cart-btn">
                 <div class="circle-black">
