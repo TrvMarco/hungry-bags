@@ -21,14 +21,19 @@
                 <div class="card w-100">
                     <div class="card-header">{{ __('Il tuo Menù') }}</div>
                     <div class="card-body">
-                        @foreach ($items as $item)
-                            <div class="card-text d-flex">
-                                <div class="card_image">
-                                    <img class="img-fluid" src="{{ asset('storage/' . $item->image)}}" alt="">
+                            @foreach ($items as $item)
+                                <div class="card-text d-flex item_preview justify-content-between">
+                                    <div class="d-flex">
+                                        <div class="item_img_preview_box mr-3">
+                                            <img class="img-fluid center" src="{{ asset('storage/' . $item->image)}}" alt="">
+                                        </div>
+                                        <div>{{ $item->name }}</div>
+                                    </div>
+                                    <div>
+                                        {{$item->price}}&#x20AC;
+                                    </div>
                                 </div>
-                                {{ $item->name }}
-                            </div>
-                        @endforeach
+                            @endforeach
                         <a href="{{route('admin.items.index')}}">visualizza menu</a>
                         <br>
                         <a href="{{route('admin.items.create')}}">inserisci il tuo piatto</a>
