@@ -53,10 +53,13 @@ class ItemController extends Controller
         $newItem = new Item();
         $newItem->fill($data);
         $newItem->is_visible = isset($data['is_visible']);
-        // $newItem->image = Storage::put('uploads', $data['image']);
         $newItem->user_id = Auth::id();
+        
+        if(isset($data['image'])){
+            $newItem->image = Storage::put('uploads', $data['image']);
+        }
+        
         $newItem->save();
-
         return redirect()->route('admin.items.show', $newItem->id);
     }
 
@@ -68,7 +71,9 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        
+        if($item->user_id !== Auth::id()) {
+            abort(403);
+        }   
         return view('admin.items.show', compact('item'));
     }
 
@@ -80,6 +85,9 @@ class ItemController extends Controller
      */
     public function edit($id)
     {
+        if($item->user_id !== Auth::id()) {
+            abort(403);
+        } 
         return view('admin.items.edit');
     }
 
@@ -92,7 +100,9 @@ class ItemController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if($item->user_id !== Auth::id()) {
+            abort(403);
+        } 
     }
 
     /**
@@ -103,6 +113,9 @@ class ItemController extends Controller
      */
     public function destroy(Item $item)
     {
+        if($item->user_id !== Auth::id()) {
+            abort(403);
+        } 
         $item->delete();
         return redirect()->route('admin.items.index');
     }

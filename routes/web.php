@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// }); 
+
+// COMMENTATA DA GIANLUCA
 
 Auth::routes();
 Route::middleware('auth')

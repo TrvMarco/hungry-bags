@@ -14,6 +14,13 @@
                     @endif
                 
                     {{ __('You are logged in!') }}
+
+                    {{-- !PROVVISIORIO IMG RISTORANTE DA AGGIUNGERE UPLOAD IN SEGUITO SE NULL --}}
+                    @if($user->image)
+                        <div>
+                            <img class="img-fluid" src="{{ asset('storage/' . $user->image)}}" alt="Restaurant picture">
+                        </div>
+                    @endif
                 </div>
             </div>
 
@@ -29,9 +36,7 @@
                         @endforeach
                             {{--! verificare in seguito per la modifica --}}
                             {{-- <a href="{{route('admin.types.index')}}">Modifica le tipologie del tuo ristorante</a> <br> --}}
-                            <a href="{{route('admin.users.edit', $user)}}">Aggiungi o modifica la tipologia del tuo ristorante</a>
-                            <br>
-                            <a href="{{route('admin.types.create')}}">Inserisci una nuova tipologia</a>
+                            {{-- <a href="{{route('admin.users.edit', $user)}}">Aggiungi o modifica la tipologia del tuo ristorante</a> --}}
                             
                     @endif
                 </div>

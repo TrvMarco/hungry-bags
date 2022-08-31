@@ -8,16 +8,16 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         {{-- NOME --}}
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome Attività*') }}</label>
-
+                            
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
+                                <p class="campo-obbligatorio">Campo obbligatorio</p>
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -33,7 +33,7 @@
                             
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-                                
+                                <p class="campo-obbligatorio">Campo obbligatorio</p>
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -48,7 +48,7 @@
                             
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
+                                <p class="campo-obbligatorio">Campo obbligatorio</p>
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -63,16 +63,17 @@
                             
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <p class="campo-obbligatorio">Campo obbligatorio</p>
                             </div>
                         </div>
 
                         {{-- VAT --}}
                         <div class="form-group row">
                             <label for="vat" class="col-md-4 col-form-label text-md-right">{{ __('P.iva*') }}</label>
-
+                            
                             <div class="col-md-6">
                                 <input id="vat" type="text" class="form-control @error('vat') is-invalid @enderror" name="vat" value="{{ old('vat') }}" required autocomplete="vat" autofocus>
-
+                                <p class="campo-obbligatorio">Campo obbligatorio</p>
                                 @error('vat')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -84,10 +85,11 @@
                         {{-- ADDRESS --}}
                         <div class="form-group row">
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo*') }}</label>
+                            
 
                             <div class="col-md-6">
                                 <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
-
+                                <p class="campo-obbligatorio">Campo obbligatorio</p>
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -95,22 +97,36 @@
                                 @enderror
                             </div>
                         </div>
+                      
+                        <hr>
 
                         {{-- IMMAGINE --}} 
-                        {{-- !to do: AGGIUNGIUNGERE INPUT CARICAMENTO IMG --}}
                         <div class="form-group row">
                             <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine') }}</label>
-
                             <div class="col-md-6">
-                                <input id="image" type="text" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}" autocomplete="image" autofocus>
-
+                                <input type="file" class="form-control-file @error('image') is-invalid @enderror" id="image" name="image" value="{{old('image')}}">
                                 @error('image')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                         </div>
+
+                        <hr>
+
+                        {{-- TIPOLOGIES --}}
+                        
+                        <div class="form-group row">
+                            <label for="types" class="col-md-4 col-form-label text-md-right">{{ __('Tipologie') }}</label>
+                            <div class="col-md-6">
+                                @foreach ($types as $type)
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="{{$type->id}}" value="{{$type->id}}" name="types[]" {{in_array($type->id, old('types', [])) ? 'checked' : ''}}>
+                                    <label class="form-check-label" for="{{$type->id}}">{{$type->name}}</label>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+
                         {{-- REGISTER BUTTON --}}
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
@@ -125,4 +141,5 @@
         </div>
     </div>
 </div>
+
 @endsection
