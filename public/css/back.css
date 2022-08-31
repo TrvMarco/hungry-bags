@@ -10991,6 +10991,13 @@ main {
   justify-content: center;
 }
 
+.backoffice_menu_container {
+  background-color: #fff;
+  border-radius: 0.9375rem;
+  -o-box-shadow: 5px 5px 10px 0px rgba(26, 26, 26, 0.8705882353);
+  box-shadow: 5px 5px 10px 0px rgba(26, 26, 26, 0.8705882353);
+}
+
 .type_checkbox {
   overflow-y: auto;
   height: 12.5rem;

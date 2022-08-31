@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row mb-4 justify-content-center">
+    <div class="container backoffice_menu_container">
+        <div class="row mb-4 justify-content-center pt-4">
           <h1>Il tuo Menù</h1>
             @if ($items->isEmpty())
             <h1>il tuo menu è vuoto </h1>

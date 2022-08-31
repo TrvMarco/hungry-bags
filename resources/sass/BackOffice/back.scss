@@ -24,6 +24,16 @@ ul{
     align-content: center;
     justify-content: center;
 }
+
+.backoffice_menu_container{
+    background-color: #fff;
+    border-radius: .9375rem;
+    -webkit-box-shadow: 5px 5px 10px 0px #1a1a1ade;
+    -moz-box-shadow: 5px 5px 10px 0px #1a1a1ade;
+    -o-box-shadow: 5px 5px 10px 0px #1a1a1ade;
+    box-shadow: 5px 5px 10px 0px #1a1a1ade;
+}
+
 //      ----------------        REGISTER BLADE
 .type_checkbox{
     overflow-y: auto;
