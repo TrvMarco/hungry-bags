@@ -13,12 +13,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
- * {
-
-  font-family: 'Lato', sans-serif;
-  font-family: 'Questrial', sans-serif;
-}
-
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
