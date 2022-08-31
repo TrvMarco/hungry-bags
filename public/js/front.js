@@ -2039,16 +2039,39 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
+  return _c("header", {
+    staticClass: "header"
+  }, [_vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "header__bottom"
+  }, [_c("a", {
+    staticClass: "link",
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Chi siamo")]), _vm._v(" "), _c("a", {
+    staticClass: "link",
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Contattaci")]), _vm._v(" "), _c("a", {
+    staticClass: "link",
+    attrs: {
+      href: "/admin/home"
+    }
+  }, [_vm._v("Area Ristoratori")]), _vm._v(" "), _c("router-link", {
+    attrs: {
+      to: {
+        name: "restaurant-area"
+      }
+    }
+  }, [_vm._v("Area Ristoratori")])], 1)]);
 };
 
 var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("header", {
-    staticClass: "header"
-  }, [_c("div", {
+  return _c("div", {
     staticClass: "header__top"
   }, [_c("img", {
     staticClass: "logo-header",
@@ -2068,24 +2091,7 @@ var staticRenderFns = [function () {
     staticClass: "circle-black"
   }, [_c("i", {
     staticClass: "cart-img fa-solid fa-cart-shopping container-fluid"
-  })])])]), _vm._v(" "), _c("div", {
-    staticClass: "header__bottom"
-  }, [_c("a", {
-    staticClass: "link",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Chi siamo")]), _vm._v(" "), _c("a", {
-    staticClass: "link",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Contattaci")]), _vm._v(" "), _c("a", {
-    staticClass: "link",
-    attrs: {
-      href: "/admin/home"
-    }
-  }, [_vm._v("Area Ristoratori")])])]);
+  })])])]);
 }];
 render._withStripped = true;
 
@@ -19203,7 +19209,12 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     path: "/restaurant-area",
     name: "restaurant-area",
     component: _pages_RestaurantArea__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }]
+  } // {
+  //     path: "/about",
+  //     name: "about",
+  //     component: About
+  // },
+  ]
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
 
