@@ -3,55 +3,61 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card mb-2">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                
-                    {{ __('You are logged in!') }}
-
-                    {{-- !PROVVISIORIO IMG RISTORANTE DA AGGIUNGERE UPLOAD IN SEGUITO SE NULL --}}
-                    @if($user->image)
-                        <div>
-                            <img class="img-fluid" src="{{ asset('storage/' . $user->image)}}" alt="Restaurant picture">
-                        </div>
-                    @endif
+        <div class="col-md-8 d-flex">
+            <div class="col-4">
+                {{-- CARD RIEPILOGO DATI RISTORANTE --}}
+                <div class="card">
+                    <img class="card-img-top" src="{{ asset('storage/' . $user->image)}}" alt="Card image cap">
+                    <div class="card-body">
+                    <h5 class="card-title"><strong>{{ $user->name }}</strong></h5>
+                    <p class="card-text"><strong>Indirizzo:</strong> {{ $user->address}}</p>
+                    <p class="card-text"><small><strong>P.iva:</strong> {{ $user->vat }}</small></p>
+                    <a href="#" class="btn btn-primary">Modifica Profilo</a>
+                    </div>
                 </div>
             </div>
-
-            <div class="card">
-                <div class="card-header">{{ __('Le tipologie del tuo ristorante') }}</div>
-                <div class="card-body">
-                    @if ($types->isEmpty())
-                            <h2>NON HAI ANCORA INSERITO UNA TIPOLOGIA RISTORANTE!</h2>
-                            <a href="{{route('admin.users.edit', $user)}}">Scegli la tipologia del tuo ristorante</a>
-                    @else
-                        @foreach ($types as $type)
-                            <li>{{$type->name}}</li>
+            <div class="col-8">
+                {{-- CARD MENÙ --}}
+                <div class="card w-100">
+                    <div class="card-header">{{ __('Il tuo Menù') }}</div>
+                    <div class="card-body">
+                        @foreach ($items as $item)
+                            <div class="card-text d-flex">
+                                <div class="card_image">
+                                    <img class="img-fluid" src="{{ asset('storage/' . $item->image)}}" alt="">
+                                </div>
+                                {{ $item->name }}
+                            </div>
                         @endforeach
-                            {{--! verificare in seguito per la modifica --}}
-                            {{-- <a href="{{route('admin.types.index')}}">Modifica le tipologie del tuo ristorante</a> <br> --}}
-                            {{-- <a href="{{route('admin.users.edit', $user)}}">Aggiungi o modifica la tipologia del tuo ristorante</a> --}}
-                            
-                    @endif
-                </div>
+                        <a href="{{route('admin.items.index')}}">visualizza menu</a>
+                        <br>
+                        <a href="{{route('admin.items.create')}}">inserisci il tuo piatto</a>
+                    </div>
+                </div>            
             </div>
-
-            <div class="card">
-                <div class="card-header">{{ __('il tuo menù') }}</div>
-                <div class="card-body">
-                    <a href="{{route('admin.items.index')}}">visualizza menu</a>
-                    <br>
-                    <a href="{{route('admin.items.create')}}">inserisci il tuo piatto</a>
-                </div>
-            </div>
-        
         </div>
     </div>
 </div>
 @endsection
+
+
+
+
+
+{{-- <div class="card">
+    <div class="card-header">{{ __('Le tipologie del tuo ristorante') }}</div>
+    <div class="card-body">
+        @if ($types->isEmpty())
+                <h2>NON HAI ANCORA INSERITO UNA TIPOLOGIA RISTORANTE!</h2>
+                <a href="{{route('admin.users.edit', $user)}}">Scegli la tipologia del tuo ristorante</a>
+        @else
+            @foreach ($types as $type)
+                <li>{{$type->name}}</li>
+            @endforeach
+                {{--! verificare in seguito per la modifica --}}
+                {{-- <a href="{{route('admin.types.index')}}">Modifica le tipologie del tuo ristorante</a> <br> --}}
+                {{-- <a href="{{route('admin.users.edit', $user)}}">Aggiungi o modifica la tipologia del tuo ristorante</a> --}}
+                
+        {{-- @endif
+    </div>
+</div> --}}
