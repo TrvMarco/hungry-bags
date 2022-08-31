@@ -2075,11 +2075,6 @@ var staticRenderFns = [function () {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("Menu")]), _vm._v(" "), _c("a", {
-    staticClass: "link",
-    attrs: {
-      href: "#"
-    }
   }, [_vm._v("Chi siamo")]), _vm._v(" "), _c("a", {
     staticClass: "link",
     attrs: {

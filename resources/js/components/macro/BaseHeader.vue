@@ -14,7 +14,6 @@
         </div>
         <!-- Link menu blu Header bottom -->
         <div class="header__bottom">
-            <a class="link" href="#">Menu</a>
             <a class="link" href="#">Chi siamo</a>
             <a class="link" href="#">Contattaci</a>
             <a class="link" href="/admin/home">Area Ristoratori</a>
