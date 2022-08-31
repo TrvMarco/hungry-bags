@@ -12,11 +12,12 @@ use Illuminate\Support\Facades\Storage;
 class UserController extends Controller
 {
     private $validation = [
-        'name' => 'required|string|max:255',
-        'vat' => 'required|string|digits:11',
-        'address' => 'required|string|max:300',
+        // 'name' => 'required|string|max:255',
+        // 'vat' => 'required|numeric|digits:11',
+        // 'address' => 'required|string|max:300',
         'types' => 'required',
         'image' => 'nullable|image',
+
     ];
 
     /**
