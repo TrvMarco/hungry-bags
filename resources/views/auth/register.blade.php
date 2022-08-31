@@ -72,7 +72,7 @@
                             <label for="vat" class="col-md-4 col-form-label text-md-right">{{ __('P.iva*') }}</label>
                             
                             <div class="col-md-6">
-                                <input id="vat" type="text" class="form-control @error('vat') is-invalid @enderror" name="vat" value="{{ old('vat') }}" required autocomplete="vat" autofocus>
+                                <input id="vat" type="text" maxlength="11" class="form-control @error('vat') is-invalid @enderror" name="vat" value="{{ old('vat') }}" required autocomplete="vat" autofocus>
                                 <p class="campo-obbligatorio">Campo obbligatorio</p>
                                 @error('vat')
                                     <span class="invalid-feedback" role="alert">
