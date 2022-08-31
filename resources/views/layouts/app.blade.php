@@ -63,9 +63,9 @@
                                     </a>
                                     
                                     {{-- EDIT PROFILE --}}
-                                    {{-- <a class="dropdown-item" href="{{ route('admin.users.edit', $user->id) }}">
+                                    <a class="dropdown-item" href="{{ route('admin.users.edit', $user->id) }}">
                                         {{ __('Modifica Profilo') }}
-                                    </a> --}}
+                                    </a>
                                     
                                     {{-- LOGOUT  --}}
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

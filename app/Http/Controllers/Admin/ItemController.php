@@ -20,7 +20,7 @@ class ItemController extends Controller
     {
         $user= Auth::user();
         $items = $user->items;
-        return view('admin.items.index', compact('items'));
+        return view('admin.items.index', compact('items', 'user'));
     }
 
     /**
@@ -30,7 +30,8 @@ class ItemController extends Controller
      */
     public function create()
     {
-        return view('admin.items.create');
+        $user= Auth::user();
+        return view('admin.items.create', compact('user'));
     }
 
     /**
@@ -53,13 +54,10 @@ class ItemController extends Controller
         $newItem = new Item();
         $newItem->fill($data);
         $newItem->is_visible = isset($data['is_visible']);
+        $newItem->image = Storage::put('uploads', $data['image']);
         $newItem->user_id = Auth::id();
-        
-        if(isset($data['image'])){
-            $newItem->image = Storage::put('uploads', $data['image']);
-        }
-        
         $newItem->save();
+
         return redirect()->route('admin.items.show', $newItem->id);
     }
 
@@ -73,7 +71,7 @@ class ItemController extends Controller
     {
         if($item->user_id !== Auth::id()) {
             abort(403);
-        }   
+        } 
         return view('admin.items.show', compact('item'));
     }
 
@@ -83,12 +81,12 @@ class ItemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Item $item)
     {
         if($item->user_id !== Auth::id()) {
             abort(403);
         } 
-        return view('admin.items.edit');
+        return view('admin.items.edit', compact('item'));
     }
 
     /**

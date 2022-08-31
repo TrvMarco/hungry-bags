@@ -6,9 +6,18 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use App\Type;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
+    private $validation = [
+        'name' => 'required|string|max:255',
+        'vat' => 'required|string|digits:11',
+        'address' => 'required|string|max:300',
+        'types' => 'required',
+    ];
+
     /**
      * Display a listing of the resource.
      *
@@ -61,6 +70,10 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        if($user->id !== Auth::id()) {
+            abort(403);
+        }
+
         $types = Type::all();
         $userType = $user->types->map(function($type) {
             return $type->id;
@@ -77,8 +90,20 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $data = $request->all();
+        if($user->id !== Auth::id()){
+            abort(403);
+        }
+
+        $data = $request->validate($this->validation);
+
         $user->fill($data);
+
+        if(isset($data['image'])) {
+            if($user->image){
+                Storage::delete($user->image);
+            }
+            $user->image = Storage::put('uploads', $data['image']);
+        }
         $user->save();
          
         $types = isset($data['types']) ? $data['types'] : [];
