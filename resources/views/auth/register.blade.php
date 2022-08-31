@@ -98,6 +98,8 @@
                             </div>
                         </div>
                       
+                        <hr>
+
                         {{-- IMMAGINE --}} 
                         <div class="form-group row">
                             <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine') }}</label>
@@ -108,6 +110,8 @@
                                 @enderror
                             </div>
                         </div>
+
+                        <hr>
 
                         {{-- TIPOLOGIES --}}
                         
