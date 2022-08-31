@@ -84,7 +84,7 @@ export default {
             .cart-img {
                 color: var(--secondary-color);
                 font-size: 30px;
-                margin: 3px 1px 0px 0px;
+                margin: 3px 0px 0px 3px;
             }
 
             .cart-img:hover {

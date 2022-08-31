@@ -2336,7 +2336,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".header {\n  min-height: 100px;\n}\n.header .logo-header {\n  width: 65px;\n  margin-bottom: 10px;\n  margin-left: 10px;\n  cursor: pointer;\n}\n.header .logo-header:hover {\n  -webkit-animation: shake 0.5s;\n          animation: shake 0.5s;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n}\n@-webkit-keyframes shake {\n0% {\n    transform: translate(1px, 1px) rotate(0deg);\n}\n10% {\n    transform: translate(-1px, -2px) rotate(-1deg);\n}\n20% {\n    transform: translate(-3px, 0px) rotate(1deg);\n}\n30% {\n    transform: translate(3px, 2px) rotate(0deg);\n}\n40% {\n    transform: translate(1px, -1px) rotate(1deg);\n}\n50% {\n    transform: translate(-1px, 2px) rotate(-1deg);\n}\n60% {\n    transform: translate(-3px, 1px) rotate(0deg);\n}\n70% {\n    transform: translate(3px, 1px) rotate(-1deg);\n}\n80% {\n    transform: translate(-1px, -1px) rotate(1deg);\n}\n90% {\n    transform: translate(1px, 2px) rotate(0deg);\n}\n100% {\n    transform: translate(1px, -2px) rotate(-1deg);\n}\n}\n@keyframes shake {\n0% {\n    transform: translate(1px, 1px) rotate(0deg);\n}\n10% {\n    transform: translate(-1px, -2px) rotate(-1deg);\n}\n20% {\n    transform: translate(-3px, 0px) rotate(1deg);\n}\n30% {\n    transform: translate(3px, 2px) rotate(0deg);\n}\n40% {\n    transform: translate(1px, -1px) rotate(1deg);\n}\n50% {\n    transform: translate(-1px, 2px) rotate(-1deg);\n}\n60% {\n    transform: translate(-3px, 1px) rotate(0deg);\n}\n70% {\n    transform: translate(3px, 1px) rotate(-1deg);\n}\n80% {\n    transform: translate(-1px, -1px) rotate(1deg);\n}\n90% {\n    transform: translate(1px, 2px) rotate(0deg);\n}\n100% {\n    transform: translate(1px, -2px) rotate(-1deg);\n}\n}\n.header .name-header {\n  width: 43%;\n  cursor: pointer;\n}\n.header .cart-btn {\n  cursor: pointer;\n  margin-right: 10px;\n}\n.header .cart-btn .circle-black {\n  background: black;\n  width: 70px;\n  height: 70px;\n  border-radius: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0;\n  cursor: pointer;\n}\n.header .cart-btn .cart-img {\n  color: var(--secondary-color);\n  font-size: 30px;\n  margin: 3px 1px 0px 0px;\n}\n.header .cart-btn .cart-img:hover {\n  color: rgb(255, 230, 0);\n}\n.header__top {\n  height: 130px;\n  width: 100%;\n  background: var(--primary-color);\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.header__bottom {\n  min-height: 40px;\n  width: 100%;\n  background: var(--secondary-color);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap;\n}\n.header__bottom .link {\n  color: black;\n  font-size: 22px;\n  text-decoration: none;\n  color: inherit;\n  margin: 5px 25px 0px 25px;\n  border-bottom: 5px solid var(--secondary-color);\n}\n.header__bottom .link:hover {\n  border-bottom: 5px solid var(--primary-color);\n}", ""]);
+exports.push([module.i, ".header {\n  min-height: 100px;\n}\n.header .logo-header {\n  width: 65px;\n  margin-bottom: 10px;\n  margin-left: 10px;\n  cursor: pointer;\n}\n.header .logo-header:hover {\n  -webkit-animation: shake 0.5s;\n          animation: shake 0.5s;\n  -webkit-animation-iteration-count: infinite;\n          animation-iteration-count: infinite;\n}\n@-webkit-keyframes shake {\n0% {\n    transform: translate(1px, 1px) rotate(0deg);\n}\n10% {\n    transform: translate(-1px, -2px) rotate(-1deg);\n}\n20% {\n    transform: translate(-3px, 0px) rotate(1deg);\n}\n30% {\n    transform: translate(3px, 2px) rotate(0deg);\n}\n40% {\n    transform: translate(1px, -1px) rotate(1deg);\n}\n50% {\n    transform: translate(-1px, 2px) rotate(-1deg);\n}\n60% {\n    transform: translate(-3px, 1px) rotate(0deg);\n}\n70% {\n    transform: translate(3px, 1px) rotate(-1deg);\n}\n80% {\n    transform: translate(-1px, -1px) rotate(1deg);\n}\n90% {\n    transform: translate(1px, 2px) rotate(0deg);\n}\n100% {\n    transform: translate(1px, -2px) rotate(-1deg);\n}\n}\n@keyframes shake {\n0% {\n    transform: translate(1px, 1px) rotate(0deg);\n}\n10% {\n    transform: translate(-1px, -2px) rotate(-1deg);\n}\n20% {\n    transform: translate(-3px, 0px) rotate(1deg);\n}\n30% {\n    transform: translate(3px, 2px) rotate(0deg);\n}\n40% {\n    transform: translate(1px, -1px) rotate(1deg);\n}\n50% {\n    transform: translate(-1px, 2px) rotate(-1deg);\n}\n60% {\n    transform: translate(-3px, 1px) rotate(0deg);\n}\n70% {\n    transform: translate(3px, 1px) rotate(-1deg);\n}\n80% {\n    transform: translate(-1px, -1px) rotate(1deg);\n}\n90% {\n    transform: translate(1px, 2px) rotate(0deg);\n}\n100% {\n    transform: translate(1px, -2px) rotate(-1deg);\n}\n}\n.header .name-header {\n  width: 43%;\n  cursor: pointer;\n}\n.header .cart-btn {\n  cursor: pointer;\n  margin-right: 10px;\n}\n.header .cart-btn .circle-black {\n  background: black;\n  width: 70px;\n  height: 70px;\n  border-radius: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin: 0;\n  cursor: pointer;\n}\n.header .cart-btn .cart-img {\n  color: var(--secondary-color);\n  font-size: 30px;\n  margin: 3px 0px 0px 3px;\n}\n.header .cart-btn .cart-img:hover {\n  color: rgb(255, 230, 0);\n}\n.header__top {\n  height: 130px;\n  width: 100%;\n  background: var(--primary-color);\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.header__bottom {\n  min-height: 40px;\n  width: 100%;\n  background: var(--secondary-color);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap;\n}\n.header__bottom .link {\n  color: black;\n  font-size: 22px;\n  text-decoration: none;\n  color: inherit;\n  margin: 5px 25px 0px 25px;\n  border-bottom: 5px solid var(--secondary-color);\n}\n.header__bottom .link:hover {\n  border-bottom: 5px solid var(--primary-color);\n}", ""]);
 
 // exports
 
@@ -3649,21 +3649,14 @@ function normalizeComponent(
 /*!********************************************************!*\
   !*** ./node_modules/vue-router/dist/vue-router.esm.js ***!
   \********************************************************/
-/*! exports provided: NavigationFailureType, RouterLink, RouterView, START_LOCATION, default, isNavigationFailure, version */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavigationFailureType", function() { return NavigationFailureType; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RouterLink", function() { return Link; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RouterView", function() { return View; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "START_LOCATION", function() { return START; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return VueRouter$1; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isNavigationFailure", function() { return isNavigationFailure; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "version", function() { return version; });
 /*!
-  * vue-router v3.6.4
-  * (c) 2022 Evan You
+  * vue-router v3.5.3
+  * (c) 2021 Evan You
   * @license MIT
   */
 /*  */
@@ -4181,7 +4174,7 @@ function parsePath (path) {
 }
 
 function cleanPath (path) {
-  return path.replace(/\/(?:\s*\/)+/g, '/')
+  return path.replace(/\/+/g, '/')
 }
 
 var isarray = Array.isArray || function (arr) {
@@ -4753,7 +4746,7 @@ var Link = {
     }
   },
   render: function render (h) {
-    var this$1$1 = this;
+    var this$1 = this;
 
     var router = this.$router;
     var current = this.$route;
@@ -4796,7 +4789,7 @@ var Link = {
 
     var handler = function (e) {
       if (guardEvent(e)) {
-        if (this$1$1.replace) {
+        if (this$1.replace) {
           router.replace(location, noop);
         } else {
           router.push(location, noop);
@@ -5112,7 +5105,7 @@ function addRouteRecord (
         warn(
           false,
           "Named Route '" + (route.name) + "' has a default child route. " +
-            "When navigating to this named route (:to=\"{name: '" + (route.name) + "'}\"), " +
+            "When navigating to this named route (:to=\"{name: '" + (route.name) + "'\"), " +
             "the default child route will not be rendered. Remove the name from " +
             "this route and use the name of the default child route for named " +
             "links instead."
@@ -5656,6 +5649,25 @@ function replaceState (url) {
   pushState(url, true);
 }
 
+/*  */
+
+function runQueue (queue, fn, cb) {
+  var step = function (index) {
+    if (index >= queue.length) {
+      cb();
+    } else {
+      if (queue[index]) {
+        fn(queue[index], function () {
+          step(index + 1);
+        });
+      } else {
+        step(index + 1);
+      }
+    }
+  };
+  step(0);
+}
+
 // When changing thing, also edit router.d.ts
 var NavigationFailureType = {
   redirected: 2,
@@ -5737,25 +5749,6 @@ function isNavigationFailure (err, errorType) {
     err._isRouter &&
     (errorType == null || err.type === errorType)
   )
-}
-
-/*  */
-
-function runQueue (queue, fn, cb) {
-  var step = function (index) {
-    if (index >= queue.length) {
-      cb();
-    } else {
-      if (queue[index]) {
-        fn(queue[index], function () {
-          step(index + 1);
-        });
-      } else {
-        step(index + 1);
-      }
-    }
-  };
-  step(0);
 }
 
 /*  */
@@ -5906,7 +5899,7 @@ History.prototype.transitionTo = function transitionTo (
   onComplete,
   onAbort
 ) {
-    var this$1$1 = this;
+    var this$1 = this;
 
   var route;
   // catch redirect option https://github.com/vuejs/vue-router/issues/3201
@@ -5923,17 +5916,17 @@ History.prototype.transitionTo = function transitionTo (
   this.confirmTransition(
     route,
     function () {
-      this$1$1.updateRoute(route);
+      this$1.updateRoute(route);
       onComplete && onComplete(route);
-      this$1$1.ensureURL();
-      this$1$1.router.afterHooks.forEach(function (hook) {
+      this$1.ensureURL();
+      this$1.router.afterHooks.forEach(function (hook) {
         hook && hook(route, prev);
       });
 
       // fire ready cbs once
-      if (!this$1$1.ready) {
-        this$1$1.ready = true;
-        this$1$1.readyCbs.forEach(function (cb) {
+      if (!this$1.ready) {
+        this$1.ready = true;
+        this$1.readyCbs.forEach(function (cb) {
           cb(route);
         });
       }
@@ -5942,14 +5935,14 @@ History.prototype.transitionTo = function transitionTo (
       if (onAbort) {
         onAbort(err);
       }
-      if (err && !this$1$1.ready) {
+      if (err && !this$1.ready) {
         // Initial redirection should not mark the history as ready yet
         // because it's triggered by the redirection instead
         // https://github.com/vuejs/vue-router/issues/3225
         // https://github.com/vuejs/vue-router/issues/3331
         if (!isNavigationFailure(err, NavigationFailureType.redirected) || prev !== START) {
-          this$1$1.ready = true;
-          this$1$1.readyErrorCbs.forEach(function (cb) {
+          this$1.ready = true;
+          this$1.readyErrorCbs.forEach(function (cb) {
             cb(err);
           });
         }
@@ -5959,7 +5952,7 @@ History.prototype.transitionTo = function transitionTo (
 };
 
 History.prototype.confirmTransition = function confirmTransition (route, onComplete, onAbort) {
-    var this$1$1 = this;
+    var this$1 = this;
 
   var current = this.current;
   this.pending = route;
@@ -5968,8 +5961,8 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
     // https://github.com/vuejs/vue-router/pull/3047 before that change,
     // redirect and aborted navigation would produce an err == null
     if (!isNavigationFailure(err) && isError(err)) {
-      if (this$1$1.errorCbs.length) {
-        this$1$1.errorCbs.forEach(function (cb) {
+      if (this$1.errorCbs.length) {
+        this$1.errorCbs.forEach(function (cb) {
           cb(err);
         });
       } else {
@@ -6018,17 +6011,17 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
   );
 
   var iterator = function (hook, next) {
-    if (this$1$1.pending !== route) {
+    if (this$1.pending !== route) {
       return abort(createNavigationCancelledError(current, route))
     }
     try {
       hook(route, current, function (to) {
         if (to === false) {
           // next(false) -> abort navigation, ensure current URL
-          this$1$1.ensureURL(true);
+          this$1.ensureURL(true);
           abort(createNavigationAbortedError(current, route));
         } else if (isError(to)) {
-          this$1$1.ensureURL(true);
+          this$1.ensureURL(true);
           abort(to);
         } else if (
           typeof to === 'string' ||
@@ -6038,9 +6031,9 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
           // next('/') or next({ path: '/' }) -> redirect
           abort(createNavigationRedirectedError(current, route));
           if (typeof to === 'object' && to.replace) {
-            this$1$1.replace(to);
+            this$1.replace(to);
           } else {
-            this$1$1.push(to);
+            this$1.push(to);
           }
         } else {
           // confirm transition and pass on the value
@@ -6056,15 +6049,15 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
     // wait until async components are resolved before
     // extracting in-component enter guards
     var enterGuards = extractEnterGuards(activated);
-    var queue = enterGuards.concat(this$1$1.router.resolveHooks);
+    var queue = enterGuards.concat(this$1.router.resolveHooks);
     runQueue(queue, iterator, function () {
-      if (this$1$1.pending !== route) {
+      if (this$1.pending !== route) {
         return abort(createNavigationCancelledError(current, route))
       }
-      this$1$1.pending = null;
+      this$1.pending = null;
       onComplete(route);
-      if (this$1$1.router.app) {
-        this$1$1.router.app.$nextTick(function () {
+      if (this$1.router.app) {
+        this$1.router.app.$nextTick(function () {
           handleRouteEntered(route);
         });
       }
@@ -6221,7 +6214,7 @@ var HTML5History = /*@__PURE__*/(function (History) {
   HTML5History.prototype.constructor = HTML5History;
 
   HTML5History.prototype.setupListeners = function setupListeners () {
-    var this$1$1 = this;
+    var this$1 = this;
 
     if (this.listeners.length > 0) {
       return
@@ -6236,16 +6229,16 @@ var HTML5History = /*@__PURE__*/(function (History) {
     }
 
     var handleRoutingEvent = function () {
-      var current = this$1$1.current;
+      var current = this$1.current;
 
       // Avoiding first `popstate` event dispatched in some browsers but first
       // history route not updated since async guard at the same time.
-      var location = getLocation(this$1$1.base);
-      if (this$1$1.current === START && location === this$1$1._startLocation) {
+      var location = getLocation(this$1.base);
+      if (this$1.current === START && location === this$1._startLocation) {
         return
       }
 
-      this$1$1.transitionTo(location, function (route) {
+      this$1.transitionTo(location, function (route) {
         if (supportsScroll) {
           handleScroll(router, route, current, true);
         }
@@ -6262,25 +6255,25 @@ var HTML5History = /*@__PURE__*/(function (History) {
   };
 
   HTML5History.prototype.push = function push (location, onComplete, onAbort) {
-    var this$1$1 = this;
+    var this$1 = this;
 
     var ref = this;
     var fromRoute = ref.current;
     this.transitionTo(location, function (route) {
-      pushState(cleanPath(this$1$1.base + route.fullPath));
-      handleScroll(this$1$1.router, route, fromRoute, false);
+      pushState(cleanPath(this$1.base + route.fullPath));
+      handleScroll(this$1.router, route, fromRoute, false);
       onComplete && onComplete(route);
     }, onAbort);
   };
 
   HTML5History.prototype.replace = function replace (location, onComplete, onAbort) {
-    var this$1$1 = this;
+    var this$1 = this;
 
     var ref = this;
     var fromRoute = ref.current;
     this.transitionTo(location, function (route) {
-      replaceState(cleanPath(this$1$1.base + route.fullPath));
-      handleScroll(this$1$1.router, route, fromRoute, false);
+      replaceState(cleanPath(this$1.base + route.fullPath));
+      handleScroll(this$1.router, route, fromRoute, false);
       onComplete && onComplete(route);
     }, onAbort);
   };
@@ -6332,7 +6325,7 @@ var HashHistory = /*@__PURE__*/(function (History) {
   // this is delayed until the app mounts
   // to avoid the hashchange listener being fired too early
   HashHistory.prototype.setupListeners = function setupListeners () {
-    var this$1$1 = this;
+    var this$1 = this;
 
     if (this.listeners.length > 0) {
       return
@@ -6347,13 +6340,13 @@ var HashHistory = /*@__PURE__*/(function (History) {
     }
 
     var handleRoutingEvent = function () {
-      var current = this$1$1.current;
+      var current = this$1.current;
       if (!ensureSlash()) {
         return
       }
-      this$1$1.transitionTo(getHash(), function (route) {
+      this$1.transitionTo(getHash(), function (route) {
         if (supportsScroll) {
-          handleScroll(this$1$1.router, route, current, true);
+          handleScroll(this$1.router, route, current, true);
         }
         if (!supportsPushState) {
           replaceHash(route.fullPath);
@@ -6371,7 +6364,7 @@ var HashHistory = /*@__PURE__*/(function (History) {
   };
 
   HashHistory.prototype.push = function push (location, onComplete, onAbort) {
-    var this$1$1 = this;
+    var this$1 = this;
 
     var ref = this;
     var fromRoute = ref.current;
@@ -6379,7 +6372,7 @@ var HashHistory = /*@__PURE__*/(function (History) {
       location,
       function (route) {
         pushHash(route.fullPath);
-        handleScroll(this$1$1.router, route, fromRoute, false);
+        handleScroll(this$1.router, route, fromRoute, false);
         onComplete && onComplete(route);
       },
       onAbort
@@ -6387,7 +6380,7 @@ var HashHistory = /*@__PURE__*/(function (History) {
   };
 
   HashHistory.prototype.replace = function replace (location, onComplete, onAbort) {
-    var this$1$1 = this;
+    var this$1 = this;
 
     var ref = this;
     var fromRoute = ref.current;
@@ -6395,7 +6388,7 @@ var HashHistory = /*@__PURE__*/(function (History) {
       location,
       function (route) {
         replaceHash(route.fullPath);
-        handleScroll(this$1$1.router, route, fromRoute, false);
+        handleScroll(this$1.router, route, fromRoute, false);
         onComplete && onComplete(route);
       },
       onAbort
@@ -6487,13 +6480,13 @@ var AbstractHistory = /*@__PURE__*/(function (History) {
   AbstractHistory.prototype.constructor = AbstractHistory;
 
   AbstractHistory.prototype.push = function push (location, onComplete, onAbort) {
-    var this$1$1 = this;
+    var this$1 = this;
 
     this.transitionTo(
       location,
       function (route) {
-        this$1$1.stack = this$1$1.stack.slice(0, this$1$1.index + 1).concat(route);
-        this$1$1.index++;
+        this$1.stack = this$1.stack.slice(0, this$1.index + 1).concat(route);
+        this$1.index++;
         onComplete && onComplete(route);
       },
       onAbort
@@ -6501,12 +6494,12 @@ var AbstractHistory = /*@__PURE__*/(function (History) {
   };
 
   AbstractHistory.prototype.replace = function replace (location, onComplete, onAbort) {
-    var this$1$1 = this;
+    var this$1 = this;
 
     this.transitionTo(
       location,
       function (route) {
-        this$1$1.stack = this$1$1.stack.slice(0, this$1$1.index).concat(route);
+        this$1.stack = this$1.stack.slice(0, this$1.index).concat(route);
         onComplete && onComplete(route);
       },
       onAbort
@@ -6514,7 +6507,7 @@ var AbstractHistory = /*@__PURE__*/(function (History) {
   };
 
   AbstractHistory.prototype.go = function go (n) {
-    var this$1$1 = this;
+    var this$1 = this;
 
     var targetIndex = this.index + n;
     if (targetIndex < 0 || targetIndex >= this.stack.length) {
@@ -6524,16 +6517,16 @@ var AbstractHistory = /*@__PURE__*/(function (History) {
     this.confirmTransition(
       route,
       function () {
-        var prev = this$1$1.current;
-        this$1$1.index = targetIndex;
-        this$1$1.updateRoute(route);
-        this$1$1.router.afterHooks.forEach(function (hook) {
+        var prev = this$1.current;
+        this$1.index = targetIndex;
+        this$1.updateRoute(route);
+        this$1.router.afterHooks.forEach(function (hook) {
           hook && hook(route, prev);
         });
       },
       function (err) {
         if (isNavigationFailure(err, NavigationFailureType.duplicated)) {
-          this$1$1.index = targetIndex;
+          this$1.index = targetIndex;
         }
       }
     );
@@ -6552,8 +6545,6 @@ var AbstractHistory = /*@__PURE__*/(function (History) {
 }(History));
 
 /*  */
-
-
 
 var VueRouter = function VueRouter (options) {
   if ( options === void 0 ) options = {};
@@ -6608,7 +6599,7 @@ prototypeAccessors.currentRoute.get = function () {
 };
 
 VueRouter.prototype.init = function init (app /* Vue component instance */) {
-    var this$1$1 = this;
+    var this$1 = this;
 
    true &&
     assert(
@@ -6623,13 +6614,13 @@ VueRouter.prototype.init = function init (app /* Vue component instance */) {
   // https://github.com/vuejs/vue-router/issues/2639
   app.$once('hook:destroyed', function () {
     // clean out app from this.apps array once destroyed
-    var index = this$1$1.apps.indexOf(app);
-    if (index > -1) { this$1$1.apps.splice(index, 1); }
+    var index = this$1.apps.indexOf(app);
+    if (index > -1) { this$1.apps.splice(index, 1); }
     // ensure we still have a main app or null if no apps
     // we do not release the router so it can be reused
-    if (this$1$1.app === app) { this$1$1.app = this$1$1.apps[0] || null; }
+    if (this$1.app === app) { this$1.app = this$1.apps[0] || null; }
 
-    if (!this$1$1.app) { this$1$1.history.teardown(); }
+    if (!this$1.app) { this$1.history.teardown(); }
   });
 
   // main app previously initialized
@@ -6645,11 +6636,11 @@ VueRouter.prototype.init = function init (app /* Vue component instance */) {
   if (history instanceof HTML5History || history instanceof HashHistory) {
     var handleInitialScroll = function (routeOrError) {
       var from = history.current;
-      var expectScroll = this$1$1.options.scrollBehavior;
+      var expectScroll = this$1.options.scrollBehavior;
       var supportsScroll = supportsPushState && expectScroll;
 
       if (supportsScroll && 'fullPath' in routeOrError) {
-        handleScroll(this$1$1, routeOrError, from, false);
+        handleScroll(this$1, routeOrError, from, false);
       }
     };
     var setupListeners = function (routeOrError) {
@@ -6664,7 +6655,7 @@ VueRouter.prototype.init = function init (app /* Vue component instance */) {
   }
 
   history.listen(function (route) {
-    this$1$1.apps.forEach(function (app) {
+    this$1.apps.forEach(function (app) {
       app._route = route;
     });
   });
@@ -6691,12 +6682,12 @@ VueRouter.prototype.onError = function onError (errorCb) {
 };
 
 VueRouter.prototype.push = function push (location, onComplete, onAbort) {
-    var this$1$1 = this;
+    var this$1 = this;
 
   // $flow-disable-line
   if (!onComplete && !onAbort && typeof Promise !== 'undefined') {
     return new Promise(function (resolve, reject) {
-      this$1$1.history.push(location, resolve, reject);
+      this$1.history.push(location, resolve, reject);
     })
   } else {
     this.history.push(location, onComplete, onAbort);
@@ -6704,12 +6695,12 @@ VueRouter.prototype.push = function push (location, onComplete, onAbort) {
 };
 
 VueRouter.prototype.replace = function replace (location, onComplete, onAbort) {
-    var this$1$1 = this;
+    var this$1 = this;
 
   // $flow-disable-line
   if (!onComplete && !onAbort && typeof Promise !== 'undefined') {
     return new Promise(function (resolve, reject) {
-      this$1$1.history.replace(location, resolve, reject);
+      this$1.history.replace(location, resolve, reject);
     })
   } else {
     this.history.replace(location, onComplete, onAbort);
@@ -6791,8 +6782,6 @@ VueRouter.prototype.addRoutes = function addRoutes (routes) {
 
 Object.defineProperties( VueRouter.prototype, prototypeAccessors );
 
-var VueRouter$1 = VueRouter;
-
 function registerHook (list, fn) {
   list.push(fn);
   return function () {
@@ -6806,9 +6795,8 @@ function createHref (base, fullPath, mode) {
   return base ? cleanPath(base + '/' + path) : path
 }
 
-// We cannot remove this as it would be a breaking change
 VueRouter.install = install;
-VueRouter.version = '3.6.4';
+VueRouter.version = '3.5.3';
 VueRouter.isNavigationFailure = isNavigationFailure;
 VueRouter.NavigationFailureType = NavigationFailureType;
 VueRouter.START_LOCATION = START;
@@ -6817,9 +6805,7 @@ if (inBrowser && window.Vue) {
   window.Vue.use(VueRouter);
 }
 
-var version = '3.6.4';
-
-
+/* harmony default export */ __webpack_exports__["default"] = (VueRouter);
 
 
 /***/ }),
@@ -19201,7 +19187,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Home */ "./resources/js/pages/Home.vue");
-/* harmony import */ var _pages_RestaurantArea__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/RestaurantArea */ "./resources/js/pages/RestaurantArea.vue");
+/* harmony import */ var _pages_RestaurantArea__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/RestaurantArea */ "./resources/js/pages/RestaurantArea.vue");
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
@@ -19216,7 +19202,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   }, {
     path: "/restaurant-area",
     name: "restaurant-area",
-    component: _pages_RestaurantArea__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _pages_RestaurantArea__WEBPACK_IMPORTED_MODULE_3__["default"]
   }]
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
@@ -19317,7 +19303,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\valen\Desktop\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\lafer\OneDrive\Desktop\Progetto finale\hungry-bags\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
