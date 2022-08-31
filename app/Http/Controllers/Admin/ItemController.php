@@ -73,7 +73,7 @@ class ItemController extends Controller
     {
         if($item->user_id !== Auth::id()) {
             abort(403);
-        } 
+        }   
         return view('admin.items.show', compact('item'));
     }
 
