@@ -50,6 +50,7 @@
                     <a href="{{route('admin.items.create')}}">inserisci il tuo piatto</a>
                 </div>
             </div>
+        
         </div>
     </div>
 </div>

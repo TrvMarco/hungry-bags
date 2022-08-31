@@ -20,7 +20,7 @@ class ItemController extends Controller
     {
         $user= Auth::user();
         $items = $user->items;
-        return view('admin.items.index', compact('items'));
+        return view('admin.items.index', compact('items','user'));
     }
 
     /**
@@ -29,8 +29,9 @@ class ItemController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('admin.items.create');
+    {   
+        $user= Auth::user();
+        return view('admin.items.create', compact('user'));
     }
 
     /**
