@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     private $validation = [
         'name' => 'required|string|max:255',
-        'vat' => 'required|numeric|digits:11|unique:users',
+        'vat' => 'required|numeric|digits:11',
         'address' => 'required|string|max:300',
         'types' => 'required',
         'image' => 'nullable|image',

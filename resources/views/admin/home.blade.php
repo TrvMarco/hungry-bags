@@ -12,7 +12,7 @@
                     <h5 class="card-title"><strong>{{ $user->name }}</strong></h5>
                     <p class="card-text"><strong>Indirizzo:</strong> {{ $user->address}}</p>
                     <p class="card-text"><small><strong>P.iva:</strong> {{ $user->vat }}</small></p>
-                    <a href="#" class="btn btn-primary">Modifica Profilo</a>
+                    <a href="{{route('admin.users.edit', $user)}}" class="btn btn-primary">Modifica Profilo</a>
                     </div>
                 </div>
             </div>
