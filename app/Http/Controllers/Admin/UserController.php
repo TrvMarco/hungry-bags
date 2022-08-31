@@ -16,6 +16,7 @@ class UserController extends Controller
         'vat' => 'required|string|digits:11',
         'address' => 'required|string|max:300',
         'types' => 'required',
+        'image' => 'nullable|image',
     ];
 
     /**
