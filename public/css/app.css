@@ -6,6 +6,11 @@
   --third-color: #5ce1e6;
 }
 
+.campo-obbligatorio {
+  color: grey;
+  font-size: 10px;
+}
+
 /*!
  * Bootstrap v4.6.2 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
