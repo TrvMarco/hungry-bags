@@ -56,17 +56,18 @@
 
                                 {{-- MENU PROFILE  --}}
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                     {{-- EDIT PROFILE --}}
+                                     <a class="dropdown-item" href="{{ route('admin.users.edit', $user->id) }}">
+                                        {{ __('Modifica Profilo') }}
+                                    </a>
+                                    
+
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    
-                                    {{-- EDIT PROFILE --}}
-                                    {{-- <a class="dropdown-item" href="{{ route('admin.users.edit', $user->id) }}">
-                                        {{ __('Modifica Profilo') }}
-                                    </a> --}}
-                                    
                                     {{-- LOGOUT  --}}
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
