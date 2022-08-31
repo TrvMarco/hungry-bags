@@ -7,14 +7,14 @@
             <div class="col-4">
                 {{-- CARD RIEPILOGO DATI RISTORANTE --}}
                 <div class="card">
+                   
+                    <div class="card-body d-flex flex-column align-items-center">
                     @if ($user->image)
-                        <img class="card-img-top" src="{{ asset('storage/' . $user->image)}}" alt="Card image cap">
+                        <img class="card-img-top " src="{{ asset('storage/' . $user->image)}}" alt="Card image cap">
                     @else
                         <a href="{{route('admin.users.edit', $user)}}"><img src="https://placehold.jp/150x150.png" alt=""></a>
                         <small>clicca per inserire immagine</small>
                     @endif
-                    
-                    <div class="card-body">
                     <h5 class="card-title"><strong>{{ $user->name }}</strong></h5>
                     <p class="card-text"><strong>Indirizzo:</strong> {{ $user->address}}</p>
                     <p class="card-text"><small><strong>P.iva:</strong> {{ $user->vat }}</small></p>
@@ -30,9 +30,17 @@
                             @foreach ($items as $item)
                                 <div class="card-text d-flex item_preview justify-content-between">
                                     <div class="d-flex">
-                                        <div class="item_img_preview_box mr-3">
-                                            <img class="img-fluid center" src="{{ asset('storage/' . $item->image)}}" alt="">
-                                        </div>
+                                        @if ($item->image)
+                                            <div class="item_img_preview_box mr-3">
+                                                <img class="img-fluid center" src="{{ asset('storage/' . $item->image)}}" alt="">
+                                            </div>
+                                        @else
+                                            <div class="item_img_preview_box mr-3">
+                                                {{-- INSERIRE UN PLACEHOLDER  --}}
+                                                <small>null</small>
+                                            </div>
+                                        @endif
+                                        
                                         <div>{{ $item->name }}</div>
                                     </div>
                                     <div>
