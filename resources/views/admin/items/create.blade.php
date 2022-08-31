@@ -51,6 +51,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Crea piatto</button>
+            
         </form>
     </div>
 @endsection
