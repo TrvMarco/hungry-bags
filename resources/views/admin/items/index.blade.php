@@ -25,7 +25,12 @@
               @foreach($items as $item)
               <tr>
                     <th scope="row">
+                      @if ($item->image)
                       <img class="img-fluid menu_item_img" src="{{ asset('storage/' . $item->image)}}" alt="{{$item->name}}">
+                      @else
+                          <p>null</p>
+                      @endif
+                      
                     </th>
                     <td>{{$item->name}}</td>
                     <td class="d-flex justify-content-center">

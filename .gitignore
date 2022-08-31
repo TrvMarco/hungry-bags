@@ -10,8 +10,13 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+<<<<<<< HEAD
 public/css/back.css
 public/css/app.css
 public/mix-manifest.json
 public/css/back.css
+=======
+public/mix-manifest.json
+.gitignore
+>>>>>>> back-giuseppe-branch
 public/js/app.js

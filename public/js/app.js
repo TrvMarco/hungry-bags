@@ -49657,6 +49657,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+=======
+>>>>>>> back-giuseppe-branch
 /***/ "./resources/sass/front.scss":
 /*!***********************************!*\
   !*** ./resources/sass/front.scss ***!
