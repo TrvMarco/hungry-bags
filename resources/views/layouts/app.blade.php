@@ -62,15 +62,16 @@
                                         {{ __('Logout') }}
                                     </a>
                                     
+                                    {{-- EDIT PROFILE --}}
+                                    {{-- <a class="dropdown-item" href="{{ route('admin.users.edit', $user->id) }}">
+                                        {{ __('Modifica Profilo') }}
+                                    </a> --}}
+                                    
                                     {{-- LOGOUT  --}}
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
 
-                                    {{-- EDIT PROFILE --}}
-                                    <a class="dropdown-item" href="{{ route('admin.users.edit', $user->id) }}">
-                                        {{ __('Modifica Profilo') }}
-                                    </a>
                                 </div>
                             </li>
                         @endguest
