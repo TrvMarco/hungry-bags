@@ -2413,7 +2413,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".main[data-v-5625139a] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.main .accedi[data-v-5625139a], .main .registrati[data-v-5625139a] {\n  margin: 10px;\n  height: 40px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.main .accedi[data-v-5625139a] {\n  background: var(--primary-color);\n}\n.main .registrati[data-v-5625139a] {\n  background: var(--secondary-color);\n}\n.main .link[data-v-5625139a] {\n  text-decoration: none;\n  color: inherit;\n  width: 100%;\n  text-align: center;\n}\n.main .text-register[data-v-5625139a] {\n  margin: 50px 0px 0px 0px;\n}", ""]);
+exports.push([module.i, ".main[data-v-5625139a] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.main .accedi[data-v-5625139a], .main .registrati[data-v-5625139a] {\n  margin: 10px;\n  height: 40px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 50%;\n  border-radius: 50px;\n}\n.main .accedi[data-v-5625139a] {\n  background: var(--primary-color);\n}\n.main .registrati[data-v-5625139a] {\n  background: var(--secondary-color);\n}\n.main .link[data-v-5625139a] {\n  text-decoration: none;\n  color: inherit;\n  width: 100%;\n  text-align: center;\n}\n.main .text-register[data-v-5625139a] {\n  margin: 50px 0px 0px 0px;\n}", ""]);
 
 // exports
 
