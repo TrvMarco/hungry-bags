@@ -1,6 +1,9 @@
 <template>
   
   <div class="main">
+    <div class="container animation">
+      <img class="food-img" src="../components/macro/img/pollo.png" alt=""> 
+    </div>
     <h2 class="text-register">Se sei già registrato:</h2>
     <div class="container accedi">
       <a class="link" href="/login">
