@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container backoffice_menu_container p-4">
     <div class="row justify-content-center">
         <div class="col-md-8 d-flex">
             <div class="col-4">

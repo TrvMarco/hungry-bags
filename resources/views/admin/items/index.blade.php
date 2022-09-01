@@ -14,7 +14,7 @@
               <div class="item_menu_box"><a href="{{route('admin.home')}}">Torna alla pagina Home</a></div>
           </div>
           @else
-          <h1>Il tuo Menù</h1>
+          <h1 class="text-center p-3">Il tuo Menù</h1>
           <div class="row">
             <table class="table">
               <thead>
