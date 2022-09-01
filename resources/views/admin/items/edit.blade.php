@@ -39,7 +39,7 @@
                             <label for="price">Prezzo: *</label>
                             <div class="input-group-prepend">
                                 <span class="input-group-text">&#x20AC;</span>
-                                <input class="form-control input-group-append @error('price') is-invalid @enderror" type="number" min="0.00" max="200" placeholder="Inserisci il prezzo" step="0.1" name="price" value="{{old('price', $item->price)}}" required autocomplete="price" autofocus/>
+                                <input class="form-control input-group-append @error('price') is-invalid @enderror" type="number" min="0.00" max="200" placeholder="Inserisci il prezzo" step="0.01" name="price" value="{{old('price', $item->price)}}" required autocomplete="price" autofocus/>
                             </div>
                             @error('price')
                                 <div class="alert alert-danger">{{ $message }}</div>
