@@ -6,52 +6,14 @@
         </div>
         <div>
             <div class="row">
-                <div class="col-2 d-flex">
-                    <div class="type_box">
-                        <div class="box_img">
-                            <img src="https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg" alt="">
+                <div v-for="type in types" :key="type.id">
+                    <div class="col-2 d-flex">
+                        <div class="type_box">
+                            <div class="box_img">
+                                <img src="https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg" alt="">
+                            </div>
+                            <div class="text-center"><small>{{type.name}}</small></div>
                         </div>
-                        <div class="text-center"><small>Hamburger</small></div>
-                    </div>
-                </div>
-                <div class="col-2 d-flex">
-                    <div class="type_box">
-                        <div class="box_img">
-                            <img src="https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg" alt="">
-                        </div>
-                        <div class="text-center"><small>Hamburger</small></div>
-                    </div>
-                </div>
-                <div class="col-2 d-flex">
-                    <div class="type_box">
-                        <div class="box_img">
-                            <img src="https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg" alt="">
-                        </div>
-                        <div class="text-center"><small>Hamburger</small></div>
-                    </div>
-                </div>
-                <div class="col-2 d-flex">
-                    <div class="type_box">
-                        <div class="box_img">
-                            <img src="https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg" alt="">
-                        </div>
-                        <div class="text-center"><small>Hamburger</small></div>
-                    </div>
-                </div>
-                <div class="col-2 d-flex">
-                    <div class="type_box">
-                        <div class="box_img">
-                            <img src="https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg" alt="">
-                        </div>
-                        <div class="text-center"><small>Hamburger</small></div>
-                    </div>
-                </div>
-                <div class="col-2 d-flex">
-                    <div class="type_box">
-                        <div class="box_img">
-                            <img src="https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg" alt="">
-                        </div>
-                        <div class="text-center"><small>Hamburger</small></div>
                     </div>
                 </div>
             </div>
@@ -65,33 +27,14 @@ export default {
     name: 'TypeSection',
     data() {
         return{
-            // tipologies: [
-            //     {
-            //         name: 'Hamburger',
-            //         img: 'https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg'
-            //     },
-            //     {
-            //         name: 'Poke',
-            //         img: 'https://www.risogallo.it/wp-content/uploads/2020/09/MG_POKE-RISO-SOSTENIBILE--1024x954.jpg'
-            //     },
-            //     {
-            //         name: 'Sushi',
-            //         img: 'https://static.cookist.it/wp-content/uploads/sites/21/2020/11/tipi-di-sushi-1.jpg'
-            //     },
-            //     {
-            //         name: 'Hamburger',
-            //         img: 'https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg'
-            //     },
-            //     {
-            //         name: 'Poke',
-            //         img: 'https://www.risogallo.it/wp-content/uploads/2020/09/MG_POKE-RISO-SOSTENIBILE--1024x954.jpg'
-            //     },
-            //     {
-            //         name: 'Sushi',
-            //         img: 'https://static.cookist.it/wp-content/uploads/sites/21/2020/11/tipi-di-sushi-1.jpg'
-            //     },
-            // ]
-        }
+            types : [],
+        };
+    },
+    created() {
+        axios.get('/api/types')
+        .then((response) => {
+            this.types = response.data
+        })
     }
 }
 </script>
