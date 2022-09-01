@@ -49675,10 +49675,10 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Progetti Boolean\hungry-bags\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Progetti Boolean\hungry-bags\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\Progetti Boolean\hungry-bags\resources\sass\front.scss */"./resources/sass/front.scss");
-module.exports = __webpack_require__(/*! C:\Progetti Boolean\hungry-bags\resources\sass\BackOffice\back.scss */"./resources/sass/BackOffice/back.scss");
+__webpack_require__(/*! C:\Users\Giuseppe\Desktop\BOOLEAN\ESERCIZI\PHP\hungry-bags\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\Giuseppe\Desktop\BOOLEAN\ESERCIZI\PHP\hungry-bags\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Giuseppe\Desktop\BOOLEAN\ESERCIZI\PHP\hungry-bags\resources\sass\front.scss */"./resources/sass/front.scss");
+module.exports = __webpack_require__(/*! C:\Users\Giuseppe\Desktop\BOOLEAN\ESERCIZI\PHP\hungry-bags\resources\sass\BackOffice\back.scss */"./resources/sass/BackOffice/back.scss");
 
 
 /***/ })
