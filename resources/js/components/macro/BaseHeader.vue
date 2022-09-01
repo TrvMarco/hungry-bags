@@ -22,7 +22,6 @@
         <div class="header__bottom">
             <a class="link" href="#">Chi siamo</a>
             <a class="link" href="#">Contattaci</a>
-            <a class="link" href="/admin/home">LOGIN</a>
             <router-link class="link" :to="{name:'restaurant-area'}">Area Ristoratori</router-link>
         </div>
     </header>
