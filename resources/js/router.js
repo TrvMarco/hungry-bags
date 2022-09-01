@@ -24,11 +24,11 @@ const router = new VueRouter({
         //     name: "about",
         //     component: About
         // },
-        {
-            path: "/*",
-            name: "page-404",
-            component: Page404
-        },
+        // {
+        //     // path: "/*",
+        //     // name: "page-404",
+        //     // component: Page404
+        // },
     ]
 });
 

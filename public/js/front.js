@@ -2294,7 +2294,7 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "container"
   }, [_c("div", {
-    staticClass: "row"
+    staticClass: "row pb-3"
   }, [_c("h3", [_vm._v("Le scelte più appetitose")])]), _vm._v(" "), _c("div", [_c("div", {
     staticClass: "row"
   }, [_c("div", {
@@ -19678,16 +19678,17 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     path: "/restaurant-area",
     name: "restaurant-area",
     component: _pages_RestaurantArea__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }, // {
+  } // {
   //     path: "/about",
   //     name: "about",
   //     component: About
   // },
-  {
-    path: "/*",
-    name: "page-404",
-    component: Page404
-  }]
+  // {
+  //     // path: "/*",
+  //     // name: "page-404",
+  //     // component: Page404
+  // },
+  ]
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
 

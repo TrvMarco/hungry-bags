@@ -1,7 +1,7 @@
 <template>
   <section class="type py-5"> 
     <div class="container">
-        <div class="row">
+        <div class="row pb-3">
             <h3>Le scelte più appetitose</h3>
         </div>
         <div>
