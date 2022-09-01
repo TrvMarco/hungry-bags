@@ -10980,7 +10980,7 @@ ul {
 
 .backoffice_container,
 main {
-  background: linear-gradient(45deg, var(--third-color), var(--primary-color));
+  background-image: url("https://img.freepik.com/free-vector/cartoon-food-court-interior_52683-66181.jpg?w=2000");
 }
 
 .backoffice_maincontainer,
@@ -11022,6 +11022,14 @@ main {
 
 .menu_eye_red {
   color: rgb(163, 19, 19);
+}
+
+.item_menu_box {
+  height: 9.375rem;
+  width: 9.375rem;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
 }
 
 ::-webkit-scrollbar {
