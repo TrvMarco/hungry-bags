@@ -1991,33 +1991,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'TypeSection',
   data: function data() {
-    return {// tipologies: [
-      //     {
-      //         name: 'Hamburger',
-      //         img: 'https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg'
-      //     },
-      //     {
-      //         name: 'Poke',
-      //         img: 'https://www.risogallo.it/wp-content/uploads/2020/09/MG_POKE-RISO-SOSTENIBILE--1024x954.jpg'
-      //     },
-      //     {
-      //         name: 'Sushi',
-      //         img: 'https://static.cookist.it/wp-content/uploads/sites/21/2020/11/tipi-di-sushi-1.jpg'
-      //     },
-      //     {
-      //         name: 'Hamburger',
-      //         img: 'https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg'
-      //     },
-      //     {
-      //         name: 'Poke',
-      //         img: 'https://www.risogallo.it/wp-content/uploads/2020/09/MG_POKE-RISO-SOSTENIBILE--1024x954.jpg'
-      //     },
-      //     {
-      //         name: 'Sushi',
-      //         img: 'https://static.cookist.it/wp-content/uploads/sites/21/2020/11/tipi-di-sushi-1.jpg'
-      //     },
-      // ]
+    return {
+      types: []
     };
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get('/api/types').then(function (response) {
+      _this.types = response.data;
+    });
   }
 });
 
@@ -2282,100 +2265,44 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
+  return _c("section", {
+    staticClass: "type py-5"
+  }, [_c("div", {
+    staticClass: "container"
+  }, [_vm._m(0), _vm._v(" "), _c("div", [_c("div", {
+    staticClass: "row"
+  }, _vm._l(_vm.types, function (type) {
+    return _c("div", {
+      key: type.id
+    }, [_c("div", {
+      staticClass: "col-2 d-flex"
+    }, [_c("div", {
+      staticClass: "type_box"
+    }, [_vm._m(1, true), _vm._v(" "), _c("div", {
+      staticClass: "text-center"
+    }, [_c("small", [_vm._v(_vm._s(type.name))])])])])]);
+  }), 0)])])]);
 };
 
 var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("section", {
-    staticClass: "type py-5"
-  }, [_c("div", {
-    staticClass: "container"
-  }, [_c("div", {
+  return _c("div", {
     staticClass: "row pb-3"
-  }, [_c("h3", [_vm._v("Le scelte più appetitose")])]), _vm._v(" "), _c("div", [_c("div", {
-    staticClass: "row"
-  }, [_c("div", {
-    staticClass: "col-2 d-flex"
-  }, [_c("div", {
-    staticClass: "type_box"
-  }, [_c("div", {
+  }, [_c("h3", [_vm._v("Le scelte più appetitose")])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "box_img"
   }, [_c("img", {
     attrs: {
       src: "https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg",
       alt: ""
     }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "text-center"
-  }, [_c("small", [_vm._v("Hamburger")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-2 d-flex"
-  }, [_c("div", {
-    staticClass: "type_box"
-  }, [_c("div", {
-    staticClass: "box_img"
-  }, [_c("img", {
-    attrs: {
-      src: "https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg",
-      alt: ""
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "text-center"
-  }, [_c("small", [_vm._v("Hamburger")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-2 d-flex"
-  }, [_c("div", {
-    staticClass: "type_box"
-  }, [_c("div", {
-    staticClass: "box_img"
-  }, [_c("img", {
-    attrs: {
-      src: "https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg",
-      alt: ""
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "text-center"
-  }, [_c("small", [_vm._v("Hamburger")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-2 d-flex"
-  }, [_c("div", {
-    staticClass: "type_box"
-  }, [_c("div", {
-    staticClass: "box_img"
-  }, [_c("img", {
-    attrs: {
-      src: "https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg",
-      alt: ""
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "text-center"
-  }, [_c("small", [_vm._v("Hamburger")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-2 d-flex"
-  }, [_c("div", {
-    staticClass: "type_box"
-  }, [_c("div", {
-    staticClass: "box_img"
-  }, [_c("img", {
-    attrs: {
-      src: "https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg",
-      alt: ""
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "text-center"
-  }, [_c("small", [_vm._v("Hamburger")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-2 d-flex"
-  }, [_c("div", {
-    staticClass: "type_box"
-  }, [_c("div", {
-    staticClass: "box_img"
-  }, [_c("img", {
-    attrs: {
-      src: "https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg",
-      alt: ""
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "text-center"
-  }, [_c("small", [_vm._v("Hamburger")])])])])])])])]);
+  })]);
 }];
 render._withStripped = true;
 
