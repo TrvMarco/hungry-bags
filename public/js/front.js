@@ -2281,7 +2281,43 @@ var staticRenderFns = [function () {
       src: __webpack_require__(/*! ../components/macro/img/raider-header.png */ "./resources/js/components/macro/img/raider-header.png"),
       alt: ""
     }
-  })]);
+  }), _vm._v(" "), _c("div", {
+    staticClass: "container flex margin-bottom-70px"
+  }, [_c("div", {
+    staticClass: "imgs-left"
+  }, [_c("div", {
+    staticClass: "img-top-left"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "container-left"
+  }, [_c("div", {
+    staticClass: "container-bottom-left"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "container-bottom-right"
+  }, [_c("div", {
+    staticClass: "top-right-bottom"
+  }, [_c("img", {
+    staticClass: "busta-rossa",
+    attrs: {
+      src: __webpack_require__(/*! ../components/macro/img/logo-busta-solo-rossa.png */ "./resources/js/components/macro/img/logo-busta-solo-rossa.png"),
+      alt: ""
+    }
+  }), _vm._v(" "), _c("img", {
+    staticClass: "busta-rossa",
+    attrs: {
+      src: __webpack_require__(/*! ../components/macro/img/logo-busta-solo-rossa.png */ "./resources/js/components/macro/img/logo-busta-solo-rossa.png"),
+      alt: ""
+    }
+  }), _vm._v(" "), _c("img", {
+    staticClass: "busta-rossa",
+    attrs: {
+      src: __webpack_require__(/*! ../components/macro/img/logo-busta-solo-rossa.png */ "./resources/js/components/macro/img/logo-busta-solo-rossa.png"),
+      alt: ""
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "bottom-right"
+  })])])]), _vm._v(" "), _c("div", {
+    staticClass: "imgs-right"
+  })])]);
 }];
 render._withStripped = true;
 
@@ -2394,7 +2430,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".main[data-v-b3c5cf30] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.main .question[data-v-b3c5cf30] {\n  font-size: 70px;\n  text-align: center;\n}\n.main .circle-list[data-v-b3c5cf30] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-wrap: wrap;\n  margin-top: 10px;\n}\n.main .circle-list .circle-red[data-v-b3c5cf30] {\n  background: var(--primary-color);\n  height: 100px;\n  width: 100px;\n  border-radius: 100px;\n  margin: 5px;\n  cursor: pointer;\n  transition: transform 0.25s;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.main .circle-list .circle-red .food-img[data-v-b3c5cf30] {\n  width: 70%;\n}\n.main .circle-list .circle-red[data-v-b3c5cf30]:hover {\n  transform: scale(1.1);\n}\n.main .circle-list .circle-blu[data-v-b3c5cf30] {\n  background: var(--secondary-color);\n  height: 100px;\n  width: 100px;\n  border-radius: 100px;\n  margin: 5px;\n  cursor: pointer;\n  transition: transform 0.25s;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.main .circle-list .circle-blu .food-img[data-v-b3c5cf30] {\n  width: 70%;\n}\n.main .circle-list .circle-blu[data-v-b3c5cf30]:hover {\n  transform: scale(1.1);\n}\n.main .cuore-img[data-v-b3c5cf30] {\n  margin: 18px 0px -3px 0px;\n  width: 150px;\n}\n.main .cuore-img[data-v-b3c5cf30]:hover {\n  -webkit-animation: zoom-in-zoom-out-b3c5cf30 1.5s ease-in infinite;\n          animation: zoom-in-zoom-out-b3c5cf30 1.5s ease-in infinite;\n}\n@-webkit-keyframes zoom-in-zoom-out-b3c5cf30 {\n0% {\n    transform: scale(1, 1);\n}\n50% {\n    transform: scale(1.1, 1.1);\n}\n100% {\n    transform: scale(1, 1);\n}\n}\n@keyframes zoom-in-zoom-out-b3c5cf30 {\n0% {\n    transform: scale(1, 1);\n}\n50% {\n    transform: scale(1.1, 1.1);\n}\n100% {\n    transform: scale(1, 1);\n}\n}\n.main .raider-img[data-v-b3c5cf30] {\n  margin: 50px 50px 0px 0px;\n  max-width: 300px;\n}\n.main .sushi-fix[data-v-b3c5cf30] {\n  margin-left: 9px;\n}\n.main .panino-fix[data-v-b3c5cf30] {\n  margin: 0px 2px 2px 0px;\n}\n.main .pizza-fix[data-v-b3c5cf30] {\n  margin: 0px 1px 0px 0px;\n}\n.main .poke-fix[data-v-b3c5cf30] {\n  padding: 7px;\n}\n.main .carne-fix[data-v-b3c5cf30] {\n  margin: 2px 0px 0px 5px;\n}\n.main .cerchio-e-scritta[data-v-b3c5cf30] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}", ""]);
+exports.push([module.i, ".main[data-v-b3c5cf30] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.main .imgs-left[data-v-b3c5cf30] {\n  width: 100%;\n  height: 400px;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  margin-right: 10px;\n}\n.main .imgs-left .img-top-left[data-v-b3c5cf30] {\n  height: 100%;\n  width: 100%;\n  background: var(--primary-color);\n  border-radius: 12px;\n}\n.main .imgs-left .container-left[data-v-b3c5cf30] {\n  display: flex;\n  align-content: center;\n  justify-content: space-between;\n  width: 100%;\n  padding-top: 10px;\n}\n.main .imgs-left .container-left .top-right-bottom[data-v-b3c5cf30] {\n  height: 55%;\n  width: 100%;\n  background: var(--secondary-color);\n  border-radius: 12px;\n}\n.main .imgs-left .container-left .bottom-right[data-v-b3c5cf30] {\n  height: 40%;\n  width: 100%;\n  background: var(--primary-color);\n  border-radius: 12px;\n}\n.main .imgs-left .container-left .container-bottom-left[data-v-b3c5cf30] {\n  height: 200px;\n  width: 50%;\n  background: var(--secondary-color);\n  border-radius: 12px;\n}\n.main .imgs-left .container-left .container-bottom-right[data-v-b3c5cf30] {\n  display: flex;\n  width: 50%;\n  align-content: center;\n  justify-content: space-between;\n  flex-direction: column;\n  margin: 0px 0px 0px 10px;\n}\n.main .imgs-right[data-v-b3c5cf30] {\n  background: var(--secondary-color);\n  border-radius: 12px;\n  width: 45%;\n  height: 400px;\n}\n.main .container-left[data-v-b3c5cf30] {\n  display: flex;\n  align-content: center;\n  justify-content: space-between;\n  width: 100%;\n  padding-top: 10px;\n}\n.main .container-left .top-right-bottom[data-v-b3c5cf30] {\n  height: 55%;\n  width: 100%;\n  background: var(--secondary-color);\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: space-evenly;\n}\n.main .container-left .top-right-bottom .busta-rossa[data-v-b3c5cf30] {\n  max-width: 25%;\n  max-height: 70%;\n}\n.main .container-left .bottom-right[data-v-b3c5cf30] {\n  height: 40%;\n  width: 100%;\n  background: var(--primary-color);\n}\n.main .flex[data-v-b3c5cf30] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.main .question[data-v-b3c5cf30] {\n  font-size: 70px;\n  text-align: center;\n}\n.main .circle-list[data-v-b3c5cf30] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-wrap: wrap;\n  margin-top: 10px;\n}\n.main .circle-list .circle-red[data-v-b3c5cf30] {\n  background: var(--primary-color);\n  height: 100px;\n  width: 100px;\n  border-radius: 100px;\n  margin: 5px;\n  cursor: pointer;\n  transition: transform 0.25s;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.main .circle-list .circle-red .food-img[data-v-b3c5cf30] {\n  width: 70%;\n}\n.main .circle-list .circle-red[data-v-b3c5cf30]:hover {\n  transform: scale(1.1);\n}\n.main .circle-list .circle-blu[data-v-b3c5cf30] {\n  background: var(--secondary-color);\n  height: 100px;\n  width: 100px;\n  border-radius: 100px;\n  margin: 5px;\n  cursor: pointer;\n  transition: transform 0.25s;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.main .circle-list .circle-blu .food-img[data-v-b3c5cf30] {\n  width: 70%;\n}\n.main .circle-list .circle-blu[data-v-b3c5cf30]:hover {\n  transform: scale(1.1);\n}\n.main .cuore-img[data-v-b3c5cf30] {\n  margin: 18px 0px -3px 0px;\n  width: 150px;\n}\n.main .cuore-img[data-v-b3c5cf30]:hover {\n  -webkit-animation: zoom-in-zoom-out-b3c5cf30 1.5s ease-in infinite;\n          animation: zoom-in-zoom-out-b3c5cf30 1.5s ease-in infinite;\n}\n@-webkit-keyframes zoom-in-zoom-out-b3c5cf30 {\n0% {\n    transform: scale(1, 1);\n}\n50% {\n    transform: scale(1.1, 1.1);\n}\n100% {\n    transform: scale(1, 1);\n}\n}\n@keyframes zoom-in-zoom-out-b3c5cf30 {\n0% {\n    transform: scale(1, 1);\n}\n50% {\n    transform: scale(1.1, 1.1);\n}\n100% {\n    transform: scale(1, 1);\n}\n}\n.main .raider-img[data-v-b3c5cf30] {\n  margin: 25px 50px 25px 0px;\n  max-width: 300px;\n}\n.main .sushi-fix[data-v-b3c5cf30] {\n  margin-left: 9px;\n}\n.main .panino-fix[data-v-b3c5cf30] {\n  margin: 0px 2px 2px 0px;\n}\n.main .pizza-fix[data-v-b3c5cf30] {\n  margin: 0px 1px 0px 0px;\n}\n.main .poke-fix[data-v-b3c5cf30] {\n  padding: 7px;\n}\n.main .carne-fix[data-v-b3c5cf30] {\n  margin: 2px 0px 0px 5px;\n}\n.main .cerchio-e-scritta[data-v-b3c5cf30] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n.main .margin-bottom-70px[data-v-b3c5cf30] {\n  margin-bottom: 70px;\n}", ""]);
 
 // exports
 
@@ -18999,6 +19035,17 @@ module.exports = "/images/indiano.png?65f9eff4b48e503d8ef87ba692fe7c5c";
 /***/ (function(module, exports) {
 
 module.exports = "/images/logo-busta-blu.png?b5787a0751f05897b2674d839e2dc6c1";
+
+/***/ }),
+
+/***/ "./resources/js/components/macro/img/logo-busta-solo-rossa.png":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/macro/img/logo-busta-solo-rossa.png ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/logo-busta-solo-rossa.png?9fbb124801710ace2666fa4f54a8f711";
 
 /***/ }),
 

@@ -73,10 +73,27 @@
         </div>
         <!-- Immagine Raider -->
         <img class="raider-img container" src="../components/macro/img/raider-header.png" alt="">
-        
+
+        <div class="container flex margin-bottom-70px">
+            <div class="imgs-left">
+                <div class="img-top-left"></div> 
+                <div class="container-left">
+                    <div class="container-bottom-left"></div>
+                    <div class="container-bottom-right">
+                        <div class="top-right-bottom">
+                            <img class="busta-rossa" src="../components/macro/img/logo-busta-solo-rossa.png" alt="">
+                            <img class="busta-rossa" src="../components/macro/img/logo-busta-solo-rossa.png" alt="">
+                            <img class="busta-rossa" src="../components/macro/img/logo-busta-solo-rossa.png" alt="">
+                        </div>
+                        <div class="bottom-right"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="imgs-right">
+            </div>
+        </div>
     </main>
 </template>
-
 <script>
 export default {
     name: 'Home',
@@ -90,6 +107,102 @@ export default {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
+        .imgs-left {
+            width: 100%;
+            height: 400px;
+            display:flex;
+            align-items: center;
+            flex-direction: column;
+            margin-right: 10px;
+
+            .img-top-left {
+                height: 100%;
+                width: 100%;
+                background: var(--primary-color);
+                border-radius: 12px;
+            }
+
+            .container-left {
+            display:flex;
+            align-content: center;
+            justify-content: space-between;
+            width: 100%;
+            padding-top: 10px;
+
+                .top-right-bottom {
+                    height: 55%;
+                    width: 100%;
+                    background: var(--secondary-color);
+                    border-radius: 12px;
+
+                }
+
+                .bottom-right {
+                    height: 40%;
+                    width: 100%;
+                    background: var(--primary-color);
+                    border-radius: 12px;
+                }
+
+                .container-bottom-left {
+                    height: 200px;
+                    width: 50%;
+                    background: var(--secondary-color);
+                    border-radius: 12px;
+                }
+
+                .container-bottom-right {
+                    display:flex;
+                    width: 50%;
+                    align-content: center;
+                    justify-content: space-between;
+                    flex-direction: column;
+                    margin: 0px 0px 0px 10px;
+                }
+            }
+        }
+        .imgs-right {
+            background: var(--secondary-color);
+            border-radius: 12px;
+            width: 45%;
+            height: 400px;
+        }
+
+        .container-left {
+            display:flex;
+            align-content: center;
+            justify-content: space-between;
+            width: 100%;
+            padding-top: 10px;
+
+            .top-right-bottom {
+                height: 55%;
+                width: 100%;
+                background: var(--secondary-color);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+
+                .busta-rossa {
+                    max-width: 25%;
+                    max-height: 70%;
+                }
+            }
+            .bottom-right {
+                height: 40%;
+                width: 100%;
+                background: var(--primary-color);
+                border-radius: 12px;
+            }
+        }
+
+        .flex {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
 
         .question {
             font-size: 70px;
@@ -168,7 +281,7 @@ export default {
         }
 
         .raider-img {
-            margin: 50px 50px 0px 0px;
+            margin: 25px 50px 25px 0px;
             max-width: 300px;
         }
         
@@ -198,6 +311,11 @@ export default {
             justify-content: center;
             align-items: center;
             flex-direction: column;
+        }
+
+
+        .margin-bottom-70px {
+            margin-bottom: 70px;
         }
     }
 </style>
