@@ -43,6 +43,8 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 50%;
+      border-radius: 50px;
     }
 
     .accedi{
