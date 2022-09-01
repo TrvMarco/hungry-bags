@@ -13,7 +13,7 @@
                         <img class="card-img-top " src="{{ asset('storage/' . $user->image)}}" alt="Card image cap">
                     @else
                         <a href="{{route('admin.users.edit', $user)}}">
-                            <img src="https://placehold.jp/150x150.png" alt="">
+                            <img src="{{asset('images/bugs-150x150.jpg')}}" alt="">
                             <small>clicca per inserire immagine</small>
                         </a>
                        
@@ -31,16 +31,15 @@
                     <div class="card-header">{{ __('Il tuo Menù') }}</div>
                     <div class="card-body">
                             @foreach ($items as $item)
-                                <div class="card-text d-flex item_preview justify-content-between">
-                                    <div class="d-flex">
+                                <div class="card-text d-flex item_preview justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
                                         @if ($item->image)
                                             <div class="item_img_preview_box mr-3">
                                                 <img class="img-fluid center" src="{{ asset('storage/' . $item->image)}}" alt="">
                                             </div>
                                         @else
                                             <div class="item_img_preview_box mr-3">
-                                                {{-- INSERIRE UN PLACEHOLDER  --}}
-                                                <small>null</small>
+                                                <img class="bags-blue" src="{{asset('images/logo-busta-blu-50x50.png')}}" alt="">
                                             </div>
                                         @endif
                                         

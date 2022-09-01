@@ -8,10 +8,11 @@
                 <h2>Il tuo Menù è vuoto!</h2>
               </div>
               <div class="item_menu_box">
-                <a href="{{route('admin.items.create')}}"><i class="fa-solid fa-plus"></i></a>
-                <span>Inserisci un piatto</span>
+                <a href="{{route('admin.items.create')}}">Inserisci un piatto</a>
               </div>
-              <div class="item_menu_box"><a href="{{route('admin.home')}}">Torna alla pagina Home</a></div>
+              <div class="item_menu_box">
+                <a href="{{route('admin.home')}}">Torna alla pagina Home</a>
+              </div>
           </div>
           @else
           <h1 class="text-center p-3">Il tuo Menù</h1>
@@ -32,7 +33,9 @@
                   @if ($item->image)
                   <img class="img-fluid menu_item_img" src="{{ asset('storage/' . $item->image)}}" alt="{{$item->name}}">
                   @else
-                  <p>null</p>
+                  <div class="item_img_preview_box mr-3">
+                    <img class="bags-blue" src="{{asset('images/logo-busta-blu-50x50.png')}}" alt="">
+                  </div>
                   @endif
                   
                 </th>
