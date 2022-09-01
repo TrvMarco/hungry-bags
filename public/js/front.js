@@ -19678,12 +19678,16 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     path: "/restaurant-area",
     name: "restaurant-area",
     component: _pages_RestaurantArea__WEBPACK_IMPORTED_MODULE_3__["default"]
-  } // {
+  }, // {
   //     path: "/about",
   //     name: "about",
   //     component: About
   // },
-  ]
+  {
+    path: "/*",
+    name: "page-404",
+    component: Page404
+  }]
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
 
@@ -19783,7 +19787,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Giuseppe\Desktop\BOOLEAN\ESERCIZI\PHP\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Progetti Boolean\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
