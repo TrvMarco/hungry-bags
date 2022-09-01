@@ -10979,7 +10979,10 @@ ul {
 }
 
 main {
-  background-image: url("https://img.freepik.com/free-vector/cartoon-food-court-interior_52683-66181.jpg?w=2000");
+  background-image: url(/images/img-backoffice.jpg?8016013f99237dd07b14d6b8a67a1f60);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .backoffice_maincontainer,
@@ -10991,7 +10994,7 @@ main {
 }
 
 .backoffice_menu_container {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 0.9375rem;
   -o-box-shadow: 5px 5px 10px 0px rgba(26, 26, 26, 0.8705882353);
   box-shadow: 5px 5px 10px 0px rgba(26, 26, 26, 0.8705882353);
@@ -11026,9 +11029,17 @@ main {
 .item_menu_box {
   height: 9.375rem;
   width: 9.375rem;
-  border: 1px solid red;
+  border: 2px solid black;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.bags-blue {
+  width: 1.875rem;
 }
 
 ::-webkit-scrollbar {

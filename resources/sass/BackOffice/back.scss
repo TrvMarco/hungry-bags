@@ -12,7 +12,10 @@ ul{
 //      ----------------        CONTAINERS
 main{
     // background: linear-gradient(45deg,var(--third-color), var(--primary-color));
-    background-image: url('https://img.freepik.com/free-vector/cartoon-food-court-interior_52683-66181.jpg?w=2000');
+    background-image: url('../../../public/image/img-backoffice.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:bottom;
 }
 
 // .backoffice_navbar{
@@ -27,7 +30,7 @@ main{
 }
 
 .backoffice_menu_container{
-    background-color: #fff;
+    background-color:rgba(255, 255, 255, 0.8);
     border-radius: .9375rem;
     -webkit-box-shadow: 5px 5px 10px 0px #1a1a1ade;
     -moz-box-shadow: 5px 5px 10px 0px #1a1a1ade;
@@ -69,13 +72,19 @@ main{
 .item_menu_box{
     height: 9.375rem;
     width: 9.375rem;
-    border: 1px solid red;
+    border: 2px solid black;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 
-
+.bags-blue{
+    width: 1.875rem;
+  }
 
 ::-webkit-scrollbar {
     width: 10px;
