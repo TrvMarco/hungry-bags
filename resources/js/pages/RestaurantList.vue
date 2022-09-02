@@ -14,6 +14,10 @@
                         <img class="img-fluid" :src="`../storage/${restaurant.image}`" alt="">
                     </div>
                 </a>
+                <div class="restaurant_card">
+                    <h1>{{restaurant.name}}</h1>
+                    <router-link :to="{ name: 'single-restaurant', params: { user: restaurant.name} }">Visualizza il menù</router-link>
+                </div>
             </div>
         </div>
     </div>

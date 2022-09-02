@@ -19,7 +19,7 @@ Route::get('types', 'Api\TypeController@index');
 
 Route::post('users', 'Api\UserController@index');
 
-Route::get('users/', 'Api\UserController@index2');
-
 Route::get('users/{type}', 'Api\UserController@show');
+
+Route::get('items/{user}', 'Api\ItemController@show');
 

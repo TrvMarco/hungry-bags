@@ -2119,7 +2119,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'SingleRestaurant'
+  name: 'SingleRestaurant',
+  data: function data() {
+    return {
+      plate: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get("/api/items/".concat(this.$route.params.user)).then(function (response) {
+      _this.plate = response.data.items; // console.log(response.data)
+    });
+  }
 });
 
 /***/ }),
@@ -2631,12 +2643,9 @@ var render = function render() {
     return _c("div", {
       key: id,
       staticClass: "col-4 pb-3"
-    }, [_c("a", {
-      attrs: {
-        href: ""
-      }
     }, [_c("div", {
       staticClass: "restaurant_card"
+<<<<<<< HEAD
     }, [_c("h1", [_vm._v(_vm._s(restaurant.name))]), _vm._v(" "), _c("img", {
       staticClass: "img-fluid",
       attrs: {
@@ -2644,6 +2653,18 @@ var render = function render() {
         alt: ""
       }
     })])])]);
+=======
+    }, [_c("h1", [_vm._v(_vm._s(restaurant.name))]), _vm._v(" "), _c("router-link", {
+      attrs: {
+        to: {
+          name: "single-restaurant",
+          params: {
+            user: restaurant.name
+          }
+        }
+      }
+    }, [_vm._v("Visualizza il menù")])], 1)]);
+>>>>>>> 55780079eae7c2a6c866cae3577fad61c546177a
   }), 0)])]);
 };
 
@@ -2677,16 +2698,23 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
+  return _c("main", [_c("div", {
+    staticClass: "container"
+  }, [_vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "row gap"
+  }, _vm._l(_vm.plate, function (item, id) {
+    return _c("div", {
+      key: id,
+      staticClass: "col-sm-12 col-md-6"
+    }, [_vm._m(1, true)]);
+  }), 0)])]);
 };
 
 var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("main", [_c("div", {
-    staticClass: "container"
-  }, [_c("div", {
+  return _c("div", {
     staticClass: "row py-5 align-items-center"
   }, [_c("div", {
     staticClass: "col-2 d-flex"
@@ -2698,11 +2726,12 @@ var staticRenderFns = [function () {
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "col-10 pt-3"
-  }, [_c("h2", [_vm._v("Nome ristorante")])])]), _vm._v(" "), _c("div", {
-    staticClass: "row gap"
-  }, [_c("div", {
-    staticClass: "col-sm-12 col-md-6"
-  }, [_c("div", {
+  }, [_c("h2", [_vm._v("Nome ristorante")])])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "menu_item_box d-flex p-2 flex-wrap"
   }, [_c("div", {
     staticClass: "item_box_description col-8"
@@ -2722,73 +2751,7 @@ var staticRenderFns = [function () {
     staticClass: "div"
   }, [_c("strong", [_vm._v("Prezzo:")]), _vm._v(" 10$")]), _vm._v(" "), _c("div", [_c("i", {
     staticClass: "fa-solid fa-circle-plus add_cart_plus"
-  })])])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-sm-12 col-md-6"
-  }, [_c("div", {
-    staticClass: "menu_item_box d-flex p-2 flex-wrap"
-  }, [_c("div", {
-    staticClass: "item_box_description col-8"
-  }, [_c("h4", [_vm._v("Nome item")]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum deserunt temporibus sint aliquid, eveniet exercitationem veritatis et esse dolores numquam nam id est facere asperiores. Error perferendis minima voluptate voluptatum!")])]), _vm._v(" "), _c("div", {
-    staticClass: "item_box_image col-4"
-  }, [_c("img", {
-    staticClass: "img-fluid",
-    attrs: {
-      src: "https://www.mcdonalds.it/sites/default/files/product_category/thumb/thumb_menu_panini_300.png",
-      alt: ""
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col-12"
-  }, [_c("hr"), _vm._v(" "), _c("div", {
-    staticClass: "d-flex justify-content-between"
-  }, [_c("div", {
-    staticClass: "div"
-  }, [_c("strong", [_vm._v("Prezzo:")]), _vm._v(" 10$")]), _vm._v(" "), _c("div", [_c("i", {
-    staticClass: "fa-solid fa-circle-plus add_cart_plus"
-  })])])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-sm-12 col-md-6"
-  }, [_c("div", {
-    staticClass: "menu_item_box d-flex p-2 flex-wrap"
-  }, [_c("div", {
-    staticClass: "item_box_description col-8"
-  }, [_c("h4", [_vm._v("Nome item")]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum deserunt temporibus sint aliquid, eveniet exercitationem veritatis et esse dolores numquam nam id est facere asperiores. Error perferendis minima voluptate voluptatum!")])]), _vm._v(" "), _c("div", {
-    staticClass: "item_box_image col-4"
-  }, [_c("img", {
-    staticClass: "img-fluid",
-    attrs: {
-      src: "https://www.mcdonalds.it/sites/default/files/product_category/thumb/thumb_menu_panini_300.png",
-      alt: ""
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col-12"
-  }, [_c("hr"), _vm._v(" "), _c("div", {
-    staticClass: "d-flex justify-content-between"
-  }, [_c("div", {
-    staticClass: "div"
-  }, [_c("strong", [_vm._v("Prezzo:")]), _vm._v(" 10$")]), _vm._v(" "), _c("div", [_c("i", {
-    staticClass: "fa-solid fa-circle-plus add_cart_plus"
-  })])])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-sm-12 col-md-6"
-  }, [_c("div", {
-    staticClass: "menu_item_box d-flex p-2 flex-wrap"
-  }, [_c("div", {
-    staticClass: "item_box_description col-8"
-  }, [_c("h4", [_vm._v("Nome item")]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum deserunt temporibus sint aliquid, eveniet exercitationem veritatis et esse dolores numquam nam id est facere asperiores. Error perferendis minima voluptate voluptatum!")])]), _vm._v(" "), _c("div", {
-    staticClass: "item_box_image col-4"
-  }, [_c("img", {
-    staticClass: "img-fluid",
-    attrs: {
-      src: "https://www.mcdonalds.it/sites/default/files/product_category/thumb/thumb_menu_panini_300.png",
-      alt: ""
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col-12"
-  }, [_c("hr"), _vm._v(" "), _c("div", {
-    staticClass: "d-flex justify-content-between"
-  }, [_c("div", {
-    staticClass: "div"
-  }, [_c("strong", [_vm._v("Prezzo:")]), _vm._v(" 10$")]), _vm._v(" "), _c("div", [_c("i", {
-    staticClass: "fa-solid fa-circle-plus add_cart_plus"
-  })])])])])])])])]);
+  })])])])]);
 }];
 render._withStripped = true;
 
@@ -20439,7 +20402,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: "restaurant-list",
     component: _pages_RestaurantList__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
-    path: "/restaurant/:userId",
+    path: "/restaurant/:user",
     name: "single-restaurant",
     component: _pages_SingleRestaurant__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {
