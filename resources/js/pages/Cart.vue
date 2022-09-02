@@ -40,12 +40,10 @@
                     <hr>
                     <div class="d-flex justify-content-between px-4">
                         <h5 class="text-uppercase">Totale</h5>
-                        <span>{{totalCartPrice.toFixed(2)}}&#8364;</span>
+                        <span v-show="totalCartPrice">{{totalCartPrice.toFixed(2)}}&#8364;</span>
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
   </main>
@@ -57,7 +55,7 @@ export default {
     data(){
         return{
             myCart: [],
-            totalCartPrice,
+            totalCartPrice
         }
     },
     created(){
@@ -73,14 +71,14 @@ export default {
         
     },
     methods: {
-        totalCartPrice(){
-            myCart.array.forEach(elm => {
-                console.log(elm)
-            });
-        },
-        removeItem(x) {
-            this.myCart.splice(x, 1);
-        },
+        // totalCartPrice(){
+        //     myCart.array.forEach(elm => {
+        //         console.log(elm)
+        //     });
+        // },
+        // removeItem(x) {
+        //     this.myCart.splice(x, 1);
+        // },
     }
 }
 </script>
