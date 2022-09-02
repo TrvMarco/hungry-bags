@@ -2011,20 +2011,16 @@ __webpack_require__.r(__webpack_exports__);
 
       return arr;
     }
-  },
-  methods: {
-    chooseType: function chooseType() {
-      var _this2 = this;
+  } // methods: {
+  //     chooseType(){
+  //         axios.post('/api/users', this.typeChoose)
+  //         .then((resp) => {
+  //             this.typeChoose = [];
+  //             this.$router.push({name: 'restaurant-list'});
+  //         })
+  //     }
+  // }
 
-      axios.post('/api/users', this.typeChoose).then(function (resp) {
-        _this2.typeChoose = [];
-
-        _this2.$router.push({
-          name: 'restaurant-list'
-        });
-      });
-    }
-  }
 });
 
 /***/ }),
@@ -2104,9 +2100,8 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    axios.get('/api/users').then(function (response) {
-      _this.restaurants = response.data;
-      console.log(response.data.users.name);
+    axios.get("/api/users/".concat(this.$route.params.type)).then(function (response) {
+      _this.restaurants = response.data; // console.log(response.data.users.name)
     });
   }
 });
@@ -2355,14 +2350,7 @@ var render = function render() {
     staticClass: "container"
   }, [_vm._m(0), _vm._v(" "), _c("div", [_c("div", {
     staticClass: "row"
-  }, [_c("form", {
-    on: {
-      submit: function submit($event) {
-        $event.preventDefault();
-        return _vm.chooseType();
-      }
-    }
-  }, [_vm._l(_vm.firstTypes, function (type) {
+  }, _vm._l(_vm.firstTypes, function (type) {
     return _c("div", {
       key: type.id
     }, [_c("div", {
@@ -2371,52 +2359,17 @@ var render = function render() {
       staticClass: "type_box"
     }, [_c("div", {
       staticClass: "box_img"
-    }, [_c("input", {
-      directives: [{
-        name: "model",
-        rawName: "v-model",
-        value: _vm.typeChoose,
-        expression: "typeChoose"
-      }],
-      staticClass: "form-check-input",
+    }, [_c("router-link", {
       attrs: {
-        type: "checkbox",
-        id: type.id
-      },
-      domProps: {
-        value: type.name,
-        checked: Array.isArray(_vm.typeChoose) ? _vm._i(_vm.typeChoose, type.name) > -1 : _vm.typeChoose
-      },
-      on: {
-        change: function change($event) {
-          var $$a = _vm.typeChoose,
-              $$el = $event.target,
-              $$c = $$el.checked ? true : false;
-
-          if (Array.isArray($$a)) {
-            var $$v = type.name,
-                $$i = _vm._i($$a, $$v);
-
-            if ($$el.checked) {
-              $$i < 0 && (_vm.typeChoose = $$a.concat([$$v]));
-            } else {
-              $$i > -1 && (_vm.typeChoose = $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
-            }
-          } else {
-            _vm.typeChoose = $$c;
+        to: {
+          name: "restaurant-list",
+          params: {
+            type: type
           }
         }
       }
-    }), _vm._v(" "), _c("label", {
-      attrs: {
-        "for": type.id
-      }
-    }, [_vm._v(_vm._s(type.name))])])])])]);
-  }), _vm._v(" "), _c("button", {
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Cerca")])], 2)])])])]);
+    }, [_vm._v(_vm._s(type.name))])], 1)])])]);
+  }), 0)])])]);
 };
 
 var staticRenderFns = [function () {
@@ -20475,7 +20428,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: "restaurant-area",
     component: _pages_RestaurantArea__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
-    path: "/restaurant-list",
+    path: "/restaurant-list/:type",
     name: "restaurant-list",
     component: _pages_RestaurantList__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
@@ -20591,7 +20544,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Progetti Boolean\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\valen\Desktop\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
