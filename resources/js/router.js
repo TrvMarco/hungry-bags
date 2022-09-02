@@ -5,6 +5,8 @@ Vue.use(VueRouter);
 
 import Home from "./pages/Home";
 import RestaurantArea from "./pages/RestaurantArea";
+import RestaurantList from "./pages/RestaurantList";
+import SingleRestaurant from './pages/SingleRestaurant';
 
 const router = new VueRouter({
     mode: "history",
@@ -19,7 +21,16 @@ const router = new VueRouter({
             name: "restaurant-area",
             component: RestaurantArea
         },
-   
+        {
+            path: "/restaurant-list",
+            name: "restaurant-list",
+            component: RestaurantList
+        },
+        {
+            path: "/restaurant/:userId",
+            name: "single-restaurant",
+            component: SingleRestaurant
+        }
         // {
         //     // path: "/*",
         //     // name: "page-404",

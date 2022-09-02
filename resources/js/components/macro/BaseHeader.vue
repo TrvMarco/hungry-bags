@@ -13,7 +13,6 @@
                 </div>
             </div>
         </div>
-        <HeroSection/>
     </header>
 </template>
 
@@ -23,9 +22,6 @@ import HeroSection from '../sections/HeroSection.vue';
 
 export default {
     name: 'BaseHeader',
-     components: {
-        HeroSection,
-    }
 }
 
 </script>
