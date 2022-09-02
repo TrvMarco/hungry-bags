@@ -4,12 +4,13 @@
             <div class="row p-3 text-white">
                 <div class="col-6">
                     <!-- Qui andrà img e logo -->
-                    <h1>HungryBags</h1>
+                    <a href="/" class="link-default"><h1>HungryBags</h1></a>
                 </div>
                 <div class="col-6 d-flex justify-content-end">
                     <!-- nav accedi lingua -->
-                    <span>Area riservata</span>
-                    <span>Selezione lingua</span>
+                    <div class="cart">
+                    <a href="/check-out" class="link-default cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -30,6 +31,18 @@ export default {
     header{
         .container-fluid{
             background-color: #111214;
+
+            .link-default{
+                text-decoration: none;
+                color: white;
+            }
+
+            .cart{
+                font-size: 1.25rem;
+            }
+
+            
+           
         }
     }
 </style>
