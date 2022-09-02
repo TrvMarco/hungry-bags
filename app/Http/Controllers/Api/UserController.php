@@ -19,12 +19,6 @@ class UserController extends Controller
         return $user;
     }
 
-    public function index2()
-    {
-        $users = User::all();
-        return $users;
-    }
-
     public function show($type)
     {
         $user = Type::where('name', $type)->with(['users'])->first();

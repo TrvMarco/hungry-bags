@@ -8,11 +8,10 @@
         </div>
         <div class="row">
             <div class="col-4 pb-3" v-for="restaurant,id in restaurants" :key="id">
-                <a href="">
-                    <div class="restaurant_card">
-                        <h1>{{restaurant.name}}</h1>
-                    </div>
-                </a>
+                <div class="restaurant_card">
+                    <h1>{{restaurant.name}}</h1>
+                    <router-link :to="{ name: 'single-restaurant', params: { user: restaurant.name} }">Visualizza il menù</router-link>
+                </div>
             </div>
         </div>
     </div>

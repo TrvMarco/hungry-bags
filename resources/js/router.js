@@ -28,7 +28,7 @@ const router = new VueRouter({
             component: RestaurantList
         },
         {
-            path: "/restaurant/:userId",
+            path: "/restaurant/:user",
             name: "single-restaurant",
             component: SingleRestaurant
         },
