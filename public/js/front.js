@@ -2408,7 +2408,7 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("main", [_c("div", {
-    staticClass: "container"
+    staticClass: "container pb-5"
   }, [_c("div", {
     staticClass: "row p-4"
   }, [_c("div", {
@@ -2692,7 +2692,7 @@ var staticRenderFns = [function () {
   })]), _vm._v(" "), _c("div", {
     staticClass: "col-10 pt-3"
   }, [_c("h2", [_vm._v("Nome ristorante")])])]), _vm._v(" "), _c("div", {
-    staticClass: "row"
+    staticClass: "row gap"
   }, [_c("div", {
     staticClass: "col-sm-12 col-md-6"
   }, [_c("div", {
