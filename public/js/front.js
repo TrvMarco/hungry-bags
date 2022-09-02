@@ -1989,7 +1989,8 @@ __webpack_require__.r(__webpack_exports__);
   name: 'TypeSection',
   data: function data() {
     return {
-      types: []
+      types: [],
+      typeChoose: []
     };
   },
   created: function created() {
@@ -2008,6 +2009,15 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       return arr;
+    }
+  },
+  methods: {
+    chooseType: function chooseType() {
+      var _this2 = this;
+
+      axios.post('/api/users', this.typeChoose).then(function (resp) {
+        _this2.typeChoose = [];
+      });
     }
   }
 });
@@ -2312,17 +2322,68 @@ var render = function render() {
     staticClass: "container"
   }, [_vm._m(0), _vm._v(" "), _c("div", [_c("div", {
     staticClass: "row"
-  }, _vm._l(_vm.firstTypes, function (type) {
+  }, [_c("form", {
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.chooseType();
+      }
+    }
+  }, [_vm._l(_vm.firstTypes, function (type) {
     return _c("div", {
       key: type.id
     }, [_c("div", {
       staticClass: "col-2 d-flex"
     }, [_c("div", {
       staticClass: "type_box"
-    }, [_vm._m(1, true), _vm._v(" "), _c("div", {
-      staticClass: "text-center"
-    }, [_c("small", [_vm._v(_vm._s(type.name))])])])])]);
-  }), 0)])])]);
+    }, [_c("div", {
+      staticClass: "box_img"
+    }, [_c("input", {
+      directives: [{
+        name: "model",
+        rawName: "v-model",
+        value: _vm.typeChoose,
+        expression: "typeChoose"
+      }],
+      staticClass: "form-check-input",
+      attrs: {
+        type: "checkbox",
+        id: type.id
+      },
+      domProps: {
+        value: type.name,
+        checked: Array.isArray(_vm.typeChoose) ? _vm._i(_vm.typeChoose, type.name) > -1 : _vm.typeChoose
+      },
+      on: {
+        change: function change($event) {
+          var $$a = _vm.typeChoose,
+              $$el = $event.target,
+              $$c = $$el.checked ? true : false;
+
+          if (Array.isArray($$a)) {
+            var $$v = type.name,
+                $$i = _vm._i($$a, $$v);
+
+            if ($$el.checked) {
+              $$i < 0 && (_vm.typeChoose = $$a.concat([$$v]));
+            } else {
+              $$i > -1 && (_vm.typeChoose = $$a.slice(0, $$i).concat($$a.slice($$i + 1)));
+            }
+          } else {
+            _vm.typeChoose = $$c;
+          }
+        }
+      }
+    }), _vm._v(" "), _c("label", {
+      attrs: {
+        "for": type.id
+      }
+    }, [_vm._v(_vm._s(type.name))])])])])]);
+  }), _vm._v(" "), _c("button", {
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Cerca")])], 2)])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -2332,18 +2393,6 @@ var staticRenderFns = [function () {
   return _c("div", {
     staticClass: "row pb-3"
   }, [_c("h3", [_vm._v("Le scelte più appetitose")])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "box_img"
-  }, [_c("img", {
-    attrs: {
-      src: "https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg",
-      alt: ""
-    }
-  })]);
 }];
 render._withStripped = true;
 
@@ -20154,7 +20203,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Progetti Boolean\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\valen\Desktop\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

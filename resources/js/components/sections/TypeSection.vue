@@ -5,17 +5,21 @@
             <h3>Le scelte più appetitose</h3>
         </div>
         <div>
-            <div class="row">                
-                <div v-for="type in firstTypes" :key="type.id">
-                    <div class="col-2 d-flex">
-                        <div class="type_box">
-                            <div class="box_img">
-                                <img src="https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg" alt="">
+            <div class="row">
+                <form @submit.prevent="chooseType()">
+                    <div v-for="type in firstTypes" :key="type.id">
+                        <div class="col-2 d-flex">
+                            <div class="type_box">
+                                <div class="box_img">
+                                    <!-- <img src="https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg" alt=""> -->
+                                     <input class="form-check-input" type="checkbox" :id="type.id" :value="type.name"  v-model="typeChoose">
+                                    <label :for="type.id">{{type.name}}</label>
+                                </div>
                             </div>
-                            <div class="text-center"><small>{{type.name}}</small></div>
                         </div>
                     </div>
-                </div>
+                    <button type="submit">Cerca</button>
+                </form>           
             </div>
         </div>
     </div>
@@ -28,6 +32,7 @@ export default {
     data() {
         return{
             types : [],
+            typeChoose : [],
         };
     },
     created() {
@@ -43,6 +48,14 @@ export default {
                 arr.push(this.types[i]);
             }
             return arr;
+        }
+    },
+    methods: {
+        chooseType(){
+            axios.post('/api/users', this.typeChoose)
+            .then((resp) => {
+                this.typeChoose = [];
+            })
         }
     }
 }
