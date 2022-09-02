@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('types', 'Api\TypeController@index');
-Route::get('users', 'Api\UserController@index');
+// Route::get('users', 'Api\UserController@index');
+
 Route::post('users', 'Api\UserController@index');
 
+Route::get('users/', 'Api\UserController@index2');
+
+Route::get('users/{type}', 'Api\UserController@show');
 

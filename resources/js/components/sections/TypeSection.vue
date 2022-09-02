@@ -6,20 +6,19 @@
         </div>
         <div>
             <div class="row">
-                <form @submit.prevent="chooseType()">
+                <!-- <form @submit.prevent="chooseType()"> -->
                     <div v-for="type in firstTypes" :key="type.id">
                         <div class="col-2 d-flex">
                             <div class="type_box">
                                 <div class="box_img">
                                     <!-- <img src="https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg" alt=""> -->
-                                     <input class="form-check-input" type="checkbox" :id="type.id" :value="type.name"  v-model="typeChoose">
-                                    <label :for="type.id">{{type.name}}</label>
+                                     <router-link :to="{ name: 'restaurant-list', params: {type: type} }">{{type.name}}</router-link>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button type="submit">Cerca</button>
-                </form>
+                    <!-- <button type="submit">Cerca</button> -->
+                <!-- </form> -->
             </div>
         </div>
     </div>
@@ -51,15 +50,15 @@ export default {
             return arr;
         }
     },
-    methods: {
-        chooseType(){
-            axios.post('/api/users', this.typeChoose)
-            .then((resp) => {
-                this.typeChoose = [];
-                this.$router.push({name: 'restaurant-list'});
-            })
-        }
-    }
+    // methods: {
+    //     chooseType(){
+    //         axios.post('/api/users', this.typeChoose)
+    //         .then((resp) => {
+    //             this.typeChoose = [];
+    //             this.$router.push({name: 'restaurant-list'});
+    //         })
+    //     }
+    // }
 }
 </script>
 
