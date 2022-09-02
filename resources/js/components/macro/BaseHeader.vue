@@ -9,8 +9,7 @@
                 <div class="col-6 d-flex justify-content-end">
                     <!-- nav accedi lingua -->
                     <div class="cart">
-                    <a href="/check-out" class="link-default cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                    ciao
+                        <a href="/check-out" class="link-default cart"><i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                 </div>
             </div>

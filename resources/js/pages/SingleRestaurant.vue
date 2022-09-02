@@ -24,8 +24,8 @@
                     <div class="col-12">
                         <hr>
                         <div class="d-flex justify-content-between">
-                            <div class="div"><strong>Prezzo:</strong> {{item.price}}&#8364;</div>
-                            <div><i class="fa-solid fa-circle-plus add_cart_plus"></i></div>
+                            <div class="div"><strong>Prezzo:</strong> {{item.price.toFixed(2)}}&#8364;</div>
+                            <div><i class="fa-solid fa-circle-plus add_cart_plus" @click="addToCart(item)"></i></div>
                         </div>
                     </div>
                 </div>
@@ -42,6 +42,7 @@ export default {
         return {
             items: [],
             user:[],
+            virtualCart:[],
         }
     },
     created() {
@@ -49,8 +50,25 @@ export default {
         .then((response) => {
             this.items = response.data.items;
             this.user = response.data;
+            // console.log(localStorage.items)
             // console.log(response.data)
         })
+    },
+    // mounted() {
+    //     if (localStorage.getItem('itemCart')) {
+    //     try {
+    //         this.item = JSON.parse(localStorage.getItem('itemCart'));
+    //     } catch(e) {
+    //         localStorage.removeItem('cats');
+    //     }
+    //     }
+    // },
+    methods: {
+        addToCart(item){
+            this.virtualCart.push(item)
+            localStorage.setItem('prodotto', JSON.stringify(this.virtualCart))
+            console.log(JSON.parse(localStorage.getItem('prodotto')))
+        }
     }
 }
 </script>

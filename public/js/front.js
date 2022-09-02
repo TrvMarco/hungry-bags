@@ -2035,7 +2035,32 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Cart'
+  name: 'Cart',
+  data: function data() {
+    return {
+      myCart: [],
+      totalCartPrice: totalCartPrice
+    };
+  },
+  created: function created() {
+    this.myCart = JSON.parse(localStorage.getItem('prodotto'));
+    var sum = 0;
+    this.myCart.forEach(function (elm) {
+      // console.log(elm.price);
+      sum += elm.price;
+    });
+    this.totalCartPrice = sum;
+  },
+  methods: {
+    totalCartPrice: function totalCartPrice() {
+      myCart.array.forEach(function (elm) {
+        console.log(elm);
+      });
+    },
+    removeItem: function removeItem(x) {
+      this.myCart.splice(x, 1);
+    }
+  }
 });
 
 /***/ }),
@@ -2123,7 +2148,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       items: [],
-      user: []
+      user: [],
+      virtualCart: []
     };
   },
   created: function created() {
@@ -2131,8 +2157,25 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get("/api/items/".concat(this.$route.params.user)).then(function (response) {
       _this.items = response.data.items;
-      _this.user = response.data; // console.log(response.data)
+      _this.user = response.data; // console.log(localStorage.items)
+      // console.log(response.data)
     });
+  },
+  // mounted() {
+  //     if (localStorage.getItem('itemCart')) {
+  //     try {
+  //         this.item = JSON.parse(localStorage.getItem('itemCart'));
+  //     } catch(e) {
+  //         localStorage.removeItem('cats');
+  //     }
+  //     }
+  // },
+  methods: {
+    addToCart: function addToCart(item) {
+      this.virtualCart.push(item);
+      localStorage.setItem('prodotto', JSON.stringify(this.virtualCart));
+      console.log(JSON.parse(localStorage.getItem('prodotto')));
+    }
   }
 });
 
@@ -2429,116 +2472,44 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
-};
-
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
   return _c("main", [_c("div", {
     staticClass: "container pb-5"
-  }, [_c("div", {
-    staticClass: "row p-4"
-  }, [_c("div", {
-    staticClass: "col-12 text-center"
-  }, [_c("h1", [_vm._v("Completa il tuo ordine!")])])]), _vm._v(" "), _c("div", {
+  }, [_vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "d-flex row"
   }, [_c("div", {
     staticClass: "col-12 col-lg-6"
-  }, [_c("div", {
-    staticClass: "col-sm-12 align-self-start pb-3"
-  }, [_c("div", {
-    staticClass: "menu_item_box d-flex p-2 flex-wrap"
-  }, [_c("div", {
-    staticClass: "item_box_description col-8"
-  }, [_c("h3", [_vm._v("Nome item")]), _vm._v(" "), _c("span", [_vm._v("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum deserunt temporibus sint aliquid, eveniet exercitationem veritatis et esse dolores numquam nam id est facere asperiores. Error perferendis minima voluptate voluptatum!")])]), _vm._v(" "), _c("div", {
-    staticClass: "item_box_image col-4"
-  }, [_c("img", {
-    staticClass: "img-fluid",
-    attrs: {
-      src: "https://www.mcdonalds.it/sites/default/files/product_category/thumb/thumb_menu_panini_300.png",
-      alt: ""
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col-12 d-flex justify-content-between align-items-center"
-  }, [_c("div", {
-    staticClass: "div"
-  }, [_c("strong", [_vm._v("Prezzo:")]), _vm._v(" 10$")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-sm btn-danger",
-    attrs: {
-      type: "button"
-    }
-  }, [_vm._v("Rimuovi")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-sm-12 align-self-start pb-3"
-  }, [_c("div", {
-    staticClass: "menu_item_box d-flex p-2 flex-wrap"
-  }, [_c("div", {
-    staticClass: "item_box_description col-8"
-  }, [_c("h3", [_vm._v("Nome item")]), _vm._v(" "), _c("span", [_vm._v("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum deserunt temporibus sint aliquid, eveniet exercitationem veritatis et esse dolores numquam nam id est facere asperiores. Error perferendis minima voluptate voluptatum!")])]), _vm._v(" "), _c("div", {
-    staticClass: "item_box_image col-4"
-  }, [_c("img", {
-    staticClass: "img-fluid",
-    attrs: {
-      src: "https://www.mcdonalds.it/sites/default/files/product_category/thumb/thumb_menu_panini_300.png",
-      alt: ""
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col-12 d-flex justify-content-between align-items-center"
-  }, [_c("div", {
-    staticClass: "div"
-  }, [_c("strong", [_vm._v("Prezzo:")]), _vm._v(" 10$")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-sm btn-danger",
-    attrs: {
-      type: "button"
-    }
-  }, [_vm._v("Rimuovi")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-sm-12 align-self-start pb-3"
-  }, [_c("div", {
-    staticClass: "menu_item_box d-flex p-2 flex-wrap"
-  }, [_c("div", {
-    staticClass: "item_box_description col-8"
-  }, [_c("h3", [_vm._v("Nome item")]), _vm._v(" "), _c("span", [_vm._v("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum deserunt temporibus sint aliquid, eveniet exercitationem veritatis et esse dolores numquam nam id est facere asperiores. Error perferendis minima voluptate voluptatum!")])]), _vm._v(" "), _c("div", {
-    staticClass: "item_box_image col-4"
-  }, [_c("img", {
-    staticClass: "img-fluid",
-    attrs: {
-      src: "https://www.mcdonalds.it/sites/default/files/product_category/thumb/thumb_menu_panini_300.png",
-      alt: ""
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col-12 d-flex justify-content-between align-items-center"
-  }, [_c("div", {
-    staticClass: "div"
-  }, [_c("strong", [_vm._v("Prezzo:")]), _vm._v(" 10$")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-sm btn-danger",
-    attrs: {
-      type: "button"
-    }
-  }, [_vm._v("Rimuovi")])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-sm-12 align-self-start pb-3"
-  }, [_c("div", {
-    staticClass: "menu_item_box d-flex p-2 flex-wrap"
-  }, [_c("div", {
-    staticClass: "item_box_description col-8"
-  }, [_c("h3", [_vm._v("Nome item")]), _vm._v(" "), _c("span", [_vm._v("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum deserunt temporibus sint aliquid, eveniet exercitationem veritatis et esse dolores numquam nam id est facere asperiores. Error perferendis minima voluptate voluptatum!")])]), _vm._v(" "), _c("div", {
-    staticClass: "item_box_image col-4"
-  }, [_c("img", {
-    staticClass: "img-fluid",
-    attrs: {
-      src: "https://www.mcdonalds.it/sites/default/files/product_category/thumb/thumb_menu_panini_300.png",
-      alt: ""
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col-12 d-flex justify-content-between align-items-center"
-  }, [_c("div", {
-    staticClass: "div"
-  }, [_c("strong", [_vm._v("Prezzo:")]), _vm._v(" 10$")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-sm btn-danger",
-    attrs: {
-      type: "button"
-    }
-  }, [_vm._v("Rimuovi")])])])])]), _vm._v(" "), _c("div", {
+  }, _vm._l(_vm.myCart, function (item, id) {
+    return _c("div", {
+      key: id,
+      staticClass: "col-sm-12 align-self-start pb-3"
+    }, [_c("div", {
+      staticClass: "menu_item_box d-flex p-2 flex-wrap"
+    }, [_c("div", {
+      staticClass: "item_box_description col-8"
+    }, [_c("h3", [_vm._v(_vm._s(item.name))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(item.description))])]), _vm._v(" "), _c("div", {
+      staticClass: "item_box_image col-4"
+    }, [_c("img", {
+      staticClass: "img-fluid",
+      attrs: {
+        src: "../storage/".concat(item.image),
+        alt: ""
+      }
+    })]), _vm._v(" "), _c("div", {
+      staticClass: "col-12 d-flex justify-content-between align-items-center"
+    }, [_c("div", {
+      staticClass: "div"
+    }, [_c("strong", [_vm._v("Prezzo:")]), _vm._v(" " + _vm._s(item.price.toFixed(2)) + "€")]), _vm._v(" "), _c("button", {
+      staticClass: "btn btn-sm btn-danger",
+      attrs: {
+        type: "button"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.remove(item);
+        }
+      }
+    }, [_vm._v("Rimuovi")])])])]);
+  }), 0), _vm._v(" "), _c("div", {
     staticClass: "col-12 col-lg-6"
   }, [_c("div", {
     staticClass: "menu_item_box p-2"
@@ -2546,19 +2517,27 @@ var staticRenderFns = [function () {
     staticClass: "text-center pt-2"
   }, [_vm._v("Confrema ordine:")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
     staticClass: "px-4"
-  }, [_c("div", {
-    staticClass: "d-flex justify-content-between"
-  }, [_c("span", [_vm._v("Nome Item")]), _vm._v(" "), _c("span", [_vm._v("10$")])]), _vm._v(" "), _c("div", {
-    staticClass: "d-flex justify-content-between"
-  }, [_c("span", [_vm._v("Nome Item")]), _vm._v(" "), _c("span", [_vm._v("10$")])]), _vm._v(" "), _c("div", {
-    staticClass: "d-flex justify-content-between"
-  }, [_c("span", [_vm._v("Nome Item")]), _vm._v(" "), _c("span", [_vm._v("10$")])]), _vm._v(" "), _c("div", {
-    staticClass: "d-flex justify-content-between"
-  }, [_c("span", [_vm._v("Nome Item")]), _vm._v(" "), _c("span", [_vm._v("10$")])])]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
+  }, _vm._l(_vm.myCart, function (item, id) {
+    return _c("div", {
+      key: id,
+      staticClass: "d-flex justify-content-between"
+    }, [_c("span", [_vm._v(_vm._s(item.name))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(item.price.toFixed(2)) + "€")])]);
+  }), 0), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
     staticClass: "d-flex justify-content-between px-4"
   }, [_c("h5", {
     staticClass: "text-uppercase"
-  }, [_vm._v("Totale")]), _vm._v(" "), _c("span", [_vm._v("40$")])])])])])])]);
+  }, [_vm._v("Totale")]), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.totalCartPrice.toFixed(2)) + "€")])])])])])])]);
+};
+
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "row p-4"
+  }, [_c("div", {
+    staticClass: "col-12 text-center"
+  }, [_c("h1", [_vm._v("Completa il tuo ordine!")])])]);
 }];
 render._withStripped = true;
 
@@ -2748,18 +2727,18 @@ var render = function render() {
       staticClass: "d-flex justify-content-between"
     }, [_c("div", {
       staticClass: "div"
-    }, [_c("strong", [_vm._v("Prezzo:")]), _vm._v(" " + _vm._s(item.price) + "€")]), _vm._v(" "), _vm._m(0, true)])])])]);
+    }, [_c("strong", [_vm._v("Prezzo:")]), _vm._v(" " + _vm._s(item.price.toFixed(2)) + "€")]), _vm._v(" "), _c("div", [_c("i", {
+      staticClass: "fa-solid fa-circle-plus add_cart_plus",
+      on: {
+        click: function click($event) {
+          return _vm.addToCart(item);
+        }
+      }
+    })])])])])]);
   }), 0)])]);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", [_c("i", {
-    staticClass: "fa-solid fa-circle-plus add_cart_plus"
-  })]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
@@ -20521,7 +20500,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Giuseppe\Desktop\BOOLEAN\ESERCIZI\PHP\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Progetti Boolean\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
