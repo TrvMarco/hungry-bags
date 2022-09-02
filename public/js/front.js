@@ -2051,15 +2051,14 @@ __webpack_require__.r(__webpack_exports__);
     });
     this.totalCartPrice = sum;
   },
-  methods: {
-    totalCartPrice: function totalCartPrice() {
-      myCart.array.forEach(function (elm) {
-        console.log(elm);
-      });
-    },
-    removeItem: function removeItem(x) {
-      this.myCart.splice(x, 1);
-    }
+  methods: {// totalCartPrice(){
+    //     myCart.array.forEach(elm => {
+    //         console.log(elm)
+    //     });
+    // },
+    // removeItem(x) {
+    //     this.myCart.splice(x, 1);
+    // },
   }
 });
 
@@ -2473,7 +2472,10 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("main", [_c("div", {
-    staticClass: "container pb-5"
+    staticClass: "container pb-5",
+    attrs: {
+      "v-if": _vm.myCart.length > 0
+    }
   }, [_vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "d-flex row"
   }, [_c("div", {
@@ -2526,7 +2528,14 @@ var render = function render() {
     staticClass: "d-flex justify-content-between px-4"
   }, [_c("h5", {
     staticClass: "text-uppercase"
-  }, [_vm._v("Totale")]), _vm._v(" "), _c("span", [_vm._v(_vm._s(_vm.totalCartPrice.toFixed(2)) + "€")])])])])])])]);
+  }, [_vm._v("Totale")]), _vm._v(" "), _c("span", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.totalCartPrice,
+      expression: "totalCartPrice"
+    }]
+  }, [_vm._v(_vm._s(_vm.totalCartPrice.toFixed(2)) + "€")])])])])])])]);
 };
 
 var staticRenderFns = [function () {

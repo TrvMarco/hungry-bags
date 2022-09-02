@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div class="container pb-5">
+    <div :v-if="myCart.length > 0" class="container pb-5">
         <div class="row p-4">
             <div class="col-12 text-center">
                 <h1>Completa il tuo ordine!</h1>
