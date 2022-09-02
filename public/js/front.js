@@ -2676,7 +2676,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".restaurant_card[data-v-ef1c3478] {\n  height: 12.5rem;\n  background-color: aquamarine;\n  border: 1px solid black;\n}", ""]);
+exports.push([module.i, ".restaurant_card[data-v-ef1c3478] {\n  height: 12.5rem;\n  background-color: aquamarine;\n  border: 1px solid black;\n}\nh1[data-v-ef1c3478] {\n  font-weight: bold;\n}", ""]);
 
 // exports
 

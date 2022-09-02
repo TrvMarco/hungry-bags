@@ -65,4 +65,5 @@ export default {
         color: rgba(62, 196, 184, 0.938);
         cursor: pointer;
     }
+
 </style>
