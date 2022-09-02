@@ -2,13 +2,17 @@
   <main>
     <div class="container">
         <div class="row py-5 align-items-center">
-            <div class="col-2 d-flex"><img src="https://via.placeholder.com/150" alt=""></div>
+            <div class="col-2 d-flex">
+                <img class="img-fluid" src="https://via.placeholder.com/150" alt="">
+                </div>
             <div class="col-10 pt-3">
                 <h2>Nome ristorante</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-6">
+        <div class="gap row">
+
+            <!-- CARD ITEM -->
+            <div class="col-sm-12 col-md-6">
                 <div class="menu_item_box d-flex p-2 flex-wrap">
                     <div class="item_box_description col-8">
                         <h4>Nome item</h4>
@@ -26,6 +30,64 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-sm-12 col-md-6">
+                <div class="menu_item_box d-flex p-2 flex-wrap">
+                    <div class="item_box_description col-8">
+                        <h4>Nome item</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum deserunt temporibus sint aliquid, eveniet exercitationem veritatis et esse dolores numquam nam id est facere asperiores. Error perferendis minima voluptate voluptatum!</p>
+                    </div>
+                    <div class="item_box_image col-4">
+                        <img class="img-fluid" src="https://www.mcdonalds.it/sites/default/files/product_category/thumb/thumb_menu_panini_300.png" alt="">
+                    </div>
+                    <div class="col-12">
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <div class="div"><strong>Prezzo:</strong> 10$</div>
+                            <div><i class="fa-solid fa-circle-plus add_cart_plus"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6">
+                <div class="menu_item_box d-flex p-2 flex-wrap">
+                    <div class="item_box_description col-8">
+                        <h4>Nome item</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum deserunt temporibus sint aliquid, eveniet exercitationem veritatis et esse dolores numquam nam id est facere asperiores. Error perferendis minima voluptate voluptatum!</p>
+                    </div>
+                    <div class="item_box_image col-4">
+                        <img class="img-fluid" src="https://www.mcdonalds.it/sites/default/files/product_category/thumb/thumb_menu_panini_300.png" alt="">
+                    </div>
+                    <div class="col-12">
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <div class="div"><strong>Prezzo:</strong> 10$</div>
+                            <div><i class="fa-solid fa-circle-plus add_cart_plus"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6">
+                <div class="menu_item_box d-flex p-2 flex-wrap">
+                    <div class="item_box_description col-8">
+                        <h4>Nome item</h4>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum deserunt temporibus sint aliquid, eveniet exercitationem veritatis et esse dolores numquam nam id est facere asperiores. Error perferendis minima voluptate voluptatum!</p>
+                    </div>
+                    <div class="item_box_image col-4">
+                        <img class="img-fluid" src="https://www.mcdonalds.it/sites/default/files/product_category/thumb/thumb_menu_panini_300.png" alt="">
+                    </div>
+                    <div class="col-12">
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <div class="div"><strong>Prezzo:</strong> 10$</div>
+                            <div><i class="fa-solid fa-circle-plus add_cart_plus"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
   </main>
@@ -66,4 +128,7 @@ export default {
         cursor: pointer;
     }
 
+    .gap{
+        row-gap: 1.875rem;
+    }
 </style>

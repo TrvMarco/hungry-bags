@@ -26,6 +26,18 @@
 <script>
 export default {
     name: 'RestaurantList',
+    data(){
+        return{
+            restaurants: []
+        }
+    },
+    created(){
+        axios.get('/api/users')
+        .then((response) => {
+            // this.restaurants = response.data;
+            console.log(response)
+        })
+    }
 }
 </script>
 

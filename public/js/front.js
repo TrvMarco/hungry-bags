@@ -2075,7 +2075,18 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'RestaurantList'
+  name: 'RestaurantList',
+  data: function data() {
+    return {
+      restaurants: []
+    };
+  },
+  created: function created() {
+    axios.get('/api/users').then(function (response) {
+      // this.restaurants = response.data;
+      console.log(response);
+    });
+  }
 });
 
 /***/ }),
@@ -2552,6 +2563,7 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "col-2 d-flex"
   }, [_c("img", {
+    staticClass: "img-fluid",
     attrs: {
       src: "https://via.placeholder.com/150",
       alt: ""
@@ -2559,9 +2571,75 @@ var staticRenderFns = [function () {
   })]), _vm._v(" "), _c("div", {
     staticClass: "col-10 pt-3"
   }, [_c("h2", [_vm._v("Nome ristorante")])])]), _vm._v(" "), _c("div", {
-    staticClass: "row"
+    staticClass: "gap row"
   }, [_c("div", {
-    staticClass: "col-6"
+    staticClass: "col-sm-12 col-md-6"
+  }, [_c("div", {
+    staticClass: "menu_item_box d-flex p-2 flex-wrap"
+  }, [_c("div", {
+    staticClass: "item_box_description col-8"
+  }, [_c("h4", [_vm._v("Nome item")]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum deserunt temporibus sint aliquid, eveniet exercitationem veritatis et esse dolores numquam nam id est facere asperiores. Error perferendis minima voluptate voluptatum!")])]), _vm._v(" "), _c("div", {
+    staticClass: "item_box_image col-4"
+  }, [_c("img", {
+    staticClass: "img-fluid",
+    attrs: {
+      src: "https://www.mcdonalds.it/sites/default/files/product_category/thumb/thumb_menu_panini_300.png",
+      alt: ""
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col-12"
+  }, [_c("hr"), _vm._v(" "), _c("div", {
+    staticClass: "d-flex justify-content-between"
+  }, [_c("div", {
+    staticClass: "div"
+  }, [_c("strong", [_vm._v("Prezzo:")]), _vm._v(" 10$")]), _vm._v(" "), _c("div", [_c("i", {
+    staticClass: "fa-solid fa-circle-plus add_cart_plus"
+  })])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-sm-12 col-md-6"
+  }, [_c("div", {
+    staticClass: "menu_item_box d-flex p-2 flex-wrap"
+  }, [_c("div", {
+    staticClass: "item_box_description col-8"
+  }, [_c("h4", [_vm._v("Nome item")]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum deserunt temporibus sint aliquid, eveniet exercitationem veritatis et esse dolores numquam nam id est facere asperiores. Error perferendis minima voluptate voluptatum!")])]), _vm._v(" "), _c("div", {
+    staticClass: "item_box_image col-4"
+  }, [_c("img", {
+    staticClass: "img-fluid",
+    attrs: {
+      src: "https://www.mcdonalds.it/sites/default/files/product_category/thumb/thumb_menu_panini_300.png",
+      alt: ""
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col-12"
+  }, [_c("hr"), _vm._v(" "), _c("div", {
+    staticClass: "d-flex justify-content-between"
+  }, [_c("div", {
+    staticClass: "div"
+  }, [_c("strong", [_vm._v("Prezzo:")]), _vm._v(" 10$")]), _vm._v(" "), _c("div", [_c("i", {
+    staticClass: "fa-solid fa-circle-plus add_cart_plus"
+  })])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-sm-12 col-md-6"
+  }, [_c("div", {
+    staticClass: "menu_item_box d-flex p-2 flex-wrap"
+  }, [_c("div", {
+    staticClass: "item_box_description col-8"
+  }, [_c("h4", [_vm._v("Nome item")]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum deserunt temporibus sint aliquid, eveniet exercitationem veritatis et esse dolores numquam nam id est facere asperiores. Error perferendis minima voluptate voluptatum!")])]), _vm._v(" "), _c("div", {
+    staticClass: "item_box_image col-4"
+  }, [_c("img", {
+    staticClass: "img-fluid",
+    attrs: {
+      src: "https://www.mcdonalds.it/sites/default/files/product_category/thumb/thumb_menu_panini_300.png",
+      alt: ""
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col-12"
+  }, [_c("hr"), _vm._v(" "), _c("div", {
+    staticClass: "d-flex justify-content-between"
+  }, [_c("div", {
+    staticClass: "div"
+  }, [_c("strong", [_vm._v("Prezzo:")]), _vm._v(" 10$")]), _vm._v(" "), _c("div", [_c("i", {
+    staticClass: "fa-solid fa-circle-plus add_cart_plus"
+  })])])])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-sm-12 col-md-6"
   }, [_c("div", {
     staticClass: "menu_item_box d-flex p-2 flex-wrap"
   }, [_c("div", {
@@ -2744,7 +2822,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".menu_item_box[data-v-2ff820ae] {\n  min-height: 10.625rem;\n  background-color: beige;\n  border-radius: 0.625rem;\n  box-shadow: 9px 6px 19px -7px #000000;\n}\n.menu_item_box .item_box_description[data-v-2ff820ae] {\n  font-size: 0.8125rem;\n}\n.menu_item_box .item_box_image[data-v-2ff820ae] {\n  width: 9.375rem;\n  height: 9.375rem;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.menu_item_box .item_box_image img[data-v-2ff820ae] {\n  border-radius: 0.625rem;\n  overflow: hidden;\n}\n.add_cart_plus[data-v-2ff820ae] {\n  font-size: 1.25rem;\n  color: rgba(62, 196, 184, 0.938);\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, ".menu_item_box[data-v-2ff820ae] {\n  min-height: 10.625rem;\n  background-color: beige;\n  border-radius: 0.625rem;\n  box-shadow: 9px 6px 19px -7px #000000;\n}\n.menu_item_box .item_box_description[data-v-2ff820ae] {\n  font-size: 0.8125rem;\n}\n.menu_item_box .item_box_image[data-v-2ff820ae] {\n  width: 9.375rem;\n  height: 9.375rem;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.menu_item_box .item_box_image img[data-v-2ff820ae] {\n  border-radius: 0.625rem;\n  overflow: hidden;\n}\n.add_cart_plus[data-v-2ff820ae] {\n  font-size: 1.25rem;\n  color: rgba(62, 196, 184, 0.938);\n  cursor: pointer;\n}\n.gap[data-v-2ff820ae] {\n  row-gap: 1.875rem;\n}", ""]);
 
 // exports
 
@@ -20203,7 +20281,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\valen\Desktop\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Progetti Boolean\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
