@@ -2645,16 +2645,7 @@ var render = function render() {
       staticClass: "col-4 pb-3"
     }, [_c("div", {
       staticClass: "restaurant_card"
-<<<<<<< HEAD
-    }, [_c("h1", [_vm._v(_vm._s(restaurant.name))]), _vm._v(" "), _c("img", {
-      staticClass: "img-fluid",
-      attrs: {
-        src: "../storage/".concat(restaurant.image),
-        alt: ""
-      }
-    })])])]);
-=======
-    }, [_c("h1", [_vm._v(_vm._s(restaurant.name))]), _vm._v(" "), _c("router-link", {
+    }, [_c("router-link", {
       attrs: {
         to: {
           name: "single-restaurant",
@@ -2663,8 +2654,13 @@ var render = function render() {
           }
         }
       }
-    }, [_vm._v("Visualizza il menù")])], 1)]);
->>>>>>> 55780079eae7c2a6c866cae3577fad61c546177a
+    }, [_c("h1", [_vm._v(_vm._s(restaurant.name))]), _vm._v(" "), _c("img", {
+      staticClass: "img-fluid",
+      attrs: {
+        src: "../storage/".concat(restaurant.image),
+        alt: ""
+      }
+    })])], 1)]);
   }), 0)])]);
 };
 

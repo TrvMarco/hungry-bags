@@ -8,15 +8,11 @@
         </div>
         <div class="row">
             <div class="col-4 pb-3" v-for="restaurant,id in restaurants" :key="id">
-                <a href="">
-                    <div class="restaurant_card">
+                <div class="restaurant_card">
+                    <router-link :to="{ name: 'single-restaurant', params: { user: restaurant.name} }">
                         <h1>{{restaurant.name}}</h1>
                         <img class="img-fluid" :src="`../storage/${restaurant.image}`" alt="">
-                    </div>
-                </a>
-                <div class="restaurant_card">
-                    <h1>{{restaurant.name}}</h1>
-                    <router-link :to="{ name: 'single-restaurant', params: { user: restaurant.name} }">Visualizza il menù</router-link>
+                    </router-link>
                 </div>
             </div>
         </div>
