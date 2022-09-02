@@ -2214,9 +2214,23 @@ var staticRenderFns = [function () {
     staticClass: "row p-3 text-white"
   }, [_c("div", {
     staticClass: "col-6"
-  }, [_c("h1", [_vm._v("HungryBags")])]), _vm._v(" "), _c("div", {
+  }, [_c("a", {
+    staticClass: "link-default",
+    attrs: {
+      href: "/"
+    }
+  }, [_c("h1", [_vm._v("HungryBags")])])]), _vm._v(" "), _c("div", {
     staticClass: "col-6 d-flex justify-content-end"
-  }, [_c("span", [_vm._v("Area riservata")]), _vm._v(" "), _c("span", [_vm._v("Selezione lingua")])])])])]);
+  }, [_c("div", {
+    staticClass: "cart"
+  }, [_c("a", {
+    staticClass: "link-default cart",
+    attrs: {
+      href: "/check-out"
+    }
+  }, [_c("i", {
+    staticClass: "fa-solid fa-cart-shopping"
+  })])])])])])]);
 }];
 render._withStripped = true;
 
@@ -2794,7 +2808,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "header .container-fluid[data-v-8a2cb668] {\n  background-color: #111214;\n}", ""]);
+exports.push([module.i, "header .container-fluid[data-v-8a2cb668] {\n  background-color: #111214;\n}\nheader .container-fluid .link-default[data-v-8a2cb668] {\n  text-decoration: none;\n  color: white;\n}\nheader .container-fluid .cart[data-v-8a2cb668] {\n  font-size: 1.25rem;\n}", ""]);
 
 // exports
 
@@ -20510,7 +20524,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Progetti Boolean\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Giuseppe\Desktop\BOOLEAN\ESERCIZI\PHP\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
