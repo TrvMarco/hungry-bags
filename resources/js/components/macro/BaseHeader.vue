@@ -10,6 +10,7 @@
                     <!-- nav accedi lingua -->
                     <div class="cart">
                     <a href="/check-out" class="link-default cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                    ciao
                     </div>
                 </div>
             </div>
