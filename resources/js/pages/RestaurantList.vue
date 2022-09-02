@@ -44,8 +44,4 @@ export default {
         background-color: aquamarine;
         border: 1px solid black;
     } 
-
-    h1{
-        font-weight: bold;
-    }
 </style>

@@ -82,6 +82,11 @@ export default {
         font-size: 1.25rem;
         color: rgba(62, 196, 184, 0.938);
         cursor: pointer;
+        transition: all 0.5s;
+
+        &:hover{
+            transform: scale(1.5);
+        }
     }
 
     .gap{
