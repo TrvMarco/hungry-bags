@@ -2122,14 +2122,16 @@ __webpack_require__.r(__webpack_exports__);
   name: 'SingleRestaurant',
   data: function data() {
     return {
-      plate: []
+      items: [],
+      user: []
     };
   },
   created: function created() {
     var _this = this;
 
     axios.get("/api/items/".concat(this.$route.params.user)).then(function (response) {
-      _this.plate = response.data.items; // console.log(response.data)
+      _this.items = response.data.items;
+      _this.user = response.data; // console.log(response.data)
     });
   }
 });
@@ -2695,14 +2697,44 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("main", [_c("div", {
-    staticClass: "container"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "container pb-5"
+  }, [_c("div", {
+    staticClass: "row py-5 align-items-center"
+  }, [_c("div", {
+    staticClass: "col-2 d-flex"
+  }, [_c("img", {
+    staticClass: "img-fluid",
+    attrs: {
+      src: "../storage/".concat(_vm.user.image),
+      alt: ""
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "col-10 pt-3"
+  }, [_c("h2", [_vm._v(_vm._s(_vm.user.name))])])]), _vm._v(" "), _c("div", {
     staticClass: "row gap"
-  }, _vm._l(_vm.plate, function (item, id) {
+  }, _vm._l(_vm.items, function (item, id) {
     return _c("div", {
       key: id,
       staticClass: "col-sm-12 col-md-6"
-    }, [_vm._m(1, true)]);
+    }, [_c("div", {
+      staticClass: "menu_item_box d-flex p-2 flex-wrap"
+    }, [_c("div", {
+      staticClass: "item_box_description col-8"
+    }, [_c("h4", [_vm._v(_vm._s(item.name))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(item.description))])]), _vm._v(" "), _c("div", {
+      staticClass: "item_box_image col-4"
+    }, [_c("img", {
+      staticClass: "img-fluid",
+      attrs: {
+        src: "../storage/".concat(item.image),
+        alt: ""
+      }
+    })]), _vm._v(" "), _c("div", {
+      staticClass: "col-12"
+    }, [_c("hr"), _vm._v(" "), _c("div", {
+      staticClass: "d-flex justify-content-between"
+    }, [_c("div", {
+      staticClass: "div"
+    }, [_c("strong", [_vm._v("Prezzo:")]), _vm._v(" " + _vm._s(item.price) + "€")]), _vm._v(" "), _vm._m(0, true)])])])]);
   }), 0)])]);
 };
 
@@ -2710,44 +2742,9 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", {
-    staticClass: "row py-5 align-items-center"
-  }, [_c("div", {
-    staticClass: "col-2 d-flex"
-  }, [_c("img", {
-    staticClass: "img-fluid",
-    attrs: {
-      src: "https://via.placeholder.com/150",
-      alt: ""
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col-10 pt-3"
-  }, [_c("h2", [_vm._v("Nome ristorante")])])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "menu_item_box d-flex p-2 flex-wrap"
-  }, [_c("div", {
-    staticClass: "item_box_description col-8"
-  }, [_c("h4", [_vm._v("Nome item")]), _vm._v(" "), _c("p", [_vm._v("Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum deserunt temporibus sint aliquid, eveniet exercitationem veritatis et esse dolores numquam nam id est facere asperiores. Error perferendis minima voluptate voluptatum!")])]), _vm._v(" "), _c("div", {
-    staticClass: "item_box_image col-4"
-  }, [_c("img", {
-    staticClass: "img-fluid",
-    attrs: {
-      src: "https://www.mcdonalds.it/sites/default/files/product_category/thumb/thumb_menu_panini_300.png",
-      alt: ""
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col-12"
-  }, [_c("hr"), _vm._v(" "), _c("div", {
-    staticClass: "d-flex justify-content-between"
-  }, [_c("div", {
-    staticClass: "div"
-  }, [_c("strong", [_vm._v("Prezzo:")]), _vm._v(" 10$")]), _vm._v(" "), _c("div", [_c("i", {
+  return _c("div", [_c("i", {
     staticClass: "fa-solid fa-circle-plus add_cart_plus"
-  })])])])]);
+  })]);
 }];
 render._withStripped = true;
 
