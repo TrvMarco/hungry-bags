@@ -5,8 +5,8 @@
             <h3>Le scelte più appetitose</h3>
         </div>
         <div>
-            <div class="row">
-                <div v-for="type in types" :key="type.id">
+            <div class="row">                
+                <div v-for="type in firstTypes" :key="type.id">
                     <div class="col-2 d-flex">
                         <div class="type_box">
                             <div class="box_img">
@@ -35,6 +35,15 @@ export default {
         .then((response) => {
             this.types = response.data
         })
+    },
+    computed: {
+        firstTypes() {
+            let arr = [];
+            for (let i = 0; i < 8; i++) {
+                arr.push(this.types[i]);
+            }
+            return arr;
+        }
     }
 }
 </script>
