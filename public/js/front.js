@@ -2051,14 +2051,21 @@ __webpack_require__.r(__webpack_exports__);
     });
     this.totalCartPrice = sum;
   },
-  methods: {// totalCartPrice(){
+  methods: {
+    // totalCartPrice(){
     //     myCart.array.forEach(elm => {
     //         console.log(elm)
     //     });
     // },
     // removeItem(x) {
     //     this.myCart.splice(x, 1);
-    // },
+    // },  
+    deleteItem: function deleteItem(item) {//     console.log(item)
+      //     localStorage.removeItem('prodotto', JSON.stringify(item))
+      //     this.myCart.splice()
+      //     localStorage.setItem('questions', JSON.stringify(questions)); 
+      // }
+    }
   }
 });
 
@@ -2507,7 +2514,7 @@ var render = function render() {
       },
       on: {
         click: function click($event) {
-          return _vm.remove(item);
+          return _vm.deleteItem(item);
         }
       }
     }, [_vm._v("Rimuovi")])])])]);
@@ -20509,7 +20516,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Progetti Boolean\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Giuseppe\Desktop\BOOLEAN\ESERCIZI\PHP\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
