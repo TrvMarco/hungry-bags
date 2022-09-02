@@ -9,7 +9,7 @@
                 <h2>Nome ristorante</h2>
             </div>
         </div>
-        <div class="row">
+        <div class="row gap">
 
             <!-- CARD ITEM -->
             <div class="col-sm-12 col-md-6">
