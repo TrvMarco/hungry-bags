@@ -12,7 +12,7 @@
                     
                 @else
                 <a href="{{route('admin.items.edit', $item->id)}}">
-                    <img src="https://placehold.jp/300x300.png" alt=""> 
+                    <img src="{{asset('images/bugs-300x300.jpg')}}" alt=""> 
                     <small>clicca per aggiungere immagine</small>
                 </a>
                 @endif
