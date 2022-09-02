@@ -7,16 +7,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-4">
+            <div class="col-4 pb-3" v-for="restaurant,id in restaurants" :key="id">
                 <a href="">
-                    <div class="restaurant_card"></div>
+                    <div class="restaurant_card">
+                        <h1>{{restaurant.name}}</h1>
+                    </div>
                 </a>
-            </div>
-            <div class="col-4">
-                <div class="restaurant_card"></div>
-            </div>
-            <div class="col-4">
-                <div class="restaurant_card"></div>
             </div>
         </div>
     </div>
@@ -34,8 +30,8 @@ export default {
     created(){
         axios.get('/api/users')
         .then((response) => {
-            // this.restaurants = response.data;
-            console.log(response)
+            this.restaurants = response.data;
+            console.log(response.data.users.name)
         })
     }
 }
