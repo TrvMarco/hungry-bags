@@ -11,6 +11,7 @@
                 <a href="">
                     <div class="restaurant_card">
                         <h1>{{restaurant.name}}</h1>
+                        <img class="img-fluid" :src="`../storage/${restaurant.image}`" alt="">
                     </div>
                 </a>
             </div>
@@ -31,7 +32,7 @@ export default {
         axios.get(`/api/users/${this.$route.params.type}`) 
         .then((response) => {
             this.restaurants = response.data.users
-            // console.log(response.data.users)
+            console.log(response.data.users)
         })
     }
 }

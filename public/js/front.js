@@ -2101,7 +2101,8 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios.get("/api/users/".concat(this.$route.params.type)).then(function (response) {
-      _this.restaurants = response.data.users; // console.log(response.data.users)
+      _this.restaurants = response.data.users;
+      console.log(response.data.users);
     });
   }
 });
@@ -2636,7 +2637,13 @@ var render = function render() {
       }
     }, [_c("div", {
       staticClass: "restaurant_card"
-    }, [_c("h1", [_vm._v(_vm._s(restaurant.name))])])])]);
+    }, [_c("h1", [_vm._v(_vm._s(restaurant.name))]), _vm._v(" "), _c("img", {
+      staticClass: "img-fluid",
+      attrs: {
+        src: "../storage/".concat(restaurant.image),
+        alt: ""
+      }
+    })])])]);
   }), 0)])]);
 };
 
@@ -20544,7 +20551,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\valen\Desktop\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Progetti Boolean\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
