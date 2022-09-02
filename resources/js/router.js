@@ -19,11 +19,7 @@ const router = new VueRouter({
             name: "restaurant-area",
             component: RestaurantArea
         },
-        // {
-        //     path: "/about",
-        //     name: "about",
-        //     component: About
-        // },
+   
         // {
         //     // path: "/*",
         //     // name: "page-404",

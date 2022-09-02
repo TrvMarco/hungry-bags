@@ -19606,11 +19606,6 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: "restaurant-area",
     component: _pages_RestaurantArea__WEBPACK_IMPORTED_MODULE_3__["default"]
   } // {
-  //     path: "/about",
-  //     name: "about",
-  //     component: About
-  // },
-  // {
   //     // path: "/*",
   //     // name: "page-404",
   //     // component: Page404
