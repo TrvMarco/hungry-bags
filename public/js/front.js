@@ -1990,7 +1990,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       types: [],
-      typeChoose: []
+      typeChoose: [],
+      choose: false
     };
   },
   created: function created() {
@@ -2017,6 +2018,10 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.post('/api/users', this.typeChoose).then(function (resp) {
         _this2.typeChoose = [];
+
+        _this2.$router.push({
+          name: 'restaurant-list'
+        });
       });
     }
   }
@@ -2075,7 +2080,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'RestaurantList'
+  name: 'RestaurantList',
+  data: function data() {
+    return {
+      restaurant: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get('/api/users').then(function (response) {
+      _this.restaurant = response.data;
+    });
+  }
 });
 
 /***/ }),

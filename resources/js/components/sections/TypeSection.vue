@@ -19,7 +19,7 @@
                         </div>
                     </div>
                     <button type="submit">Cerca</button>
-                </form>           
+                </form>
             </div>
         </div>
     </div>
@@ -33,6 +33,7 @@ export default {
         return{
             types : [],
             typeChoose : [],
+            choose: false,
         };
     },
     created() {
@@ -55,6 +56,7 @@ export default {
             axios.post('/api/users', this.typeChoose)
             .then((resp) => {
                 this.typeChoose = [];
+                this.$router.push({name: 'restaurant-list'});
             })
         }
     }
