@@ -30,8 +30,8 @@ export default {
     created(){
         axios.get(`/api/users/${this.$route.params.type}`) 
         .then((response) => {
-            this.restaurants = response.data;
-            // console.log(response.data.users.name)
+            this.restaurants = response.data.users
+            // console.log(response.data.users)
         })
     }
 }

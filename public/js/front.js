@@ -2101,7 +2101,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios.get("/api/users/".concat(this.$route.params.type)).then(function (response) {
-      _this.restaurants = response.data; // console.log(response.data.users.name)
+      _this.restaurants = response.data.users; // console.log(response.data.users)
     });
   }
 });
@@ -2364,7 +2364,7 @@ var render = function render() {
         to: {
           name: "restaurant-list",
           params: {
-            type: type
+            type: type.name
           }
         }
       }

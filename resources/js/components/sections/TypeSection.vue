@@ -12,7 +12,7 @@
                             <div class="type_box">
                                 <div class="box_img">
                                     <!-- <img src="https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg" alt=""> -->
-                                     <router-link :to="{ name: 'restaurant-list', params: {type: type} }">{{type.name}}</router-link>
+                                     <router-link :to="{ name: 'restaurant-list', params: {type: type.name} }">{{type.name}}</router-link>
                                 </div>
                             </div>
                         </div>
