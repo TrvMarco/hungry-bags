@@ -20,7 +20,7 @@
                         </div>
                         <div class="col-12 d-flex justify-content-between align-items-center">
                             <div class="div"><strong>Prezzo:</strong> {{item.price.toFixed(2)}}&#8364;</div>
-                            <button type="button" class="btn btn-sm btn-danger" @click="remove(item)">Rimuovi</button>
+                            <button type="button" class="btn btn-sm btn-danger" @click="deleteItem(item)">Rimuovi</button>
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,13 @@ export default {
         // },
         // removeItem(x) {
         //     this.myCart.splice(x, 1);
-        // },
+        // },  
+        deleteItem(item){
+        //     console.log(item)
+        //     localStorage.removeItem('prodotto', JSON.stringify(item))
+        //     this.myCart.splice()
+        //     localStorage.setItem('questions', JSON.stringify(questions)); 
+        // }
     }
 }
 </script>
