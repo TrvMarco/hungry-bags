@@ -20,7 +20,7 @@
                         </div>
                         <div class="col-12 d-flex justify-content-between align-items-center">
                             <div class="div"><strong>Prezzo:</strong> {{item.price.toFixed(2)}}&#8364;</div>
-                            <button type="button" class="btn btn-sm btn-danger" @click="deleteItem(item)">Rimuovi</button>
+                            <button type="button" class="btn btn-sm btn-danger" @click="deleteItem(id)">Rimuovi</button>
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                     <hr>
                     <div class="d-flex justify-content-between px-4">
                         <h5 class="text-uppercase">Totale</h5>
-                        <span v-show="totalCartPrice">{{totalCartPrice.toFixed(2)}}&#8364;</span>
+                        <span v-show="totalCartPrice">{{sum}}&#8364;</span>
                     </div>
                 </div>
             </div>
@@ -50,43 +50,52 @@
 </template>
 
 <script>
+import shared from '../shared'
 export default {
     name: 'Cart',
     data(){
         return{
             myCart: [],
-            totalCartPrice
+            totalCartPrice: [],
+            shared,
         }
     },
     created(){
        this.myCart = JSON.parse(localStorage.getItem('prodotto'))
+        console.log(JSON.parse(localStorage.getItem('prodotto')).length)
+       
+        
+    },
+  
+    methods: {
+      
+        deleteItem(id){
+         
+            console.log(id)
+            //elimino un elemento dall'array myCart
+            this.myCart.splice(id,1); 
+            // assegno nuovamente l'array allo storage 
+            localStorage.setItem('prodotto', JSON.stringify(this.myCart))
+            console.log(localStorage.length);
+        
+        }
 
-        let sum = 0;
+    },
+
+    computed: {
+        sum(){
+             let sum = 0;
         this.myCart.forEach(elm => {
                 // console.log(elm.price);
                 sum += elm.price
         })
+       
+        // console.log(this.myCart)
+        return this.shared.totalCartPrice = sum.toFixed(2)
 
-       this.totalCartPrice = sum
-        
-    },
-    methods: {
-        // totalCartPrice(){
-        //     myCart.array.forEach(elm => {
-        //         console.log(elm)
-        //     });
-        // },
-        // removeItem(x) {
-        //     this.myCart.splice(x, 1);
-        // },  
-        deleteItem(item){
-        //     console.log(item)
-        //     localStorage.removeItem('prodotto', JSON.stringify(item))
-        //     this.myCart.splice()
-        //     localStorage.setItem('questions', JSON.stringify(questions)); 
-        // }
+        },
+
     }
-}
 }
 </script>
 

@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import shared from '../shared'
 export default {
     name: 'SingleRestaurant',
     data() {
@@ -43,6 +44,7 @@ export default {
             items: [],
             user:[],
             virtualCart:[],
+            shared,
         }
     },
     created() {
@@ -65,11 +67,17 @@ export default {
     // },
     methods: {
         addToCart(item){
-            this.virtualCart.push(item)
-            localStorage.setItem('prodotto', JSON.stringify(this.virtualCart))
-            console.log(JSON.parse(localStorage.getItem('prodotto')))
+            this.virtualCart.push(item);
+            localStorage.setItem('prodotto', JSON.stringify(this.virtualCart));
+            console.log(JSON.parse(localStorage.getItem('prodotto')));
         }
+    },
+
+    computed:{
+       
     }
+
+    
 }
 </script>
 

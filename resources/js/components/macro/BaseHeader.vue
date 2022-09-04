@@ -10,6 +10,7 @@
                     <!-- nav accedi lingua -->
                     <div class="cart">
                         <a href="/check-out" class="link-default cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <span class="items-count"><strong>{{shared.count}}</strong></span>
                     </div>
                 </div>
             </div>
@@ -20,9 +21,21 @@
 <script>
 
 import HeroSection from '../sections/HeroSection.vue';
+import shared from '../../shared'
 
 export default {
     name: 'BaseHeader',
+    data(){
+        return{
+            shared,
+        }
+    },
+    computed: {
+         count(){
+            
+            return shared.count = JSON.parse(localStorage.getItem('prodotto')).length;
+        }
+    }
 }
 
 </script>
@@ -38,7 +51,23 @@ export default {
             }
 
             .cart{
-                font-size: 1.25rem;
+                position:relative;
+                font-size: 1.5rem;
+                .items-count{
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    top: -7px;
+                    right: -12px;
+                    color: black;
+                    background-color: white;
+                    width: 1.25rem;
+                    height: 1.25rem;
+                    border-radius: 30px;
+                    font-size: .9375rem;
+                    
+                }
             }
 
             
