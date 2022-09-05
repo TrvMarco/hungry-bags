@@ -45,6 +45,7 @@ export default {
             font-size: 16px;
             align-items: center;
             height: 50px;
+            margin: 25px 0px 0px 0px;
 
             .flag-container {
                 background: #eee1b3;
@@ -89,7 +90,8 @@ export default {
 
                     .position-icon {
                         color: black;
-                        margin: 0px 5px 0px 0px;
+                        margin: 0px 8px 0px 0px;
+                        font-size: 20px;
                     }
 
                     .position-text {
