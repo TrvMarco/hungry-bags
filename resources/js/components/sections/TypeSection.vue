@@ -7,16 +7,19 @@
         <div>
             <div class="row">
                 <!-- <form @submit.prevent="chooseType()"> -->
-                    <div v-for="type in firstTypes" :key="type.id">
-                        <div class="col-2 d-flex">
-                            <div class="type_box">
-                                <div class="box_img">
-                                    <!-- <img src="https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg" alt=""> -->
-                                     <router-link :to="{ name: 'restaurant-list', params: {type: type.name} }">{{type.name}}</router-link>
+                    <div v-if="types.length > 0">
+                        <div v-for="type in firstTypes" :key="type.id">
+                            <div class="col-2 d-flex">
+                                <div class="type_box">
+                                    <div class="box_img">
+                                        <!-- <img src="https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg" alt=""> -->
+                                        <router-link :to="{ name: 'restaurant-list', params: {type: type.name} }">{{type.name}}</router-link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                     <!-- <button type="submit">Cerca</button> -->
                 <!-- </form> -->
             </div>
