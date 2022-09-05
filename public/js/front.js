@@ -2061,14 +2061,15 @@ __webpack_require__.r(__webpack_exports__);
     this.myCart = JSON.parse(localStorage.getItem('prodotto'));
     console.log(JSON.parse(localStorage.getItem('prodotto')).length);
   },
-  methods: {// deleteItem(id){
-    //     console.log(id)
-    //     //elimino un elemento dall'array myCart
-    //     this.myCart.splice(id,1); 
-    //     // assegno nuovamente l'array allo storage 
-    //     localStorage.setItem('prodotto', JSON.stringify(this.myCart))
-    //     console.log(localStorage.length);
-    // }
+  methods: {
+    deleteItem: function deleteItem(id) {
+      console.log(id); //elimino un elemento dall'array myCart
+
+      this.myCart.splice(id, 1); // assegno nuovamente l'array allo storage 
+
+      localStorage.setItem('prodotto', JSON.stringify(this.myCart));
+      console.log(localStorage.length);
+    }
   },
   computed: {
     sum: function sum() {
@@ -2451,9 +2452,9 @@ var render = function render() {
     staticClass: "type py-5"
   }, [_c("div", {
     staticClass: "container"
-  }, [_vm._m(0), _vm._v(" "), _c("div", [_c("div", {
+  }, [_vm._m(0), _vm._v(" "), _c("div", [_vm.types.length > 0 ? _c("div", [_c("div", {
     staticClass: "row"
-  }, [_vm.types.length > 0 ? _c("div", _vm._l(_vm.firstTypes, function (type) {
+  }, _vm._l(_vm.firstTypes, function (type) {
     return _c("div", {
       key: type.id
     }, [_c("div", {
@@ -2472,7 +2473,7 @@ var render = function render() {
         }
       }
     }, [_vm._v(_vm._s(type.name))])], 1)])])]);
-  }), 0) : _vm._e()])])])]);
+  }), 0)]) : _vm._e()])])]);
 };
 
 var staticRenderFns = [function () {

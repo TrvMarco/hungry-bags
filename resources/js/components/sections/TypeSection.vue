@@ -5,9 +5,9 @@
             <h3>Le scelte più appetitose</h3>
         </div>
         <div>
-            <div class="row">
+            <div v-if="types.length > 0">
                 <!-- <form @submit.prevent="chooseType()"> -->
-                    <div v-if="types.length > 0">
+                    <div class="row">
                         <div v-for="type in firstTypes" :key="type.id">
                             <div class="col-2 d-flex">
                                 <div class="type_box">
