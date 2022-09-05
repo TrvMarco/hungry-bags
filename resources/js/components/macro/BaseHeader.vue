@@ -35,8 +35,9 @@ export default {
   
     computed: {
          count(){
-            
-            return shared.count = JSON.parse(localStorage.getItem('prodotto')).length;
+            if(JSON.parse(localStorage.getItem('prodotto')) != null){
+                return shared.count = JSON.parse(localStorage.getItem('prodotto')).length;
+            }
         }
     }
 }
