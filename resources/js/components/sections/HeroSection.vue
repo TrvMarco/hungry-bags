@@ -5,7 +5,7 @@
                 <div class="col-6">
                     <img class="img-fluid" src="https://wallpaperaccess.com/full/386420.jpg" alt="">
                 </div>
-                <div class="col-6 p-5">
+                <div class="col-12 col-md-6 p-5">
                     <h2>Hai fame?<br>
                     Su HungryBags puoi ordinare tutto il cibo che vuoi con consegna a domicilio!</h2>
                     <div class="input-container">
@@ -37,6 +37,11 @@ export default {
 <style lang="scss" scoped>
     .hero{
         background-color: #111214;
+
+        img{
+            box-shadow: 0px 0px 10px #000;
+            // box-shadow: inset 0px 0px 50px 23px #000000;
+        }
 
         .input-container {
             display: flex;

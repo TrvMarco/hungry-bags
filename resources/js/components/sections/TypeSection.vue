@@ -1,13 +1,13 @@
 <template>
   <section class="type py-5"> 
     <div class="container">
-        <div class="row pb-3">
+        <div class="row pb-3 justify-content-center">
             <h3>Le scelte più appetitose</h3>
         </div>
         <div>
             <div v-if="types.length > 0">
                 <!-- <form @submit.prevent="chooseType()"> -->
-                    <div class="row">
+                    <div class="row justify-content-center">
                         <div v-for="type in firstTypes" :key="type.id">
                             <div class="col-2 d-flex">
                                 <div class="type_box transform">
