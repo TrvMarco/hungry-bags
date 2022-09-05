@@ -10,7 +10,7 @@
                     <!-- nav accedi lingua -->
                     <div class="cart">
                         <a href="/check-out" class="link-default cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                        <span class="items-count"><strong>{{shared.count}}</strong></span>
+                        <span class="items-count"><strong>{{count}}</strong></span>
                     </div>
                 </div>
             </div>
@@ -30,6 +30,7 @@ export default {
             shared,
         }
     },
+  
     computed: {
          count(){
             
@@ -47,7 +48,7 @@ export default {
 
             .link-default{
                 text-decoration: none;
-                color: white;
+                color: #fff
             }
 
             .cart{
@@ -60,8 +61,8 @@ export default {
                     align-items: center;
                     top: -7px;
                     right: -12px;
-                    color: black;
-                    background-color: white;
+                    color: #fff;
+                    background-color: rgb(161, 9, 9);
                     width: 1.25rem;
                     height: 1.25rem;
                     border-radius: 30px;
