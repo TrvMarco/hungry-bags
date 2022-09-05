@@ -68,7 +68,7 @@ export default {
 }
 </script>
 
-<style lang='scss' scss>
+<style lang='scss' scoped>
 footer{
     background-color: #111214;
     color: white;
