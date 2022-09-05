@@ -2068,7 +2068,10 @@ __webpack_require__.r(__webpack_exports__);
       this.myCart.splice(id, 1); // assegno nuovamente l'array allo storage 
 
       localStorage.setItem('prodotto', JSON.stringify(this.myCart));
-    }
+    } // addDataClient() {
+    //     axios.post()
+    // }
+
   },
   computed: {
     sum: function sum() {
@@ -2253,10 +2256,17 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("footer");
+  return _vm._m(0);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("footer", {
+    staticClass: "p-4"
+  }, [_c("h1", [_vm._v("footersss")])]);
+}];
 render._withStripped = true;
 
 
@@ -2458,9 +2468,9 @@ var render = function render() {
     staticClass: "type py-5"
   }, [_c("div", {
     staticClass: "container"
-  }, [_vm._m(0), _vm._v(" "), _c("div", [_c("div", {
+  }, [_vm._m(0), _vm._v(" "), _c("div", [_vm.types.length > 0 ? _c("div", [_c("div", {
     staticClass: "row"
-  }, [_vm.types.length > 0 ? _c("div", _vm._l(_vm.firstTypes, function (type) {
+  }, _vm._l(_vm.firstTypes, function (type) {
     return _c("div", {
       key: type.id
     }, [_c("div", {
@@ -2479,7 +2489,7 @@ var render = function render() {
         }
       }
     }, [_vm._v(_vm._s(type.name))])], 1)])])]);
-  }), 0) : _vm._e()])])])]);
+  }), 0)]) : _vm._e()])])]);
 };
 
 var staticRenderFns = [function () {
@@ -2574,7 +2584,24 @@ var render = function render() {
       value: _vm.totalCartPrice,
       expression: "totalCartPrice"
     }]
-  }, [_vm._v(_vm._s(_vm.sum) + "€")])])])])])])]);
+  }, [_vm._v(_vm._s(_vm.sum) + "€")])])]), _vm._v(" "), _c("div", {
+    staticClass: "menu_item_box p-2 mt-3"
+  }, [_c("h4", {
+    staticClass: "text-center pt-2"
+  }, [_vm._v("Inserisci i tuoi dati")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("form", {
+    staticClass: "px-4",
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.addDataClient();
+      }
+    }
+  }, [_vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-success",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Checkout")])])])])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -2586,6 +2613,83 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "col-12 text-center"
   }, [_c("h1", [_vm._v("Completa il tuo ordine!")])])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "form-row"
+  }, [_c("div", {
+    staticClass: "form-group col-md-6"
+  }, [_c("label", {
+    attrs: {
+      "for": "client_name"
+    }
+  }, [_vm._v("Nome *")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "client_name",
+      name: "client_name",
+      placeholder: "Inserisci il tuo nome",
+      required: ""
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group col-md-6"
+  }, [_c("label", {
+    attrs: {
+      "for": "client_surname"
+    }
+  }, [_vm._v("Cognome *")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "client_surname",
+      name: "client_surname",
+      placeholder: "Inserisci il tuo cognome",
+      required: ""
+    }
+  })])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    attrs: {
+      "for": "inputAddress"
+    }
+  }, [_vm._v("Indirizzo di consegna *")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "inputAddress",
+      placeholder: "es: Milano, Via Roma 23",
+      name: "address",
+      required: ""
+    }
+  })]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    attrs: {
+      "for": "phone"
+    }
+  }, [_vm._v("Numero di telefono *")]), _vm._v(" "), _c("input", {
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "phone",
+      placeholder: "+39 ...",
+      name: "phone",
+      required: ""
+    }
+  })]);
 }];
 render._withStripped = true;
 
@@ -2832,7 +2936,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "header .container-fluid[data-v-8a2cb668] {\n  background-color: #111214;\n}\nheader .container-fluid .link-default[data-v-8a2cb668] {\n  text-decoration: none;\n  color: white;\n}\nheader .container-fluid .cart[data-v-8a2cb668] {\n  position: relative;\n  font-size: 1.5rem;\n}\nheader .container-fluid .cart .items-count[data-v-8a2cb668] {\n  position: absolute;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  top: -7px;\n  right: -12px;\n  color: black;\n  background-color: white;\n  width: 1.25rem;\n  height: 1.25rem;\n  border-radius: 30px;\n  font-size: 0.9375rem;\n}", ""]);
+exports.push([module.i, "header .container-fluid[data-v-8a2cb668] {\n  background-color: #111214;\n}\nheader .container-fluid .link-default[data-v-8a2cb668] {\n  text-decoration: none;\n  color: #fff;\n}\nheader .container-fluid .cart[data-v-8a2cb668] {\n  position: relative;\n  font-size: 1.5rem;\n}\nheader .container-fluid .cart .items-count[data-v-8a2cb668] {\n  position: absolute;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  top: -7px;\n  right: -12px;\n  color: #fff;\n  background-color: rgb(161, 9, 9);\n  width: 1.25rem;\n  height: 1.25rem;\n  border-radius: 30px;\n  font-size: 0.9375rem;\n}", ""]);
 
 // exports
 

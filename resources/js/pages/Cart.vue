@@ -28,6 +28,7 @@
 
             <!-- BOX TOTALE -->
             <div class="col-12 col-lg-6">
+                <!-- CONFERMA ORDINE -->
                 <div class="menu_item_box p-2">
                     <h4 class="text-center pt-2">Confrema ordine:</h4>
                     <hr>
@@ -42,6 +43,33 @@
                         <h5 class="text-uppercase">Totale</h5>
                         <span v-show="totalCartPrice">{{sum}}&#8364;</span>
                     </div>
+                </div>
+
+                <!-- DATI CLIENTE -->
+                <div class="menu_item_box p-2 mt-3">
+                    <h4 class="text-center pt-2">Inserisci i tuoi dati</h4>
+                    <hr>
+                    <form class="px-4" @submit.prevent="addDataClient()">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="client_name">Nome *</label>
+                                <input type="text" class="form-control" id="client_name" name="client_name" placeholder="Inserisci il tuo nome" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="client_surname">Cognome *</label>
+                                <input type="text" class="form-control" id="client_surname" name="client_surname" placeholder="Inserisci il tuo cognome" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Indirizzo di consegna *</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="es: Milano, Via Roma 23" name="address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Numero di telefono *</label>
+                            <input type="text" class="form-control" id="phone" placeholder="+39 ..." name="phone" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Checkout</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -78,7 +106,11 @@ export default {
             localStorage.setItem('prodotto', JSON.stringify(this.myCart))
            
         
-        }
+        },
+
+        // addDataClient() {
+        //     axios.post()
+        // }
 
     },
 
