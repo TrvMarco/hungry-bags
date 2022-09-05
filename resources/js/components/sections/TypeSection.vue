@@ -10,16 +10,15 @@
                     <div class="row">
                         <div v-for="type in firstTypes" :key="type.id">
                             <div class="col-2 d-flex">
-                                <div class="type_box">
+                                <div class="type_box transform">
                                     <div class="box_img">
                                         <!-- <img src="https://cdn.ilclubdellericette.it/wp-content/uploads/2018/02/ricetta-hamburger-640x480.jpg" alt=""> -->
-                                        <router-link :to="{ name: 'restaurant-list', params: {type: type.name} }">{{type.name}}</router-link>
+                                        <router-link class="link-text" :to="{ name: 'restaurant-list', params: {type: type.name} }">{{type.name}}</router-link>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
                     <!-- <button type="submit">Cerca</button> -->
                 <!-- </form> -->
             </div>
@@ -67,15 +66,31 @@ export default {
 
 <style lang="scss" scoped>
     .type_box{
-        .box_img{
-            height: 6.25rem;
-            width: 6.25rem;
-        }
+        background: #eee1b3;
+        border-radius: 30px;
+        transition: all 0.3s;
 
+        .box_img{
+            min-height: 35px;
+            min-width: 50px;
+            padding: 0px 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+        }
         img{
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+        .link-text {
+            text-decoration:none;
+            color: black; 
+        }
+    }
+     .type_box:hover {
+        transform: scale(1.08);
     }
 </style>
