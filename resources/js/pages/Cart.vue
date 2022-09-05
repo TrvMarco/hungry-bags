@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div :v-if="myCart.length > 0" class="container pb-5">
+    <div v-if="myCart.length > 0" class="container pb-5">
         <div class="row p-4">
             <div class="col-12 text-center">
                 <h1>Completa il tuo ordine!</h1>
@@ -73,6 +73,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div v-else class="col-12 text-center p-5">
+        <h1>Il carrello è vuoto!</h1>
     </div>
   </main>
 </template>

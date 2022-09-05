@@ -2520,11 +2520,8 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("main", [_c("div", {
-    staticClass: "container pb-5",
-    attrs: {
-      "v-if": _vm.myCart.length > 0
-    }
+  return _c("main", [_vm.myCart.length > 0 ? _c("div", {
+    staticClass: "container pb-5"
   }, [_vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "d-flex row"
   }, [_c("div", {
@@ -2601,7 +2598,9 @@ var render = function render() {
     attrs: {
       type: "submit"
     }
-  }, [_vm._v("Checkout")])])])])])])]);
+  }, [_vm._v("Checkout")])])])])])]) : _c("div", {
+    staticClass: "col-12 text-center p-5"
+  }, [_c("h1", [_vm._v("Il carrello è vuoto!")])])]);
 };
 
 var staticRenderFns = [function () {
@@ -20673,7 +20672,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Giuseppe\Desktop\BOOLEAN\ESERCIZI\PHP\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Progetti Boolean\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
