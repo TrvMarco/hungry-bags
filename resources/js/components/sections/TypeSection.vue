@@ -66,7 +66,7 @@ export default {
 
 <style lang="scss" scoped>
     .type_box{
-        background: pink;
+        background: #eee1b3;
         display: flex;
         border-radius: 30px;
 
