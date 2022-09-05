@@ -18,7 +18,7 @@
                         <div class="position-container">
                             <div class="position">
                                 <i class="fa-solid fa-location-dot position-icon"></i>
-                                <span class="position-text">Inserisci la tua posizione</span>
+                                <span class="position-text">Posizione attuale</span>
                             </div>
                         </div>
                     </div>
