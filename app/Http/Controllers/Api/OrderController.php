@@ -10,14 +10,13 @@ class OrderController extends Controller
 {
     public function store(Request $request)
     {
-
-
-        // $request->validate([
-        //     'client_name' => 'required|string|max:255',
-        //     'client_surname' => 'required|string|max;255',
-        //     'address' => 'required|string|',
-        //     'phone' => 'required|numeric,'
-        // ]);
+        $request->validate([
+            'client_name' => 'required|string',
+            'client_surname' => 'required|string',
+            'address' => 'required|string',
+            'phone' => 'required|numeric',
+            'total_price' => 'between:0,500.00'
+        ]);
 
         $data = $request->all();
 

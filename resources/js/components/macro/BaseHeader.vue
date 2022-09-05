@@ -6,8 +6,10 @@
                     <!-- Qui andrà img e logo -->
                     <a href="/" class="link-default"><h1>HungryBags</h1></a>
                 </div>
-                <div class="col-6 d-flex justify-content-end">
-                    <!-- nav accedi lingua -->
+                <div class="col-6 d-flex justify-content-end align-items-center">
+                    <div class="mr-3">
+                        <a href="/login" class="btn btn-sm reserved_area">Area Ristoratore</a>
+                    </div>
                     <div class="cart">
                         <a href="/check-out" class="link-default cart"><i class="fa-solid fa-cart-shopping"></i></a>
                         <span class="items-count"><strong>{{count}}</strong></span>
@@ -48,7 +50,7 @@ export default {
 
             .link-default{
                 text-decoration: none;
-                color: #fff
+                color: #eee1b3
             }
 
             .cart{
@@ -71,7 +73,10 @@ export default {
                 }
             }
 
-            
+            .reserved_area{
+                background-color: #eee1b3;
+                color: #111214;
+            }
            
         }
     }
