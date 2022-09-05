@@ -52,8 +52,8 @@
                 <div class="form-group mb-4">
                     <label for="image">Immagine:</label>
                     @if ($item->image)
-                    <div>
-                        <img src="{{asset("storage/{$item->image}")}}" alt="immagine">
+                    <div class="py-3">
+                        <img class="img-fluid edit_img" src="{{asset("storage/{$item->image}")}}" alt="immagine">
                     </div>
                 @endif
                     <input type="file" accept=".png,.jpeg,.jpg" class="form-control-file @error('image') is-invalid @enderror" id="image" name="image" value="{{old('image')}}">

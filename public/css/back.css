@@ -11038,6 +11038,10 @@ main {
   text-transform: uppercase;
 }
 
+.edit_img {
+  max-width: 25rem;
+}
+
 .bags-blue {
   width: 1.875rem;
 }
