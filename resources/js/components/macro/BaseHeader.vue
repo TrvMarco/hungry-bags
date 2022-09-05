@@ -10,7 +10,7 @@
                     <!-- nav accedi lingua -->
                     <div class="cart">
                         <a href="/check-out" class="link-default cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                        <span class="items-count"><strong>{{shared.count}}</strong></span>
+                        <span class="items-count"><strong>{{count}}</strong></span>
                     </div>
                 </div>
             </div>
@@ -30,6 +30,7 @@ export default {
             shared,
         }
     },
+  
     computed: {
          count(){
             

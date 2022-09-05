@@ -57,7 +57,6 @@ export default {
         })
     //    console.log(JSON.parse(localStorage.getItem('prodotto')).length)
          if(this.virtualCart.length === 0 && JSON.parse(localStorage.getItem('prodotto')) != null ){
-                console.log('ci sei riuscito trimone a vento')
                 this.virtualCart = JSON.parse(localStorage.getItem('prodotto'));
             }
         // if(JSON.parse(localStorage.getItem('prodotto')) != null){
@@ -77,10 +76,11 @@ export default {
     },
     methods: {
         addToCart(item){
+            this.shared.count ++;
             this.virtualCart.push(item);
             localStorage.setItem('prodotto', JSON.stringify(this.virtualCart));
             console.log(JSON.parse(localStorage.getItem('prodotto')));
-            // this.shared.count = JSON.parse(localStorage.getItem('prodotto')).length;
+            
             
         }
     
