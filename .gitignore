@@ -36,3 +36,5 @@ resources/js/pages/Cart.vue
 public/js/front.js
 public/js/front.js
 public/js/front.js
+public/js/app.js
+.gitignore
