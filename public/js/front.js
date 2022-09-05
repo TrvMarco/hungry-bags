@@ -2054,7 +2054,15 @@ __webpack_require__.r(__webpack_exports__);
     return {
       myCart: [],
       totalCartPrice: [],
-      shared: _shared__WEBPACK_IMPORTED_MODULE_0__["default"]
+      price: null,
+      shared: _shared__WEBPACK_IMPORTED_MODULE_0__["default"],
+      Dataclient: {
+        client_name: '',
+        client_surname: '',
+        address: '',
+        phone: '',
+        total_price: this.price
+      }
     };
   },
   created: function created() {
@@ -2068,10 +2076,20 @@ __webpack_require__.r(__webpack_exports__);
       this.myCart.splice(id, 1); // assegno nuovamente l'array allo storage 
 
       localStorage.setItem('prodotto', JSON.stringify(this.myCart));
-    } // addDataClient() {
-    //     axios.post()
-    // }
+    },
+    addDataClient: function addDataClient() {
+      var _this = this;
 
+      this.price = this.sum;
+      axios.post('/api/orders', this.Dataclient).then(function (resp) {
+        _this.Dataclient.client_name = '';
+        _this.Dataclient.client_surname = '';
+        _this.Dataclient.address = '';
+        _this.Dataclient.phone = '';
+      })["catch"](function (er) {
+        console.log(er);
+      });
+    }
   },
   computed: {
     sum: function sum() {
@@ -2581,7 +2599,137 @@ var render = function render() {
       value: _vm.totalCartPrice,
       expression: "totalCartPrice"
     }]
-  }, [_vm._v(_vm._s(_vm.sum) + "€")])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v(_vm._s(_vm.sum) + "€")])])]), _vm._v("\n<<<<<<< HEAD\n            ")]), _vm._v(" "), _c("div", [_c("form", {
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.addDataClient();
+      }
+    }
+  }, [_c("div", {
+    staticClass: "form-row"
+  }, [_c("div", {
+    staticClass: "form-group col-md-6"
+  }, [_c("label", {
+    attrs: {
+      "for": "client_name"
+    }
+  }, [_vm._v("Nome")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.Dataclient.client_name,
+      expression: "Dataclient.client_name"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "client_name",
+      name: "client_name"
+    },
+    domProps: {
+      value: _vm.Dataclient.client_name
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.Dataclient, "client_name", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group col-md-6"
+  }, [_c("label", {
+    attrs: {
+      "for": "client_surname"
+    }
+  }, [_vm._v("Cognome")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.Dataclient.client_surname,
+      expression: "Dataclient.client_surname"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "client_surname",
+      name: "client_surname"
+    },
+    domProps: {
+      value: _vm.Dataclient.client_surname
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.Dataclient, "client_surname", $event.target.value);
+      }
+    }
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    attrs: {
+      "for": "inputAddress"
+    }
+  }, [_vm._v("Address")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.Dataclient.address,
+      expression: "Dataclient.address"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "inputAddress",
+      name: "address"
+    },
+    domProps: {
+      value: _vm.Dataclient.address
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.Dataclient, "address", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    attrs: {
+      "for": "phone"
+    }
+  }, [_vm._v("Numero di telefono")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.Dataclient.phone,
+      expression: "Dataclient.phone"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "phone",
+      name: "phone"
+    },
+    domProps: {
+      value: _vm.Dataclient.phone
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.Dataclient, "phone", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-primary",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Checkout")])]), _vm._v("\n=======\n\n                "), _vm._v(" "), _c("div", {
     staticClass: "menu_item_box p-2 mt-3"
   }, [_c("h4", {
     staticClass: "text-center pt-2"
@@ -2598,7 +2746,7 @@ var render = function render() {
     attrs: {
       type: "submit"
     }
-  }, [_vm._v("Checkout")])])])])])]) : _c("div", {
+  }, [_vm._v("Checkout")])])]), _vm._v("\n>>>>>>> 1ae98b7d5034c1045c5979660d4c563f77dc231a\n            ")])])]) : _c("div", {
     staticClass: "col-12 text-center p-5"
   }, [_c("h1", [_vm._v("Il carrello è vuoto!")])])]);
 };
@@ -20573,7 +20721,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 __webpack_require__.r(__webpack_exports__);
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony default export */ __webpack_exports__["default"] = (Vue.observable({
-  totalCartPrice: [],
+  totalCartPrice: 0,
   myCart: [],
   count: 0
 }));
@@ -20674,7 +20822,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Giuseppe\Desktop\BOOLEAN\ESERCIZI\PHP\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\valen\Desktop\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

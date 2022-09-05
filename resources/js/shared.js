@@ -2,7 +2,7 @@ window.Vue = require('vue');
 
 
 export default Vue.observable({
-    totalCartPrice: [],
+    totalCartPrice: 0,
     myCart: [],
     count: 0,
 });
