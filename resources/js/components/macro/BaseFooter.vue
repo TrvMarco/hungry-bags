@@ -51,22 +51,23 @@
         </div>
         <div class="lingua-select row">
           <label for="lingua">Scegli una lingua</label>
-            <select name="lingua" id="lingua">
-              <option value="italiano">Italiano <i class="flag flag-italy"></i></option>
-              <option value="inglese">Inglese <i class="flag flag-united-kingdom"></i></option>
-              <option value="spagnolo">Spagnolo <i class="flag flag-spain"></i></option>
-              <option value="tedesco">Tedesco <i class="flag flag-germany"></i></option>
+            <select onchange="document.getElementById('preview').src = this.value" placeholder="Lingua">
+              <option value="https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg">Italiano</option>
+              <option value="https://upload.wikimedia.org/wikipedia/commons/4/42/Flag_of_the_United_Kingdom.png">Inglese </option>
+              <option value="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg">Spagnolo </option>
+              <option value="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg">Tedesco</option>
             </select>
+            <img id="preview" height="30px">
         </div>
         </div>
-        
     </footer>
+   
 </template>
 
 <script>
 export default {
     name: 'BaseFooter'
-}
+};
 </script>
 
 <style lang='scss' scoped>
@@ -200,6 +201,11 @@ a:hover::before {
 .social{
     display: flex;
     justify-content: flex-end;
+}
+
+.flag{
+  width: 1.875rem;
+  height: 1.25rem;
 }
 
 
