@@ -103,8 +103,8 @@ export default {
             //elimino un elemento dall'array myCart
             this.myCart.splice(id,1); 
             // assegno nuovamente l'array allo storage 
-            // localStorage.setItem('prodotto', JSON.stringify(this.myCart))
-            console.log(localStorage.length);
+            localStorage.setItem('prodotto', JSON.stringify(this.myCart))
+           
         
         },
 
