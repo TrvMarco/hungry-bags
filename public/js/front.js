@@ -2188,7 +2188,6 @@ __webpack_require__.r(__webpack_exports__);
     }); //    console.log(JSON.parse(localStorage.getItem('prodotto')).length)
 
     if (this.virtualCart.length === 0 && JSON.parse(localStorage.getItem('prodotto')) != null) {
-      console.log('ci sei riuscito trimone a vento');
       this.virtualCart = JSON.parse(localStorage.getItem('prodotto'));
     } // if(JSON.parse(localStorage.getItem('prodotto')) != null){
     //     console.log('ok');
@@ -2198,9 +2197,10 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {},
   methods: {
     addToCart: function addToCart(item) {
+      this.shared.count++;
       this.virtualCart.push(item);
       localStorage.setItem('prodotto', JSON.stringify(this.virtualCart));
-      console.log(JSON.parse(localStorage.getItem('prodotto'))); // this.shared.count = JSON.parse(localStorage.getItem('prodotto')).length;
+      console.log(JSON.parse(localStorage.getItem('prodotto')));
     }
   },
   computed: {}
@@ -2297,7 +2297,7 @@ var render = function render() {
     staticClass: "cart"
   }, [_vm._m(1), _vm._v(" "), _c("span", {
     staticClass: "items-count"
-  }, [_c("strong", [_vm._v(_vm._s(_vm.shared.count))])])])])])])]);
+  }, [_c("strong", [_vm._v(_vm._s(_vm.count))])])])])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -20672,7 +20672,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Progetti Boolean\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Giuseppe\Desktop\BOOLEAN\ESERCIZI\PHP\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
