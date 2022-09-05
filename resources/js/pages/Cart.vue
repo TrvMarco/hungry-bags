@@ -50,21 +50,25 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="client_name">Nome</label>
-                            <input type="text" class="form-control" id="client_name" name="client_name">
+                            <input type="text" class="form-control" id="client_name" name="client_name" v-model="Dataclient.client_name">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="client_surname">Cognome</label>
-                            <input type="text" class="form-control" id="client_surname" name="client_surname">
+                            <input type="text" class="form-control" id="client_surname" name="client_surname" v-model="Dataclient.client_surname">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputAddress">Address</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address">
+                        <input type="text" class="form-control" id="inputAddress" name="address" v-model="Dataclient.address">
                     </div>
                     <div class="form-group">
-                        <label for="phone">Address</label>
-                        <input type="text" class="form-control" id="phone" placeholder="1234 Main St" name="phone">
+                        <label for="phone">Numero di telefono</label>
+                        <input type="text" class="form-control" id="phone" name="phone" v-model="Dataclient.phone">
                     </div>
+                    <!-- <div class="form-group">
+                        <label for="total_price">Totale prezzo</label>
+                        <input name= "total_price" id="total_price" v-model="Dataclient.total_price" >
+                    </div> -->
                     <button type="submit" class="btn btn-primary">Checkout</button>
                 </form>
             </div>
@@ -81,7 +85,15 @@ export default {
         return{
             myCart: [],
             totalCartPrice: [],
+            price: null,
             shared,
+            Dataclient: {
+                client_name: '',
+                client_surname: '',
+                address: '',
+                phone: '',
+                total_price: this.price,
+            }
         }
     },
     created(){
@@ -104,9 +116,19 @@ export default {
         
         },
 
-        // addDataClient() {
-        //     axios.post()
-        // }
+        addDataClient() {
+            this.price = this.sum;
+            axios.post('/api/orders', this.Dataclient)
+            .then((resp) => {
+                this.Dataclient.client_name = '';
+                this.Dataclient.client_surname = '';
+                this.Dataclient.address = '';
+                this.Dataclient.phone = '';
+            })
+            .catch((er) => {
+                console.log(er);
+            })
+        }
 
     },
 
@@ -117,7 +139,7 @@ export default {
                 // console.log(elm.price);
                 sum += elm.price
         })
-       
+        
         // console.log(this.myCart)
         return this.shared.totalCartPrice = sum.toFixed(2)
 

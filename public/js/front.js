@@ -2054,7 +2054,15 @@ __webpack_require__.r(__webpack_exports__);
     return {
       myCart: [],
       totalCartPrice: [],
-      shared: _shared__WEBPACK_IMPORTED_MODULE_0__["default"]
+      price: null,
+      shared: _shared__WEBPACK_IMPORTED_MODULE_0__["default"],
+      Dataclient: {
+        client_name: '',
+        client_surname: '',
+        address: '',
+        phone: '',
+        total_price: this.price
+      }
     };
   },
   created: function created() {
@@ -2069,10 +2077,20 @@ __webpack_require__.r(__webpack_exports__);
       // localStorage.setItem('prodotto', JSON.stringify(this.myCart))
 
       console.log(localStorage.length);
-    } // addDataClient() {
-    //     axios.post()
-    // }
+    },
+    addDataClient: function addDataClient() {
+      var _this = this;
 
+      this.price = this.sum;
+      axios.post('/api/orders', this.Dataclient).then(function (resp) {
+        _this.Dataclient.client_name = '';
+        _this.Dataclient.client_surname = '';
+        _this.Dataclient.address = '';
+        _this.Dataclient.phone = '';
+      })["catch"](function (er) {
+        console.log(er);
+      });
+    }
   },
   computed: {
     sum: function sum() {
@@ -2585,7 +2603,127 @@ var render = function render() {
         return _vm.addDataClient();
       }
     }
-  }, [_vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _c("button", {
+  }, [_c("div", {
+    staticClass: "form-row"
+  }, [_c("div", {
+    staticClass: "form-group col-md-6"
+  }, [_c("label", {
+    attrs: {
+      "for": "client_name"
+    }
+  }, [_vm._v("Nome")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.Dataclient.client_name,
+      expression: "Dataclient.client_name"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "client_name",
+      name: "client_name"
+    },
+    domProps: {
+      value: _vm.Dataclient.client_name
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.Dataclient, "client_name", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group col-md-6"
+  }, [_c("label", {
+    attrs: {
+      "for": "client_surname"
+    }
+  }, [_vm._v("Cognome")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.Dataclient.client_surname,
+      expression: "Dataclient.client_surname"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "client_surname",
+      name: "client_surname"
+    },
+    domProps: {
+      value: _vm.Dataclient.client_surname
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.Dataclient, "client_surname", $event.target.value);
+      }
+    }
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    attrs: {
+      "for": "inputAddress"
+    }
+  }, [_vm._v("Address")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.Dataclient.address,
+      expression: "Dataclient.address"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "inputAddress",
+      placeholder: "1234 Main St",
+      name: "address"
+    },
+    domProps: {
+      value: _vm.Dataclient.address
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.Dataclient, "address", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    attrs: {
+      "for": "phone"
+    }
+  }, [_vm._v("Address")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.Dataclient.phone,
+      expression: "Dataclient.phone"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "phone",
+      placeholder: "1234 Main St",
+      name: "phone"
+    },
+    domProps: {
+      value: _vm.Dataclient.phone
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.Dataclient, "phone", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-primary",
     attrs: {
       type: "submit"
@@ -2602,77 +2740,6 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "col-12 text-center"
   }, [_c("h1", [_vm._v("Completa il tuo ordine!")])])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-row"
-  }, [_c("div", {
-    staticClass: "form-group col-md-6"
-  }, [_c("label", {
-    attrs: {
-      "for": "client_name"
-    }
-  }, [_vm._v("Nome")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "client_name",
-      name: "client_name"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group col-md-6"
-  }, [_c("label", {
-    attrs: {
-      "for": "client_surname"
-    }
-  }, [_vm._v("Cognome")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "client_surname",
-      name: "client_surname"
-    }
-  })])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-group"
-  }, [_c("label", {
-    attrs: {
-      "for": "inputAddress"
-    }
-  }, [_vm._v("Address")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "inputAddress",
-      placeholder: "1234 Main St",
-      name: "address"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-group"
-  }, [_c("label", {
-    attrs: {
-      "for": "phone"
-    }
-  }, [_vm._v("Address")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "phone",
-      placeholder: "1234 Main St",
-      name: "phone"
-    }
-  })]);
 }];
 render._withStripped = true;
 
@@ -20552,7 +20619,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 __webpack_require__.r(__webpack_exports__);
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony default export */ __webpack_exports__["default"] = (Vue.observable({
-  totalCartPrice: [],
+  totalCartPrice: 0,
   myCart: [],
   count: 0
 }));
