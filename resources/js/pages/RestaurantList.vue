@@ -11,7 +11,7 @@
                 <div class="restaurant_card">
                     <router-link class="router_link" :to="{ name: 'single-restaurant', params: { user: restaurant.name} }">
                         <div class="restaurant_name">
-                            <h1>{{restaurant.name}}</h1>
+                            <h1 class="restaurant_title text-center">{{restaurant.name}}</h1>
                         </div>
                         <img class="img-fluid" :src="`../storage/${restaurant.image}`" alt="">
                     </router-link>
@@ -46,7 +46,7 @@ export default {
         // border: 1px solid black;
         overflow: hidden;
         position: relative;
-        border-radius: 10px;
+        border-radius: .625rem;
 
         &:hover{
             img{
@@ -72,9 +72,12 @@ export default {
         color: inherit;
 
         h1{
+            // background-color: rgba($color: #000000, $alpha: 0.3);
             text-decoration: none;
             color: #fff;
             text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            border-radius: .625rem;
+            // padding: .3125rem;
         }
     }
 

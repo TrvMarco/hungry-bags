@@ -2803,7 +2803,9 @@ var render = function render() {
       }
     }, [_c("div", {
       staticClass: "restaurant_name"
-    }, [_c("h1", [_vm._v(_vm._s(restaurant.name))])]), _vm._v(" "), _c("img", {
+    }, [_c("h1", {
+      staticClass: "restaurant_title text-center"
+    }, [_vm._v(_vm._s(restaurant.name))])]), _vm._v(" "), _c("img", {
       staticClass: "img-fluid",
       attrs: {
         src: "../storage/".concat(restaurant.image),
@@ -3053,7 +3055,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".restaurant_card[data-v-ef1c3478] {\n  height: 12.5rem;\n  overflow: hidden;\n  position: relative;\n  border-radius: 10px;\n}\n.restaurant_card:hover img[data-v-ef1c3478] {\n  transform: scale(1.2);\n}\n.restaurant_card img[data-v-ef1c3478] {\n  opacity: 0.9;\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: all 0.5s;\n}\n.restaurant_name[data-v-ef1c3478] {\n  position: absolute;\n  z-index: 10;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  color: inherit;\n}\n.restaurant_name h1[data-v-ef1c3478] {\n  text-decoration: none;\n  color: #fff;\n  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;\n}", ""]);
+exports.push([module.i, ".restaurant_card[data-v-ef1c3478] {\n  height: 12.5rem;\n  overflow: hidden;\n  position: relative;\n  border-radius: 0.625rem;\n}\n.restaurant_card:hover img[data-v-ef1c3478] {\n  transform: scale(1.2);\n}\n.restaurant_card img[data-v-ef1c3478] {\n  opacity: 0.9;\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: all 0.5s;\n}\n.restaurant_name[data-v-ef1c3478] {\n  position: absolute;\n  z-index: 10;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  color: inherit;\n}\n.restaurant_name h1[data-v-ef1c3478] {\n  text-decoration: none;\n  color: #fff;\n  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;\n  border-radius: 0.625rem;\n}", ""]);
 
 // exports
 
