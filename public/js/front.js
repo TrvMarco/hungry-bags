@@ -2061,14 +2061,14 @@ __webpack_require__.r(__webpack_exports__);
     this.myCart = JSON.parse(localStorage.getItem('prodotto'));
     console.log(JSON.parse(localStorage.getItem('prodotto')).length);
   },
-  methods: {// deleteItem(id){
-    //     console.log(id)
-    //     //elimino un elemento dall'array myCart
-    //     this.myCart.splice(id,1); 
-    //     // assegno nuovamente l'array allo storage 
-    //     localStorage.setItem('prodotto', JSON.stringify(this.myCart))
-    //     console.log(localStorage.length);
-    // }
+  methods: {
+    deleteItem: function deleteItem(id) {
+      console.log(id); //elimino un elemento dall'array myCart
+
+      this.myCart.splice(id, 1); // assegno nuovamente l'array allo storage 
+
+      localStorage.setItem('prodotto', JSON.stringify(this.myCart));
+    }
   },
   computed: {
     sum: function sum() {
@@ -2182,22 +2182,22 @@ __webpack_require__.r(__webpack_exports__);
       _this.items = response.data.items;
       _this.user = response.data; // console.log(localStorage.items)
       // console.log(response.data)
-    });
+    }); //    console.log(JSON.parse(localStorage.getItem('prodotto')).length)
+
+    if (this.virtualCart.length === 0 && JSON.parse(localStorage.getItem('prodotto')) != null) {
+      console.log('ci sei riuscito trimone a vento');
+      this.virtualCart = JSON.parse(localStorage.getItem('prodotto'));
+    } // if(JSON.parse(localStorage.getItem('prodotto')) != null){
+    //     console.log('ok');
+    // }
+
   },
-  // mounted() {
-  //     if (localStorage.getItem('itemCart')) {
-  //     try {
-  //         this.item = JSON.parse(localStorage.getItem('itemCart'));
-  //     } catch(e) {
-  //         localStorage.removeItem('cats');
-  //     }
-  //     }
-  // },
+  mounted: function mounted() {},
   methods: {
     addToCart: function addToCart(item) {
       this.virtualCart.push(item);
       localStorage.setItem('prodotto', JSON.stringify(this.virtualCart));
-      console.log(JSON.parse(localStorage.getItem('prodotto')));
+      console.log(JSON.parse(localStorage.getItem('prodotto'))); // this.shared.count = JSON.parse(localStorage.getItem('prodotto')).length;
     }
   },
   computed: {}
@@ -2217,6 +2217,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_macro_BaseHeader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/macro/BaseHeader.vue */ "./resources/js/components/macro/BaseHeader.vue");
 /* harmony import */ var _components_macro_BaseMain_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/macro/BaseMain.vue */ "./resources/js/components/macro/BaseMain.vue");
 /* harmony import */ var _components_macro_BaseFooter_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/macro/BaseFooter.vue */ "./resources/js/components/macro/BaseFooter.vue");
+/* harmony import */ var _shared__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared */ "./resources/js/shared.js");
+
 
 
 
@@ -2226,6 +2228,11 @@ __webpack_require__.r(__webpack_exports__);
     BaseHeader: _components_macro_BaseHeader_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     BaseMain: _components_macro_BaseMain_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     BaseFooter: _components_macro_BaseFooter_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  data: function data() {
+    return {
+      shared: _shared__WEBPACK_IMPORTED_MODULE_3__["default"]
+    };
   }
 });
 
@@ -20559,7 +20566,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\valen\Desktop\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Giuseppe\Desktop\BOOLEAN\ESERCIZI\PHP\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

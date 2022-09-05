@@ -55,26 +55,39 @@ export default {
             // console.log(localStorage.items)
             // console.log(response.data)
         })
+    //    console.log(JSON.parse(localStorage.getItem('prodotto')).length)
+         if(this.virtualCart.length === 0 && JSON.parse(localStorage.getItem('prodotto')) != null ){
+                console.log('ci sei riuscito trimone a vento')
+                this.virtualCart = JSON.parse(localStorage.getItem('prodotto'));
+            }
+        // if(JSON.parse(localStorage.getItem('prodotto')) != null){
+        //     console.log('ok');
+        // }
+            
+
+       
+        
+        
+       
     },
-    // mounted() {
-    //     if (localStorage.getItem('itemCart')) {
-    //     try {
-    //         this.item = JSON.parse(localStorage.getItem('itemCart'));
-    //     } catch(e) {
-    //         localStorage.removeItem('cats');
-    //     }
-    //     }
-    // },
+    mounted() {
+           
+        
+     
+    },
     methods: {
         addToCart(item){
             this.virtualCart.push(item);
             localStorage.setItem('prodotto', JSON.stringify(this.virtualCart));
             console.log(JSON.parse(localStorage.getItem('prodotto')));
+            // this.shared.count = JSON.parse(localStorage.getItem('prodotto')).length;
+            
         }
+    
     },
 
     computed:{
-       
+        
     }
 
     
