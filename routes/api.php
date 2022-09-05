@@ -21,7 +21,13 @@ Route::get('users/{type}', 'Api\UserController@show');
 
 Route::get('items/{user}', 'Api\ItemController@show');
 
+// Chiamata get token
+Route::get('order/generate', 'Api\OrderController@generateToken');
+
 // chiamate post
 Route::post('users', 'Api\UserController@index');
 
 Route::post('orders', 'Api\OrderController@store');
+
+// Chiamata post Order
+Route::post('order/pay-order', 'Api\OrderController@payOrder');

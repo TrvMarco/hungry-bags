@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+// use App\Http\Controllers\Api\Braintree\Gateway; 
 
 use App\Order;
 class OrderController extends Controller
@@ -31,5 +32,13 @@ class OrderController extends Controller
 
         return $newOrder;
 
+    }
+
+    public function generateToken(Request $request){
+        // 
+    }   
+
+    public function payOrder(Request $request){
+        return 'payOrder';
     }
 }
