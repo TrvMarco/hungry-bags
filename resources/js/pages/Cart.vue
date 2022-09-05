@@ -69,6 +69,13 @@
                         </div>
                         <button type="submit" class="btn btn-success">Checkout</button>
                     </form>
+                    <div>
+                        <v-braintree authorization="xxxxxxxxxxxxxxxxxx">
+                        <template v-slot:button="slotProps">
+                            <v-btn @click="slotProps.submit" color="success">Fancy button</v-btn>
+                        </template>
+                        </v-braintree>
+                    </div>
                 </div>
             </div>
         </div>

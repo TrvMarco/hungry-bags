@@ -2876,7 +2876,24 @@ var render = function render() {
     attrs: {
       type: "submit"
     }
-  }, [_vm._v("Checkout")])])])])])]) : _c("div", {
+  }, [_vm._v("Checkout")])]), _vm._v(" "), _c("div", [_c("v-braintree", {
+    attrs: {
+      authorization: "xxxxxxxxxxxxxxxxxx"
+    },
+    scopedSlots: _vm._u([{
+      key: "button",
+      fn: function fn(slotProps) {
+        return [_c("v-btn", {
+          attrs: {
+            color: "success"
+          },
+          on: {
+            click: slotProps.submit
+          }
+        }, [_vm._v("Fancy button")])];
+      }
+    }], null, false, 3041145211)
+  })], 1)])])])]) : _c("div", {
     staticClass: "col-12 text-center p-5"
   }, [_c("h1", [_vm._v("Il carrello è vuoto!")])])]);
 };
@@ -2982,7 +2999,7 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("main", [_c("div", {
+  return _c("main", [_vm.restaurants.length > 0 ? _c("div", {
     staticClass: "container pt-4"
   }, [_vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "row"
@@ -3013,7 +3030,7 @@ var render = function render() {
         alt: ""
       }
     })])], 1)]);
-  }), 0)])]);
+  }), 0)]) : _c("div", [_vm._m(1)])]);
 };
 
 var staticRenderFns = [function () {
@@ -3025,6 +3042,17 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "col-12"
   }, [_c("h1", [_vm._v("I nostri ristoranti")])])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "container pt-4"
+  }, [_c("div", {
+    staticClass: "row text-center"
+  }, [_c("div", {
+    staticClass: "col-12 p-5"
+  }, [_c("h1", [_vm._v("Al momento non ci sono ristoranti associati!")])])])]);
 }];
 render._withStripped = true;
 
@@ -3092,10 +3120,19 @@ var render = function render() {
         }
       }
     })])])])])]);
-  }), 0)])]);
+  }), 0), _vm._v(" "), _vm.items.length == 0 ? _c("div", {
+    staticClass: "row text-center"
+  }, [_vm._m(0)]) : _vm._e()])]);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "col-12 p-5"
+  }, [_c("h1", [_vm._v("Il ristoratore non ha ancora aggiunto il suo menù")])]);
+}];
 render._withStripped = true;
 
 
@@ -21009,7 +21046,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Giuseppe\Desktop\BOOLEAN\ESERCIZI\PHP\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Progetti Boolean\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
