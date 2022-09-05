@@ -44,37 +44,6 @@
                         <span v-show="totalCartPrice">{{sum}}&#8364;</span>
                     </div>
                 </div>
-<<<<<<< HEAD
-            </div>
-            <!-- DATI CLIENTE -->
-            <div>
-                <form @submit.prevent="addDataClient()">
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="client_name">Nome</label>
-                            <input type="text" class="form-control" id="client_name" name="client_name" v-model="Dataclient.client_name">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="client_surname">Cognome</label>
-                            <input type="text" class="form-control" id="client_surname" name="client_surname" v-model="Dataclient.client_surname">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputAddress">Address</label>
-                        <input type="text" class="form-control" id="inputAddress" name="address" v-model="Dataclient.address">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Numero di telefono</label>
-                        <input type="text" class="form-control" id="phone" name="phone" v-model="Dataclient.phone">
-                    </div>
-                    <!-- <div class="form-group">
-                        <label for="total_price">Totale prezzo</label>
-                        <input name= "total_price" id="total_price" v-model="Dataclient.total_price" >
-                    </div> -->
-                    <button type="submit" class="btn btn-primary">Checkout</button>
-                </form>
-=======
-
                 <!-- DATI CLIENTE -->
                 <div class="menu_item_box p-2 mt-3">
                     <h4 class="text-center pt-2">Inserisci i tuoi dati</h4>
@@ -83,25 +52,24 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="client_name">Nome *</label>
-                                <input type="text" class="form-control" id="client_name" name="client_name" placeholder="Inserisci il tuo nome" required>
+                                <input type="text" class="form-control" id="client_name" name="client_name" placeholder="Inserisci il tuo nome"  v-model="Dataclient.client_name" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="client_surname">Cognome *</label>
-                                <input type="text" class="form-control" id="client_surname" name="client_surname" placeholder="Inserisci il tuo cognome" required>
+                                <input type="text" class="form-control" id="client_surname" name="client_surname" placeholder="Inserisci il tuo cognome" v-model="Dataclient.client_surname" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputAddress">Indirizzo di consegna *</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="es: Milano, Via Roma 23" name="address" required>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="es: Milano, Via Roma 23" name="address" v-model="Dataclient.address" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Numero di telefono *</label>
-                            <input type="text" class="form-control" id="phone" placeholder="+39 ..." name="phone" required>
+                            <input type="text" class="form-control" id="phone" placeholder="+39 ..." name="phone" v-model="Dataclient.phone" required>
                         </div>
                         <button type="submit" class="btn btn-success">Checkout</button>
                     </form>
                 </div>
->>>>>>> 1ae98b7d5034c1045c5979660d4c563f77dc231a
             </div>
         </div>
     </div>
@@ -119,14 +87,14 @@ export default {
         return{
             myCart: [],
             totalCartPrice: [],
-            price: null,
+            price: '',
             shared,
             Dataclient: {
                 client_name: '',
                 client_surname: '',
                 address: '',
                 phone: '',
-                total_price: this.price,
+                total_price: '',
             }
         }
     },
@@ -151,7 +119,7 @@ export default {
         },
 
         addDataClient() {
-            this.price = this.sum;
+            this.Dataclient.total_price = this.price
             axios.post('/api/orders', this.Dataclient)
             .then((resp) => {
                 this.Dataclient.client_name = '';
@@ -174,6 +142,7 @@ export default {
                 sum += elm.price
         })
         
+        this.price = sum.toFixed(2)
         // console.log(this.myCart)
         return this.shared.totalCartPrice = sum.toFixed(2)
 
