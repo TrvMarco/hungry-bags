@@ -53,20 +53,20 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="client_name">Nome *</label>
-                                <input type="text" class="form-control" id="client_name" name="client_name" placeholder="Inserisci il tuo nome">
+                                <input type="text" class="form-control" id="client_name" name="client_name" placeholder="Inserisci il tuo nome" required>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="client_surname">Cognome *</label>
-                                <input type="text" class="form-control" id="client_surname" name="client_surname" placeholder="Inserisci il tuo cognome">
+                                <input type="text" class="form-control" id="client_surname" name="client_surname" placeholder="Inserisci il tuo cognome" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputAddress">Indirizzo di consegna *</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="es: Milano, Via Roma 23" name="address">
+                            <input type="text" class="form-control" id="inputAddress" placeholder="es: Milano, Via Roma 23" name="address" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Numero di telefono *</label>
-                            <input type="text" class="form-control" id="phone" placeholder="+39 ..." name="phone">
+                            <input type="text" class="form-control" id="phone" placeholder="+39 ..." name="phone" required>
                         </div>
                         <button type="submit" class="btn btn-success">Checkout</button>
                     </form>

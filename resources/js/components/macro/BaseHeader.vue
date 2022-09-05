@@ -47,7 +47,7 @@ export default {
 
             .link-default{
                 text-decoration: none;
-                color: white;
+                color: #fff
             }
 
             .cart{
@@ -60,8 +60,8 @@ export default {
                     align-items: center;
                     top: -7px;
                     right: -12px;
-                    color: black;
-                    background-color: white;
+                    color: #fff;
+                    background-color: rgb(161, 9, 9);
                     width: 1.25rem;
                     height: 1.25rem;
                     border-radius: 30px;

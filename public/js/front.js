@@ -2625,7 +2625,8 @@ var staticRenderFns = [function () {
       type: "text",
       id: "client_name",
       name: "client_name",
-      placeholder: "Inserisci il tuo nome"
+      placeholder: "Inserisci il tuo nome",
+      required: ""
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "form-group col-md-6"
@@ -2639,7 +2640,8 @@ var staticRenderFns = [function () {
       type: "text",
       id: "client_surname",
       name: "client_surname",
-      placeholder: "Inserisci il tuo cognome"
+      placeholder: "Inserisci il tuo cognome",
+      required: ""
     }
   })])]);
 }, function () {
@@ -2658,7 +2660,8 @@ var staticRenderFns = [function () {
       type: "text",
       id: "inputAddress",
       placeholder: "es: Milano, Via Roma 23",
-      name: "address"
+      name: "address",
+      required: ""
     }
   })]);
 }, function () {
@@ -2677,7 +2680,8 @@ var staticRenderFns = [function () {
       type: "text",
       id: "phone",
       placeholder: "+39 ...",
-      name: "phone"
+      name: "phone",
+      required: ""
     }
   })]);
 }];
@@ -2926,7 +2930,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "header .container-fluid[data-v-8a2cb668] {\n  background-color: #111214;\n}\nheader .container-fluid .link-default[data-v-8a2cb668] {\n  text-decoration: none;\n  color: white;\n}\nheader .container-fluid .cart[data-v-8a2cb668] {\n  position: relative;\n  font-size: 1.5rem;\n}\nheader .container-fluid .cart .items-count[data-v-8a2cb668] {\n  position: absolute;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  top: -7px;\n  right: -12px;\n  color: black;\n  background-color: white;\n  width: 1.25rem;\n  height: 1.25rem;\n  border-radius: 30px;\n  font-size: 0.9375rem;\n}", ""]);
+exports.push([module.i, "header .container-fluid[data-v-8a2cb668] {\n  background-color: #111214;\n}\nheader .container-fluid .link-default[data-v-8a2cb668] {\n  text-decoration: none;\n  color: #fff;\n}\nheader .container-fluid .cart[data-v-8a2cb668] {\n  position: relative;\n  font-size: 1.5rem;\n}\nheader .container-fluid .cart .items-count[data-v-8a2cb668] {\n  position: absolute;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  top: -7px;\n  right: -12px;\n  color: #fff;\n  background-color: rgb(161, 9, 9);\n  width: 1.25rem;\n  height: 1.25rem;\n  border-radius: 30px;\n  font-size: 0.9375rem;\n}", ""]);
 
 // exports
 
