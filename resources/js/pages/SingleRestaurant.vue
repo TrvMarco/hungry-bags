@@ -82,10 +82,11 @@ export default {
                 this.virtualCart.push(item);
                 localStorage.setItem('prodotto', JSON.stringify(this.virtualCart));
                 console.log(JSON.parse(localStorage.getItem('prodotto')));
+                
             }else{
                 alert("elemento non dello stesso ristorante")
             }
-           
+        
             
             
         }

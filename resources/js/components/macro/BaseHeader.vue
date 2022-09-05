@@ -37,6 +37,8 @@ export default {
          count(){
             if(JSON.parse(localStorage.getItem('prodotto')) != null){
                 return shared.count = JSON.parse(localStorage.getItem('prodotto')).length;
+            } else {
+                return shared.count = 0;
             }
         }
     }
