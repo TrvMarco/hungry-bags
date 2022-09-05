@@ -28,6 +28,7 @@
 
             <!-- BOX TOTALE -->
             <div class="col-12 col-lg-6">
+                <!-- CONFERMA ORDINE -->
                 <div class="menu_item_box p-2">
                     <h4 class="text-center pt-2">Confrema ordine:</h4>
                     <hr>
@@ -43,30 +44,33 @@
                         <span v-show="totalCartPrice">{{sum}}&#8364;</span>
                     </div>
                 </div>
-            </div>
-            <!-- DATI CLIENTE -->
-            <div>
-                <form @submit.prevent="addDataClient()">
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="client_name">Nome</label>
-                            <input type="text" class="form-control" id="client_name" name="client_name">
+
+                <!-- DATI CLIENTE -->
+                <div class="menu_item_box p-2 mt-3">
+                    <h4 class="text-center pt-2">Inserisci i tuoi dati</h4>
+                    <hr>
+                    <form class="px-4" @submit.prevent="addDataClient()">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="client_name">Nome *</label>
+                                <input type="text" class="form-control" id="client_name" name="client_name" placeholder="Inserisci il tuo nome">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="client_surname">Cognome *</label>
+                                <input type="text" class="form-control" id="client_surname" name="client_surname" placeholder="Inserisci il tuo cognome">
+                            </div>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="client_surname">Cognome</label>
-                            <input type="text" class="form-control" id="client_surname" name="client_surname">
+                        <div class="form-group">
+                            <label for="inputAddress">Indirizzo di consegna *</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="es: Milano, Via Roma 23" name="address">
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputAddress">Address</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Address</label>
-                        <input type="text" class="form-control" id="phone" placeholder="1234 Main St" name="phone">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Checkout</button>
-                </form>
+                        <div class="form-group">
+                            <label for="phone">Numero di telefono *</label>
+                            <input type="text" class="form-control" id="phone" placeholder="+39 ..." name="phone">
+                        </div>
+                        <button type="submit" class="btn btn-success">Checkout</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

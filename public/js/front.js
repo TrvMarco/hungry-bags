@@ -2578,7 +2578,12 @@ var render = function render() {
       value: _vm.totalCartPrice,
       expression: "totalCartPrice"
     }]
-  }, [_vm._v(_vm._s(_vm.sum) + "€")])])])]), _vm._v(" "), _c("div", [_c("form", {
+  }, [_vm._v(_vm._s(_vm.sum) + "€")])])]), _vm._v(" "), _c("div", {
+    staticClass: "menu_item_box p-2 mt-3"
+  }, [_c("h4", {
+    staticClass: "text-center pt-2"
+  }, [_vm._v("Inserisci i tuoi dati")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("form", {
+    staticClass: "px-4",
     on: {
       submit: function submit($event) {
         $event.preventDefault();
@@ -2586,11 +2591,11 @@ var render = function render() {
       }
     }
   }, [_vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
+    staticClass: "btn btn-success",
     attrs: {
       type: "submit"
     }
-  }, [_vm._v("Checkout")])])])])])]);
+  }, [_vm._v("Checkout")])])])])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -2614,12 +2619,13 @@ var staticRenderFns = [function () {
     attrs: {
       "for": "client_name"
     }
-  }, [_vm._v("Nome")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Nome *")]), _vm._v(" "), _c("input", {
     staticClass: "form-control",
     attrs: {
       type: "text",
       id: "client_name",
-      name: "client_name"
+      name: "client_name",
+      placeholder: "Inserisci il tuo nome"
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "form-group col-md-6"
@@ -2627,12 +2633,13 @@ var staticRenderFns = [function () {
     attrs: {
       "for": "client_surname"
     }
-  }, [_vm._v("Cognome")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Cognome *")]), _vm._v(" "), _c("input", {
     staticClass: "form-control",
     attrs: {
       type: "text",
       id: "client_surname",
-      name: "client_surname"
+      name: "client_surname",
+      placeholder: "Inserisci il tuo cognome"
     }
   })])]);
 }, function () {
@@ -2645,12 +2652,12 @@ var staticRenderFns = [function () {
     attrs: {
       "for": "inputAddress"
     }
-  }, [_vm._v("Address")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Indirizzo di consegna *")]), _vm._v(" "), _c("input", {
     staticClass: "form-control",
     attrs: {
       type: "text",
       id: "inputAddress",
-      placeholder: "1234 Main St",
+      placeholder: "es: Milano, Via Roma 23",
       name: "address"
     }
   })]);
@@ -2664,12 +2671,12 @@ var staticRenderFns = [function () {
     attrs: {
       "for": "phone"
     }
-  }, [_vm._v("Address")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Numero di telefono *")]), _vm._v(" "), _c("input", {
     staticClass: "form-control",
     attrs: {
       type: "text",
       id: "phone",
-      placeholder: "1234 Main St",
+      placeholder: "+39 ...",
       name: "phone"
     }
   })]);
@@ -20653,7 +20660,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\valen\Desktop\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Progetti Boolean\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
