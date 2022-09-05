@@ -8,7 +8,20 @@
                 <div class="col-6 p-5">
                     <h2>Hai fame?<br>
                     Su HungryBags puoi ordinare tutto il cibo che vuoi con consegna a domicilio!</h2>
-                    <input class="mt-3" type="text" name="" id="">
+                    <div class="input-container">
+                        <div class="flag-container">
+                            <i class="fa-regular fa-flag flag"></i>
+                        </div>
+                        <div class="text-container">
+                            <input class="input-text" placeholder="Qual'è la tua posizione?" type="text">
+                        </div>
+                        <div class="position-container">
+                            <div class="position">
+                                <i class="fa-solid fa-location-dot position-icon"></i>
+                                <span class="position-text">Inserisci la tua posizione</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -24,5 +37,68 @@ export default {
 <style lang="scss" scoped>
     .hero{
         background-color: #111214;
+
+        .input-container {
+            display: flex;
+            max-width: 540px;
+            width: 100%;
+            font-size: 16px;
+            align-items: center;
+            height: 50px;
+            margin: 25px 0px 0px 0px;
+
+            .flag-container {
+                background: #eee1b3;
+                height: 40px;
+                width: 40px;
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+
+                .flag {
+                    color: black;
+                }
+            }
+            // Questo rimuove il bordo input
+            .input-text {
+                border: none;
+                height: 40px;
+                padding: 3px 10px;
+            }
+            // Questo rimuove il bordo input al click
+            .input-text:focus {
+                outline: none 
+            }
+
+            .position-container {
+                display: flex;
+                cursor: pointer;
+
+                .position {
+                    background: #eee1b3;
+                    height: 40px;
+                    min-width: 40px;
+                    border-top-right-radius: 8px;
+                    border-bottom-right-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0px 10px;
+
+                    .position-icon {
+                        color: black;
+                        margin: 0px 8px 0px 0px;
+                        font-size: 20px;
+                    }
+
+                    .position-text {
+                        color: black;
+                    }
+                }
+            }
+        }
     }
 </style>
