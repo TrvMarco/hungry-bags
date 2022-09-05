@@ -2247,10 +2247,17 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("footer");
+  return _vm._m(0);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("footer", {
+    staticClass: "p-4"
+  }, [_c("h1", [_vm._v("footersss")])]);
+}];
 render._withStripped = true;
 
 
@@ -20560,7 +20567,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\valen\Desktop\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Progetti Boolean\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

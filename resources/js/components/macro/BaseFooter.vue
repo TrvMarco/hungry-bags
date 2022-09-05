@@ -1,6 +1,6 @@
 <template>
-    <footer>
-        
+    <footer class="p-4">
+        <h1>footersss</h1>
     </footer>
 </template>
 
