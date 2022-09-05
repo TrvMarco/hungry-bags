@@ -2054,7 +2054,15 @@ __webpack_require__.r(__webpack_exports__);
     return {
       myCart: [],
       totalCartPrice: [],
-      shared: _shared__WEBPACK_IMPORTED_MODULE_0__["default"]
+      price: '',
+      shared: _shared__WEBPACK_IMPORTED_MODULE_0__["default"],
+      Dataclient: {
+        client_name: '',
+        client_surname: '',
+        address: '',
+        phone: '',
+        total_price: ''
+      }
     };
   },
   created: function created() {
@@ -2068,10 +2076,20 @@ __webpack_require__.r(__webpack_exports__);
       this.myCart.splice(id, 1); // assegno nuovamente l'array allo storage 
 
       localStorage.setItem('prodotto', JSON.stringify(this.myCart));
-    } // addDataClient() {
-    //     axios.post()
-    // }
+    },
+    addDataClient: function addDataClient() {
+      var _this = this;
 
+      this.Dataclient.total_price = this.price;
+      axios.post('/api/orders', this.Dataclient).then(function (resp) {
+        _this.Dataclient.client_name = '';
+        _this.Dataclient.client_surname = '';
+        _this.Dataclient.address = '';
+        _this.Dataclient.phone = '';
+      })["catch"](function (er) {
+        console.log(er);
+      });
+    }
   },
   computed: {
     sum: function sum() {
@@ -2079,7 +2097,8 @@ __webpack_require__.r(__webpack_exports__);
       this.myCart.forEach(function (elm) {
         // console.log(elm.price);
         sum += elm.price;
-      }); // console.log(this.myCart)
+      });
+      this.price = sum.toFixed(2); // console.log(this.myCart)
 
       return this.shared.totalCartPrice = sum.toFixed(2);
     }
@@ -2396,15 +2415,30 @@ var staticRenderFns = [function () {
       alt: ""
     }
   })]), _vm._v(" "), _c("div", {
-    staticClass: "col-6 p-5"
-  }, [_c("h2", [_vm._v("Hai fame?"), _c("br"), _vm._v("\n                Su HungryBags puoi ordinare tutto il cibo che vuoi con consegna a domicilio!")]), _vm._v(" "), _c("input", {
-    staticClass: "mt-3",
+    staticClass: "col-12 col-md-6 p-5"
+  }, [_c("h2", [_vm._v("Hai fame?"), _c("br"), _vm._v("\n                Su HungryBags puoi ordinare tutto il cibo che vuoi con consegna a domicilio!")]), _vm._v(" "), _c("div", {
+    staticClass: "input-container"
+  }, [_c("div", {
+    staticClass: "flag-container"
+  }, [_c("i", {
+    staticClass: "fa-regular fa-flag flag"
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "text-container"
+  }, [_c("input", {
+    staticClass: "input-text",
     attrs: {
-      type: "text",
-      name: "",
-      id: ""
+      placeholder: "Qual'è la tua posizione?",
+      type: "text"
     }
-  })])])])]);
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "position-container"
+  }, [_c("div", {
+    staticClass: "position"
+  }, [_c("i", {
+    staticClass: "fa-solid fa-location-dot position-icon"
+  }), _vm._v(" "), _c("span", {
+    staticClass: "position-text"
+  }, [_vm._v("Posizione attuale")])])])])])])])]);
 }];
 render._withStripped = true;
 
@@ -2440,10 +2474,10 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "box-partner d-flex flex-column justify-content-center align-items-center"
   }, [_c("p", {
-    staticClass: "px-4 text-center"
+    staticClass: "px-4 text-center font-italic"
   }, [_vm._v("Diventa partner di HungryBags e raggiungi sempre più clienti. Ci occupiamo noi della consegna, così che la tua unica preoccupazione sia continuare a preparare il miglior cibo. ")]), _vm._v(" "), _c("a", {
     attrs: {
-      href: "/login"
+      href: "/register"
     }
   }, [_c("button", {
     staticClass: "partner-button"
@@ -2474,17 +2508,16 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "container"
   }, [_vm._m(0), _vm._v(" "), _c("div", [_vm.types.length > 0 ? _c("div", [_c("div", {
-    staticClass: "row"
+    staticClass: "row justify-content-center"
   }, _vm._l(_vm.firstTypes, function (type) {
     return _c("div", {
       key: type.id
     }, [_c("div", {
       staticClass: "col-2 d-flex"
     }, [_c("div", {
-      staticClass: "type_box"
-    }, [_c("div", {
-      staticClass: "box_img"
+      staticClass: "type_box transform"
     }, [_c("router-link", {
+      staticClass: "link-text",
       attrs: {
         to: {
           name: "restaurant-list",
@@ -2493,7 +2526,9 @@ var render = function render() {
           }
         }
       }
-    }, [_vm._v(_vm._s(type.name))])], 1)])])]);
+    }, [_c("div", {
+      staticClass: "box_img"
+    }, [_vm._v("\n                                          " + _vm._s(type.name) + "\n                                      ")])])], 1)])]);
   }), 0)]) : _vm._e()])])]);
 };
 
@@ -2502,7 +2537,7 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "row pb-3"
+    staticClass: "row pb-3 justify-content-center"
   }, [_c("h3", [_vm._v("Le scelte più appetitose")])]);
 }];
 render._withStripped = true;
@@ -2598,7 +2633,133 @@ var render = function render() {
         return _vm.addDataClient();
       }
     }
-  }, [_vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _c("button", {
+  }, [_c("div", {
+    staticClass: "form-row"
+  }, [_c("div", {
+    staticClass: "form-group col-md-6"
+  }, [_c("label", {
+    attrs: {
+      "for": "client_name"
+    }
+  }, [_vm._v("Nome *")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.Dataclient.client_name,
+      expression: "Dataclient.client_name"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "client_name",
+      name: "client_name",
+      placeholder: "Inserisci il tuo nome",
+      required: ""
+    },
+    domProps: {
+      value: _vm.Dataclient.client_name
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.Dataclient, "client_name", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group col-md-6"
+  }, [_c("label", {
+    attrs: {
+      "for": "client_surname"
+    }
+  }, [_vm._v("Cognome *")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.Dataclient.client_surname,
+      expression: "Dataclient.client_surname"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "client_surname",
+      name: "client_surname",
+      placeholder: "Inserisci il tuo cognome",
+      required: ""
+    },
+    domProps: {
+      value: _vm.Dataclient.client_surname
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.Dataclient, "client_surname", $event.target.value);
+      }
+    }
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    attrs: {
+      "for": "inputAddress"
+    }
+  }, [_vm._v("Indirizzo di consegna *")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.Dataclient.address,
+      expression: "Dataclient.address"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "inputAddress",
+      placeholder: "es: Milano, Via Roma 23",
+      name: "address",
+      required: ""
+    },
+    domProps: {
+      value: _vm.Dataclient.address
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.Dataclient, "address", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    attrs: {
+      "for": "phone"
+    }
+  }, [_vm._v("Numero di telefono *")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.Dataclient.phone,
+      expression: "Dataclient.phone"
+    }],
+    staticClass: "form-control",
+    attrs: {
+      type: "text",
+      id: "phone",
+      placeholder: "+39 ...",
+      name: "phone",
+      required: ""
+    },
+    domProps: {
+      value: _vm.Dataclient.phone
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.Dataclient, "phone", $event.target.value);
+      }
+    }
+  })]), _vm._v(" "), _c("button", {
     staticClass: "btn btn-success",
     attrs: {
       type: "submit"
@@ -2617,83 +2778,6 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "col-12 text-center"
   }, [_c("h1", [_vm._v("Completa il tuo ordine!")])])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-row"
-  }, [_c("div", {
-    staticClass: "form-group col-md-6"
-  }, [_c("label", {
-    attrs: {
-      "for": "client_name"
-    }
-  }, [_vm._v("Nome *")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "client_name",
-      name: "client_name",
-      placeholder: "Inserisci il tuo nome",
-      required: ""
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group col-md-6"
-  }, [_c("label", {
-    attrs: {
-      "for": "client_surname"
-    }
-  }, [_vm._v("Cognome *")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "client_surname",
-      name: "client_surname",
-      placeholder: "Inserisci il tuo cognome",
-      required: ""
-    }
-  })])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-group"
-  }, [_c("label", {
-    attrs: {
-      "for": "inputAddress"
-    }
-  }, [_vm._v("Indirizzo di consegna *")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "inputAddress",
-      placeholder: "es: Milano, Via Roma 23",
-      name: "address",
-      required: ""
-    }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-group"
-  }, [_c("label", {
-    attrs: {
-      "for": "phone"
-    }
-  }, [_vm._v("Numero di telefono *")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "phone",
-      placeholder: "+39 ...",
-      name: "phone",
-      required: ""
-    }
-  })]);
 }];
 render._withStripped = true;
 
@@ -2964,7 +3048,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".hero[data-v-251d0256] {\n  background-color: #111214;\n}", ""]);
+exports.push([module.i, ".hero[data-v-251d0256] {\n  background-color: #111214;\n}\n.hero img[data-v-251d0256] {\n  box-shadow: 0px 0px 10px #000;\n}\n.hero .input-container[data-v-251d0256] {\n  display: flex;\n  max-width: 540px;\n  width: 100%;\n  font-size: 16px;\n  align-items: center;\n  height: 50px;\n  margin: 25px 0px 0px 0px;\n}\n.hero .input-container .flag-container[data-v-251d0256] {\n  background: #eee1b3;\n  height: 40px;\n  width: 40px;\n  border-top-left-radius: 8px;\n  border-bottom-left-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n}\n.hero .input-container .flag-container .flag[data-v-251d0256] {\n  color: black;\n}\n.hero .input-container .input-text[data-v-251d0256] {\n  border: none;\n  height: 40px;\n  padding: 3px 10px;\n}\n.hero .input-container .input-text[data-v-251d0256]:focus {\n  outline: none;\n}\n.hero .input-container .position-container[data-v-251d0256] {\n  display: flex;\n  cursor: pointer;\n}\n.hero .input-container .position-container .position[data-v-251d0256] {\n  background: #eee1b3;\n  height: 40px;\n  min-width: 40px;\n  border-top-right-radius: 8px;\n  border-bottom-right-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 10px;\n}\n.hero .input-container .position-container .position .position-icon[data-v-251d0256] {\n  color: black;\n  margin: 0px 8px 0px 0px;\n  font-size: 20px;\n}\n.hero .input-container .position-container .position .position-text[data-v-251d0256] {\n  color: black;\n}", ""]);
 
 // exports
 
@@ -2984,7 +3068,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".partner[data-v-11a91fa3] {\n  background-image: url(" + escape(__webpack_require__(/*! ../macro/img/partner-img-jpg.jpg */ "./resources/js/components/macro/img/partner-img-jpg.jpg")) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n  height: 31.25rem;\n  width: 100%;\n}\n.partner .container[data-v-11a91fa3] {\n  height: 100%;\n}\n.partner .box-partner[data-v-11a91fa3] {\n  width: 50%;\n  height: 25rem;\n  background-color: rgba(0, 0, 0, 0.3);\n  box-shadow: -1px 1px 6px 6px rgba(123, 123, 123, 0.55);\n  border-radius: 30px;\n  transition-duration: 0.4s;\n}\n.partner .box-partner p[data-v-11a91fa3] {\n  color: white;\n  text-transform: uppercase;\n}\n.partner .box-partner .partner-button[data-v-11a91fa3] {\n  margin-top: 3.125rem;\n  text-transform: uppercase;\n  padding: 0.625rem 1.875rem;\n  border: none;\n  border-radius: 1.875rem;\n  transition-duration: 0.4s;\n}\n.partner .box-partner .partner-button[data-v-11a91fa3]:hover {\n  background-color: #2EE59D;\n  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);\n  color: #fff;\n  transform: translateY(-7px);\n}\n.partner .box-partner[data-v-11a91fa3]:hover {\n  box-shadow: -1px 1px 6px 6px rgba(255, 255, 255, 0.55);\n}", ""]);
+exports.push([module.i, ".partner[data-v-11a91fa3] {\n  background-image: url(" + escape(__webpack_require__(/*! ../macro/img/partner-img-jpg.jpg */ "./resources/js/components/macro/img/partner-img-jpg.jpg")) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n  height: 31.25rem;\n  width: 100%;\n}\n.partner .container[data-v-11a91fa3] {\n  height: 100%;\n}\n.partner .box-partner[data-v-11a91fa3] {\n  width: 50%;\n  height: 25rem;\n  background-color: rgba(0, 0, 0, 0.8);\n  box-shadow: -1px 1px 6px 6px rgba(238, 225, 179, 0.4);\n  border-radius: 30px;\n  transition-duration: 0.4s;\n}\n.partner .box-partner p[data-v-11a91fa3] {\n  color: #eee1b3;\n}\n.partner .box-partner .partner-button[data-v-11a91fa3] {\n  margin-top: 3.125rem;\n  text-transform: uppercase;\n  padding: 0.625rem 1.875rem;\n  border: none;\n  border-radius: 1.875rem;\n  transition-duration: 0.4s;\n}\n.partner .box-partner .partner-button[data-v-11a91fa3]:hover {\n  background-color: #eee1b3;\n  box-shadow: 0px 15px 20px rgba(238, 225, 179, 0.4);\n  transform: translateY(-7px);\n}\n.partner .box-partner[data-v-11a91fa3]:hover {\n  box-shadow: -1px 1px 6px 6px rgba(255, 255, 255, 0.55);\n}", ""]);
 
 // exports
 
@@ -3003,7 +3087,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".type_box .box_img[data-v-c1d090d6] {\n  height: 6.25rem;\n  width: 6.25rem;\n}\n.type_box img[data-v-c1d090d6] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}", ""]);
+exports.push([module.i, ".type_box[data-v-c1d090d6] {\n  background: #eee1b3;\n  border-radius: 30px;\n  transition: all 0.08s;\n}\n.type_box .box_img[data-v-c1d090d6] {\n  min-height: 35px;\n  min-width: 50px;\n  padding: 0px 15px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 30px;\n}\n.type_box img[data-v-c1d090d6] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.type_box .link-text[data-v-c1d090d6] {\n  text-decoration: none;\n  color: black;\n}\n.type_box[data-v-c1d090d6]:hover {\n  transform: scale(1.1);\n}", ""]);
 
 // exports
 
@@ -20578,7 +20662,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 __webpack_require__.r(__webpack_exports__);
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony default export */ __webpack_exports__["default"] = (Vue.observable({
-  totalCartPrice: [],
+  totalCartPrice: 0,
   myCart: [],
   count: 0
 }));
@@ -20679,7 +20763,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Giuseppe\Desktop\BOOLEAN\ESERCIZI\PHP\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Progetti Boolean\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
