@@ -2054,14 +2054,14 @@ __webpack_require__.r(__webpack_exports__);
     return {
       myCart: [],
       totalCartPrice: [],
-      price: null,
+      price: '',
       shared: _shared__WEBPACK_IMPORTED_MODULE_0__["default"],
       Dataclient: {
         client_name: '',
         client_surname: '',
         address: '',
         phone: '',
-        total_price: this.price
+        total_price: ''
       }
     };
   },
@@ -2080,7 +2080,7 @@ __webpack_require__.r(__webpack_exports__);
     addDataClient: function addDataClient() {
       var _this = this;
 
-      this.price = this.sum;
+      this.Dataclient.total_price = this.price;
       axios.post('/api/orders', this.Dataclient).then(function (resp) {
         _this.Dataclient.client_name = '';
         _this.Dataclient.client_surname = '';
@@ -2097,7 +2097,8 @@ __webpack_require__.r(__webpack_exports__);
       this.myCart.forEach(function (elm) {
         // console.log(elm.price);
         sum += elm.price;
-      }); // console.log(this.myCart)
+      });
+      this.price = sum.toFixed(2); // console.log(this.myCart)
 
       return this.shared.totalCartPrice = sum.toFixed(2);
     }
@@ -2494,10 +2495,11 @@ var render = function render() {
     }, [_c("div", {
       staticClass: "col-2 d-flex"
     }, [_c("div", {
-      staticClass: "type_box"
+      staticClass: "type_box transform"
     }, [_c("div", {
       staticClass: "box_img"
     }, [_c("router-link", {
+      staticClass: "link-text",
       attrs: {
         to: {
           name: "restaurant-list",
@@ -2599,7 +2601,12 @@ var render = function render() {
       value: _vm.totalCartPrice,
       expression: "totalCartPrice"
     }]
-  }, [_vm._v(_vm._s(_vm.sum) + "€")])])]), _vm._v("\n<<<<<<< HEAD\n            ")]), _vm._v(" "), _c("div", [_c("form", {
+  }, [_vm._v(_vm._s(_vm.sum) + "€")])])]), _vm._v(" "), _c("div", {
+    staticClass: "menu_item_box p-2 mt-3"
+  }, [_c("h4", {
+    staticClass: "text-center pt-2"
+  }, [_vm._v("Inserisci i tuoi dati")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("form", {
+    staticClass: "px-4",
     on: {
       submit: function submit($event) {
         $event.preventDefault();
@@ -2614,7 +2621,7 @@ var render = function render() {
     attrs: {
       "for": "client_name"
     }
-  }, [_vm._v("Nome")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Nome *")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2625,7 +2632,9 @@ var render = function render() {
     attrs: {
       type: "text",
       id: "client_name",
-      name: "client_name"
+      name: "client_name",
+      placeholder: "Inserisci il tuo nome",
+      required: ""
     },
     domProps: {
       value: _vm.Dataclient.client_name
@@ -2643,7 +2652,7 @@ var render = function render() {
     attrs: {
       "for": "client_surname"
     }
-  }, [_vm._v("Cognome")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Cognome *")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2654,7 +2663,9 @@ var render = function render() {
     attrs: {
       type: "text",
       id: "client_surname",
-      name: "client_surname"
+      name: "client_surname",
+      placeholder: "Inserisci il tuo cognome",
+      required: ""
     },
     domProps: {
       value: _vm.Dataclient.client_surname
@@ -2672,7 +2683,7 @@ var render = function render() {
     attrs: {
       "for": "inputAddress"
     }
-  }, [_vm._v("Address")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Indirizzo di consegna *")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2683,7 +2694,9 @@ var render = function render() {
     attrs: {
       type: "text",
       id: "inputAddress",
-      name: "address"
+      placeholder: "es: Milano, Via Roma 23",
+      name: "address",
+      required: ""
     },
     domProps: {
       value: _vm.Dataclient.address
@@ -2701,7 +2714,7 @@ var render = function render() {
     attrs: {
       "for": "phone"
     }
-  }, [_vm._v("Numero di telefono")]), _vm._v(" "), _c("input", {
+  }, [_vm._v("Numero di telefono *")]), _vm._v(" "), _c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -2712,7 +2725,9 @@ var render = function render() {
     attrs: {
       type: "text",
       id: "phone",
-      name: "phone"
+      placeholder: "+39 ...",
+      name: "phone",
+      required: ""
     },
     domProps: {
       value: _vm.Dataclient.phone
@@ -2725,28 +2740,11 @@ var render = function render() {
       }
     }
   })]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-primary",
-    attrs: {
-      type: "submit"
-    }
-  }, [_vm._v("Checkout")])]), _vm._v("\n=======\n\n                "), _vm._v(" "), _c("div", {
-    staticClass: "menu_item_box p-2 mt-3"
-  }, [_c("h4", {
-    staticClass: "text-center pt-2"
-  }, [_vm._v("Inserisci i tuoi dati")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("form", {
-    staticClass: "px-4",
-    on: {
-      submit: function submit($event) {
-        $event.preventDefault();
-        return _vm.addDataClient();
-      }
-    }
-  }, [_vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _c("button", {
     staticClass: "btn btn-success",
     attrs: {
       type: "submit"
     }
-  }, [_vm._v("Checkout")])])]), _vm._v("\n>>>>>>> 1ae98b7d5034c1045c5979660d4c563f77dc231a\n            ")])])]) : _c("div", {
+  }, [_vm._v("Checkout")])])])])])]) : _c("div", {
     staticClass: "col-12 text-center p-5"
   }, [_c("h1", [_vm._v("Il carrello è vuoto!")])])]);
 };
@@ -2760,83 +2758,6 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "col-12 text-center"
   }, [_c("h1", [_vm._v("Completa il tuo ordine!")])])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-row"
-  }, [_c("div", {
-    staticClass: "form-group col-md-6"
-  }, [_c("label", {
-    attrs: {
-      "for": "client_name"
-    }
-  }, [_vm._v("Nome *")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "client_name",
-      name: "client_name",
-      placeholder: "Inserisci il tuo nome",
-      required: ""
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "form-group col-md-6"
-  }, [_c("label", {
-    attrs: {
-      "for": "client_surname"
-    }
-  }, [_vm._v("Cognome *")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "client_surname",
-      name: "client_surname",
-      placeholder: "Inserisci il tuo cognome",
-      required: ""
-    }
-  })])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-group"
-  }, [_c("label", {
-    attrs: {
-      "for": "inputAddress"
-    }
-  }, [_vm._v("Indirizzo di consegna *")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "inputAddress",
-      placeholder: "es: Milano, Via Roma 23",
-      name: "address",
-      required: ""
-    }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "form-group"
-  }, [_c("label", {
-    attrs: {
-      "for": "phone"
-    }
-  }, [_vm._v("Numero di telefono *")]), _vm._v(" "), _c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "phone",
-      placeholder: "+39 ...",
-      name: "phone",
-      required: ""
-    }
-  })]);
 }];
 render._withStripped = true;
 
@@ -3146,7 +3067,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".type_box .box_img[data-v-c1d090d6] {\n  height: 6.25rem;\n  width: 6.25rem;\n}\n.type_box img[data-v-c1d090d6] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}", ""]);
+exports.push([module.i, ".type_box[data-v-c1d090d6] {\n  background: #eee1b3;\n  border-radius: 30px;\n  transition: all 0.3s;\n}\n.type_box .box_img[data-v-c1d090d6] {\n  min-height: 35px;\n  min-width: 50px;\n  padding: 0px 15px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 30px;\n}\n.type_box img[data-v-c1d090d6] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.type_box .link-text[data-v-c1d090d6] {\n  text-decoration: none;\n  color: black;\n}\n.type_box[data-v-c1d090d6]:hover {\n  transform: scale(1.08);\n}", ""]);
 
 // exports
 
