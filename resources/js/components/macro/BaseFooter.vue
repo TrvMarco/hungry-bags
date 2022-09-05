@@ -47,15 +47,16 @@
                     <span class="tooltip">Instagram</span>
                     <span><i class="fab fa-instagram"></i></span>
                 </li>
-                <li class="icon github">
-                    <span class="tooltip">Github</span>
-                    <span><i class="fab fa-github"></i></span>
-                </li>
-                <li class="icon youtube">
-                    <span class="tooltip">Youtube</span>
-                    <span><i class="fab fa-youtube"></i></span>
-                </li>
             </ul>
+        </div>
+        <div class="lingua-select row">
+          <label for="lingua">Scegli una lingua</label>
+            <select name="lingua" id="lingua">
+              <option value="italiano">Italiano <i class="flag flag-italy"></i></option>
+              <option value="inglese">Inglese <i class="flag flag-united-kingdom"></i></option>
+              <option value="spagnolo">Spagnolo <i class="flag flag-spain"></i></option>
+              <option value="tedesco">Tedesco <i class="flag flag-germany"></i></option>
+            </select>
         </div>
         </div>
         
@@ -68,7 +69,7 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang='scss' scoped>
 footer{
     background-color: #111214;
     color: white;
@@ -191,20 +192,6 @@ a:hover::before {
 .wrapper .instagram:hover .tooltip,
 .wrapper .instagram:hover .tooltip::before {
   background: #E4405F;
-  color: #ffffff;
-}
-
-.wrapper .github:hover,
-.wrapper .github:hover .tooltip,
-.wrapper .github:hover .tooltip::before {
-  background: #333333;
-  color: #ffffff;
-}
-
-.wrapper .youtube:hover,
-.wrapper .youtube:hover .tooltip,
-.wrapper .youtube:hover .tooltip::before {
-  background: #CD201F;
   color: #ffffff;
 }
 .brands-list{
