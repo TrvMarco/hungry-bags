@@ -2411,14 +2411,29 @@ var staticRenderFns = [function () {
     }
   })]), _vm._v(" "), _c("div", {
     staticClass: "col-6 p-5"
-  }, [_c("h2", [_vm._v("Hai fame?"), _c("br"), _vm._v("\n                Su HungryBags puoi ordinare tutto il cibo che vuoi con consegna a domicilio!")]), _vm._v(" "), _c("input", {
-    staticClass: "mt-3",
+  }, [_c("h2", [_vm._v("Hai fame?"), _c("br"), _vm._v("\n                Su HungryBags puoi ordinare tutto il cibo che vuoi con consegna a domicilio!")]), _vm._v(" "), _c("div", {
+    staticClass: "input-container"
+  }, [_c("div", {
+    staticClass: "flag-container"
+  }, [_c("i", {
+    staticClass: "fa-regular fa-flag flag"
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "text-container"
+  }, [_c("input", {
+    staticClass: "input-text",
     attrs: {
-      type: "text",
-      name: "",
-      id: ""
+      placeholder: "Qual'è la tua posizione?",
+      type: "text"
     }
-  })])])])]);
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "position-container"
+  }, [_c("div", {
+    staticClass: "position"
+  }, [_c("i", {
+    staticClass: "fa-solid fa-location-dot position-icon"
+  }), _vm._v(" "), _c("span", {
+    staticClass: "position-text"
+  }, [_vm._v("Inserisci la tua posizione")])])])])])])])]);
 }];
 render._withStripped = true;
 
@@ -2496,8 +2511,6 @@ var render = function render() {
       staticClass: "col-2 d-flex"
     }, [_c("div", {
       staticClass: "type_box transform"
-    }, [_c("div", {
-      staticClass: "box_img"
     }, [_c("router-link", {
       staticClass: "link-text",
       attrs: {
@@ -2508,7 +2521,9 @@ var render = function render() {
           }
         }
       }
-    }, [_vm._v(_vm._s(type.name))])], 1)])])]);
+    }, [_c("div", {
+      staticClass: "box_img"
+    }, [_vm._v("\n                                          " + _vm._s(type.name) + "\n                                      ")])])], 1)])]);
   }), 0)]) : _vm._e()])])]);
 };
 
@@ -3028,7 +3043,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".hero[data-v-251d0256] {\n  background-color: #111214;\n}", ""]);
+exports.push([module.i, ".hero[data-v-251d0256] {\n  background-color: #111214;\n}\n.hero .input-container[data-v-251d0256] {\n  display: flex;\n  max-width: 540px;\n  width: 100%;\n  font-size: 16px;\n  align-items: center;\n  height: 50px;\n  margin: 25px 0px 0px 0px;\n}\n.hero .input-container .flag-container[data-v-251d0256] {\n  background: #eee1b3;\n  height: 40px;\n  width: 40px;\n  border-top-left-radius: 8px;\n  border-bottom-left-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n}\n.hero .input-container .flag-container .flag[data-v-251d0256] {\n  color: black;\n}\n.hero .input-container .input-text[data-v-251d0256] {\n  border: none;\n  height: 40px;\n  padding: 3px 10px;\n}\n.hero .input-container .input-text[data-v-251d0256]:focus {\n  outline: none;\n}\n.hero .input-container .position-container[data-v-251d0256] {\n  display: flex;\n  cursor: pointer;\n}\n.hero .input-container .position-container .position[data-v-251d0256] {\n  background: #eee1b3;\n  height: 40px;\n  min-width: 40px;\n  border-top-right-radius: 8px;\n  border-bottom-right-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 10px;\n}\n.hero .input-container .position-container .position .position-icon[data-v-251d0256] {\n  color: black;\n  margin: 0px 8px 0px 0px;\n  font-size: 20px;\n}\n.hero .input-container .position-container .position .position-text[data-v-251d0256] {\n  color: black;\n}", ""]);
 
 // exports
 
@@ -3067,7 +3082,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".type_box[data-v-c1d090d6] {\n  background: #eee1b3;\n  border-radius: 30px;\n  transition: all 0.3s;\n}\n.type_box .box_img[data-v-c1d090d6] {\n  min-height: 35px;\n  min-width: 50px;\n  padding: 0px 15px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 30px;\n}\n.type_box img[data-v-c1d090d6] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.type_box .link-text[data-v-c1d090d6] {\n  text-decoration: none;\n  color: black;\n}\n.type_box[data-v-c1d090d6]:hover {\n  transform: scale(1.08);\n}", ""]);
+exports.push([module.i, ".type_box[data-v-c1d090d6] {\n  background: #eee1b3;\n  border-radius: 30px;\n  transition: all 0.08s;\n}\n.type_box .box_img[data-v-c1d090d6] {\n  min-height: 35px;\n  min-width: 50px;\n  padding: 0px 15px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 30px;\n}\n.type_box img[data-v-c1d090d6] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.type_box .link-text[data-v-c1d090d6] {\n  text-decoration: none;\n  color: black;\n}\n.type_box[data-v-c1d090d6]:hover {\n  transform: scale(1.1);\n}", ""]);
 
 // exports
 
