@@ -4,27 +4,43 @@
             <div class="row p-3 text-white">
                 <div class="col-6">
                     <!-- Qui andrà img e logo -->
-                    <h1>HungryBags</h1>
+                    <a href="/" class="link-default"><h1>HungryBags</h1></a>
                 </div>
-                <div class="col-6 d-flex justify-content-end">
-                    <!-- nav accedi lingua -->
-                    <span>Area riservata</span>
-                    <span>Selezione lingua</span>
+                <div class="col-6 d-flex justify-content-end align-items-center">
+                    <div class="mr-3">
+                        <a href="/login" class="btn btn-sm reserved_area">Area Ristoratore</a>
+                    </div>
+                    <div class="cart">
+                        <a href="/check-out" class="link-default cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <span class="items-count"><strong>{{count}}</strong></span>
+                    </div>
                 </div>
             </div>
         </div>
-        <HeroSection/>
     </header>
 </template>
 
 <script>
 
 import HeroSection from '../sections/HeroSection.vue';
+import shared from '../../shared'
 
 export default {
     name: 'BaseHeader',
-     components: {
-        HeroSection,
+    data(){
+        return{
+            shared,
+        }
+    },
+  
+    computed: {
+         count(){
+            if(JSON.parse(localStorage.getItem('prodotto')) != null){
+                return shared.count = JSON.parse(localStorage.getItem('prodotto')).length;
+            } else {
+                return shared.count = 0;
+            }
+        }
     }
 }
 
@@ -34,6 +50,37 @@ export default {
     header{
         .container-fluid{
             background-color: #111214;
+
+            .link-default{
+                text-decoration: none;
+                color: #eee1b3
+            }
+
+            .cart{
+                position:relative;
+                font-size: 1.5rem;
+                .items-count{
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    top: -7px;
+                    right: -12px;
+                    color: #fff;
+                    background-color: rgb(161, 9, 9);
+                    width: 1.25rem;
+                    height: 1.25rem;
+                    border-radius: 30px;
+                    font-size: .9375rem;
+                    
+                }
+            }
+
+            .reserved_area{
+                background-color: #eee1b3;
+                color: #111214;
+            }
+           
         }
     }
 </style>

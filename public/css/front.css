@@ -1,6 +1,5 @@
-@import url(https://fonts.googleapis.com/css2?family=Lato:wght@400;
+@import url(https://fonts.googleapis.com/css2?family=Questrial&family=Roboto:wght@700&display=swap);@charset "UTF-8";
 
-700&family=Questrial&display=swap);@charset "UTF-8";
 :root {
   --primary-color: #ea526f;
   --secondary-color: #25ced1;
@@ -10976,7 +10975,14 @@ a.text-dark:focus {
 }
 
 * {
-  font-family: "Lato", sans-serif;
   font-family: "Questrial", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bold;
 }
 
