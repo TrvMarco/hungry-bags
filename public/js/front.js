@@ -2258,22 +2258,104 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("footer", {
-    staticClass: "p-4 container"
+    staticClass: "p-4"
   }, [_c("div", {
-    staticClass: "row"
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "row list"
   }, [_c("ul", {
     staticClass: "col"
-  }, [_c("h2", [_vm._v("Uniamo le forze")]), _vm._v(" "), _c("li", [_vm._v("Lavora con noi")]), _vm._v(" "), _c("li", [_vm._v("HungryBags con i partner")]), _vm._v(" "), _c("li", [_vm._v("Corrieri")]), _vm._v(" "), _c("li", [_vm._v("HungryBags business")])]), _vm._v(" "), _c("ul", {
+  }, [_c("h2", [_vm._v("Uniamo le forze")]), _vm._v(" "), _c("li", [_c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Lavora con noi")])]), _vm._v(" "), _c("li", [_c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("HungryBags con i partner")])]), _vm._v(" "), _c("li", [_c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Corrieri")])]), _vm._v(" "), _c("li", [_c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("HungryBags business")])])]), _vm._v(" "), _c("ul", {
     staticClass: "col"
-  }, [_c("h2", [_vm._v("Link di interesse")]), _vm._v(" "), _c("li", [_vm._v("Chi siamo")]), _vm._v(" "), _c("li", [_vm._v("FAQ")]), _vm._v(" "), _c("li", [_vm._v("Blog")]), _vm._v(" "), _c("li", [_vm._v("Contattaci")]), _vm._v(" "), _c("li", [_vm._v("Sicurezza")])]), _vm._v(" "), _c("ul", {
+  }, [_c("h2", [_vm._v("Link di interesse")]), _vm._v(" "), _c("li", [_c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Chi siamo")])]), _vm._v(" "), _c("li", [_c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("FAQ")])]), _vm._v(" "), _c("li", [_c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Blog")])]), _vm._v(" "), _c("li", [_c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Contattaci")])]), _vm._v(" "), _c("li", [_c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Sicurezza")])])]), _vm._v(" "), _c("ul", {
     staticClass: "col"
-  }, [_c("h2", [_vm._v("Seguici")]), _vm._v(" "), _c("li", [_vm._v("Twitter")]), _vm._v(" "), _c("li", [_vm._v("Instagram")]), _vm._v(" "), _c("li", [_vm._v("Facebook")])]), _vm._v(" "), _c("ul", {
-    staticClass: "col"
-  }, [_c("li", [_vm._v("Termini e condizioni")]), _vm._v(" "), _c("li", [_vm._v("Politica sulla privacy")]), _vm._v(" "), _c("li", [_vm._v("Politica sui cookie")])])]), _vm._v(" "), _c("div", {
+  }, [_c("li", [_c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Termini e condizioni")])]), _vm._v(" "), _c("li", [_c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Politica sulla privacy")])]), _vm._v(" "), _c("li", [_c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("Politica sui cookie")])])])]), _vm._v(" "), _c("div", {
     staticClass: "brands-list"
   }, [_c("h2", [_vm._v("I brand più richiesti al momento")]), _vm._v(" "), _c("ul", {
     staticClass: "row brands"
-  }, [_c("li", [_vm._v("McDonalds")]), _vm._v(" "), _c("li", [_vm._v("Burger King")]), _vm._v(" "), _c("li", [_vm._v("Kfc")]), _vm._v(" "), _c("li", [_vm._v("Starbucks")])])])]);
+  }, [_c("li", [_vm._v("McDonalds")]), _vm._v(" "), _c("li", [_vm._v("Burger King")]), _vm._v(" "), _c("li", [_vm._v("Kfc")]), _vm._v(" "), _c("li", [_vm._v("Starbucks")])])]), _vm._v(" "), _c("div", {
+    staticClass: "social"
+  }, [_c("ul", {
+    staticClass: "wrapper"
+  }, [_c("li", {
+    staticClass: "icon facebook"
+  }, [_c("span", {
+    staticClass: "tooltip"
+  }, [_vm._v("Facebook")]), _vm._v(" "), _c("span", [_c("i", {
+    staticClass: "fab fa-facebook-f"
+  })])]), _vm._v(" "), _c("li", {
+    staticClass: "icon twitter"
+  }, [_c("span", {
+    staticClass: "tooltip"
+  }, [_vm._v("Twitter")]), _vm._v(" "), _c("span", [_c("i", {
+    staticClass: "fab fa-twitter"
+  })])]), _vm._v(" "), _c("li", {
+    staticClass: "icon instagram"
+  }, [_c("span", {
+    staticClass: "tooltip"
+  }, [_vm._v("Instagram")]), _vm._v(" "), _c("span", [_c("i", {
+    staticClass: "fab fa-instagram"
+  })])]), _vm._v(" "), _c("li", {
+    staticClass: "icon github"
+  }, [_c("span", {
+    staticClass: "tooltip"
+  }, [_vm._v("Github")]), _vm._v(" "), _c("span", [_c("i", {
+    staticClass: "fab fa-github"
+  })])]), _vm._v(" "), _c("li", {
+    staticClass: "icon youtube"
+  }, [_c("span", {
+    staticClass: "tooltip"
+  }, [_vm._v("Youtube")]), _vm._v(" "), _c("span", [_c("i", {
+    staticClass: "fab fa-youtube"
+  })])])])])])]);
 }];
 render._withStripped = true;
 
@@ -2933,7 +3015,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "ul {\n  list-style: none;\n  line-height: 30px;\n}\n.brands li {\n  display: flex;\n  margin-right: 1.875rem;\n}", ""]);
+exports.push([module.i, "footer {\n  background-color: #111214;\n  color: white;\n}\nfooter .container {\n  padding-top: 3.125rem;\n}\nul {\n  list-style: none;\n  line-height: 30px;\n}\n.brands li {\n  display: flex;\n  padding-right: 1.875rem;\n  margin-left: 0px;\n}\n.list ul li a {\n  position: relative;\n  color: #ffffff;\n  text-decoration: none;\n}\na::before {\n  content: \"\";\n  position: absolute;\n  width: 100%;\n  height: 2px;\n  border-radius: 2px;\n  background-color: #ffffff;\n  bottom: 0;\n  left: 0;\n  transform-origin: right;\n  transform: scaleX(0);\n  transition: transform 0.3s ease-in-out;\n}\na:hover::before {\n  transform-origin: left;\n  transform: scaleX(1);\n}\n.wrapper {\n  display: inline-flex;\n  list-style: none;\n}\n.wrapper .icon {\n  position: relative;\n  background: #ffffff;\n  border-radius: 50%;\n  padding: 15px;\n  margin: 10px;\n  width: 50px;\n  height: 50px;\n  font-size: 18px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);\n  cursor: pointer;\n  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n  color: #111214;\n}\n.wrapper .tooltip {\n  position: absolute;\n  top: 0;\n  font-size: 14px;\n  background: #ffffff;\n  color: #ffffff;\n  padding: 5px 8px;\n  border-radius: 5px;\n  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);\n  opacity: 0;\n  pointer-events: none;\n  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.wrapper .tooltip::before {\n  position: absolute;\n  content: \"\";\n  height: 8px;\n  width: 8px;\n  background: #ffffff;\n  bottom: -3px;\n  left: 50%;\n  transform: translate(-50%) rotate(45deg);\n  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.wrapper .icon:hover .tooltip {\n  top: -45px;\n  opacity: 1;\n  visibility: visible;\n  pointer-events: auto;\n}\n.wrapper .icon:hover span,\n.wrapper .icon:hover .tooltip {\n  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);\n}\n.wrapper .facebook:hover,\n.wrapper .facebook:hover .tooltip,\n.wrapper .facebook:hover .tooltip::before {\n  background: #1877F2;\n  color: #ffffff;\n}\n.wrapper .twitter:hover,\n.wrapper .twitter:hover .tooltip,\n.wrapper .twitter:hover .tooltip::before {\n  background: #1DA1F2;\n  color: #ffffff;\n}\n.wrapper .instagram:hover,\n.wrapper .instagram:hover .tooltip,\n.wrapper .instagram:hover .tooltip::before {\n  background: #E4405F;\n  color: #ffffff;\n}\n.wrapper .github:hover,\n.wrapper .github:hover .tooltip,\n.wrapper .github:hover .tooltip::before {\n  background: #333333;\n  color: #ffffff;\n}\n.wrapper .youtube:hover,\n.wrapper .youtube:hover .tooltip,\n.wrapper .youtube:hover .tooltip::before {\n  background: #CD201F;\n  color: #ffffff;\n}\n.brands-list {\n  padding-top: 2.5rem;\n}\n.social {\n  display: flex;\n  justify-content: flex-end;\n}", ""]);
 
 // exports
 
