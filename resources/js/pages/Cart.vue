@@ -44,6 +44,30 @@
                     </div>
                 </div>
             </div>
+            <!-- DATI CLIENTE -->
+            <div>
+                <form @submit.prevent="addDataClient()">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="client_name">Nome</label>
+                            <input type="text" class="form-control" id="client_name" name="client_name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="client_surname">Cognome</label>
+                            <input type="text" class="form-control" id="client_surname" name="client_surname">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Address</label>
+                        <input type="text" class="form-control" id="phone" placeholder="1234 Main St" name="phone">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Checkout</button>
+                </form>
+            </div>
         </div>
     </div>
   </main>
@@ -75,10 +99,14 @@ export default {
             //elimino un elemento dall'array myCart
             this.myCart.splice(id,1); 
             // assegno nuovamente l'array allo storage 
-            localStorage.setItem('prodotto', JSON.stringify(this.myCart))
+            // localStorage.setItem('prodotto', JSON.stringify(this.myCart))
             console.log(localStorage.length);
         
-        }
+        },
+
+        // addDataClient() {
+        //     axios.post()
+        // }
 
     },
 
