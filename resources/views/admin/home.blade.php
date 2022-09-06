@@ -7,7 +7,6 @@
             <div class="col-4">
                 {{-- CARD RIEPILOGO DATI RISTORANTE --}}
                 <div class="card beige-bg border-radius-20px ">
-                   
                     <div class="card-body d-flex flex-column align-items-center">
                     @if ($user->image)
                         <img class="card-img-top " src="{{ asset('storage/' . $user->image)}}" alt="Card image cap">
