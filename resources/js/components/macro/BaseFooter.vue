@@ -4,25 +4,26 @@
         <div class="row list">
             <ul class="col ">
                 <h2>Uniamo le forze</h2>
-                <li><a href="#">Lavora con noi</a></li>
-                <li><a href="#">HungryBags con i partner</a></li>
-                <li><a href="#">Corrieri</a></li>
-                <li><a href="#">HungryBags business</a></li>
+                <li v-for="link in linksForce" :key="link" class="my-2">
+                  <a :href="link.url">{{link.text}}</a>
+                </li>
             </ul>
             <ul class="col">
                 <h2>Link di interesse</h2>
-                <li><a href="#">Chi siamo</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contattaci</a></li>
-                <li><a href="#">Sicurezza</a></li>
+                <li v-for="link in linksInt" :key="link" class="my-2">
+                  <a :href="link.url">{{link.text}}</a>
+                </li>
             </ul>
         
             <ul class="col">
-                <li><a href="#">Termini e condizioni</a></li>
-                <li><a href="#">Politica sulla privacy</a></li>
-                <li><a href="#">Politica sui cookie</a></li>
+                <li v-for="link in linksAbout" :key="link" class="my-2">
+                  <a :href="link.url">{{link.text}}</a>
+                </li>
             </ul>
+            <div class="apps">
+              <img src="https://res.cloudinary.com/glovoapp/image/fetch//w_105,h_35,c_fit,q_auto/https://glovoapp.com/images/app_store/download-button-new.svg" style="height:50px"  alt="">
+              <img src="https://res.cloudinary.com/glovoapp/image/fetch//w_112,h_35,c_fit,q_auto/https://glovoapp.com/images/google_play/download-button-new.svg" style="height:50px"  alt="">
+            </div>
         </div>
         <div class="brands-list ">
             <h2>I brand più richiesti al momento</h2>
@@ -49,15 +50,62 @@
                 </li>
             </ul>
         </div>
+        <div class="lang-select">
+          <label for="lang">Scegli una lingua </label>
+            <select onchange="document.getElementById('preview').src = this.value" class="lang">
+              <option value="https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg">Italiano</option>
+              <option value="https://upload.wikimedia.org/wikipedia/commons/4/42/Flag_of_the_United_Kingdom.png">Inglese </option>
+              <option value="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg">Spagnolo </option>
+              <option value="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg">Tedesco</option>
+            </select>
+            <img id="preview" height="20px">
         </div>
-        
+        </div>
     </footer>
+   
 </template>
 
 <script>
 export default {
-    name: 'BaseFooter'
-}
+    name: 'BaseFooter',
+    data(){
+      return{
+        linksForce: [
+        {text: "Lavora con noi",
+         url: "",},
+         {text: "HungryBags per i partner",
+         url: "",},
+         {text: "Corrieri",
+         url: "",},
+         {text: "HungryBags Business",
+         url: "",},
+      ],
+      linksInt: [
+        {text: "Chi siamo",
+         url: "",},
+         {text: "FAQ",
+         url: "",},
+         {text: "Blog",
+         url: "",},
+         {text: "Contattaci",
+         url: "",},
+         {text: "Sicurezza",
+         url: "",},
+      ],
+      linksAbout: [
+        {text: "Termini e condizioni",
+         url: "",},
+         {text: "Politica sulla privacy",
+         url: "",},
+         {text: "politica sui cookie",
+         url: "",},
+      ]
+      
+      }
+
+    }
+};
+
 </script>
 
 <style lang='scss' scoped>
@@ -193,6 +241,23 @@ a:hover::before {
     justify-content: flex-end;
 }
 
-
+.flag{
+  width: 1.875rem;
+  height: 1.25rem;
+}
+.apps{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.lingua-select{
+  display: flex;
+  flex-direction: row;
+}
+.lang{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
 
 </style>
+
