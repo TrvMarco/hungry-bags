@@ -52,11 +52,38 @@
                     <a href="{{route('admin.items.show', $item->id)}}" class="btn btn-primary mx-2 btn-sm">Visualizza</a>
                     <a href="{{route('admin.items.edit', $item->id)}}" class="btn btn-warning mx-2 btn-sm">Modifica</a>
                     {{-- bottone elimina --}}
-                    <form action="{{route('admin.items.destroy', $item->id)}}" method="POST">
-                      @csrf
-                      @method('DELETE')
-                      <button type="submit" class="btn btn-danger btn-sm">Cancella</button>
-                    </form>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#staticBackdrop{{$item->id}}">
+                      cancella
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop{{$item->id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body text-center">
+                            Vuoi davvero cancellare <strong>{{$item->name}}</strong>  ? 
+                            
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">No</button>
+                            <form action="{{route('admin.items.destroy', $item->id)}}" method="POST">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-danger btn-sm">Si</button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                 
                   </div>
                 </td>
               </tr>
