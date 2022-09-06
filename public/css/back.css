@@ -10994,7 +10994,7 @@ main {
 }
 
 .backoffice_menu_container {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 0.9375rem;
   -o-box-shadow: 5px 5px 10px 0px rgba(26, 26, 26, 0.8705882353);
   box-shadow: 5px 5px 10px 0px rgba(26, 26, 26, 0.8705882353);
@@ -11072,6 +11072,14 @@ main {
   background-color: #eee1b3;
 }
 
+.black-bg {
+  background: rgb(0, 0, 0);
+}
+
+.color-white {
+  color: white;
+}
+
 .black-btn {
   background-color: black;
   border-color: black;
@@ -11079,5 +11087,44 @@ main {
 
 .color-black {
   color: black;
+}
+
+.margin-login-card {
+  margin: 90px 0px 0px 0px;
+}
+
+.margin-food-list {
+  margin: 0px 0px 25px 0px;
+}
+
+.img-card {
+  border-radius: 20px;
+}
+
+.border-radius-20px {
+  border-radius: 20px;
+}
+
+.border-radius-bottom-20px {
+  border-radius: 0px 0px 20px 20px;
+}
+
+.visualizza-menu-btn,
+.inserisci-piatto-btn {
+  border-radius: 20px;
+  border-color: black;
+  margin: 5px 0px;
+  background-color: #eee1b3;
+  color: black;
+  border: 1px solid #eee1b3;
+}
+
+.inserisci-img-btn {
+  border-radius: 20px;
+  border-color: black;
+  margin: 15px 0px;
+  background-color: #000000;
+  color: white;
+  border: 1px solid black;
 }
 

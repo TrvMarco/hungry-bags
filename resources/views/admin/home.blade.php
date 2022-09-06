@@ -6,33 +6,33 @@
         <div class="col-md-8 d-flex">
             <div class="col-4">
                 {{-- CARD RIEPILOGO DATI RISTORANTE --}}
-                <div class="card">
+                <div class="card beige-bg border-radius-20px ">
                    
                     <div class="card-body d-flex flex-column align-items-center">
                     @if ($user->image)
                         <img class="card-img-top " src="{{ asset('storage/' . $user->image)}}" alt="Card image cap">
                     @else
-                        <a href="{{route('admin.users.edit', $user)}}">
-                            <img src="{{asset('images/bugs-150x150.jpg')}}" alt="">
-                            <small>clicca per inserire immagine</small>
+                    <img class="img-card" src="{{asset('images/bugs-150x150.jpg')}}" alt="">
+                        <a class="btn btn-primary inserisci-img-btn" href="{{route('admin.users.edit', $user)}}">
+                            <small>Clicca QUI per inserire un'immagine</small>
                         </a>
                        
                     @endif
                     <h5 class="card-title"><strong>{{ $user->name }}</strong></h5>
                     <p class="card-text"><strong>Indirizzo:</strong> {{ $user->address}}</p>
                     <p class="card-text"><small><strong>P.iva:</strong> {{ $user->vat }}</small></p>
-                    <a href="{{route('admin.users.edit', $user)}}" class="btn btn-primary">Modifica Profilo</a>
+                    <a href="{{route('admin.users.edit', $user)}}" class="btn btn-primary black-btn border-radius-20px ">Modifica Profilo</a>
                     </div>
                 </div>
             </div>
             <div class="col-8">
                 {{-- CARD MENÙ --}}
-                <div class="card w-100">
-                    <div class="card-header">{{ __('Il tuo Menù') }}</div>
-                    <div class="card-body">
+                <div class="card w-100 border-radius-20px  beige-bg">
+                    <div class="card-header border-radius-20px">{{ __('Il tuo Menù') }}</div>
+                    <div class="card-body black-bg border-radius-bottom-20px color-white">
                             @foreach ($items as $item)
                                 <div class="card-text d-flex item_preview justify-content-between align-items-center">
-                                    <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center margin-food-list">
                                         @if ($item->image)
                                             <div class="item_img_preview_box mr-3">
                                                 <img class="img-fluid center" src="{{ asset('storage/' . $item->image)}}" alt="">
@@ -50,9 +50,9 @@
                                     </div>
                                 </div>
                             @endforeach
-                        <a href="{{route('admin.items.index')}}">visualizza menu</a>
+                        <a class="btn btn-primary visualizza-menu-btn" href="{{route('admin.items.index')}}">Visualizza menu</a>
                         <br>
-                        <a href="{{route('admin.items.create')}}">inserisci il tuo piatto</a>
+                        <a class="btn btn-primary inserisci-piatto-btn" href="{{route('admin.items.create')}}">Inserisci il tuo piatto</a>
                     </div>
                 </div>            
             </div>

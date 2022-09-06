@@ -1,37 +1,37 @@
-@import '../variables';
+@import "../variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
-
-//      ----------------        RESET 
-ul{
+//      ----------------        RESET
+ul {
     padding-left: 0;
 }
 
 //      ----------------        CONTAINERS
-main{
+main {
     // background: linear-gradient(45deg,var(--third-color), var(--primary-color));
-    background-image: url('../../../public/image/img-backoffice.jpg');
-    background-size:cover;
+    background-image: url("../../../public/image/img-backoffice.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position:bottom;
+    background-position: bottom;
 }
 
 // .backoffice_navbar{
 //     height: 4.1875rem;
 // }
 
-.backoffice_maincontainer, .backoffice_container{
+.backoffice_maincontainer,
+.backoffice_container {
     min-height: calc(100vh - 4.1875rem);
     display: flex;
     align-content: center;
     justify-content: center;
 }
 
-.backoffice_menu_container{
-    background-color:rgba(255, 255, 255, 0.8);
-    border-radius: .9375rem;
+.backoffice_menu_container {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0.9375rem;
     -webkit-box-shadow: 5px 5px 10px 0px #1a1a1ade;
     -moz-box-shadow: 5px 5px 10px 0px #1a1a1ade;
     -o-box-shadow: 5px 5px 10px 0px #1a1a1ade;
@@ -39,37 +39,35 @@ main{
 }
 
 //      ----------------        REGISTER BLADE
-.type_checkbox{
+.type_checkbox {
     overflow-y: auto;
     height: 12.5rem;
 }
 
-
 //      ----------------        HOME BLADE
-.card_image{
+.card_image {
     width: 1.875rem;
 }
 
-.item_img_preview_box{
+.item_img_preview_box {
     width: 1.875rem;
     height: 1.875rem;
 }
 
-
 //      ----------------        ITEM INDEX
-.menu_item_img{
-    height: 2.5rem
+.menu_item_img {
+    height: 2.5rem;
 }
 
-.menu_eye_green{
+.menu_eye_green {
     color: rgb(0, 212, 0);
 }
 
-.menu_eye_red{
+.menu_eye_red {
     color: rgb(163, 19, 19);
 }
 
-.item_menu_box{
+.item_menu_box {
     height: 9.375rem;
     width: 9.375rem;
     border: 2px solid black;
@@ -79,43 +77,49 @@ main{
     align-items: center;
     text-align: center;
     text-transform: uppercase;
-
 }
 
 //      ----------------        ITEM EDIT
-.edit_img{
+.edit_img {
     max-width: 25rem;
 }
 
-.bags-blue{
+.bags-blue {
     width: 1.875rem;
-  }
+}
 
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888; 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
+}
 
-//   LOGIN - REGISTER - STYLE GIANLUCA
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
 
-.beige-bg{
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+//   LOGIN - REGISTER- HOME.BLADE - STYLE GIANLUCA
+
+.beige-bg {
     background-color: #eee1b3;
 }
 
+.black-bg {
+    background: rgb(0, 0, 0);
+}
+
+.color-white {
+    color: white;
+}
 .black-btn {
     background-color: black;
     border-color: black;
@@ -124,3 +128,44 @@ main{
 .color-black {
     color: black;
 }
+
+.margin-login-card {
+    margin: 90px 0px 0px 0px;
+}
+
+.margin-food-list {
+    margin: 0px 0px 25px 0px;
+}
+
+.img-card {
+    border-radius: 20px;
+}
+
+.border-radius-20px {
+    border-radius: 20px;
+}
+
+.border-radius-bottom-20px {
+    border-radius: 0px 0px 20px 20px;
+}
+
+
+
+.visualizza-menu-btn,
+.inserisci-piatto-btn {
+    border-radius: 20px;
+    border-color: black;
+    margin: 5px 0px;
+    background-color: #eee1b3;
+    color: black;
+    border: 1px solid #eee1b3;
+}
+
+.inserisci-img-btn {
+    border-radius: 20px;
+    border-color: black;
+    margin: 15px 0px;
+    background-color: #000000;
+    color: white;
+    border: 1px solid black;
+};
