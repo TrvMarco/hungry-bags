@@ -110,7 +110,7 @@ main{
     background: #555; 
   }
 
-//   LOGIN STYLE GIANLUCA
+//   LOGIN - REGISTER - STYLE GIANLUCA
 
 .beige-bg{
     background-color: #eee1b3;
@@ -120,3 +120,18 @@ main{
     background-color: black;
     border-color: black;
 }
+
+.color-black {
+    color: black;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff;
+    border-color: #000000;
+    background-color: #000000;
+  }
+
+  .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
+    border-color: #000000;
+    background-color: #000000;
+  }

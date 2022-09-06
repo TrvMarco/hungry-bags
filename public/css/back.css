@@ -11077,3 +11077,18 @@ main {
   border-color: black;
 }
 
+.color-black {
+  color: black;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: #000000;
+  background-color: #000000;
+}
+
+.custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
+  border-color: #000000;
+  background-color: #000000;
+}
+
