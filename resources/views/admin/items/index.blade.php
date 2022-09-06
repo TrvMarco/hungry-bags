@@ -68,7 +68,7 @@
                             </button>
                           </div>
                           <div class="modal-body text-center">
-                            Vuoi davvero cancellare questo <strong>{{$item->name}}</strong>  ? 
+                            Vuoi davvero cancellare <strong>{{$item->name}}</strong>  ? 
                             
                           </div>
                           <div class="modal-footer">
@@ -76,7 +76,7 @@
                             <form action="{{route('admin.items.destroy', $item->id)}}" method="POST">
                               @csrf
                               @method('DELETE')
-                              <button type="submit" class="btn btn-danger btn-sm">Sì</button>
+                              <button type="submit" class="btn btn-danger btn-sm">Si</button>
                             </form>
                           </div>
                         </div>
