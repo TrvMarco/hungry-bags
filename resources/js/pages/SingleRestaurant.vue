@@ -10,7 +10,6 @@
             </div>
         </div>
         <div class="row gap">
-
             <!-- CARD ITEM -->
             <div v-for="item,id in items" :key="id" class="col-sm-12 col-md-6">
                 <div class="menu_item_box d-flex p-2 flex-wrap">
@@ -29,6 +28,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div v-if="items.length == 0 " class="row text-center">
+            <div class="col-12 p-5">
+                <h1>Il ristoratore non ha ancora aggiunto il suo menù</h1>
             </div>
         </div>
     </div>

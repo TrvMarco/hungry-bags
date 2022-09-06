@@ -47,14 +47,6 @@
                     <span class="tooltip">Instagram</span>
                     <span><i class="fab fa-instagram"></i></span>
                 </li>
-                <li class="icon github">
-                    <span class="tooltip">Github</span>
-                    <span><i class="fab fa-github"></i></span>
-                </li>
-                <li class="icon youtube">
-                    <span class="tooltip">Youtube</span>
-                    <span><i class="fab fa-youtube"></i></span>
-                </li>
             </ul>
         </div>
         </div>
@@ -191,20 +183,6 @@ a:hover::before {
 .wrapper .instagram:hover .tooltip,
 .wrapper .instagram:hover .tooltip::before {
   background: #E4405F;
-  color: #ffffff;
-}
-
-.wrapper .github:hover,
-.wrapper .github:hover .tooltip,
-.wrapper .github:hover .tooltip::before {
-  background: #333333;
-  color: #ffffff;
-}
-
-.wrapper .youtube:hover,
-.wrapper .youtube:hover .tooltip,
-.wrapper .youtube:hover .tooltip::before {
-  background: #CD201F;
   color: #ffffff;
 }
 .brands-list{

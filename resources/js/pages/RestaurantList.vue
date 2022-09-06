@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div class="container pt-4">
+    <div class="container pt-4" v-if="restaurants.length > 0">
         <div class="row">
             <div class="col-12">
                 <h1>I nostri ristoranti</h1>
@@ -15,6 +15,15 @@
                         </div>
                         <img class="img-fluid" :src="`../storage/${restaurant.image}`" alt="">
                     </router-link>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div v-else>
+        <div class="container pt-4">
+            <div class="row text-center">
+                <div class="col-12 p-5">
+                    <h1>Al momento non ci sono ristoranti associati!</h1>
                 </div>
             </div>
         </div>
