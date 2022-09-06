@@ -11068,3 +11068,12 @@ main {
   background: #555;
 }
 
+.beige-bg {
+  background-color: #eee1b3;
+}
+
+.black-btn {
+  background-color: black;
+  border-color: black;
+}
+
