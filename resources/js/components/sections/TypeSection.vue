@@ -8,8 +8,8 @@
             <div v-if="types.length > 0">
                 <!-- <form @submit.prevent="chooseType()"> -->
                     <div class="row justify-content-center">
-                        <div v-for="type in firstTypes" :key="type.id">
-                            <div class="col-2 d-flex">
+                        <div v-for="type in types" :key="type.id">
+                            <div class="col-2 d-flex p-2">
                                 <div class="type_box transform">
                                     <router-link class="link-text" :to="{ name: 'restaurant-list', params: {type: type.name} }">
                                         <div class="box_img">
@@ -45,13 +45,14 @@ export default {
         })
     },
     computed: {
-        firstTypes() {
-            let arr = [];
-            for (let i = 0; i < 8; i++) {
-                arr.push(this.types[i]);
-            }
-            return arr;
-        }
+         // * Funzione per mostrare solamente 8 tipologie 
+    //     firstTypes() {
+    //         let arr = [];
+    //         for (let i = 0; i < 8; i++) {
+    //             arr.push(this.types[i]);
+    //         }
+    //         return arr;
+    //     }
     },
     // methods: {
     //     chooseType(){
