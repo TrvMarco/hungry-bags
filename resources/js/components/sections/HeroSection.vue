@@ -43,6 +43,7 @@ export default {
             // box-shadow: inset 0px 0px 50px 23px #000000;
         }
 
+
         .input-container {
             display: flex;
             max-width: 540px;
