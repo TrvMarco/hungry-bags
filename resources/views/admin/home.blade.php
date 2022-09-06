@@ -16,7 +16,6 @@
                         <a class="btn btn-primary inserisci-img-btn" href="{{route('admin.users.edit', $user)}}">
                             <small>Clicca QUI per inserire un'immagine</small>
                         </a>
-                       
                     @endif
                     <h5 class="card-title"><strong>{{ $user->name }}</strong></h5>
                     <p class="card-text"><strong>Indirizzo:</strong> {{ $user->address}}</p>
