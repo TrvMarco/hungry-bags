@@ -9,9 +9,10 @@
                 <h2>{{user.name}}</h2>
             </div>
         </div>
-        <div class="row gap">
-            <!-- CARD ITEM -->
-            <div v-for="item,id in items" :key="id" class="col-sm-12 col-md-6">
+        <div class="row gap ">
+            <div class="col-6">
+                      <!-- CARD ITEM -->
+            <div v-for="item,id in items" :key="id" class="col my-3">
                 <div class="menu_item_box d-flex p-2 flex-wrap">
                     <div class="item_box_description col-8">
                         <h4>{{item.name}}</h4>
@@ -24,17 +25,50 @@
                         <hr>
                         <div class="d-flex justify-content-between">
                             <div class="div"><strong>Prezzo:</strong> {{item.price.toFixed(2)}}&#8364;</div>
-                            <div><i class="fa-solid fa-circle-plus add_cart_plus" @click="addToCart(item)"></i></div>
+                            <div class="cart_managemen d-flex ">
+                                <!-- <div><i class="fa-solid fa-minus " @click="deleteItem(item)"></i></div> -->
+                                <div><i class="fa-solid fa-circle-plus add_cart_plus" @click="addToCart(item)"></i></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            </div>
+            <!-- BOX TOTALE -->
+            <div class="col my-3">
+                <!-- CONFERMA ORDINE -->
+                <div class="menu_item_box p-2">
+                    <h4 class="text-center pt-2">il tuo carrello : </h4>
+                    <hr>
+                    <div v-if="virtualCart.length >0 " class="px-4">
+                        
+                        <div   class="d-flex justify-content-between align-items-center my-2" v-for="item,id in virtualCart" :key="id">
+                            <span>{{id}} - {{item.name}}</span>
+                            <div class="d-flex align-items-center">
+                                <span class="mx-3">{{item.price.toFixed(2)}}&#8364;</span>
+                                <span><i class="fa-solid fa-minus minus_class " @click="deleteItem(id)"></i></span>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div v-else class="text-center">
+                        <h4> inserisci i tuoi piatti preferiti ! </h4> 
+                    </div>
+                    
+                
+                </div>
+            </div>
+            
         </div>
+        
+        
         <div v-if="items.length == 0 " class="row text-center">
             <div class="col-12 p-5">
                 <h1>Il ristoratore non ha ancora aggiunto il suo menù</h1>
             </div>
         </div>
+        
+        
     </div>
   </main>
 </template>
@@ -62,6 +96,7 @@ export default {
     //    console.log(JSON.parse(localStorage.getItem('prodotto')).length)
          if(this.virtualCart.length === 0 && JSON.parse(localStorage.getItem('prodotto')) != null ){
                 this.virtualCart = JSON.parse(localStorage.getItem('prodotto'));
+                this.shared.count = this.virtualCart.length;
             }
         // if(JSON.parse(localStorage.getItem('prodotto')) != null){
         //     console.log('ok');
@@ -86,14 +121,25 @@ export default {
                 this.virtualCart.push(item);
                 localStorage.setItem('prodotto', JSON.stringify(this.virtualCart));
                 console.log(JSON.parse(localStorage.getItem('prodotto')));
+                this.shared.count = this.virtualCart.length;
                 
             }else{
                 alert("elemento non dello stesso ristorante")
-            }
+            } 
+        },
+        deleteItem(id){
+            console.log(id)
+            
+            console.log(this.virtualCart);
+            //elimino un elemento dall'array myCart
+            this.virtualCart.splice(id,1); 
+            // assegno nuovamente l'array allo storage 
+            this.shared.count = this.virtualCart.length;
+            localStorage.setItem('prodotto', JSON.stringify(this.virtualCart))
+           
         
-            
-            
-        }
+        },
+
 
 
     
@@ -144,4 +190,13 @@ export default {
     .gap{
         row-gap: 1.875rem;
     }
+
+    .minus_class{
+        background-color:#b40404;
+        padding: .1875rem;
+        color: #ffff;
+        border-radius: 50%;
+    }
+
+     
 </style>

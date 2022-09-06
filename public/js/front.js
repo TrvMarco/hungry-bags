@@ -1934,6 +1934,14 @@ __webpack_require__.r(__webpack_exports__);
       shared: _shared__WEBPACK_IMPORTED_MODULE_1__["default"]
     };
   },
+  created: function created() {
+    if (JSON.parse(localStorage.getItem('prodotto')) != null) {
+      this.shared.count = JSON.parse(localStorage.getItem('prodotto')).length;
+    } // if(JSON.parse(localStorage.getItem('prodotto')) != null){
+    //     console.log('ok');
+    // }
+
+  },
   computed: {
     count: function count() {
       if (JSON.parse(localStorage.getItem('prodotto')) != null) {
@@ -2077,7 +2085,8 @@ __webpack_require__.r(__webpack_exports__);
     deleteItem: function deleteItem(id) {
       console.log(id); //elimino un elemento dall'array myCart
 
-      this.myCart.splice(id, 1); // assegno nuovamente l'array allo storage 
+      this.myCart.splice(id, 1);
+      this.shared.count = this.myCart.length; // assegno nuovamente l'array allo storage 
 
       localStorage.setItem('prodotto', JSON.stringify(this.myCart));
     },
@@ -2212,6 +2221,7 @@ __webpack_require__.r(__webpack_exports__);
 
     if (this.virtualCart.length === 0 && JSON.parse(localStorage.getItem('prodotto')) != null) {
       this.virtualCart = JSON.parse(localStorage.getItem('prodotto'));
+      this.shared.count = this.virtualCart.length;
     } // if(JSON.parse(localStorage.getItem('prodotto')) != null){
     //     console.log('ok');
     // }
@@ -2226,9 +2236,19 @@ __webpack_require__.r(__webpack_exports__);
         this.virtualCart.push(item);
         localStorage.setItem('prodotto', JSON.stringify(this.virtualCart));
         console.log(JSON.parse(localStorage.getItem('prodotto')));
+        this.shared.count = this.virtualCart.length;
       } else {
         alert("elemento non dello stesso ristorante");
       }
+    },
+    deleteItem: function deleteItem(id) {
+      console.log(id);
+      console.log(this.virtualCart); //elimino un elemento dall'array myCart
+
+      this.virtualCart.splice(id, 1); // assegno nuovamente l'array allo storage 
+
+      this.shared.count = this.virtualCart.length;
+      localStorage.setItem('prodotto', JSON.stringify(this.virtualCart));
     }
   },
   computed: {}
@@ -2377,18 +2397,6 @@ var staticRenderFns = [function () {
     staticClass: "tooltip"
   }, [_vm._v("Instagram")]), _vm._v(" "), _c("span", [_c("i", {
     staticClass: "fab fa-instagram"
-  })])]), _vm._v(" "), _c("li", {
-    staticClass: "icon github"
-  }, [_c("span", {
-    staticClass: "tooltip"
-  }, [_vm._v("Github")]), _vm._v(" "), _c("span", [_c("i", {
-    staticClass: "fab fa-github"
-  })])]), _vm._v(" "), _c("li", {
-    staticClass: "icon youtube"
-  }, [_c("span", {
-    staticClass: "tooltip"
-  }, [_vm._v("Youtube")]), _vm._v(" "), _c("span", [_c("i", {
-    staticClass: "fab fa-youtube"
   })])])])])])]);
 }];
 render._withStripped = true;
@@ -2421,7 +2429,7 @@ var render = function render() {
     staticClass: "cart"
   }, [_vm._m(2), _vm._v(" "), _c("span", {
     staticClass: "items-count"
-  }, [_c("strong", [_vm._v(_vm._s(_vm.count))])])])])])])]);
+  }, [_c("strong", [_vm._v(_vm._s(_vm.shared.count))])])])])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -2982,7 +2990,7 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("main", [_c("div", {
+  return _c("main", [_vm.restaurants.length > 0 ? _c("div", {
     staticClass: "container pt-4"
   }, [_vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "row"
@@ -3013,7 +3021,7 @@ var render = function render() {
         alt: ""
       }
     })])], 1)]);
-  }), 0)])]);
+  }), 0)]) : _c("div", [_vm._m(1)])]);
 };
 
 var staticRenderFns = [function () {
@@ -3025,6 +3033,17 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "col-12"
   }, [_c("h1", [_vm._v("I nostri ristoranti")])])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "container pt-4"
+  }, [_c("div", {
+    staticClass: "row text-center"
+  }, [_c("div", {
+    staticClass: "col-12 p-5"
+  }, [_c("h1", [_vm._v("Al momento non ci sono ristoranti associati!")])])])]);
 }];
 render._withStripped = true;
 
@@ -3062,10 +3081,12 @@ var render = function render() {
     staticClass: "col-10 pt-3"
   }, [_c("h2", [_vm._v(_vm._s(_vm.user.name))])])]), _vm._v(" "), _c("div", {
     staticClass: "row gap"
+  }, [_c("div", {
+    staticClass: "col-6"
   }, _vm._l(_vm.items, function (item, id) {
     return _c("div", {
       key: id,
-      staticClass: "col-sm-12 col-md-6"
+      staticClass: "col my-3"
     }, [_c("div", {
       staticClass: "menu_item_box d-flex p-2 flex-wrap"
     }, [_c("div", {
@@ -3084,18 +3105,55 @@ var render = function render() {
       staticClass: "d-flex justify-content-between"
     }, [_c("div", {
       staticClass: "div"
-    }, [_c("strong", [_vm._v("Prezzo:")]), _vm._v(" " + _vm._s(item.price.toFixed(2)) + "€")]), _vm._v(" "), _c("div", [_c("i", {
+    }, [_c("strong", [_vm._v("Prezzo:")]), _vm._v(" " + _vm._s(item.price.toFixed(2)) + "€")]), _vm._v(" "), _c("div", {
+      staticClass: "cart_managemen d-flex"
+    }, [_c("div", [_c("i", {
       staticClass: "fa-solid fa-circle-plus add_cart_plus",
       on: {
         click: function click($event) {
           return _vm.addToCart(item);
         }
       }
-    })])])])])]);
-  }), 0)])]);
+    })])])])])])]);
+  }), 0), _vm._v(" "), _c("div", {
+    staticClass: "col my-3"
+  }, [_c("div", {
+    staticClass: "menu_item_box p-2"
+  }, [_c("h4", {
+    staticClass: "text-center pt-2"
+  }, [_vm._v("il tuo carrello : ")]), _vm._v(" "), _c("hr"), _vm._v(" "), _vm.virtualCart.length > 0 ? _c("div", {
+    staticClass: "px-4"
+  }, _vm._l(_vm.virtualCart, function (item, id) {
+    return _c("div", {
+      key: id,
+      staticClass: "d-flex justify-content-between align-items-center my-2"
+    }, [_c("span", [_vm._v(_vm._s(id) + " - " + _vm._s(item.name))]), _vm._v(" "), _c("div", {
+      staticClass: "d-flex align-items-center"
+    }, [_c("span", {
+      staticClass: "mx-3"
+    }, [_vm._v(_vm._s(item.price.toFixed(2)) + "€")]), _vm._v(" "), _c("span", [_c("i", {
+      staticClass: "fa-solid fa-minus minus_class",
+      on: {
+        click: function click($event) {
+          return _vm.deleteItem(id);
+        }
+      }
+    })])])]);
+  }), 0) : _c("div", {
+    staticClass: "text-center"
+  }, [_c("h4", [_vm._v(" inserisci i tuoi piatti preferiti ! ")])])])])]), _vm._v(" "), _vm.items.length == 0 ? _c("div", {
+    staticClass: "row text-center"
+  }, [_vm._m(0)]) : _vm._e()])]);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "col-12 p-5"
+  }, [_c("h1", [_vm._v("Il ristoratore non ha ancora aggiunto il suo menù")])]);
+}];
 render._withStripped = true;
 
 
@@ -3141,7 +3199,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "footer[data-v-cc917e4c] {\n  background-color: #111214;\n  color: white;\n}\nfooter .container[data-v-cc917e4c] {\n  padding-top: 3.125rem;\n}\nul[data-v-cc917e4c] {\n  list-style: none;\n  line-height: 30px;\n}\n.brands li[data-v-cc917e4c] {\n  display: flex;\n  padding-right: 1.875rem;\n  margin-left: 0px;\n}\n.list ul li a[data-v-cc917e4c] {\n  position: relative;\n  color: #ffffff;\n  text-decoration: none;\n}\na[data-v-cc917e4c]::before {\n  content: \"\";\n  position: absolute;\n  width: 100%;\n  height: 2px;\n  border-radius: 2px;\n  background-color: #ffffff;\n  bottom: 0;\n  left: 0;\n  transform-origin: right;\n  transform: scaleX(0);\n  transition: transform 0.3s ease-in-out;\n}\na[data-v-cc917e4c]:hover::before {\n  transform-origin: left;\n  transform: scaleX(1);\n}\n.wrapper[data-v-cc917e4c] {\n  display: inline-flex;\n  list-style: none;\n}\n.wrapper .icon[data-v-cc917e4c] {\n  position: relative;\n  background: #ffffff;\n  border-radius: 50%;\n  padding: 15px;\n  margin: 10px;\n  width: 50px;\n  height: 50px;\n  font-size: 18px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);\n  cursor: pointer;\n  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n  color: #111214;\n}\n.wrapper .tooltip[data-v-cc917e4c] {\n  position: absolute;\n  top: 0;\n  font-size: 14px;\n  background: #ffffff;\n  color: #ffffff;\n  padding: 5px 8px;\n  border-radius: 5px;\n  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);\n  opacity: 0;\n  pointer-events: none;\n  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.wrapper .tooltip[data-v-cc917e4c]::before {\n  position: absolute;\n  content: \"\";\n  height: 8px;\n  width: 8px;\n  background: #ffffff;\n  bottom: -3px;\n  left: 50%;\n  transform: translate(-50%) rotate(45deg);\n  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.wrapper .icon:hover .tooltip[data-v-cc917e4c] {\n  top: -45px;\n  opacity: 1;\n  visibility: visible;\n  pointer-events: auto;\n}\n.wrapper .icon:hover span[data-v-cc917e4c],\n.wrapper .icon:hover .tooltip[data-v-cc917e4c] {\n  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);\n}\n.wrapper .facebook[data-v-cc917e4c]:hover,\n.wrapper .facebook:hover .tooltip[data-v-cc917e4c],\n.wrapper .facebook:hover .tooltip[data-v-cc917e4c]::before {\n  background: #1877F2;\n  color: #ffffff;\n}\n.wrapper .twitter[data-v-cc917e4c]:hover,\n.wrapper .twitter:hover .tooltip[data-v-cc917e4c],\n.wrapper .twitter:hover .tooltip[data-v-cc917e4c]::before {\n  background: #1DA1F2;\n  color: #ffffff;\n}\n.wrapper .instagram[data-v-cc917e4c]:hover,\n.wrapper .instagram:hover .tooltip[data-v-cc917e4c],\n.wrapper .instagram:hover .tooltip[data-v-cc917e4c]::before {\n  background: #E4405F;\n  color: #ffffff;\n}\n.wrapper .github[data-v-cc917e4c]:hover,\n.wrapper .github:hover .tooltip[data-v-cc917e4c],\n.wrapper .github:hover .tooltip[data-v-cc917e4c]::before {\n  background: #333333;\n  color: #ffffff;\n}\n.wrapper .youtube[data-v-cc917e4c]:hover,\n.wrapper .youtube:hover .tooltip[data-v-cc917e4c],\n.wrapper .youtube:hover .tooltip[data-v-cc917e4c]::before {\n  background: #CD201F;\n  color: #ffffff;\n}\n.brands-list[data-v-cc917e4c] {\n  padding-top: 2.5rem;\n}\n.social[data-v-cc917e4c] {\n  display: flex;\n  justify-content: flex-end;\n}", ""]);
+exports.push([module.i, "footer[data-v-cc917e4c] {\n  background-color: #111214;\n  color: white;\n}\nfooter .container[data-v-cc917e4c] {\n  padding-top: 3.125rem;\n}\nul[data-v-cc917e4c] {\n  list-style: none;\n  line-height: 30px;\n}\n.brands li[data-v-cc917e4c] {\n  display: flex;\n  padding-right: 1.875rem;\n  margin-left: 0px;\n}\n.list ul li a[data-v-cc917e4c] {\n  position: relative;\n  color: #ffffff;\n  text-decoration: none;\n}\na[data-v-cc917e4c]::before {\n  content: \"\";\n  position: absolute;\n  width: 100%;\n  height: 2px;\n  border-radius: 2px;\n  background-color: #ffffff;\n  bottom: 0;\n  left: 0;\n  transform-origin: right;\n  transform: scaleX(0);\n  transition: transform 0.3s ease-in-out;\n}\na[data-v-cc917e4c]:hover::before {\n  transform-origin: left;\n  transform: scaleX(1);\n}\n.wrapper[data-v-cc917e4c] {\n  display: inline-flex;\n  list-style: none;\n}\n.wrapper .icon[data-v-cc917e4c] {\n  position: relative;\n  background: #ffffff;\n  border-radius: 50%;\n  padding: 15px;\n  margin: 10px;\n  width: 50px;\n  height: 50px;\n  font-size: 18px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);\n  cursor: pointer;\n  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n  color: #111214;\n}\n.wrapper .tooltip[data-v-cc917e4c] {\n  position: absolute;\n  top: 0;\n  font-size: 14px;\n  background: #ffffff;\n  color: #ffffff;\n  padding: 5px 8px;\n  border-radius: 5px;\n  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);\n  opacity: 0;\n  pointer-events: none;\n  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.wrapper .tooltip[data-v-cc917e4c]::before {\n  position: absolute;\n  content: \"\";\n  height: 8px;\n  width: 8px;\n  background: #ffffff;\n  bottom: -3px;\n  left: 50%;\n  transform: translate(-50%) rotate(45deg);\n  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.wrapper .icon:hover .tooltip[data-v-cc917e4c] {\n  top: -45px;\n  opacity: 1;\n  visibility: visible;\n  pointer-events: auto;\n}\n.wrapper .icon:hover span[data-v-cc917e4c],\n.wrapper .icon:hover .tooltip[data-v-cc917e4c] {\n  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);\n}\n.wrapper .facebook[data-v-cc917e4c]:hover,\n.wrapper .facebook:hover .tooltip[data-v-cc917e4c],\n.wrapper .facebook:hover .tooltip[data-v-cc917e4c]::before {\n  background: #1877F2;\n  color: #ffffff;\n}\n.wrapper .twitter[data-v-cc917e4c]:hover,\n.wrapper .twitter:hover .tooltip[data-v-cc917e4c],\n.wrapper .twitter:hover .tooltip[data-v-cc917e4c]::before {\n  background: #1DA1F2;\n  color: #ffffff;\n}\n.wrapper .instagram[data-v-cc917e4c]:hover,\n.wrapper .instagram:hover .tooltip[data-v-cc917e4c],\n.wrapper .instagram:hover .tooltip[data-v-cc917e4c]::before {\n  background: #E4405F;\n  color: #ffffff;\n}\n.brands-list[data-v-cc917e4c] {\n  padding-top: 2.5rem;\n}\n.social[data-v-cc917e4c] {\n  display: flex;\n  justify-content: flex-end;\n}", ""]);
 
 // exports
 
@@ -3294,7 +3352,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".menu_item_box[data-v-2ff820ae] {\n  min-height: 10.625rem;\n  background-color: beige;\n  border-radius: 0.625rem;\n  box-shadow: 9px 6px 19px -7px #000000;\n}\n.menu_item_box .item_box_description[data-v-2ff820ae] {\n  font-size: 0.8125rem;\n}\n.menu_item_box .item_box_image[data-v-2ff820ae] {\n  width: 9.375rem;\n  height: 9.375rem;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.menu_item_box .item_box_image img[data-v-2ff820ae] {\n  border-radius: 0.625rem;\n  overflow: hidden;\n}\n.add_cart_plus[data-v-2ff820ae] {\n  font-size: 1.25rem;\n  color: rgba(62, 196, 184, 0.938);\n  cursor: pointer;\n  transition: all 0.5s;\n}\n.add_cart_plus[data-v-2ff820ae]:hover {\n  transform: scale(1.5);\n}\n.gap[data-v-2ff820ae] {\n  row-gap: 1.875rem;\n}", ""]);
+exports.push([module.i, ".menu_item_box[data-v-2ff820ae] {\n  min-height: 10.625rem;\n  background-color: beige;\n  border-radius: 0.625rem;\n  box-shadow: 9px 6px 19px -7px #000000;\n}\n.menu_item_box .item_box_description[data-v-2ff820ae] {\n  font-size: 0.8125rem;\n}\n.menu_item_box .item_box_image[data-v-2ff820ae] {\n  width: 9.375rem;\n  height: 9.375rem;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.menu_item_box .item_box_image img[data-v-2ff820ae] {\n  border-radius: 0.625rem;\n  overflow: hidden;\n}\n.add_cart_plus[data-v-2ff820ae] {\n  font-size: 1.25rem;\n  color: rgba(62, 196, 184, 0.938);\n  cursor: pointer;\n  transition: all 0.5s;\n}\n.add_cart_plus[data-v-2ff820ae]:hover {\n  transform: scale(1.5);\n}\n.gap[data-v-2ff820ae] {\n  row-gap: 1.875rem;\n}\n.minus_class[data-v-2ff820ae] {\n  background-color: #b40404;\n  padding: 0.1875rem;\n  color: white;\n  border-radius: 50%;\n}", ""]);
 
 // exports
 
