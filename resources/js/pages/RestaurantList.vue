@@ -32,19 +32,36 @@
 </template>
 
 <script>
+
+import shared from '../shared'
+
 export default {
     name: 'RestaurantList',
     data(){
         return{
-            restaurants: []
+            restaurants: [],
+            shared,
         }
     },
     created(){
-        axios.get(`/api/users/${this.$route.params.type}`) 
+        axios.get(`/api/users`) 
         .then((response) => {
-            this.restaurants = response.data.users
-            console.log(response.data.users)
+            this.restaurants = response.data
+            // console.log(response.data.users)
         })
+    },
+    computed: {
+        restaurantFilter(){
+            let array = []
+            this.restaurants.forEach(elm => {
+                for(let i = 0; i < this.shared.typeChoose.length - 1; i++){
+                    if(elm.types.name == this.shared.typeChoose[i]){
+                        this.array.push(elm)
+                    }
+                }
+            });
+            return array;
+        }
     }
 }
 </script>

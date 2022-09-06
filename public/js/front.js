@@ -1909,7 +1909,50 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'BaseFooter'
+  name: 'BaseFooter',
+  data: function data() {
+    return {
+      linksForce: [{
+        text: "Lavora con noi",
+        url: ""
+      }, {
+        text: "HungryBags per i partner",
+        url: ""
+      }, {
+        text: "Corrieri",
+        url: ""
+      }, {
+        text: "HungryBags Business",
+        url: ""
+      }],
+      linksInt: [{
+        text: "Chi siamo",
+        url: ""
+      }, {
+        text: "FAQ",
+        url: ""
+      }, {
+        text: "Blog",
+        url: ""
+      }, {
+        text: "Contattaci",
+        url: ""
+      }, {
+        text: "Sicurezza",
+        url: ""
+      }],
+      linksAbout: [{
+        text: "Termini e condizioni",
+        url: ""
+      }, {
+        text: "Politica sulla privacy",
+        url: ""
+      }, {
+        text: "politica sui cookie",
+        url: ""
+      }]
+    };
+  }
 });
 
 /***/ }),
@@ -2001,10 +2044,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _shared__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../shared */ "./resources/js/shared.js");
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'TypeSection',
   data: function data() {
     return {
+      shared: _shared__WEBPACK_IMPORTED_MODULE_0__["default"],
       types: [],
       typeChoose: [],
       choose: false
@@ -2017,24 +2063,26 @@ __webpack_require__.r(__webpack_exports__);
       _this.types = response.data;
     });
   },
-  computed: {// * Funzione per mostrare solamente 8 tipologie 
-    //     firstTypes() {
-    //         let arr = [];
-    //         for (let i = 0; i < 8; i++) {
-    //             arr.push(this.types[i]);
-    //         }
-    //         return arr;
-    //     }
-  } // methods: {
-  //     chooseType(){
-  //         axios.post('/api/users', this.typeChoose)
-  //         .then((resp) => {
-  //             this.typeChoose = [];
-  //             this.$router.push({name: 'restaurant-list'});
-  //         })
-  //     }
-  // }
-
+  methods: {
+    // chooseType(){
+    //     axios.post('/api/users', this.typeChoose)
+    //     .then((resp) => {
+    //         this.typeChoose = [];
+    //         this.$router.push({name: 'restaurant-list'});
+    //         console.log(resp)
+    //     })
+    // },
+    // searchType(){
+    // }
+    chooseType: function chooseType(elm) {
+      this.shared.typeChoose.push(elm);
+    },
+    getUsers: function getUsers() {
+      axios.get('/api/users').then(function (resp) {
+        console.log(resp);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -2159,20 +2207,37 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _shared__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../shared */ "./resources/js/shared.js");
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'RestaurantList',
   data: function data() {
     return {
-      restaurants: []
+      restaurants: [],
+      shared: _shared__WEBPACK_IMPORTED_MODULE_0__["default"]
     };
   },
   created: function created() {
     var _this = this;
 
-    axios.get("/api/users/".concat(this.$route.params.type)).then(function (response) {
-      _this.restaurants = response.data.users;
-      console.log(response.data.users);
+    axios.get("/api/users").then(function (response) {
+      _this.restaurants = response.data; // console.log(response.data.users)
     });
+  },
+  computed: {
+    restaurantFilter: function restaurantFilter() {
+      var _this2 = this;
+
+      var array = [];
+      this.restaurants.forEach(function (elm) {
+        for (var i = 0; i < _this2.shared.typeChoose.length - 1; i++) {
+          if (elm.types.name == _this2.shared.typeChoose[i]) {
+            _this2.array.push(elm);
+          }
+        }
+      });
+      return array;
+    }
   }
 });
 
@@ -2282,13 +2347,6 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
-};
-
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
   return _c("footer", {
     staticClass: "p-4"
   }, [_c("div", {
@@ -2297,63 +2355,77 @@ var staticRenderFns = [function () {
     staticClass: "row list"
   }, [_c("ul", {
     staticClass: "col"
-  }, [_c("h2", [_vm._v("Uniamo le forze")]), _vm._v(" "), _c("li", [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Lavora con noi")])]), _vm._v(" "), _c("li", [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("HungryBags con i partner")])]), _vm._v(" "), _c("li", [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Corrieri")])]), _vm._v(" "), _c("li", [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("HungryBags business")])])]), _vm._v(" "), _c("ul", {
+  }, [_c("h2", [_vm._v("Uniamo le forze")]), _vm._v(" "), _vm._l(_vm.linksForce, function (link) {
+    return _c("li", {
+      key: link,
+      staticClass: "my-2"
+    }, [_c("a", {
+      attrs: {
+        href: link.url
+      }
+    }, [_vm._v(_vm._s(link.text))])]);
+  })], 2), _vm._v(" "), _c("ul", {
     staticClass: "col"
-  }, [_c("h2", [_vm._v("Link di interesse")]), _vm._v(" "), _c("li", [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Chi siamo")])]), _vm._v(" "), _c("li", [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("FAQ")])]), _vm._v(" "), _c("li", [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Blog")])]), _vm._v(" "), _c("li", [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Contattaci")])]), _vm._v(" "), _c("li", [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Sicurezza")])])]), _vm._v(" "), _c("ul", {
+  }, [_c("h2", [_vm._v("Link di interesse")]), _vm._v(" "), _vm._l(_vm.linksInt, function (link) {
+    return _c("li", {
+      key: link,
+      staticClass: "my-2"
+    }, [_c("a", {
+      attrs: {
+        href: link.url
+      }
+    }, [_vm._v(_vm._s(link.text))])]);
+  })], 2), _vm._v(" "), _c("ul", {
     staticClass: "col"
-  }, [_c("li", [_c("a", {
+  }, _vm._l(_vm.linksAbout, function (link) {
+    return _c("li", {
+      key: link,
+      staticClass: "my-2"
+    }, [_c("a", {
+      attrs: {
+        href: link.url
+      }
+    }, [_vm._v(_vm._s(link.text))])]);
+  }), 0), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3)])]);
+};
+
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "apps"
+  }, [_c("img", {
+    staticStyle: {
+      height: "50px"
+    },
     attrs: {
-      href: "#"
+      src: "https://res.cloudinary.com/glovoapp/image/fetch//w_105,h_35,c_fit,q_auto/https://glovoapp.com/images/app_store/download-button-new.svg",
+      alt: ""
     }
-  }, [_vm._v("Termini e condizioni")])]), _vm._v(" "), _c("li", [_c("a", {
+  }), _vm._v(" "), _c("img", {
+    staticStyle: {
+      height: "50px"
+    },
     attrs: {
-      href: "#"
+      src: "https://res.cloudinary.com/glovoapp/image/fetch//w_112,h_35,c_fit,q_auto/https://glovoapp.com/images/google_play/download-button-new.svg",
+      alt: ""
     }
-  }, [_vm._v("Politica sulla privacy")])]), _vm._v(" "), _c("li", [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Politica sui cookie")])])])]), _vm._v(" "), _c("div", {
+  })]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "brands-list"
   }, [_c("h2", [_vm._v("I brand più richiesti al momento")]), _vm._v(" "), _c("ul", {
     staticClass: "row brands"
-  }, [_c("li", [_vm._v("McDonalds")]), _vm._v(" "), _c("li", [_vm._v("Burger King")]), _vm._v(" "), _c("li", [_vm._v("Kfc")]), _vm._v(" "), _c("li", [_vm._v("Starbucks")])])]), _vm._v(" "), _c("div", {
+  }, [_c("li", [_vm._v("McDonalds")]), _vm._v(" "), _c("li", [_vm._v("Burger King")]), _vm._v(" "), _c("li", [_vm._v("Kfc")]), _vm._v(" "), _c("li", [_vm._v("Starbucks")])])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
     staticClass: "social"
   }, [_c("ul", {
     staticClass: "wrapper"
@@ -2375,7 +2447,44 @@ var staticRenderFns = [function () {
     staticClass: "tooltip"
   }, [_vm._v("Instagram")]), _vm._v(" "), _c("span", [_c("i", {
     staticClass: "fab fa-instagram"
-  })])])])])])]);
+  })])])])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "lang-select"
+  }, [_c("label", {
+    attrs: {
+      "for": "lang"
+    }
+  }, [_vm._v("Scegli una lingua ")]), _vm._v(" "), _c("select", {
+    staticClass: "lang",
+    attrs: {
+      onchange: "document.getElementById('preview').src = this.value"
+    }
+  }, [_c("option", {
+    attrs: {
+      value: "https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg"
+    }
+  }, [_vm._v("Italiano")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "https://upload.wikimedia.org/wikipedia/commons/4/42/Flag_of_the_United_Kingdom.png"
+    }
+  }, [_vm._v("Inglese ")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg"
+    }
+  }, [_vm._v("Spagnolo ")]), _vm._v(" "), _c("option", {
+    attrs: {
+      value: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg"
+    }
+  }, [_vm._v("Tedesco")])]), _vm._v(" "), _c("img", {
+    attrs: {
+      id: "preview",
+      height: "20px"
+    }
+  })]);
 }];
 render._withStripped = true;
 
@@ -2614,20 +2723,26 @@ var render = function render() {
       staticClass: "col-2 d-flex p-2"
     }, [_c("div", {
       staticClass: "type_box transform"
-    }, [_c("router-link", {
-      staticClass: "link-text",
-      attrs: {
-        to: {
-          name: "restaurant-list",
-          params: {
-            type: type.name
-          }
+    }, [_c("div", {
+      staticClass: "box_img",
+      on: {
+        click: function click($event) {
+          return _vm.chooseType(type.name);
         }
       }
-    }, [_c("div", {
-      staticClass: "box_img"
-    }, [_vm._v("\n                                          " + _vm._s(type.name) + "\n                                      ")])])], 1)])]);
-  }), 0)]) : _vm._e()])])]);
+    }, [_vm._v("\n                                  " + _vm._s(type.name) + "\n                              ")])])])]);
+  }), 0), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-12 text-center"
+  }, [_c("router-link", {
+    staticClass: "btn btn-success",
+    attrs: {
+      to: {
+        name: "restaurant-list"
+      }
+    }
+  }, [_vm._v("\n                          Cerca\n                      ")])], 1)])]) : _vm._e()])])]);
 };
 
 var staticRenderFns = [function () {
@@ -3147,7 +3262,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "footer[data-v-cc917e4c] {\n  background-color: #111214;\n  color: white;\n}\nfooter .container[data-v-cc917e4c] {\n  padding-top: 3.125rem;\n}\nul[data-v-cc917e4c] {\n  list-style: none;\n  line-height: 30px;\n}\n.brands li[data-v-cc917e4c] {\n  display: flex;\n  padding-right: 1.875rem;\n  margin-left: 0px;\n}\n.list ul li a[data-v-cc917e4c] {\n  position: relative;\n  color: #ffffff;\n  text-decoration: none;\n}\na[data-v-cc917e4c]::before {\n  content: \"\";\n  position: absolute;\n  width: 100%;\n  height: 2px;\n  border-radius: 2px;\n  background-color: #ffffff;\n  bottom: 0;\n  left: 0;\n  transform-origin: right;\n  transform: scaleX(0);\n  transition: transform 0.3s ease-in-out;\n}\na[data-v-cc917e4c]:hover::before {\n  transform-origin: left;\n  transform: scaleX(1);\n}\n.wrapper[data-v-cc917e4c] {\n  display: inline-flex;\n  list-style: none;\n}\n.wrapper .icon[data-v-cc917e4c] {\n  position: relative;\n  background: #ffffff;\n  border-radius: 50%;\n  padding: 15px;\n  margin: 10px;\n  width: 50px;\n  height: 50px;\n  font-size: 18px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);\n  cursor: pointer;\n  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n  color: #111214;\n}\n.wrapper .tooltip[data-v-cc917e4c] {\n  position: absolute;\n  top: 0;\n  font-size: 14px;\n  background: #ffffff;\n  color: #ffffff;\n  padding: 5px 8px;\n  border-radius: 5px;\n  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);\n  opacity: 0;\n  pointer-events: none;\n  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.wrapper .tooltip[data-v-cc917e4c]::before {\n  position: absolute;\n  content: \"\";\n  height: 8px;\n  width: 8px;\n  background: #ffffff;\n  bottom: -3px;\n  left: 50%;\n  transform: translate(-50%) rotate(45deg);\n  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.wrapper .icon:hover .tooltip[data-v-cc917e4c] {\n  top: -45px;\n  opacity: 1;\n  visibility: visible;\n  pointer-events: auto;\n}\n.wrapper .icon:hover span[data-v-cc917e4c],\n.wrapper .icon:hover .tooltip[data-v-cc917e4c] {\n  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);\n}\n.wrapper .facebook[data-v-cc917e4c]:hover,\n.wrapper .facebook:hover .tooltip[data-v-cc917e4c],\n.wrapper .facebook:hover .tooltip[data-v-cc917e4c]::before {\n  background: #1877F2;\n  color: #ffffff;\n}\n.wrapper .twitter[data-v-cc917e4c]:hover,\n.wrapper .twitter:hover .tooltip[data-v-cc917e4c],\n.wrapper .twitter:hover .tooltip[data-v-cc917e4c]::before {\n  background: #1DA1F2;\n  color: #ffffff;\n}\n.wrapper .instagram[data-v-cc917e4c]:hover,\n.wrapper .instagram:hover .tooltip[data-v-cc917e4c],\n.wrapper .instagram:hover .tooltip[data-v-cc917e4c]::before {\n  background: #E4405F;\n  color: #ffffff;\n}\n.brands-list[data-v-cc917e4c] {\n  padding-top: 2.5rem;\n}\n.social[data-v-cc917e4c] {\n  display: flex;\n  justify-content: flex-end;\n}", ""]);
+exports.push([module.i, "footer[data-v-cc917e4c] {\n  background-color: #111214;\n  color: white;\n}\nfooter .container[data-v-cc917e4c] {\n  padding-top: 3.125rem;\n}\nul[data-v-cc917e4c] {\n  list-style: none;\n  line-height: 30px;\n}\n.brands li[data-v-cc917e4c] {\n  display: flex;\n  padding-right: 1.875rem;\n  margin-left: 0px;\n}\n.list ul li a[data-v-cc917e4c] {\n  position: relative;\n  color: #ffffff;\n  text-decoration: none;\n}\na[data-v-cc917e4c]::before {\n  content: \"\";\n  position: absolute;\n  width: 100%;\n  height: 2px;\n  border-radius: 2px;\n  background-color: #ffffff;\n  bottom: 0;\n  left: 0;\n  transform-origin: right;\n  transform: scaleX(0);\n  transition: transform 0.3s ease-in-out;\n}\na[data-v-cc917e4c]:hover::before {\n  transform-origin: left;\n  transform: scaleX(1);\n}\n.wrapper[data-v-cc917e4c] {\n  display: inline-flex;\n  list-style: none;\n}\n.wrapper .icon[data-v-cc917e4c] {\n  position: relative;\n  background: #ffffff;\n  border-radius: 50%;\n  padding: 15px;\n  margin: 10px;\n  width: 50px;\n  height: 50px;\n  font-size: 18px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);\n  cursor: pointer;\n  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n  color: #111214;\n}\n.wrapper .tooltip[data-v-cc917e4c] {\n  position: absolute;\n  top: 0;\n  font-size: 14px;\n  background: #ffffff;\n  color: #ffffff;\n  padding: 5px 8px;\n  border-radius: 5px;\n  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);\n  opacity: 0;\n  pointer-events: none;\n  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.wrapper .tooltip[data-v-cc917e4c]::before {\n  position: absolute;\n  content: \"\";\n  height: 8px;\n  width: 8px;\n  background: #ffffff;\n  bottom: -3px;\n  left: 50%;\n  transform: translate(-50%) rotate(45deg);\n  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.wrapper .icon:hover .tooltip[data-v-cc917e4c] {\n  top: -45px;\n  opacity: 1;\n  visibility: visible;\n  pointer-events: auto;\n}\n.wrapper .icon:hover span[data-v-cc917e4c],\n.wrapper .icon:hover .tooltip[data-v-cc917e4c] {\n  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);\n}\n.wrapper .facebook[data-v-cc917e4c]:hover,\n.wrapper .facebook:hover .tooltip[data-v-cc917e4c],\n.wrapper .facebook:hover .tooltip[data-v-cc917e4c]::before {\n  background: #1877F2;\n  color: #ffffff;\n}\n.wrapper .twitter[data-v-cc917e4c]:hover,\n.wrapper .twitter:hover .tooltip[data-v-cc917e4c],\n.wrapper .twitter:hover .tooltip[data-v-cc917e4c]::before {\n  background: #1DA1F2;\n  color: #ffffff;\n}\n.wrapper .instagram[data-v-cc917e4c]:hover,\n.wrapper .instagram:hover .tooltip[data-v-cc917e4c],\n.wrapper .instagram:hover .tooltip[data-v-cc917e4c]::before {\n  background: #E4405F;\n  color: #ffffff;\n}\n.brands-list[data-v-cc917e4c] {\n  padding-top: 2.5rem;\n}\n.social[data-v-cc917e4c] {\n  display: flex;\n  justify-content: flex-end;\n}\n.flag[data-v-cc917e4c] {\n  width: 1.875rem;\n  height: 1.25rem;\n}\n.apps[data-v-cc917e4c] {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-evenly;\n}\n.lingua-select[data-v-cc917e4c] {\n  display: flex;\n  flex-direction: row;\n}\n.lang[data-v-cc917e4c] {\n  padding-left: 1.25rem;\n  padding-right: 1.25rem;\n}", ""]);
 
 // exports
 
@@ -20318,14 +20433,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************************************************!*\
   !*** ./resources/js/components/sections/TypeSection.vue ***!
   \**********************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TypeSection_vue_vue_type_template_id_c1d090d6_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TypeSection.vue?vue&type=template&id=c1d090d6&scoped=true& */ "./resources/js/components/sections/TypeSection.vue?vue&type=template&id=c1d090d6&scoped=true&");
 /* harmony import */ var _TypeSection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TypeSection.vue?vue&type=script&lang=js& */ "./resources/js/components/sections/TypeSection.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _TypeSection_vue_vue_type_style_index_0_id_c1d090d6_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TypeSection.vue?vue&type=style&index=0&id=c1d090d6&lang=scss&scoped=true& */ "./resources/js/components/sections/TypeSection.vue?vue&type=style&index=0&id=c1d090d6&lang=scss&scoped=true&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _TypeSection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _TypeSection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _TypeSection_vue_vue_type_style_index_0_id_c1d090d6_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TypeSection.vue?vue&type=style&index=0&id=c1d090d6&lang=scss&scoped=true& */ "./resources/js/components/sections/TypeSection.vue?vue&type=style&index=0&id=c1d090d6&lang=scss&scoped=true&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -20357,7 +20473,7 @@ component.options.__file = "resources/js/components/sections/TypeSection.vue"
 /*!***********************************************************************************!*\
   !*** ./resources/js/components/sections/TypeSection.vue?vue&type=script&lang=js& ***!
   \***********************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20881,7 +20997,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: "restaurant-area",
     component: _pages_RestaurantArea__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
-    path: "/restaurant-list/:type",
+    path: "/restaurant-list",
     name: "restaurant-list",
     component: _pages_RestaurantList__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
@@ -20916,7 +21032,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 /* harmony default export */ __webpack_exports__["default"] = (Vue.observable({
   totalCartPrice: 0,
   myCart: [],
-  count: 0
+  count: 0,
+  typeChoose: []
 }));
 
 /***/ }),

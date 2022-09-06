@@ -6,22 +6,24 @@
         </div>
         <div>
             <div v-if="types.length > 0">
-                <!-- <form @submit.prevent="chooseType()"> -->
-                    <div class="row justify-content-center">
-                        <div v-for="type in types" :key="type.id">
-                            <div class="col-2 d-flex p-2">
-                                <div class="type_box transform">
-                                    <router-link class="link-text" :to="{ name: 'restaurant-list', params: {type: type.name} }">
-                                        <div class="box_img">
-                                            {{type.name}}
-                                        </div>
-                                    </router-link>
+                <div class="row justify-content-center">
+                    <div v-for="type in types" :key="type.id">
+                        <div class="col-2 d-flex p-2">
+                            <div class="type_box transform">
+                                <div class="box_img" @click="chooseType(type.name)">
+                                    {{type.name}}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- <button type="submit">Cerca</button> -->
-                <!-- </form> -->
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <router-link  class="btn btn-success" :to="{ name: 'restaurant-list' }">
+                            Cerca
+                        </router-link>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -29,10 +31,14 @@
 </template>
 
 <script>
+
+import shared from '../../shared'
+
 export default {
     name: 'TypeSection',
     data() {
         return{
+            shared,
             types : [],
             typeChoose : [],
             choose: false,
@@ -41,29 +47,34 @@ export default {
     created() {
         axios.get('/api/types')
         .then((response) => {
-            this.types = response.data
+            this.types = response.data;
         })
     },
-    computed: {
-         // * Funzione per mostrare solamente 8 tipologie 
-    //     firstTypes() {
-    //         let arr = [];
-    //         for (let i = 0; i < 8; i++) {
-    //             arr.push(this.types[i]);
-    //         }
-    //         return arr;
-    //     }
-    },
-    // methods: {
-    //     chooseType(){
-    //         axios.post('/api/users', this.typeChoose)
-    //         .then((resp) => {
-    //             this.typeChoose = [];
-    //             this.$router.push({name: 'restaurant-list'});
-    //         })
-    //     }
-    // }
-}
+    methods: {
+        // chooseType(){
+        //     axios.post('/api/users', this.typeChoose)
+        //     .then((resp) => {
+        //         this.typeChoose = [];
+        //         this.$router.push({name: 'restaurant-list'});
+        //         console.log(resp)
+        //     })
+
+        // },
+        // searchType(){
+
+        // }
+        chooseType(elm){
+            this.shared.typeChoose.push(elm);
+        },
+        getUsers(){
+            axios.get('/api/users')
+            .then((resp)=>{
+                console.log(resp);
+            })
+        }
+        
+    }
+}   
 </script>
 
 <style lang="scss" scoped>

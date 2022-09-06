@@ -5,4 +5,5 @@ export default Vue.observable({
     totalCartPrice: 0,
     myCart: [],
     count: 0,
+    typeChoose: [],
 });
