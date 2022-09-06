@@ -32,6 +32,7 @@ Route::middleware('auth')
         Route::resource('users', 'UserController');
     });
 
+
     // frontoffice
 Route::any('{any?}',function(){
     return view('guest.home');

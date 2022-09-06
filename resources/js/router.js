@@ -8,6 +8,7 @@ import RestaurantArea from "./pages/RestaurantArea";
 import RestaurantList from "./pages/RestaurantList";
 import SingleRestaurant from './pages/SingleRestaurant';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 
 const router = new VueRouter({
     mode: "history",
@@ -36,6 +37,11 @@ const router = new VueRouter({
             path: "/check-out",
             name: "cart",
             component: Cart
+        },
+        {
+            path: "/payment",
+            name: "checkout",
+            component: Checkout
         }
         // {
         //     // path: "/*",

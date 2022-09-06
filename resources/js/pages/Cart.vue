@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div v-if="myCart.length > 0" class="container pb-5">
+    <div v-if="shared.myCart.length > 0" class="container pb-5">
         <div class="row p-4">
             <div class="col-12 text-center">
                 <h1>Completa il tuo ordine!</h1>
@@ -9,7 +9,7 @@
         <div class="d-flex row">
             <div class="col-12 col-lg-6">
                 <!-- BOX ITEM CARRELLO -->
-                <div class="col-sm-12 align-self-start pb-3" v-for="item,id in myCart" :key="id">
+                <div class="col-sm-12 align-self-start pb-3" v-for="item,id in shared.myCart" :key="id">
                     <div class="menu_item_box d-flex p-2 flex-wrap">
                         <div class="item_box_description col-8">
                             <h3>{{item.name}}</h3>
@@ -33,7 +33,7 @@
                     <h4 class="text-center pt-2">Confrema ordine:</h4>
                     <hr>
                     <div class="px-4">
-                        <div class="d-flex justify-content-between" v-for="item,id in myCart" :key="id">
+                        <div class="d-flex justify-content-between" v-for="item,id in shared.myCart" :key="id">
                             <span>{{item.name}}</span>
                             <span>{{item.price.toFixed(2)}}&#8364;</span>
                         </div>
@@ -99,7 +99,7 @@ export default {
         }
     },
     created(){
-       this.myCart = JSON.parse(localStorage.getItem('prodotto'))
+       this.shared.myCart = JSON.parse(localStorage.getItem('prodotto'))
         console.log(JSON.parse(localStorage.getItem('prodotto')).length)
        
         
@@ -111,9 +111,9 @@ export default {
          
             console.log(id)
             //elimino un elemento dall'array myCart
-            this.myCart.splice(id,1); 
+            this.shared.myCart.splice(id,1); 
             // assegno nuovamente l'array allo storage 
-            localStorage.setItem('prodotto', JSON.stringify(this.myCart))
+            localStorage.setItem('prodotto', JSON.stringify(this.shared.myCart))
            
         
         },
@@ -126,6 +126,7 @@ export default {
                 this.Dataclient.client_surname = '';
                 this.Dataclient.address = '';
                 this.Dataclient.phone = '';
+                this.$router.push({name: 'checkout'});
             })
             .catch((er) => {
                 console.log(er);
@@ -137,7 +138,7 @@ export default {
     computed: {
         sum(){
              let sum = 0;
-        this.myCart.forEach(elm => {
+        this.shared.myCart.forEach(elm => {
                 // console.log(elm.price);
                 sum += elm.price
         })

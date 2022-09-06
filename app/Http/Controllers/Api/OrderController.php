@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Order;
+
 class OrderController extends Controller
 {
     public function store(Request $request)
@@ -32,4 +33,6 @@ class OrderController extends Controller
         return $newOrder;
 
     }
+
+    
 }

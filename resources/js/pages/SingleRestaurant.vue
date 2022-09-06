@@ -10,6 +10,7 @@
             </div>
         </div>
         <div class="row gap">
+
             <!-- CARD ITEM -->
             <div v-for="item,id in items" :key="id" class="col-sm-12 col-md-6">
                 <div class="menu_item_box d-flex p-2 flex-wrap">
@@ -28,11 +29,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div v-if="items.length == 0 " class="row text-center">
-            <div class="col-12 p-5">
-                <h1>Il ristoratore non ha ancora aggiunto il suo menù</h1>
             </div>
         </div>
     </div>
@@ -80,23 +76,12 @@ export default {
     },
     methods: {
         addToCart(item){
-            // se l'elemento che inserisco ha lo stesso user_id del primo elemento lo inserisce altrimenti esce un alert elemento non dello stesso ristorante 
-            // console.log(this.virtualCart[0].user_id)
-            if(this.virtualCart.length === 0 || item.user_id === this.virtualCart[0].user_id){
-                this.virtualCart.push(item);
-                localStorage.setItem('prodotto', JSON.stringify(this.virtualCart));
-                console.log(JSON.parse(localStorage.getItem('prodotto')));
-                
-            }else{
-                alert("elemento non dello stesso ristorante")
-            }
-        
-            
-            
+            if(this.virtualCart.length === 0 || item.user_id === this.virtualCart[0].user_id)
+            this.shared.count ++;
+            this.virtualCart.push(item);
+            localStorage.setItem('prodotto', JSON.stringify(this.virtualCart));
+            console.log(JSON.parse(localStorage.getItem('prodotto')));   
         }
-
-
-    
     },
 
     computed:{
