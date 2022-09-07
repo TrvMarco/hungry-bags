@@ -64,7 +64,11 @@ export default {
 
         // }
         chooseType(elm){
-            this.shared.typeChoose.push(elm);
+            if(!this.shared.typeChoose.includes(elm)){
+                this.shared.typeChoose.push(elm);
+            }else{
+                // this.shared.typeChoose.splice(elm,1)
+            }
         },
         getUsers(){
             axios.get('/api/users')

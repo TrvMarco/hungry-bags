@@ -15,6 +15,7 @@ class UserController extends Controller
     public function index()
     {
         $user = User::with(['types'])->get();
+        // $user = User::all();
         return $user;
     }
 

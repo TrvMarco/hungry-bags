@@ -41,6 +41,7 @@ export default {
         return{
             restaurants: [],
             shared,
+            selectedRestaurants: []
         }
     },
     created(){
@@ -49,20 +50,33 @@ export default {
             this.restaurants = response.data
             // console.log(response.data.users)
         })
+
+        // console.log(this.shared.typeChoose)
+        this.restaurants.forEach(elm => {
+            console.log(this.elm)
+            for(let i = 0; i < this.shared.typeChoose.length - 1; i++){
+                console.log(elm)
+                // console.log(this.shared.typeChoose[i])
+                // if(elm.types[0].name == this.shared.typeChoose[i]){
+                //     array.push(elm)
+                // }
+            }
+        });
     },
-    computed: {
-        restaurantFilter(){
-            let array = []
-            this.restaurants.forEach(elm => {
-                for(let i = 0; i < this.shared.typeChoose.length - 1; i++){
-                    if(elm.types.name == this.shared.typeChoose[i]){
-                        this.array.push(elm)
-                    }
-                }
-            });
-            return array;
-        }
-    }
+    // computed: {
+    //     restaurantFilter(){
+    //         let array = []
+    //         this.restaurants.forEach(elm => {
+    //             for(let i = 0; i < this.shared.typeChoose.length - 1; i++){
+    //                 console.log(this.shared.typeChoose[i])
+    //                 // if(elm.types.name == this.shared.typeChoose[i]){
+    //                 //     this.array.push(elm)
+    //                 // }
+    //             }
+    //         });
+    //         return array;
+    //     }
+    // }
 }
 </script>
 
