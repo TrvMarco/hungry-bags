@@ -117,6 +117,10 @@ main {
     background: rgb(0, 0, 0);
 }
 
+.white-bg {
+    background: white;
+}
+
 .color-white {
     color: white;
 }
@@ -155,9 +159,9 @@ main {
     border-radius: 20px;
     border-color: black;
     margin: 5px 0px;
-    background-color: #eee1b3;
-    color: black;
-    border: 1px solid #eee1b3;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: 1px solid #000000;
 }
 
 .inserisci-img-btn {

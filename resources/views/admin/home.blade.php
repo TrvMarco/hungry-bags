@@ -27,7 +27,7 @@
                 {{-- CARD MENÙ --}}
                 <div class="card w-100 border-radius-20px  beige-bg">
                     <div class="card-header border-radius-20px">{{ __('Il tuo Menù') }}</div>
-                    <div class="card-body black-bg border-radius-bottom-20px color-white">
+                    <div class="card-body white-bg border-radius-bottom-20px color-black">
                             @foreach ($items as $item)
                                 <div class="card-text d-flex item_preview justify-content-between align-items-center">
                                     <div class="d-flex align-items-center margin-food-list">
