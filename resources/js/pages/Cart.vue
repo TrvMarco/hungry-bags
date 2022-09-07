@@ -112,6 +112,7 @@ export default {
             console.log(id)
             //elimino un elemento dall'array myCart
             this.myCart.splice(id,1); 
+            this.shared.count = this.myCart.length;
             // assegno nuovamente l'array allo storage 
             localStorage.setItem('prodotto', JSON.stringify(this.myCart))
            

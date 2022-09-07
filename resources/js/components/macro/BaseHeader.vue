@@ -12,7 +12,7 @@
                     </div>
                     <div class="cart">
                         <a href="/check-out" class="link-default cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                        <span class="items-count"><strong>{{count}}</strong></span>
+                        <span class="items-count"><strong>{{shared.count}}</strong></span>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,15 @@ export default {
             shared,
         }
     },
-  
+    created() {
+
+         if( JSON.parse(localStorage.getItem('prodotto')) != null ){
+                this.shared.count  = JSON.parse(localStorage.getItem('prodotto')).length;
+            }
+        // if(JSON.parse(localStorage.getItem('prodotto')) != null){
+        //     console.log('ok');
+        // }
+    },
     computed: {
          count(){
             if(JSON.parse(localStorage.getItem('prodotto')) != null){
@@ -48,6 +56,7 @@ export default {
 
 <style lang='scss' scoped>
     header{
+       
         .container-fluid{
             background-color: #111214;
 
