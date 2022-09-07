@@ -2015,7 +2015,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'HeroSection'
+  name: "HeroSection"
 });
 
 /***/ }),
@@ -2597,15 +2597,36 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {
-    staticClass: "col-6"
-  }, [_c("img", {
-    staticClass: "img-fluid",
+    staticClass: "col-12 col-md-6 sx"
+  }, [_c("div", {
     attrs: {
-      src: "https://wallpaperaccess.com/full/386420.jpg",
-      alt: ""
+      id: "slider"
     }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "col-12 col-md-6 p-5"
+  }, [_c("figure", [_c("img", {
+    attrs: {
+      src: "https://cdn.pixabay.com/photo/2016/04/26/03/55/salmon-1353598_960_720.jpg"
+    }
+  }), _vm._v(" "), _c("img", {
+    attrs: {
+      src: "https://cdn.pixabay.com/photo/2017/12/05/20/09/pizza-3000274_960_720.jpg"
+    }
+  }), _vm._v(" "), _c("img", {
+    attrs: {
+      src: "https://cdn.pixabay.com/photo/2020/03/21/11/17/burger-4953465_960_720.jpg"
+    }
+  }), _vm._v(" "), _c("img", {
+    attrs: {
+      src: "https://cdn.pixabay.com/photo/2017/01/16/17/45/pancake-1984716_960_720.jpg"
+    }
+  }), _vm._v(" "), _c("img", {
+    attrs: {
+      src: "https://cdn.pixabay.com/photo/2016/04/26/03/55/salmon-1353598_960_720.jpg"
+    }
+  })])])]), _vm._v(" "), _c("div", {
+    staticClass: "col-12 col-md-6 p-5 dx",
+    staticStyle: {
+      width: "100%"
+    }
   }, [_c("h2", [_vm._v("Hai fame?"), _c("br"), _vm._v("\n                Su HungryBags puoi ordinare tutto il cibo che vuoi con consegna a domicilio!")]), _vm._v(" "), _c("div", {
     staticClass: "input-container"
   }, [_c("div", {
@@ -3277,7 +3298,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".hero[data-v-251d0256] {\n  background-color: #111214;\n}\n.hero img[data-v-251d0256] {\n  box-shadow: 0px 0px 10px #000;\n}\n.hero .input-container[data-v-251d0256] {\n  display: flex;\n  max-width: 540px;\n  width: 100%;\n  font-size: 16px;\n  align-items: center;\n  height: 50px;\n  margin: 25px 0px 0px 0px;\n}\n.hero .input-container .flag-container[data-v-251d0256] {\n  background: #eee1b3;\n  height: 40px;\n  width: 40px;\n  border-top-left-radius: 8px;\n  border-bottom-left-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n}\n.hero .input-container .flag-container .flag[data-v-251d0256] {\n  color: black;\n}\n.hero .input-container .input-text[data-v-251d0256] {\n  border: none;\n  height: 40px;\n  padding: 3px 10px;\n}\n.hero .input-container .input-text[data-v-251d0256]:focus {\n  outline: none;\n}\n.hero .input-container .position-container[data-v-251d0256] {\n  display: flex;\n  cursor: pointer;\n}\n.hero .input-container .position-container .position[data-v-251d0256] {\n  background: #eee1b3;\n  height: 40px;\n  min-width: 40px;\n  border-top-right-radius: 8px;\n  border-bottom-right-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 10px;\n}\n.hero .input-container .position-container .position .position-icon[data-v-251d0256] {\n  color: black;\n  margin: 0px 8px 0px 0px;\n  font-size: 20px;\n}\n.hero .input-container .position-container .position .position-text[data-v-251d0256] {\n  color: black;\n}", ""]);
+exports.push([module.i, ".hero[data-v-251d0256] {\n  background-color: #111214;\n}\n.hero img[data-v-251d0256] {\n  box-shadow: 0px 0px 10px #000;\n}\n.hero .input-container[data-v-251d0256] {\n  display: flex;\n  max-width: 540px;\n  width: 100%;\n  font-size: 16px;\n  align-items: center;\n  height: 50px;\n  margin: 25px 0px 0px 0px;\n}\n.hero .input-container .flag-container[data-v-251d0256] {\n  background: #eee1b3;\n  height: 40px;\n  width: 40px;\n  border-top-left-radius: 8px;\n  border-bottom-left-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n}\n.hero .input-container .flag-container .flag[data-v-251d0256] {\n  color: black;\n}\n.hero .input-container .input-text[data-v-251d0256] {\n  border: none;\n  height: 40px;\n  padding: 3px 10px;\n}\n.hero .input-container .input-text[data-v-251d0256]:focus {\n  outline: none;\n}\n.hero .input-container .position-container[data-v-251d0256] {\n  display: flex;\n  cursor: pointer;\n}\n.hero .input-container .position-container .position[data-v-251d0256] {\n  background: #eee1b3;\n  height: 40px;\n  min-width: 40px;\n  border-top-right-radius: 8px;\n  border-bottom-right-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 10px;\n}\n.hero .input-container .position-container .position .position-icon[data-v-251d0256] {\n  color: black;\n  margin: 0px 8px 0px 0px;\n  font-size: 20px;\n}\n.hero .input-container .position-container .position .position-text[data-v-251d0256] {\n  color: black;\n}\n#slider figure img[data-v-251d0256] {\n  height: 300px;\n  width: 20%;\n  float: left;\n}\n#slider[data-v-251d0256] {\n  overflow: hidden;\n}\n#slider figure[data-v-251d0256] {\n  position: relative;\n  width: 500%;\n  margin: 0;\n  left: 0;\n  -webkit-animation: 25s slider-251d0256 infinite;\n          animation: 25s slider-251d0256 infinite;\n}\n@-webkit-keyframes slider-251d0256 {\n0% {\n    left: 0;\n}\n20% {\n    left: 0;\n}\n25% {\n    left: -100%;\n}\n45% {\n    left: -100%;\n}\n50% {\n    left: -200%;\n}\n70% {\n    left: -200%;\n}\n75% {\n    left: -300%;\n}\n95% {\n    left: -300%;\n}\n100% {\n    left: -400%;\n}\n}\n@keyframes slider-251d0256 {\n0% {\n    left: 0;\n}\n20% {\n    left: 0;\n}\n25% {\n    left: -100%;\n}\n45% {\n    left: -100%;\n}\n50% {\n    left: -200%;\n}\n70% {\n    left: -200%;\n}\n75% {\n    left: -300%;\n}\n95% {\n    left: -300%;\n}\n100% {\n    left: -400%;\n}\n}", ""]);
 
 // exports
 
