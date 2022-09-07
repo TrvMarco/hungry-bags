@@ -19,19 +19,26 @@
                         </div>
                     </div>
             </div>
-            <div class="row">
+            <div v-show="showBox == true">
                 <!-- Prova restaurants -->
-                <div class="row justify-content-center pt-4">
-                    <div class="col-6 col-md-2 pb-3" v-for="restaurant,id in restaurants" :key="id">
-                        <div class="restaurant_card">
-                            <router-link class="router_link" :to="{ name: 'single-restaurant', params: { user: restaurant.name} }">
-                                <div class="restaurant_name">
-                                    <h3 class="restaurant_title text-center">{{restaurant.name}}</h3>
-                                </div>
-                                <img class="img-fluid" :src="`../storage/${restaurant.image}`" alt="">
-                            </router-link>
+                <div v-if="restaurantByType.length > 0" class="row justify-content-center pt-4">
+                        <div class="col-6 col-md-2 pb-3" v-for="restaurant,id in restaurantByType" :key="id">
+                                <transition appear name="fade">
+                            <div class="restaurant_card">
+                                <router-link class="router_link" :to="{ name: 'single-restaurant', params: { user: restaurant.name} }">
+                                    <div class="restaurant_name">
+                                        <h3 class="restaurant_title text-center">{{restaurant.name}}</h3>
+                                    </div>
+                                    <img class="img-fluid" :src="`../storage/${restaurant.image}`" alt="">
+                                </router-link>
+                            </div>
+                                </transition>
                         </div>
-                    </div>
+                </div>
+                <div v-else class="row justify-content-center pt-4">
+                    <transition appear name="fade">
+                    <h5><i class="fa-regular fa-face-sad-tear"></i> Nessun ristorante associato a questa categoria</h5>
+                    </transition>
                 </div>
             </div>
         </div>
@@ -40,14 +47,15 @@
 </template>
 
 <script>
+
 export default {
     name: 'TypeSection',
     data() {
         return{
             types : [],
-            typeChoose : [],
-            choose: false,
-            restaurants: []
+            restaurants: [],
+            restaurantByType: [],
+            showBox: false,
         };
     },
     created() {
@@ -61,20 +69,23 @@ export default {
             this.restaurants = response.data;
         })
     },
-    computed: {
-        filterRestaurant(){
-            this.restaurants.filter((elm)=>{
-                // console.log(elm)
-                elm.types.forEach((el) => {
-                    console.log(el)
-                    
-                });
-            })
-        }
-    },
     methods: {
-        searchByType(elm){
-            this.typeChoose.push(elm)
+        searchByType(payload){
+            this.showBox = true;
+            this.restaurantByType = [];
+            this.restaurants.forEach((elm)=>{
+                // console.log(elm.types);
+                let singleRestTypesArray = elm.types;
+                singleRestTypesArray.forEach((singleElm)=>{
+                    // console.log(singleElm.name)
+                    if(singleElm.name === payload){
+                        // console.log(`${payload} = ${elm.name}`)
+                        if(!this.restaurantByType.includes(elm)){
+                            this.restaurantByType.push(elm);
+                        }
+                    }
+                })
+            })
         }
     }
 }
@@ -107,7 +118,7 @@ export default {
         }
     }
 
-     .type_box:hover {
+     .type_box:hover, .on_click{
         transform: scale(1.1);
         box-shadow: 5px 5px 15px 1px #111214;
     }
@@ -160,4 +171,13 @@ export default {
         }
     }
 
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity .5s
+    }
+
+    .fade-enter,
+    .fade-leave-to {
+        opacity: 0
+    }
 </style>
