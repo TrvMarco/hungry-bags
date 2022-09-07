@@ -4,10 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header beige-bg">{{ __('Modifica') }}</div>
+            <div class="card border-radius-20px  beige-bg border-black">
+                <div class="card-header border-radius-20px ">{{ __('Modifica') }}</div>
 
-                <div class="card-body">
+                <div class="card-body white-bg border-radius-bottom-20px ">
                     <form method="POST" action="{{ route('admin.users.update', $user->id) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
