@@ -21,8 +21,8 @@
                 </li>
             </ul>
             <div class="apps">
-              <a href="#"><img src="./img/play.png" style="height:50px"  alt=""></a>
-              <a href="#"><img src="./img/store.png" style="height:58px"  alt=""></a>
+              <img class="pointer" src="./img/play.png" style="height:50px"  alt="">
+              <img class="pointer" src="./img/store.png" style="height:58px"  alt="">
             </div>
         </div>
         <div class="brands-list ">
@@ -51,7 +51,7 @@
                 </li>
             </ul>
         </div>
-        <div class="lang-select">
+        <!-- <div class="lang-select">
           <label for="lang">Scegli una lingua </label>
             <select onchange="document.getElementById('preview').src = this.value" class="lang">
               <option value="https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg">Italiano</option>
@@ -60,7 +60,7 @@
               <option value="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg">Tedesco</option>
             </select>
             <img id="preview" height="20px">
-        </div>
+        </div> -->
         </div>
         </div>
     </footer>
@@ -264,6 +264,8 @@ a:hover::before {
   flex-direction: row-reverse;
   justify-content: space-between;
 }
-
+.pointer:hover{
+  cursor: pointer;
+}
 </style>
 

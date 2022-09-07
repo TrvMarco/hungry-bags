@@ -6,9 +6,9 @@
                     <div id="slider">
                         <figure>
                             <img src="https://cdn.pixabay.com/photo/2016/04/26/03/55/salmon-1353598_960_720.jpg">
-                            <img src="https://cdn.pixabay.com/photo/2017/12/05/20/09/pizza-3000274_960_720.jpg">
-                            <img src="https://cdn.pixabay.com/photo/2020/03/21/11/17/burger-4953465_960_720.jpg">
-                            <img src="https://cdn.pixabay.com/photo/2017/01/16/17/45/pancake-1984716_960_720.jpg">
+                            <img src="https://www.calcionewsweb.it/wp-content/uploads/2019/12/pizza-e-diarrea.jpg">
+                            <img src="https://media-assets.vanityfair.it/photos/614c937cf483bafb5f49cb11/4:3/w_1144,h_858,c_limit/hamburger-2.jpg">
+                            <img src="https://www.outincanberra.com.au/wp-content/uploads/2021/04/meat.jpg">
                             <img src="https://cdn.pixabay.com/photo/2016/04/26/03/55/salmon-1353598_960_720.jpg">
                         </figure>
                     </div>
@@ -131,7 +131,7 @@ export default {
     width: 500%;
     margin: 0;
     left: 0;
-    animation: 25s slider infinite;
+    animation: 20s slider infinite;
 }
 @keyframes slider{
     0%{
