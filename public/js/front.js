@@ -2131,22 +2131,20 @@ __webpack_require__.r(__webpack_exports__);
       token: ''
     };
   },
-  methods: {
-    onSuccess: function onSuccess(payload) {// console.log(payload)
-      //   let token = payload.nonce;
-      // Do something great with the nonce...
-    },
-    onError: function onError(error) {// console.log(error)
-      //   let message = error.message;
-      // Whoops, an error has occured while trying to get the nonce
-    }
-  },
   created: function created() {
     var _this = this;
 
     axios.get('/api/payments').then(function (response) {
       _this.token = response.data.token;
     });
+  },
+  methods: {
+    onSuccess: function onSuccess(payload) {
+      var nonce = payload.nonce; // Do something great with the nonce...
+    },
+    onError: function onError(error) {
+      var message = error.message; // Whoops, an error has occured while trying to get the nonce
+    }
   }
 });
 

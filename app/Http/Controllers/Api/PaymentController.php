@@ -23,7 +23,7 @@ class PaymentController extends Controller
     {
 
         $result = $gateway->transaction()->sale([
-            'amount' => $request->total_price,
+            'amount' => $request,
             'paymentMethodNonce' => $request->token,
             'options' => [
                 'submintForSettlement' => true

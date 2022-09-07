@@ -1,11 +1,12 @@
 <template>
   <div class="container">
     <h1>pagamento</h1>
-    <v-braintree
+      <v-braintree 
         :authorization="token"
         @success="onSuccess"
         @error="onError"
-    ></v-braintree>
+      >
+      </v-braintree>
   </div>
 </template>
 
@@ -17,23 +18,21 @@ export default {
             token:'',
         }
     },
+    created() {
+      axios.get('/api/payments')
+      .then((response) => {
+          this.token = response.data.token
+      })
+    },
     methods: {
     onSuccess (payload) {
-        // console.log(payload)
-    //   let token = payload.nonce;
+      let nonce = payload.nonce;
       // Do something great with the nonce...
     },
     onError (error) {
-        // console.log(error)
-    //   let message = error.message;
+      let message = error.message;
       // Whoops, an error has occured while trying to get the nonce
     }
-  },
-  created() {
-    axios.get('/api/payments')
-    .then((response) => {
-        this.token = response.data.token
-    })
   }
 }
 </script>
