@@ -2030,12 +2030,18 @@ __webpack_require__.r(__webpack_exports__);
             if (!_this2.restaurantByType.includes(elm)) {
               _this2.restaurantByType.push(elm);
             } else {
-              for (var i = 0; i < _this2.restaurantByType.length; i++) {
+              var _loop = function _loop(i) {
                 console.log(_this2.restaurantByType[i].types[0].name);
 
-                if (payload == _this2.restaurantByType[i].types[0].name) {
-                  _this2.restaurantByType.splice(i, 1);
-                }
+                _this2.restaurantByType[i].types.map(function (ol) {
+                  if (payload == ol.name) {
+                    _this2.restaurantByType.splice(i, 1);
+                  }
+                });
+              };
+
+              for (var i = 0; i < _this2.restaurantByType.length; i++) {
+                _loop(i);
               }
             }
           }

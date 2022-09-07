@@ -85,9 +85,12 @@ export default {
                         }else{
                             for (let i = 0; i < this.restaurantByType.length; i++) {
                                 console.log(this.restaurantByType[i].types[0].name)
-                                if(payload == this.restaurantByType[i].types[0].name){
-                                    this.restaurantByType.splice(i, 1)
-                                }
+                                this.restaurantByType[i].types.map(ol => {
+                                    if(payload == ol.name){
+                                        this.restaurantByType.splice(i, 1)
+                                    }
+                                })
+                                
                             }
                         }
                     }
