@@ -17,11 +17,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <router-link  class="btn btn-success" :to="{ name: 'restaurant-list' }">
-                            Cerca
-                        </router-link>
+                <!-- Prova restaurants -->
+                <div class="row justify-content-center pt-4">
+                    <div class="col-6 col-md-2 pb-3" v-for="restaurant,id in restaurants" :key="id">
+                        <div class="restaurant_card">
+                            <router-link class="router_link" :to="{ name: 'single-restaurant', params: { user: restaurant.name} }">
+                                <div class="restaurant_name">
+                                    <h3 class="restaurant_title text-center">{{restaurant.name}}</h3>
+                                </div>
+                                <img class="img-fluid" :src="`../storage/${restaurant.image}`" alt="">
+                            </router-link>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -42,12 +48,19 @@ export default {
             types : [],
             typeChoose : [],
             choose: false,
+            restaurants: []
         };
     },
     created() {
         axios.get('/api/types')
         .then((response) => {
             this.types = response.data;
+        })
+
+        axios.get('/api/users')
+        .then((response) => {
+            this.restaurants = response.data;
+            console.log(this.restaurants)
         })
     },
     methods: {
@@ -111,4 +124,47 @@ export default {
      .type_box:hover {
         transform: scale(1.1);
     }
+
+    // PROVA RESTAURANTS
+    
+    .restaurant_card{
+        height: 9.375rem;
+        // border: 1px solid black;
+        overflow: hidden;
+        position: relative;
+        border-radius: .625rem;
+
+        &:hover{
+            img{
+                transform: scale(1.2);
+            }
+        }
+
+        img{
+            opacity: 0.9;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s;
+        }
+    } 
+
+    .restaurant_name{
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: inherit;
+
+        h3{
+            // background-color: rgba($color: #000000, $alpha: 0.3);
+            text-decoration: none;
+            color: #fff;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            border-radius: .625rem;
+            // padding: .3125rem;
+        }
+    }
+
 </style>
