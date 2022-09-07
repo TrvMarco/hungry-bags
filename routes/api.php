@@ -21,6 +21,8 @@ Route::get('users/{type}', 'Api\UserController@show');
 
 Route::get('items/{user}', 'Api\ItemController@show');
 
+Route::get('users', 'Api\UserController@index');
+
 // chiamate post
 Route::post('users', 'Api\UserController@index');
 

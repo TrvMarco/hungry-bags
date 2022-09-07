@@ -12,10 +12,9 @@ use function PHPSTORM_META\type;
 
 class UserController extends Controller
 {   
-    public function index(Request $request)
+    public function index()
     {
-        $data = $request->all();
-        $user = Type::where('id', $data)->with(['users'])->get();
+        $user = User::with(['types'])->get();
         return $user;
     }
 
