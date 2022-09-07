@@ -7,11 +7,11 @@
                 </div>
             <div class="col-10 pt-3">
                 <h2>{{user.name}}</h2>
+                <h5>{{user.address}}</h5>
             </div>
         </div>
-        <div class="row gap ">
+        <div class="row gap">
             <div class="col-6">
-                      <!-- CARD ITEM -->
             <div v-for="item,id in items" :key="id" class="col my-3">
                 <div class="menu_item_box d-flex p-2 flex-wrap">
                     <div class="item_box_description col-8">
@@ -37,25 +37,21 @@
             <!-- BOX TOTALE -->
             <div class="col my-3">
                 <!-- CONFERMA ORDINE -->
-                <div class="menu_item_box p-2">
-                    <h4 class="text-center pt-2">il tuo carrello : </h4>
+                <div v-if="items.length > 0" class="menu_item_box p-2">
+                    <h4 class="text-center pt-2"><i class="fa-solid fa-cart-shopping"></i> Il tuo carrello : </h4>
                     <hr>
-                    <div v-if="virtualCart.length >0 " class="px-4">
-                        
-                        <div   class="d-flex justify-content-between align-items-center my-2" v-for="item,id in virtualCart" :key="id">
+                    <div v-if="virtualCart.length > 0" class="px-4">
+                        <div class="d-flex justify-content-between align-items-center my-2" v-for="item,id in virtualCart" :key="id">
                             <span>{{id}} - {{item.name}}</span>
                             <div class="d-flex align-items-center">
                                 <span class="mx-3">{{item.price.toFixed(2)}}&#8364;</span>
                                 <span><i class="fa-solid fa-minus minus_class " @click="deleteItem(id)"></i></span>
                             </div>
-                        
                         </div>
                     </div>
-                    <div v-else class="text-center">
-                        <h4> inserisci i tuoi piatti preferiti ! </h4> 
+                    <div v-else class="text-center p-4">
+                        <h5>Il carrello é momentaneamente vuoto!</h5> 
                     </div>
-                    
-                
                 </div>
             </div>
             
@@ -197,6 +193,4 @@ export default {
         color: #ffff;
         border-radius: 50%;
     }
-
-     
 </style>

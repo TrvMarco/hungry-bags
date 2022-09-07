@@ -11,6 +11,9 @@ import Cart from './pages/Cart';
 
 const router = new VueRouter({
     mode: "history",
+    scrollBehavior (to, from) {
+        return { x: 0, y: 0 }
+    },
     routes: [
         {
             path: "/",

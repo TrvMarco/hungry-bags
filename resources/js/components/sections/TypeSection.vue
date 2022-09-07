@@ -2,7 +2,7 @@
   <section class="type py-5"> 
     <div class="container">
         <div class="row pb-3 justify-content-center">
-            <h3>Le scelte più appetitose</h3>
+            <h2>Le scelte più appetitose</h2>
         </div>
         <div>
             <div v-if="types.length > 0">
@@ -96,4 +96,9 @@ export default {
      .type_box:hover {
         transform: scale(1.1);
     }
+
+    .type{
+        background-image: url('../../../../public/images/provabg.jpg');
+    }
+
 </style>
