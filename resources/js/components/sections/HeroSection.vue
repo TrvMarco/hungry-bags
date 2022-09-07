@@ -2,10 +2,18 @@
     <section class="hero text-white p-4">
         <div class="container">
             <div class="row">
-                <div class="col-6">
-                    <img class="img-fluid" src="https://wallpaperaccess.com/full/386420.jpg" alt="">
+                <div class="col-12 col-md-6 sx">
+                    <div id="slider">
+                        <figure>
+                            <img src="https://cdn.pixabay.com/photo/2016/04/26/03/55/salmon-1353598_960_720.jpg">
+                            <img src="https://cdn.pixabay.com/photo/2017/12/05/20/09/pizza-3000274_960_720.jpg">
+                            <img src="https://cdn.pixabay.com/photo/2020/03/21/11/17/burger-4953465_960_720.jpg">
+                            <img src="https://cdn.pixabay.com/photo/2017/01/16/17/45/pancake-1984716_960_720.jpg">
+                            <img src="https://cdn.pixabay.com/photo/2016/04/26/03/55/salmon-1353598_960_720.jpg">
+                        </figure>
+                    </div>
                 </div>
-                <div class="col-12 col-md-6 p-5">
+                <div class="col-12 col-md-6 p-5 dx" style="width:100%">
                     <h2>Hai fame?<br>
                     Su HungryBags puoi ordinare tutto il cibo che vuoi con consegna a domicilio!</h2>
                     <div class="input-container">
@@ -30,8 +38,9 @@
 
 <script>
 export default {
-    name: 'HeroSection',
-}
+  name: "HeroSection",
+ 
+};
 </script>
 
 <style lang="scss" scoped>
@@ -107,4 +116,50 @@ export default {
             }
         }
     }
+
+#slider figure img{
+  height:300px;
+  width:20%;
+  float: left;
+}
+
+#slider{
+    overflow: hidden;
+}
+#slider figure{
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 25s slider infinite;
+}
+@keyframes slider{
+    0%{
+        left: 0;
+    }
+    20%{
+        left: 0;
+    }
+    25%{
+        left: -100%;
+    }
+    45%{
+        left: -100%;
+    }
+    50%{
+        left: -200%;
+    }
+    70%{
+        left: -200%;
+    }
+    75%{
+        left: -300%;
+    }
+    95%{
+        left: -300%;
+    }
+    100%{
+        left: -400%;
+    }
+}
 </style>
