@@ -11087,6 +11087,7 @@ main {
 .black-btn {
   background-color: black;
   border-color: black;
+  border-radius: 20px;
 }
 
 .color-black {
