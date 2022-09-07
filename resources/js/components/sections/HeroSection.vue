@@ -2,10 +2,18 @@
     <section class="hero text-white p-4">
         <div class="container">
             <div class="row">
-                <div class="col-6">
-                    <img class="img-fluid" src="https://wallpaperaccess.com/full/386420.jpg" alt="">
+                <div class="col-12 col-md-6 sx">
+                    <div id="slider">
+                        <figure>
+                            <img src="https://cdn.pixabay.com/photo/2016/04/26/03/55/salmon-1353598_960_720.jpg">
+                            <img src="https://www.calcionewsweb.it/wp-content/uploads/2019/12/pizza-e-diarrea.jpg">
+                            <img src="https://media-assets.vanityfair.it/photos/614c937cf483bafb5f49cb11/4:3/w_1144,h_858,c_limit/hamburger-2.jpg">
+                            <img src="https://www.outincanberra.com.au/wp-content/uploads/2021/04/meat.jpg">
+                            <img src="https://cdn.pixabay.com/photo/2016/04/26/03/55/salmon-1353598_960_720.jpg">
+                        </figure>
+                    </div>
                 </div>
-                <div class="col-12 col-md-6 p-5">
+                <div class="col-12 col-md-6 p-5 dx" style="width:100%">
                     <h2>Hai fame?<br>
                     Su HungryBags puoi ordinare tutto il cibo che vuoi con consegna a domicilio!</h2>
                     <div class="input-container">
@@ -30,8 +38,9 @@
 
 <script>
 export default {
-    name: 'HeroSection',
-}
+  name: "HeroSection",
+ 
+};
 </script>
 
 <style lang="scss" scoped>
@@ -107,4 +116,50 @@ export default {
             }
         }
     }
+
+#slider figure img{
+  height:300px;
+  width:20%;
+  float: left;
+}
+
+#slider{
+    overflow: hidden;
+}
+#slider figure{
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slider infinite;
+}
+@keyframes slider{
+    0%{
+        left: 0;
+    }
+    20%{
+        left: 0;
+    }
+    25%{
+        left: -100%;
+    }
+    45%{
+        left: -100%;
+    }
+    50%{
+        left: -200%;
+    }
+    70%{
+        left: -200%;
+    }
+    75%{
+        left: -300%;
+    }
+    95%{
+        left: -300%;
+    }
+    100%{
+        left: -400%;
+    }
+}
 </style>

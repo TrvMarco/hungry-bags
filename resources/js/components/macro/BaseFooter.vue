@@ -4,25 +4,25 @@
         <div class="row list">
             <ul class="col ">
                 <h2>Uniamo le forze</h2>
-                <li v-for="link in linksForce" :key="link" class="my-2">
+                <li v-for="link in linksForce" :key="link.text" class="my-2">
                   <a :href="link.url">{{link.text}}</a>
                 </li>
             </ul>
             <ul class="col">
                 <h2>Link di interesse</h2>
-                <li v-for="link in linksInt" :key="link" class="my-2">
+                <li v-for="link in linksInt" :key="link.text" class="my-2">
                   <a :href="link.url">{{link.text}}</a>
                 </li>
             </ul>
         
             <ul class="col">
-                <li v-for="link in linksAbout" :key="link" class="my-2">
+                <li v-for="link in linksAbout" :key="link.text" class="my-2">
                   <a :href="link.url">{{link.text}}</a>
                 </li>
             </ul>
             <div class="apps">
-              <img src="https://res.cloudinary.com/glovoapp/image/fetch//w_105,h_35,c_fit,q_auto/https://glovoapp.com/images/app_store/download-button-new.svg" style="height:50px"  alt="">
-              <img src="https://res.cloudinary.com/glovoapp/image/fetch//w_112,h_35,c_fit,q_auto/https://glovoapp.com/images/google_play/download-button-new.svg" style="height:50px"  alt="">
+              <img class="pointer" src="./img/play.png" style="height:50px"  alt="">
+              <img class="pointer" src="./img/store.png" style="height:58px"  alt="">
             </div>
         </div>
         <div class="brands-list ">
@@ -34,6 +34,7 @@
                 <li>Starbucks</li>
             </ul>
         </div>
+        <div class="bottom">
         <div class="social">
             <ul class="wrapper">
                 <li class="icon facebook">
@@ -50,7 +51,7 @@
                 </li>
             </ul>
         </div>
-        <div class="lang-select">
+        <!-- <div class="lang-select">
           <label for="lang">Scegli una lingua </label>
             <select onchange="document.getElementById('preview').src = this.value" class="lang">
               <option value="https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg">Italiano</option>
@@ -59,6 +60,7 @@
               <option value="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg">Tedesco</option>
             </select>
             <img id="preview" height="20px">
+        </div> -->
         </div>
         </div>
     </footer>
@@ -250,14 +252,20 @@ a:hover::before {
   flex-direction: column;
   justify-content: space-evenly;
 }
-.lingua-select{
-  display: flex;
-  flex-direction: row;
+.lang-select{
+  padding-top: 1.25rem;
 }
 .lang{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
-
+.bottom{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.pointer:hover{
+  cursor: pointer;
+}
 </style>
 
