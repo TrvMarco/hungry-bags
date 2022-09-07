@@ -21,7 +21,11 @@ Route::get('users/{type}', 'Api\UserController@show');
 
 Route::get('items/{user}', 'Api\ItemController@show');
 
+Route::get('payments', 'Api\PaymentController@generate');
+
 // chiamate post
 Route::post('users', 'Api\UserController@index');
 
 Route::post('orders', 'Api\OrderController@store');
+
+Route::post('payments', 'Api\PaymentController@makePayment');

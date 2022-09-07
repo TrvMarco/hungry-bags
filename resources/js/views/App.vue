@@ -3,7 +3,7 @@
   <div id="app">
     <BaseHeader/>
     <BaseMain/>
-    <BaseFooter/>
+    <!-- <BaseFooter/> -->
   </div>
 
 </template>
@@ -12,7 +12,7 @@
  
 import BaseHeader from '../components/macro/BaseHeader.vue'
 import BaseMain from '../components/macro/BaseMain.vue'
-import BaseFooter from '../components/macro/BaseFooter.vue'
+// import BaseFooter from '../components/macro/BaseFooter.vue'
 import shared from '../shared'
 
 export default {
@@ -20,7 +20,7 @@ export default {
   components: {
     BaseHeader,
     BaseMain,
-    BaseFooter,
+    // BaseFooter,
   },
   data(){
         return{

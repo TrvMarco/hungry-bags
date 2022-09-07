@@ -9,6 +9,12 @@ import router from "./router";
 
 import App from './views/App.vue';
 
+import Vue from 'vue';
+
+import vueBraintree from 'vue-braintree';
+
+Vue.use(vueBraintree);
+
 const app = new Vue({
     el: '#app',
     render: h => h(App),

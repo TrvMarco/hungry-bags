@@ -98,7 +98,7 @@ export default {
     }
 
     .type{
-        background-image: url('../../../../public/images/provabg.jpg');
+        // background-image: url('../../../../public/images/provabg.jpg');
     }
 
 </style>
