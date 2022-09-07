@@ -2000,7 +2000,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       types: [],
       typeChoose: [],
-      choose: false
+      choose: false,
+      restaurants: []
     };
   },
   created: function created() {
@@ -2009,25 +2010,25 @@ __webpack_require__.r(__webpack_exports__);
     axios.get('/api/types').then(function (response) {
       _this.types = response.data;
     });
+    axios.get('/api/users').then(function (response) {
+      _this.restaurants = response.data;
+    });
   },
-  computed: {// * Funzione per mostrare solamente 8 tipologie 
-    //     firstTypes() {
-    //         let arr = [];
-    //         for (let i = 0; i < 8; i++) {
-    //             arr.push(this.types[i]);
-    //         }
-    //         return arr;
-    //     }
-  } // methods: {
-  //     chooseType(){
-  //         axios.post('/api/users', this.typeChoose)
-  //         .then((resp) => {
-  //             this.typeChoose = [];
-  //             this.$router.push({name: 'restaurant-list'});
-  //         })
-  //     }
-  // }
-
+  computed: {
+    filterRestaurant: function filterRestaurant() {
+      this.restaurants.filter(function (elm) {
+        // console.log(elm)
+        elm.types.forEach(function (el) {
+          console.log(el);
+        });
+      });
+    }
+  },
+  methods: {
+    searchByType: function searchByType(elm) {
+      this.typeChoose.push(elm);
+    }
+  }
 });
 
 /***/ }),
@@ -2503,20 +2504,46 @@ var render = function render() {
       staticClass: "col-2 d-flex p-2"
     }, [_c("div", {
       staticClass: "type_box transform"
+    }, [_c("div", {
+      staticClass: "box_img",
+      on: {
+        click: function click($event) {
+          return _vm.searchByType(type.name);
+        }
+      }
+    }, [_vm._v("\n                                      " + _vm._s(type.name) + "\n                                  ")])])])]);
+  }), 0)]) : _vm._e(), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "row justify-content-center pt-4"
+  }, _vm._l(_vm.restaurants, function (restaurant, id) {
+    return _c("div", {
+      key: id,
+      staticClass: "col-6 col-md-2 pb-3"
+    }, [_c("div", {
+      staticClass: "restaurant_card"
     }, [_c("router-link", {
-      staticClass: "link-text",
+      staticClass: "router_link",
       attrs: {
         to: {
-          name: "restaurant-list",
+          name: "single-restaurant",
           params: {
-            type: type.name
+            user: restaurant.name
           }
         }
       }
     }, [_c("div", {
-      staticClass: "box_img"
-    }, [_vm._v("\n                                          " + _vm._s(type.name) + "\n                                      ")])])], 1)])]);
-  }), 0)]) : _vm._e()])])]);
+      staticClass: "restaurant_name"
+    }, [_c("h3", {
+      staticClass: "restaurant_title text-center"
+    }, [_vm._v(_vm._s(restaurant.name))])]), _vm._v(" "), _c("img", {
+      staticClass: "img-fluid",
+      attrs: {
+        src: "../storage/".concat(restaurant.image),
+        alt: ""
+      }
+    })])], 1)]);
+  }), 0)])])])]);
 };
 
 var staticRenderFns = [function () {
@@ -3132,7 +3159,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".type_box[data-v-c1d090d6] {\n  background: #eee1b3;\n  border-radius: 30px;\n  transition: all 0.08s;\n}\n.type_box .box_img[data-v-c1d090d6] {\n  min-height: 35px;\n  min-width: 50px;\n  padding: 0px 15px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 30px;\n}\n.type_box img[data-v-c1d090d6] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.type_box .link-text[data-v-c1d090d6] {\n  text-decoration: none;\n  color: black;\n}\n.type_box[data-v-c1d090d6]:hover {\n  transform: scale(1.1);\n  box-shadow: 5px 5px 15px 1px #111214;\n}\n.type[data-v-c1d090d6] {\n  background-image: url(" + escape(__webpack_require__(/*! ../../../../public/image/provabg.jpg */ "./public/image/provabg.jpg")) + ");\n  border-top: 1px solid #111214;\n  border-bottom: 1px solid #111214;\n}", ""]);
+exports.push([module.i, ".type_box[data-v-c1d090d6] {\n  background: #eee1b3;\n  border-radius: 30px;\n  transition: all 0.08s;\n}\n.type_box .box_img[data-v-c1d090d6] {\n  min-height: 35px;\n  min-width: 50px;\n  padding: 0px 15px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 30px;\n}\n.type_box img[data-v-c1d090d6] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.type_box .link-text[data-v-c1d090d6] {\n  text-decoration: none;\n  color: black;\n}\n.type_box[data-v-c1d090d6]:hover {\n  transform: scale(1.1);\n  box-shadow: 5px 5px 15px 1px #111214;\n}\n.type[data-v-c1d090d6] {\n  background-image: url(" + escape(__webpack_require__(/*! ../../../../public/image/provabg.jpg */ "./public/image/provabg.jpg")) + ");\n  border-top: 1px solid #111214;\n  border-bottom: 1px solid #111214;\n}\n.restaurant_card[data-v-c1d090d6] {\n  height: 9.375rem;\n  overflow: hidden;\n  position: relative;\n  border-radius: 0.625rem;\n}\n.restaurant_card:hover img[data-v-c1d090d6] {\n  transform: scale(1.2);\n}\n.restaurant_card img[data-v-c1d090d6] {\n  opacity: 0.9;\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: all 0.5s;\n}\n.restaurant_name[data-v-c1d090d6] {\n  position: absolute;\n  z-index: 10;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  color: inherit;\n}\n.restaurant_name h3[data-v-c1d090d6] {\n  text-decoration: none;\n  color: #fff;\n  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;\n  border-radius: 0.625rem;\n}", ""]);
 
 // exports
 

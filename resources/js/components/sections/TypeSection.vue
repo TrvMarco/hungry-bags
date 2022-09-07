@@ -11,17 +11,28 @@
                         <div v-for="type in types" :key="type.id">
                             <div class="col-2 d-flex p-2">
                                 <div class="type_box transform">
-                                    <router-link class="link-text" :to="{ name: 'restaurant-list', params: {type: type.name} }">
-                                        <div class="box_img">
-                                            {{type.name}}
-                                        </div>
-                                    </router-link>
+                                    <div class="box_img" @click="searchByType(type.name)">
+                                        {{type.name}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- <button type="submit">Cerca</button> -->
-                <!-- </form> -->
+            </div>
+            <div class="row">
+                <!-- Prova restaurants -->
+                <div class="row justify-content-center pt-4">
+                    <div class="col-6 col-md-2 pb-3" v-for="restaurant,id in restaurants" :key="id">
+                        <div class="restaurant_card">
+                            <router-link class="router_link" :to="{ name: 'single-restaurant', params: { user: restaurant.name} }">
+                                <div class="restaurant_name">
+                                    <h3 class="restaurant_title text-center">{{restaurant.name}}</h3>
+                                </div>
+                                <img class="img-fluid" :src="`../storage/${restaurant.image}`" alt="">
+                            </router-link>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -36,6 +47,7 @@ export default {
             types : [],
             typeChoose : [],
             choose: false,
+            restaurants: []
         };
     },
     created() {
@@ -43,26 +55,28 @@ export default {
         .then((response) => {
             this.types = response.data
         })
+
+        axios.get('/api/users')
+        .then((response) => {
+            this.restaurants = response.data;
+        })
     },
     computed: {
-         // * Funzione per mostrare solamente 8 tipologie 
-    //     firstTypes() {
-    //         let arr = [];
-    //         for (let i = 0; i < 8; i++) {
-    //             arr.push(this.types[i]);
-    //         }
-    //         return arr;
-    //     }
+        filterRestaurant(){
+            this.restaurants.filter((elm)=>{
+                // console.log(elm)
+                elm.types.forEach((el) => {
+                    console.log(el)
+                    
+                });
+            })
+        }
     },
-    // methods: {
-    //     chooseType(){
-    //         axios.post('/api/users', this.typeChoose)
-    //         .then((resp) => {
-    //             this.typeChoose = [];
-    //             this.$router.push({name: 'restaurant-list'});
-    //         })
-    //     }
-    // }
+    methods: {
+        searchByType(elm){
+            this.typeChoose.push(elm)
+        }
+    }
 }
 </script>
 
@@ -102,6 +116,48 @@ export default {
         background-image: url('../../../../public/image/provabg.jpg');
         border-top: 1px solid #111214;
         border-bottom: 1px solid #111214;
+    }
+
+    // PROVA RESTAURANTS
+    
+    .restaurant_card{
+        height: 9.375rem;
+        // border: 1px solid black;
+        overflow: hidden;
+        position: relative;
+        border-radius: .625rem;
+
+        &:hover{
+            img{
+                transform: scale(1.2);
+            }
+        }
+
+        img{
+            opacity: 0.9;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s;
+        }
+    } 
+
+    .restaurant_name{
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: inherit;
+
+        h3{
+            // background-color: rgba($color: #000000, $alpha: 0.3);
+            text-decoration: none;
+            color: #fff;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            border-radius: .625rem;
+            // padding: .3125rem;
+        }
     }
 
 </style>
