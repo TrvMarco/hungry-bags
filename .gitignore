@@ -45,3 +45,6 @@ public/js/app.js
 .gitignore
 public/css/back.css
 .gitignore
+public/css/front.css
+public/js/app.js
+public/js/front.js

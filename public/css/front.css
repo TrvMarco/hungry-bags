@@ -10978,6 +10978,10 @@ a.text-dark:focus {
   font-family: "Questrial", sans-serif;
 }
 
+main {
+  background-color: rgba(226, 226, 226, 0.76);
+}
+
 h1,
 h2,
 h3,

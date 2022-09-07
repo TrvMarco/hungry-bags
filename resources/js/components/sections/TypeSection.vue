@@ -95,10 +95,13 @@ export default {
 
      .type_box:hover {
         transform: scale(1.1);
+        box-shadow: 5px 5px 15px 1px #111214;
     }
 
     .type{
-        background-image: url('../../../../public/images/provabg.jpg');
+        background-image: url('../../../../public/image/provabg.jpg');
+        border-top: 1px solid #111214;
+        border-bottom: 1px solid #111214;
     }
 
 </style>

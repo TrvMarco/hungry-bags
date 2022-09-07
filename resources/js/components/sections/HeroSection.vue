@@ -36,7 +36,8 @@ export default {
 
 <style lang="scss" scoped>
     .hero{
-        background-color: #111214;
+        // background-color: #111214;
+        background: linear-gradient(#111214 60%,#eee1b3);
 
         img{
             box-shadow: 0px 0px 10px #000;
