@@ -18,10 +18,10 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm backoffice_navbar beige-bg">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm backoffice_navbar black-bg">
             <div class="container ">
                 <a class="navbar-brand" href="{{ route('admin.home') }}">
-                    <h3>HungryBags</h3>
+                    <h3 class="color-beige">HungryBags</h3>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

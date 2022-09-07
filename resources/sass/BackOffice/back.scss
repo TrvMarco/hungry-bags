@@ -11,7 +11,8 @@ ul {
 //      ----------------        CONTAINERS
 main {
     // background: linear-gradient(45deg,var(--third-color), var(--primary-color));
-    background-image: url("../../../public/image/img-backoffice.jpg");
+    background-image: url("https://cdn.pixabay.com/photo/2015/05/31/12/52/walnuts-791594_960_720.jpg");
+    background-color: #eee1b3;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -30,12 +31,12 @@ main {
 }
 
 .backoffice_menu_container {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.9375rem;
-    -webkit-box-shadow: 5px 5px 10px 0px #1a1a1ade;
-    -moz-box-shadow: 5px 5px 10px 0px #1a1a1ade;
-    -o-box-shadow: 5px 5px 10px 0px #1a1a1ade;
-    box-shadow: 5px 5px 10px 0px #1a1a1ade;
+    // -webkit-box-shadow: 5px 5px 10px 0px #1a1a1ade;
+    // -moz-box-shadow: 5px 5px 10px 0px #1a1a1ade;
+    // -o-box-shadow: 5px 5px 10px 0px #1a1a1ade;
+    // box-shadow: 5px 5px 10px 0px #1a1a1ade;
 }
 
 //      ----------------        REGISTER BLADE
@@ -113,8 +114,12 @@ main {
     background-color: #eee1b3;
 }
 
+.beige-bg-dark {
+    background-color: #111214;
+}
+
 .black-bg {
-    background: rgb(0, 0, 0);
+    background: #111214;
 }
 
 .white-bg {
@@ -125,14 +130,22 @@ main {
     color: white;
 }
 
+.color-beige {
+    color: #eee1b3;
+}
+
+// .border-black {
+//     border: 2px solid #111214;
+// }
+
 .black-btn {
-    background-color: black;
-    border-color: black;
+    background-color: #111214;
+    border-color: #111214;
     border-radius: 20px;
 }
 
 .color-black {
-    color: black;
+    color: #111214;
 }
 
 .margin-login-card {
@@ -160,16 +173,16 @@ main {
     border-radius: 20px;
     border-color: black;
     margin: 5px 0px;
-    background-color: #000000;
+    background-color: #2a99bc;
     color: rgb(255, 255, 255);
-    border: 1px solid #000000;
+    border: 1px solid #817142;
 }
 
 .inserisci-img-btn {
     border-radius: 20px;
-    border-color: black;
+    border-color: #111214;
     margin: 15px 0px;
-    background-color: #000000;
+    background-color: #111214;
     color: white;
-    border: 1px solid black;
+    border: 1px solid #111214;
 }
