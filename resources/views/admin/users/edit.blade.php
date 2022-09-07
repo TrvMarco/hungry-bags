@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card border-radius-20px  beige-bg border-black">
+            <div class="card border-radius-20px  beige-bg">
                 <div class="card-header border-radius-20px ">{{ __('Modifica') }}</div>
 
                 <div class="card-body white-bg border-radius-bottom-20px ">
