@@ -11101,6 +11101,12 @@ main {
   border-radius: 20px;
 }
 
+.black-btn:hover {
+  background-color: #2a99bc;
+  border-color: #2a99bc;
+  color: #eee1b3;
+}
+
 .color-black {
   color: #111214;
 }
@@ -11130,9 +11136,16 @@ main {
   border-radius: 20px;
   border-color: black;
   margin: 5px 0px;
-  background-color: #2a99bc;
+  background-color: #000000;
   color: rgb(255, 255, 255);
-  border: 1px solid #817142;
+  border: 1px solid #000000;
+}
+
+.visualizza-menu-btn:hover,
+.inserisci-piatto-btn:hover {
+  background-color: #2a99bc;
+  border-color: #2a99bc;
+  color: #eee1b3;
 }
 
 .inserisci-img-btn {
