@@ -5,8 +5,7 @@
         :authorization="token"
         @success="onSuccess"
         @error="onError"
-      >
-      </v-braintree>
+      ></v-braintree>
   </div>
 </template>
 
