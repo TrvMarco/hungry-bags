@@ -27,7 +27,10 @@
                             <div class="div"><strong>Prezzo:</strong> {{item.price.toFixed(2)}}&#8364;</div>
                             <div class="cart_managemen d-flex ">
                                 <!-- <div><i class="fa-solid fa-minus " @click="deleteItem(item)"></i></div> -->
-                                <div><i class="fa-solid fa-circle-plus add_cart_plus" @click="addToCart(item)"></i></div>
+                                <div>
+                                    <i class="fa-solid fa-circle-plus add_cart_plus" @click="addToCart(item)"></i>
+                                    <div id="myPopup" class="popup">ristorante non selezionabile</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -122,9 +125,17 @@ export default {
                 localStorage.setItem('prodotto', JSON.stringify(this.virtualCart));
                 console.log(JSON.parse(localStorage.getItem('prodotto')));
                 this.shared.count = this.virtualCart.length;
+                let popup = document.getElementById("myPopup");
+                popup.classList.add("popup");
                 
-            }else{
-                alert("elemento non dello stesso ristorante")
+            }else{ 
+              
+               
+                let popup = document.getElementById("myPopup");
+                popup.classList.add("show");
+                 setTimeout(function() { popup.classList.add("none");}, 3000);
+                popup.classList.remove("none")
+                // alert("elemento non dello stesso ristorante")
             } 
         },
         deleteItem(id){
@@ -139,17 +150,11 @@ export default {
            
         
         },
-
-
-
-    
     },
 
     computed:{
         
-    }
-
-    
+    } 
 }
 </script>
 
@@ -197,6 +202,18 @@ export default {
         color: #ffff;
         border-radius: 50%;
     }
+
+    .popup{
+        display: none;
+    }
+    .show{
+        display: block;
+    }
+    .none{
+        display: none;
+    }
+
+    
 
      
 </style>

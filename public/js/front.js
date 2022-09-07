@@ -2237,8 +2237,19 @@ __webpack_require__.r(__webpack_exports__);
         localStorage.setItem('prodotto', JSON.stringify(this.virtualCart));
         console.log(JSON.parse(localStorage.getItem('prodotto')));
         this.shared.count = this.virtualCart.length;
+        var popup = document.getElementById("myPopup");
+        popup.classList.add("popup");
       } else {
-        alert("elemento non dello stesso ristorante");
+        var _popup = document.getElementById("myPopup");
+
+        _popup.classList.add("show");
+
+        setTimeout(function () {
+          _popup.classList.add("none");
+        }, 3000);
+
+        _popup.classList.remove("none"); // alert("elemento non dello stesso ristorante")
+
       }
     },
     deleteItem: function deleteItem(id) {
@@ -3114,7 +3125,12 @@ var render = function render() {
           return _vm.addToCart(item);
         }
       }
-    })])])])])])]);
+    }), _vm._v(" "), _c("div", {
+      staticClass: "popup",
+      attrs: {
+        id: "myPopup"
+      }
+    }, [_vm._v("ristorante non selezionabile")])])])])])])]);
   }), 0), _vm._v(" "), _c("div", {
     staticClass: "col my-3"
   }, [_c("div", {
@@ -3352,7 +3368,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".menu_item_box[data-v-2ff820ae] {\n  min-height: 10.625rem;\n  background-color: beige;\n  border-radius: 0.625rem;\n  box-shadow: 9px 6px 19px -7px #000000;\n}\n.menu_item_box .item_box_description[data-v-2ff820ae] {\n  font-size: 0.8125rem;\n}\n.menu_item_box .item_box_image[data-v-2ff820ae] {\n  width: 9.375rem;\n  height: 9.375rem;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.menu_item_box .item_box_image img[data-v-2ff820ae] {\n  border-radius: 0.625rem;\n  overflow: hidden;\n}\n.add_cart_plus[data-v-2ff820ae] {\n  font-size: 1.25rem;\n  color: rgba(62, 196, 184, 0.938);\n  cursor: pointer;\n  transition: all 0.5s;\n}\n.add_cart_plus[data-v-2ff820ae]:hover {\n  transform: scale(1.5);\n}\n.gap[data-v-2ff820ae] {\n  row-gap: 1.875rem;\n}\n.minus_class[data-v-2ff820ae] {\n  background-color: #b40404;\n  padding: 0.1875rem;\n  color: white;\n  border-radius: 50%;\n}", ""]);
+exports.push([module.i, ".menu_item_box[data-v-2ff820ae] {\n  min-height: 10.625rem;\n  background-color: beige;\n  border-radius: 0.625rem;\n  box-shadow: 9px 6px 19px -7px #000000;\n}\n.menu_item_box .item_box_description[data-v-2ff820ae] {\n  font-size: 0.8125rem;\n}\n.menu_item_box .item_box_image[data-v-2ff820ae] {\n  width: 9.375rem;\n  height: 9.375rem;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.menu_item_box .item_box_image img[data-v-2ff820ae] {\n  border-radius: 0.625rem;\n  overflow: hidden;\n}\n.add_cart_plus[data-v-2ff820ae] {\n  font-size: 1.25rem;\n  color: rgba(62, 196, 184, 0.938);\n  cursor: pointer;\n  transition: all 0.5s;\n}\n.add_cart_plus[data-v-2ff820ae]:hover {\n  transform: scale(1.5);\n}\n.gap[data-v-2ff820ae] {\n  row-gap: 1.875rem;\n}\n.minus_class[data-v-2ff820ae] {\n  background-color: #b40404;\n  padding: 0.1875rem;\n  color: white;\n  border-radius: 50%;\n}\n.popup[data-v-2ff820ae] {\n  display: none;\n}\n.show[data-v-2ff820ae] {\n  display: block;\n}\n.none[data-v-2ff820ae] {\n  display: none;\n}", ""]);
 
 // exports
 
