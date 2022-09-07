@@ -72,7 +72,7 @@ export default {
     methods: {
         searchByType(payload){
             this.showBox = true;
-            this.restaurantByType = [];
+            // this.restaurantByType = [];
             this.restaurants.forEach((elm)=>{
                 // console.log(elm.types);
                 let singleRestTypesArray = elm.types;
@@ -82,6 +82,13 @@ export default {
                         // console.log(`${payload} = ${elm.name}`)
                         if(!this.restaurantByType.includes(elm)){
                             this.restaurantByType.push(elm);
+                        }else{
+                            for (let i = 0; i < this.restaurantByType.length; i++) {
+                                console.log(this.restaurantByType[i].types[0].name)
+                                if(payload == this.restaurantByType[i].types[0].name){
+                                    this.restaurantByType.splice(i, 1)
+                                }
+                            }
                         }
                     }
                 })
