@@ -2794,12 +2794,20 @@ var staticRenderFns = [function () {
       src: "https://www.gflegal.it/images/articoli_immagini/2020_immagini/GF_Legal_riders_food_delivery.jpg",
       alt: "rider"
     }
-  }), _vm._v(" "), _c("h5", [_vm._v("Diventa un nostro Rider!")])]), _vm._v(" "), _c("div", [_c("img", {
+  }), _vm._v(" "), _c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_c("h5", [_vm._v("Diventa un nostro Rider!")])])]), _vm._v(" "), _c("div", [_c("img", {
     attrs: {
       src: "https://as1.ftcdn.net/v2/jpg/02/20/26/82/1000_F_220268298_cnU7kMMfkAaEbLO1zwLowduYcqWrer17.jpg",
       alt: "work place"
     }
-  }), _vm._v(" "), _c("h5", [_vm._v("Aiutaci a crescere!")])])])])])])]);
+  }), _vm._v(" "), _c("a", {
+    attrs: {
+      href: "#"
+    }
+  }, [_c("h5", [_vm._v("Aiutaci a crescere!")])])])])])])])]);
 }];
 render._withStripped = true;
 
@@ -3480,7 +3488,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".partner[data-v-11a91fa3] {\n  background-image: url(" + escape(__webpack_require__(/*! ../macro/img/partner-img-jpg.jpg */ "./resources/js/components/macro/img/partner-img-jpg.jpg")) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n  height: 31.25rem;\n  width: 100%;\n}\n.partner .container[data-v-11a91fa3] {\n  height: 100%;\n}\n.partner .box-partner[data-v-11a91fa3] {\n  width: 50%;\n  height: 25rem;\n  background-color: rgba(0, 0, 0, 0.8);\n  box-shadow: -1px 1px 6px 6px rgba(238, 225, 179, 0.4);\n  border-radius: 30px;\n  transition-duration: 0.4s;\n}\n.partner .box-partner p[data-v-11a91fa3] {\n  color: #eee1b3;\n}\n.partner .box-partner .partner-button[data-v-11a91fa3] {\n  margin-top: 3.125rem;\n  text-transform: uppercase;\n  padding: 0.625rem 1.875rem;\n  border: none;\n  border-radius: 1.875rem;\n  transition-duration: 0.4s;\n}\n.partner .box-partner .partner-button[data-v-11a91fa3]:hover {\n  background-color: #eee1b3;\n  box-shadow: 0px 15px 20px rgba(238, 225, 179, 0.4);\n  transform: translateY(-7px);\n}\n.partner .box-partner[data-v-11a91fa3]:hover {\n  box-shadow: -1px 1px 6px 6px rgba(255, 255, 255, 0.55);\n}\n.work[data-v-11a91fa3] {\n  display: flex;\n  flex-wrap: wrap;\n  height: 18.75rem;\n}\n.jobs[data-v-11a91fa3] {\n  display: flex;\n  justify-content: space-around;\n}\n.jobs img[data-v-11a91fa3] {\n  width: 10.625rem;\n  height: 10.625rem;\n  border-radius: 50%;\n}\n.color[data-v-11a91fa3] {\n  background: url(\"https://img.freepik.com/free-vector/cute-minimal-background-simple-cream-design-vector_53876-157711.jpg\");\n  height: 18.75rem;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n}", ""]);
+exports.push([module.i, ".partner[data-v-11a91fa3] {\n  background-image: url(" + escape(__webpack_require__(/*! ../macro/img/partner-img-jpg.jpg */ "./resources/js/components/macro/img/partner-img-jpg.jpg")) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n  height: 31.25rem;\n  width: 100%;\n}\n.partner .container[data-v-11a91fa3] {\n  height: 100%;\n}\n.partner .box-partner[data-v-11a91fa3] {\n  width: 50%;\n  height: 25rem;\n  background-color: rgba(0, 0, 0, 0.8);\n  box-shadow: -1px 1px 6px 6px rgba(238, 225, 179, 0.4);\n  border-radius: 30px;\n  transition-duration: 0.4s;\n}\n.partner .box-partner p[data-v-11a91fa3] {\n  color: #eee1b3;\n}\n.partner .box-partner .partner-button[data-v-11a91fa3] {\n  margin-top: 3.125rem;\n  text-transform: uppercase;\n  padding: 0.625rem 1.875rem;\n  border: none;\n  border-radius: 1.875rem;\n  transition-duration: 0.4s;\n}\n.partner .box-partner .partner-button[data-v-11a91fa3]:hover {\n  background-color: #eee1b3;\n  box-shadow: 0px 15px 20px rgba(238, 225, 179, 0.4);\n  transform: translateY(-7px);\n}\n.partner .box-partner[data-v-11a91fa3]:hover {\n  box-shadow: -1px 1px 6px 6px rgba(255, 255, 255, 0.55);\n}\n.work[data-v-11a91fa3] {\n  display: flex;\n  flex-wrap: wrap;\n  height: 18.75rem;\n}\n.jobs[data-v-11a91fa3] {\n  display: flex;\n  justify-content: space-around;\n}\n.jobs img[data-v-11a91fa3] {\n  width: 10.625rem;\n  height: 10.625rem;\n  border-radius: 50%;\n}\n.color[data-v-11a91fa3] {\n  background: url(\"https://img.freepik.com/free-vector/cute-minimal-background-simple-cream-design-vector_53876-157711.jpg\");\n  height: 18.75rem;\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n}\n.jobs div a[data-v-11a91fa3] {\n  color: black;\n}", ""]);
 
 // exports
 

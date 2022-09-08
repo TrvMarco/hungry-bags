@@ -18,11 +18,11 @@
           <div class="jobs col-6">
             <div>
               <img src="https://www.gflegal.it/images/articoli_immagini/2020_immagini/GF_Legal_riders_food_delivery.jpg" alt="rider">
-              <h5>Diventa un nostro Rider!</h5>
+              <a href="#"><h5>Diventa un nostro Rider!</h5></a>
             </div>
             <div>
               <img src="https://as1.ftcdn.net/v2/jpg/02/20/26/82/1000_F_220268298_cnU7kMMfkAaEbLO1zwLowduYcqWrer17.jpg" alt="work place">
-              <h5>Aiutaci a crescere!</h5>
+              <a href="#"><h5>Aiutaci a crescere!</h5></a>
             </div>
           </div>
         </div>
@@ -108,5 +108,9 @@ export default {
   background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+.jobs div a{
+  color: black;
 }
 </style>
