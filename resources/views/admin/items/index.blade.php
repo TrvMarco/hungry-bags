@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container backoffice_menu_container">
+    <div class="container backoffice_menu_container white-bg">
         @if ($items->isEmpty())
           <div class="row mb-4 pt-4 justify-content-around">
-              <div class="col-12 text-center p-5">
+              <div class="col-12 text-center p-5 ">
                 <h2>Il tuo Menù è vuoto!</h2>
               </div>
               <div class="item_menu_box">
@@ -15,7 +15,7 @@
               </div>
           </div>
           @else
-          <h1 class="text-center p-3">Il tuo Menù</h1>
+          <h1 class="text-center p-3 beige-bg">Il tuo Menù</h1>
           <div class="row">
             <table class="table">
               <thead>
