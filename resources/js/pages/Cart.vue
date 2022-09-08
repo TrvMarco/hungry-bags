@@ -95,42 +95,45 @@ export default {
                 address: '',
                 phone: '',
                 total_price: '',
+                items: [],
             }
         }
     },
     created(){
-       this.myCart = JSON.parse(localStorage.getItem('prodotto'))
-        console.log(JSON.parse(localStorage.getItem('prodotto')).length)
-       
-        
+        if( JSON.parse(localStorage.getItem('prodotto')) != null ){
+            this.myCart = JSON.parse(localStorage.getItem('prodotto'))
+        }
+        // console.log(JSON.parse(localStorage.getItem('prodotto')).length)
     },
   
     methods: {
       
         deleteItem(id){
-         
             console.log(id)
             //elimino un elemento dall'array myCart
             this.myCart.splice(id,1); 
             this.shared.count = this.myCart.length;
             // assegno nuovamente l'array allo storage 
             localStorage.setItem('prodotto', JSON.stringify(this.myCart))
-           
-        
         },
 
         addDataClient() {
             this.Dataclient.total_price = this.price
+            this.Dataclient.items = this.myCart
             axios.post('/api/orders', this.Dataclient)
             .then((resp) => {
                 this.Dataclient.client_name = '';
                 this.Dataclient.client_surname = '';
                 this.Dataclient.address = '';
                 this.Dataclient.phone = '';
+                this.Dataclient.items;
+                console.log(this.Dataclient);
+                localStorage.clear();
             })
             .catch((er) => {
                 console.log(er);
             })
+            // window.location.href = '/payment';
         }
 
     },

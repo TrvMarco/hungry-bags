@@ -31,11 +31,18 @@ Route::middleware('auth')
         Route::resource('types', 'TypeController');
         Route::resource('users', 'UserController');
     });
-
-    // frontoffice
+    
+Route::any('/payment', 'BraintreeController@token')->name('token');
+ 
+// frontoffice
 Route::any('{any?}',function(){
     return view('guest.home');
 })->where('any','.*');
+
+
+// Route::any('/payment', function(){
+//     return view('guest.braintree');
+// })->where('braintree')->name('token')
 
 // Braintree
 // Route::any('/payment', 'BraintreeController@token')->name('token')->middleware('auth');
@@ -44,6 +51,7 @@ Route::any('{any?}',function(){
 //     return view('guest.braintree');  
 // });
 
-Route::any('/payment', [BraintreeController::class, 'token'])->name('token')->middleware('guest');
+// Route::get('/payment', [BraintreeController::class, 'token'])->name('token')->middleware('auth');
+
 
 
