@@ -1,7 +1,7 @@
 <template>
     <section class="hero text-white p-4">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-12 col-md-6 sx">
                     <div id="slider">
                         <figure>
