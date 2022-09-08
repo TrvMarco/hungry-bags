@@ -133,7 +133,7 @@ export default {
             .catch((er) => {
                 console.log(er);
             })
-            // window.location.href = '/payment';
+            window.location.href = '/payment';
         }
 
     },
