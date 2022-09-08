@@ -202,22 +202,15 @@ main {
     border: 1px solid #111214;
 }
 
+.house {
+    font-size: 30px;
+}
+
 // --------
-.custom-control-input:checked ~ .custom-control-label::before {   
-
-    color: #fff !important;
-    border-color: #111214 !important;
-    background-color: #111214 !important;
-
-  }
-
-  .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
-    border-color: #111214 !important;
-    background-color: #111214 !important;
-  }
 
 
-//   navbar
+
+
 
 
 

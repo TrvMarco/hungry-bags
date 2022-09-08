@@ -20,10 +20,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm backoffice_navbar beige-bg">
             <div class="container ">
-
                 <a class="navbar-brand" href="/">
-                    <i class="fa-solid fa-house"></i>
-
+                    <i class="fa-solid fa-house house"></i>
                 </a>
                 <a class="navbar-brand" href="{{ route('admin.home') }}">
                     <h3 class="color-black">HungryBags</h3>
