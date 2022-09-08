@@ -115,7 +115,7 @@ export default {
                 el.types.forEach(elm => {
                     console.log(elm.name)
                     for (let i = 0; i < this.restaurantByType.length; i++) {
-                        if(elm.name == this.restaurantByType[i]){
+                        if(elm.name == this.restaurantByType[i] && !arr.includes(el)){
                             arr.push(el)
                         }
                     }

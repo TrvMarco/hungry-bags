@@ -2120,7 +2120,7 @@ __webpack_require__.r(__webpack_exports__);
           console.log(elm.name);
 
           for (var i = 0; i < _this2.restaurantByType.length; i++) {
-            if (elm.name == _this2.restaurantByType[i]) {
+            if (elm.name == _this2.restaurantByType[i] && !arr.includes(el)) {
               arr.push(el);
             }
           }
