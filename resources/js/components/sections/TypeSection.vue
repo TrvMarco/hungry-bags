@@ -19,10 +19,9 @@
                         </div>
                     </div>
             </div>
-            <div v-show="showBox == true">
                 <!-- Prova restaurants -->
-                <div v-if="restaurantByType.length > 0" class="row justify-content-center pt-4">
-                        <div class="col-6 col-md-2 pb-3" v-for="restaurant,id in restaurantByType" :key="id">
+                <div class="row justify-content-center pt-4">
+                        <div class="col-6 col-md-2 pb-3" v-for="restaurant,id in filterRestaurant" :key="id">
                                 <transition appear name="fade">
                             <div class="restaurant_card">
                                 <router-link class="router_link" :to="{ name: 'single-restaurant', params: { user: restaurant.name} }">
@@ -35,11 +34,11 @@
                                 </transition>
                         </div>
                 </div>
-                <div v-else class="row justify-content-center pt-4">
+                <!-- <div class="row justify-content-center pt-4">
                     <transition appear name="fade">
                     <h5><i class="fa-regular fa-face-sad-tear"></i> Nessun ristorante associato a questa categoria</h5>
                     </transition>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -71,31 +70,59 @@ export default {
     },
     methods: {
         searchByType(payload){
-            this.showBox = true;
-            // this.restaurantByType = [];
-            this.restaurants.forEach((elm)=>{
-                // console.log(elm.types);
-                let singleRestTypesArray = elm.types;
-                singleRestTypesArray.forEach((singleElm)=>{
-                    // console.log(singleElm.name)
-                    if(singleElm.name === payload){
-                        // console.log(`${payload} = ${elm.name}`)
-                        if(!this.restaurantByType.includes(elm)){
-                            this.restaurantByType.push(elm);
-                        }else{
-                            for (let i = 0; i < this.restaurantByType.length; i++) {
-                                console.log(this.restaurantByType[i].types[0].name)
-                                this.restaurantByType[i].types.map(ol => {
-                                    if(payload == ol.name){
-                                        this.restaurantByType.splice(i, 1)
-                                    }
-                                })
+            if(!this.restaurantByType.includes(payload)){
+                this.restaurantByType.push(payload)
+            }else{
+                for (let i = 0; i < this.restaurantByType.length; i++) {
+                    if(payload === this.restaurantByType[i]){
+                        this.restaurantByType.splice(i, 1)
+                    }
+                }
+            }
+            // console.log(this.restaurantByType)
+
+            // this.showBox = true;
+            // // this.restaurantByType = [];
+            // this.restaurants.forEach((elm)=>{
+            //     // console.log(elm.types);
+            //     let singleRestTypesArray = elm.types;
+            //     singleRestTypesArray.forEach((singleElm)=>{
+            //         // console.log(singleElm.name)
+            //         if(singleElm.name === payload){
+            //             // console.log(`${payload} = ${elm.name}`)
+            //             if(!this.restaurantByType.includes(elm)){
+            //                 this.restaurantByType.push(elm);
+            //             }else{
+            //                 for (let i = 0; i < this.restaurantByType.length; i++) {
+            //                     console.log(this.restaurantByType[i].types[0].name)
+            //                     this.restaurantByType[i].types.map(ol => {
+            //                         if(payload == ol.name){
+            //                             this.restaurantByType.splice(i, 1)
+            //                         }
+            //                     })
                                 
-                            }
+            //                 }
+            //             }
+            //         }
+            //     })
+            // })
+        }
+    },
+    computed: {
+        filterRestaurant(){
+            let arr = [];
+            this.restaurants.forEach(el => {
+                el.types.forEach(elm => {
+                    console.log(elm.name)
+                    for (let i = 0; i < this.restaurantByType.length; i++) {
+                        if(elm.name == this.restaurantByType[i]){
+                            arr.push(el)
                         }
                     }
                 })
             })
+            console.log(arr)
+            return arr
         }
     }
 }
