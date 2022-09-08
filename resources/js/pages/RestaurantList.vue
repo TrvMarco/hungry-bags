@@ -1,8 +1,8 @@
 <template>
   <main>
-    <div class="container pt-4" v-if="restaurants.length > 0">
+    <div class="container pt-4">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 p-4 text-center">
                 <h1>I nostri ristoranti</h1>
             </div>
         </div>
@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div v-else>
+    <!-- <div v-else>
         <div class="container pt-4">
             <div class="row text-center">
                 <div class="col-12 p-5">
@@ -27,7 +27,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
   </main>
 </template>
 
@@ -40,10 +40,9 @@ export default {
         }
     },
     created(){
-        axios.get(`/api/users/${this.$route.params.type}`) 
+        axios.get(`/api/users`) 
         .then((response) => {
-            this.restaurants = response.data.users
-            console.log(response.data.users)
+            this.restaurants = response.data
         })
     }
 }
