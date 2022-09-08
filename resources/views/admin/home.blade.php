@@ -6,7 +6,7 @@
         <div class="col-md-8 d-flex">
             <div class="col-4">
                 {{-- CARD RIEPILOGO DATI RISTORANTE --}}
-                <div class="card beige-bg border-radius-20px">
+                <div class="card border-radius-20px">
                     <div class="card-body d-flex flex-column align-items-center">
                     @if ($user->image)
                         <img class="card-img-top " src="{{ asset('storage/' . $user->image)}}" alt="Card image cap">
@@ -25,9 +25,9 @@
             </div>
             <div class="col-8">
                 {{-- CARD MENÙ --}}
-                <div class="card w-100 border-radius-20px  beige-bg-dark">
-                    <div class="card-header border-radius-20px color-beige">{{ __('Il tuo Menù') }}</div>
-                    <div class="card-body beige-bg border-radius-bottom-20px color-black">
+                <div class="card w-100 border-radius-20px beige-bg">
+                    <div class="card-header border-radius-20px color-black">{{ __('Il tuo Menù') }}</div>
+                    <div class="card-body border-radius-bottom-20px white-bg color-black">
                             @foreach ($items as $item)
                                 <div class="card-text d-flex item_preview justify-content-between align-items-center">
                                     <div class="d-flex align-items-center margin-food-list">
