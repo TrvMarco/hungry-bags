@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container backoffice_menu_container p-4">
+    <div class="container backoffice_menu_container p-4 bg-white border-radius-20px">
         <div class="item-box d-flex flex-column align-items-center">
             <div class="item-name pb-3">
                 <h1>{{$item->name}}</h1>

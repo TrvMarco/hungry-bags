@@ -31,7 +31,7 @@ main {
 }
 
 .backoffice_menu_container {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 0.9375rem;
     // -webkit-box-shadow: 5px 5px 10px 0px #1a1a1ade;
     // -moz-box-shadow: 5px 5px 10px 0px #1a1a1ade;
@@ -201,3 +201,23 @@ main {
     color: white;
     border: 1px solid #111214;
 }
+
+// --------
+.custom-control-input:checked ~ .custom-control-label::before {   
+
+    color: #fff !important;
+    border-color: #111214 !important;
+    background-color: #111214 !important;
+
+  }
+
+  .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
+    border-color: #111214 !important;
+    background-color: #111214 !important;
+  }
+
+
+//   navbar
+
+
+
