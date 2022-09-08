@@ -27,3 +27,5 @@ Route::get('users', 'Api\UserController@index');
 Route::post('users', 'Api\UserController@index');
 
 Route::post('orders', 'Api\OrderController@store');
+
+Route::get('braintree', 'Api\BraintreeController@token');

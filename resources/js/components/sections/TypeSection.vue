@@ -39,7 +39,6 @@
                     <h5><i class="fa-regular fa-face-sad-tear"></i> Nessun ristorante associato a questa categoria</h5>
                     </transition>
                 </div> -->
-            </div>
         </div>
     </div>
   </section>
