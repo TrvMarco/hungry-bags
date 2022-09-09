@@ -56,7 +56,7 @@ export default {
 
 <style lang='scss' scoped>
     header{
-       
+        
         .container-fluid{
             background-color: #111214;
 
