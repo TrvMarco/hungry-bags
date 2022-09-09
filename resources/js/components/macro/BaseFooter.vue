@@ -27,12 +27,12 @@
         </div>
         <div class="brands-list ">
             <h2>I brand più richiesti al momento</h2>
-            <ul class="row brands">
-                <li>McDonalds</li>
-                <li>Burger King</li>
-                <li>Kfc</li>
-                <li>Starbucks</li>
-            </ul>
+            <div class="brands">
+                <p>McDonalds</p>
+                <p>Burger King</p>
+                <p>Kfc</p>
+                <p>Starbucks</p>
+            </div>
         </div>
         <div class="bottom">
         <div class="social">
@@ -123,12 +123,13 @@ ul {
     list-style: none;
     line-height: 30px;
 }
-.brands li{
-    display: flex;
-    padding-right: 1.875rem;
-    margin-left: 0px;
-
+.brands{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 40%;
 }
+
 .list ul li a {
   position: relative;
   color: #ffffff;

@@ -2333,6 +2333,8 @@ __webpack_require__.r(__webpack_exports__);
       items: [],
       user: [],
       virtualCart: [],
+      // prova con il count per carrello 
+      // count : [],
       shared: _shared__WEBPACK_IMPORTED_MODULE_0__["default"]
     };
   },
@@ -2347,7 +2349,13 @@ __webpack_require__.r(__webpack_exports__);
 
     if (this.virtualCart.length === 0 && JSON.parse(localStorage.getItem('prodotto')) != null) {
       this.virtualCart = JSON.parse(localStorage.getItem('prodotto'));
-      this.shared.count = this.virtualCart.length;
+      this.shared.count = this.virtualCart.length; // const count = {};
+      // this.virtualCart.forEach(element => {
+      // count[element.name] = (count[element.name] || 0) + 1;
+      // console.log(element.id);
+      // });
+      // this.count.splice(0,1)
+      // this.count.push(count);
     } // if(JSON.parse(localStorage.getItem('prodotto')) != null){
     //     console.log('ok');
     // }
@@ -2359,18 +2367,32 @@ __webpack_require__.r(__webpack_exports__);
       // se l'elemento che inserisco ha lo stesso user_id del primo elemento lo inserisce altrimenti esce un alert elemento non dello stesso ristorante 
       // console.log(this.virtualCart[0].user_id)
       if (this.virtualCart.length === 0 || item.user_id === this.virtualCart[0].user_id) {
+        // se l'elemento non è contenuto nell'array pushalo , altrimenti aumenta la quantità di 1 
         this.virtualCart.push(item);
         localStorage.setItem('prodotto', JSON.stringify(this.virtualCart));
         console.log(JSON.parse(localStorage.getItem('prodotto')));
-        this.shared.count = this.virtualCart.length;
+        this.shared.count = this.virtualCart.length; // const count = {};
+        // this.virtualCart.forEach(element => {
+        // count[element.name] = (count[element.name] || 0) + 1;
+        // console.log(element.id);
+        // });
+        // this.count.splice(0,1)
+        // this.count.push(count);
+        // console.log(count);
+        // 👇️ {one: 3, two: 2, three: 1}
       } else {
-        alert("elemento non dello stesso ristorante");
+        var popup = document.getElementById("myPopup");
+        popup.classList.add("show");
+        setTimeout(function () {
+          popup.classList.add("none");
+        }, 3000);
+        popup.classList.remove("none"); // alert("elemento non dello stesso ristorante")
       }
     },
     deleteItem: function deleteItem(id) {
-      console.log(id);
-      console.log(this.virtualCart); //elimino un elemento dall'array myCart
-
+      // console.log(id)
+      // console.log(this.virtualCart);
+      //elimino un elemento dall'array myCart
       this.virtualCart.splice(id, 1); // assegno nuovamente l'array allo storage 
 
       this.shared.count = this.virtualCart.length;
@@ -2503,9 +2525,9 @@ var staticRenderFns = [function () {
 
   return _c("div", {
     staticClass: "brands-list"
-  }, [_c("h2", [_vm._v("I brand più richiesti al momento")]), _vm._v(" "), _c("ul", {
-    staticClass: "row brands"
-  }, [_c("li", [_vm._v("McDonalds")]), _vm._v(" "), _c("li", [_vm._v("Burger King")]), _vm._v(" "), _c("li", [_vm._v("Kfc")]), _vm._v(" "), _c("li", [_vm._v("Starbucks")])])]);
+  }, [_c("h2", [_vm._v("I brand più richiesti al momento")]), _vm._v(" "), _c("div", {
+    staticClass: "brands"
+  }, [_c("p", [_vm._v("McDonalds")]), _vm._v(" "), _c("p", [_vm._v("Burger King")]), _vm._v(" "), _c("p", [_vm._v("Kfc")]), _vm._v(" "), _c("p", [_vm._v("Starbucks")])])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
@@ -3383,11 +3405,11 @@ var render = function render() {
     staticClass: "menu_item_box p-2"
   }, [_vm._m(0), _vm._v(" "), _c("hr"), _vm._v(" "), _vm.virtualCart.length > 0 ? _c("div", {
     staticClass: "px-4"
-  }, _vm._l(_vm.virtualCart, function (item, id) {
+  }, [_vm._l(_vm.virtualCart, function (item, id) {
     return _c("div", {
       key: id,
       staticClass: "d-flex justify-content-between align-items-center my-2"
-    }, [_c("span", [_vm._v(_vm._s(id) + " - " + _vm._s(item.name))]), _vm._v(" "), _c("div", {
+    }, [_c("span", [_vm._v(_vm._s(id) + " - " + _vm._s(item.name) + " - " + _vm._s(item.id))]), _vm._v(" "), _c("div", {
       staticClass: "d-flex align-items-center"
     }, [_c("span", {
       staticClass: "mx-3"
@@ -3399,7 +3421,12 @@ var render = function render() {
         }
       }
     })])])]);
-  }), 0) : _c("div", {
+  }), _vm._v(" "), _c("div", {
+    staticClass: "popup text-center",
+    attrs: {
+      id: "myPopup"
+    }
+  }, [_vm._v("puoi fare ordini solo dallo stesso ristorante ")])], 2) : _c("div", {
     staticClass: "text-center p-4"
   }, [_c("h5", [_vm._v("Il carrello é momentaneamente vuoto!")])])]) : _vm._e()])]), _vm._v(" "), _vm.items.length == 0 ? _c("div", {
     staticClass: "row text-center"
@@ -3468,7 +3495,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "footer[data-v-cc917e4c] {\n  background-color: #111214;\n  color: white;\n}\nfooter .container[data-v-cc917e4c] {\n  padding-top: 3.125rem;\n}\nul[data-v-cc917e4c] {\n  list-style: none;\n  line-height: 30px;\n}\n.brands li[data-v-cc917e4c] {\n  display: flex;\n  padding-right: 1.875rem;\n  margin-left: 0px;\n}\n.list ul li a[data-v-cc917e4c] {\n  position: relative;\n  color: #ffffff;\n  text-decoration: none;\n}\na[data-v-cc917e4c]::before {\n  content: \"\";\n  position: absolute;\n  width: 100%;\n  height: 2px;\n  border-radius: 2px;\n  background-color: #ffffff;\n  bottom: 0;\n  left: 0;\n  transform-origin: right;\n  transform: scaleX(0);\n  transition: transform 0.3s ease-in-out;\n}\na[data-v-cc917e4c]:hover::before {\n  transform-origin: left;\n  transform: scaleX(1);\n}\n.wrapper[data-v-cc917e4c] {\n  display: inline-flex;\n  list-style: none;\n}\n.wrapper .icon[data-v-cc917e4c] {\n  position: relative;\n  background: #ffffff;\n  border-radius: 50%;\n  padding: 15px;\n  margin: 10px;\n  width: 50px;\n  height: 50px;\n  font-size: 18px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);\n  cursor: pointer;\n  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n  color: #111214;\n}\n.wrapper .tooltip[data-v-cc917e4c] {\n  position: absolute;\n  top: 0;\n  font-size: 14px;\n  background: #ffffff;\n  color: #ffffff;\n  padding: 5px 8px;\n  border-radius: 5px;\n  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);\n  opacity: 0;\n  pointer-events: none;\n  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.wrapper .tooltip[data-v-cc917e4c]::before {\n  position: absolute;\n  content: \"\";\n  height: 8px;\n  width: 8px;\n  background: #ffffff;\n  bottom: -3px;\n  left: 50%;\n  transform: translate(-50%) rotate(45deg);\n  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.wrapper .icon:hover .tooltip[data-v-cc917e4c] {\n  top: -45px;\n  opacity: 1;\n  visibility: visible;\n  pointer-events: auto;\n}\n.wrapper .icon:hover span[data-v-cc917e4c],\n.wrapper .icon:hover .tooltip[data-v-cc917e4c] {\n  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);\n}\n.wrapper .facebook[data-v-cc917e4c]:hover,\n.wrapper .facebook:hover .tooltip[data-v-cc917e4c],\n.wrapper .facebook:hover .tooltip[data-v-cc917e4c]::before {\n  background: #1877F2;\n  color: #ffffff;\n}\n.wrapper .twitter[data-v-cc917e4c]:hover,\n.wrapper .twitter:hover .tooltip[data-v-cc917e4c],\n.wrapper .twitter:hover .tooltip[data-v-cc917e4c]::before {\n  background: #1DA1F2;\n  color: #ffffff;\n}\n.wrapper .instagram[data-v-cc917e4c]:hover,\n.wrapper .instagram:hover .tooltip[data-v-cc917e4c],\n.wrapper .instagram:hover .tooltip[data-v-cc917e4c]::before {\n  background: #E4405F;\n  color: #ffffff;\n}\n.brands-list[data-v-cc917e4c] {\n  padding-top: 2.5rem;\n}\n.social[data-v-cc917e4c] {\n  display: flex;\n  justify-content: flex-end;\n}\n.flag[data-v-cc917e4c] {\n  width: 1.875rem;\n  height: 1.25rem;\n}\n.apps[data-v-cc917e4c] {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-evenly;\n}\n.lang-select[data-v-cc917e4c] {\n  padding-top: 1.25rem;\n}\n.lang[data-v-cc917e4c] {\n  padding-left: 1.25rem;\n  padding-right: 1.25rem;\n}\n.bottom[data-v-cc917e4c] {\n  display: flex;\n  flex-direction: row-reverse;\n  justify-content: space-between;\n}\n.pointer[data-v-cc917e4c]:hover {\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, "footer[data-v-cc917e4c] {\n  background-color: #111214;\n  color: white;\n}\nfooter .container[data-v-cc917e4c] {\n  padding-top: 3.125rem;\n}\nul[data-v-cc917e4c] {\n  list-style: none;\n  line-height: 30px;\n}\n.brands[data-v-cc917e4c] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  width: 40%;\n}\n.list ul li a[data-v-cc917e4c] {\n  position: relative;\n  color: #ffffff;\n  text-decoration: none;\n}\na[data-v-cc917e4c]::before {\n  content: \"\";\n  position: absolute;\n  width: 100%;\n  height: 2px;\n  border-radius: 2px;\n  background-color: #ffffff;\n  bottom: 0;\n  left: 0;\n  transform-origin: right;\n  transform: scaleX(0);\n  transition: transform 0.3s ease-in-out;\n}\na[data-v-cc917e4c]:hover::before {\n  transform-origin: left;\n  transform: scaleX(1);\n}\n.wrapper[data-v-cc917e4c] {\n  display: inline-flex;\n  list-style: none;\n}\n.wrapper .icon[data-v-cc917e4c] {\n  position: relative;\n  background: #ffffff;\n  border-radius: 50%;\n  padding: 15px;\n  margin: 10px;\n  width: 50px;\n  height: 50px;\n  font-size: 18px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);\n  cursor: pointer;\n  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n  color: #111214;\n}\n.wrapper .tooltip[data-v-cc917e4c] {\n  position: absolute;\n  top: 0;\n  font-size: 14px;\n  background: #ffffff;\n  color: #ffffff;\n  padding: 5px 8px;\n  border-radius: 5px;\n  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);\n  opacity: 0;\n  pointer-events: none;\n  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.wrapper .tooltip[data-v-cc917e4c]::before {\n  position: absolute;\n  content: \"\";\n  height: 8px;\n  width: 8px;\n  background: #ffffff;\n  bottom: -3px;\n  left: 50%;\n  transform: translate(-50%) rotate(45deg);\n  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.wrapper .icon:hover .tooltip[data-v-cc917e4c] {\n  top: -45px;\n  opacity: 1;\n  visibility: visible;\n  pointer-events: auto;\n}\n.wrapper .icon:hover span[data-v-cc917e4c],\n.wrapper .icon:hover .tooltip[data-v-cc917e4c] {\n  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);\n}\n.wrapper .facebook[data-v-cc917e4c]:hover,\n.wrapper .facebook:hover .tooltip[data-v-cc917e4c],\n.wrapper .facebook:hover .tooltip[data-v-cc917e4c]::before {\n  background: #1877F2;\n  color: #ffffff;\n}\n.wrapper .twitter[data-v-cc917e4c]:hover,\n.wrapper .twitter:hover .tooltip[data-v-cc917e4c],\n.wrapper .twitter:hover .tooltip[data-v-cc917e4c]::before {\n  background: #1DA1F2;\n  color: #ffffff;\n}\n.wrapper .instagram[data-v-cc917e4c]:hover,\n.wrapper .instagram:hover .tooltip[data-v-cc917e4c],\n.wrapper .instagram:hover .tooltip[data-v-cc917e4c]::before {\n  background: #E4405F;\n  color: #ffffff;\n}\n.brands-list[data-v-cc917e4c] {\n  padding-top: 2.5rem;\n}\n.social[data-v-cc917e4c] {\n  display: flex;\n  justify-content: flex-end;\n}\n.flag[data-v-cc917e4c] {\n  width: 1.875rem;\n  height: 1.25rem;\n}\n.apps[data-v-cc917e4c] {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-evenly;\n}\n.lang-select[data-v-cc917e4c] {\n  padding-top: 1.25rem;\n}\n.lang[data-v-cc917e4c] {\n  padding-left: 1.25rem;\n  padding-right: 1.25rem;\n}\n.bottom[data-v-cc917e4c] {\n  display: flex;\n  flex-direction: row-reverse;\n  justify-content: space-between;\n}\n.pointer[data-v-cc917e4c]:hover {\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -3622,7 +3649,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".menu_item_box[data-v-2ff820ae] {\n  min-height: 10.625rem;\n  background-color: beige;\n  border-radius: 0.625rem;\n  box-shadow: 9px 6px 19px -7px #000000;\n}\n.menu_item_box .item_box_description[data-v-2ff820ae] {\n  font-size: 0.8125rem;\n}\n.menu_item_box .item_box_image[data-v-2ff820ae] {\n  width: 9.375rem;\n  height: 9.375rem;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.menu_item_box .item_box_image img[data-v-2ff820ae] {\n  border-radius: 0.625rem;\n  overflow: hidden;\n}\n.add_cart_plus[data-v-2ff820ae] {\n  font-size: 1.25rem;\n  color: rgba(62, 196, 184, 0.938);\n  cursor: pointer;\n  transition: all 0.5s;\n}\n.add_cart_plus[data-v-2ff820ae]:hover {\n  transform: scale(1.5);\n}\n.gap[data-v-2ff820ae] {\n  row-gap: 1.875rem;\n}\n.minus_class[data-v-2ff820ae] {\n  background-color: #b40404;\n  padding: 0.1875rem;\n  color: white;\n  border-radius: 50%;\n}", ""]);
+exports.push([module.i, ".menu_item_box[data-v-2ff820ae] {\n  min-height: 10.625rem;\n  background-color: beige;\n  border-radius: 0.625rem;\n  box-shadow: 9px 6px 19px -7px #000000;\n}\n.menu_item_box .item_box_description[data-v-2ff820ae] {\n  font-size: 0.8125rem;\n}\n.menu_item_box .item_box_image[data-v-2ff820ae] {\n  width: 9.375rem;\n  height: 9.375rem;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.menu_item_box .item_box_image img[data-v-2ff820ae] {\n  border-radius: 0.625rem;\n  overflow: hidden;\n}\n.add_cart_plus[data-v-2ff820ae] {\n  font-size: 1.25rem;\n  color: rgba(62, 196, 184, 0.938);\n  cursor: pointer;\n  transition: all 0.5s;\n}\n.add_cart_plus[data-v-2ff820ae]:hover {\n  transform: scale(1.5);\n}\n.gap[data-v-2ff820ae] {\n  row-gap: 1.875rem;\n}\n.minus_class[data-v-2ff820ae] {\n  background-color: #b40404;\n  padding: 0.1875rem;\n  color: white;\n  border-radius: 50%;\n}\n.popup[data-v-2ff820ae] {\n  display: none;\n}\n.show[data-v-2ff820ae] {\n  text-transform: uppercase;\n  color: #b40404;\n  font-size: 1rem;\n  display: block;\n  padding: 0.9375rem 0px;\n}\n.none[data-v-2ff820ae] {\n  display: none;\n}", ""]);
 
 // exports
 
@@ -21587,7 +21614,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\valen\Desktop\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\simon\boolean\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
