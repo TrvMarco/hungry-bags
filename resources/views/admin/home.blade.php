@@ -77,7 +77,6 @@
                 {{--! verificare in seguito per la modifica --}}
                 {{-- <a href="{{route('admin.types.index')}}">Modifica le tipologie del tuo ristorante</a> <br> --}}
                 {{-- <a href="{{route('admin.users.edit', $user)}}">Aggiungi o modifica la tipologia del tuo ristorante</a> --}}
-                
         {{-- @endif
     </div>
 </div> --}}
