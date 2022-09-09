@@ -15,7 +15,17 @@
               </div>
           </div>
           @else
+          <div class="d-flex justify-content-between align-items-center">
+            <div><a href="{{route('admin.home')}}"><i class="fa-solid fa-arrow-left"></i></a></div>
           <h1 class="text-center p-3">Il tuo Menù</h1>
+          <div class="d-flex flex-column align-items-center">
+            <div>
+             <a href="{{route('admin.items.create')}}"><i class="fa-solid fa-plus"></i></a> 
+            </div>
+            <p> <small>inserisci nuovo piatto</small> </p>
+          </div>
+          </div>
+          
           <div class="row">
             <table class="table">
               <thead>

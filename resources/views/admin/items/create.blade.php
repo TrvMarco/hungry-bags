@@ -75,6 +75,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Crea piatto</button>
+            <a href="{{route('admin.home')}}" class="btn btn-primary"> Home</a>
             
         </form>
     </div>
