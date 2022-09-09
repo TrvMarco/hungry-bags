@@ -21,15 +21,12 @@ class HomeController extends Controller
     public function index()
     {   
         $user = Auth::user();
+        $user_id = Auth::id();
         $items = $user->items;
         $types = $user->types;
-        $user_id = Auth::id();
-
-        $orders = Order::with(['items' => function($el) use($user_id) {
+        $orders = Order::whereHas('items', function($el) use($user_id) {
             $el->where('user_id', $user_id);
-        }])->get();
-
-
+        })->with(['items'])->get();
         return view('admin.home', compact('types', 'user', 'items', 'orders'));
     }
 }

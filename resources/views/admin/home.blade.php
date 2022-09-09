@@ -67,7 +67,6 @@
                     <div class="card-body">
                             @foreach ($orders as $order)
                                 <div class="card-text d-flex item_preview justify-content-between align-items-center">
-                                    @dd($order)
                                 </div>
                             @endforeach
                         <a href="{{route('admin.items.index')}}">visualizza menu</a>
