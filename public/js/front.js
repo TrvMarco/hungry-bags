@@ -2208,7 +2208,8 @@ __webpack_require__.r(__webpack_exports__);
         localStorage.clear();
       })["catch"](function (er) {
         console.log(er);
-      }); // window.location.href = '/payment';
+      });
+      window.location.href = '/payment';
     }
   },
   computed: {

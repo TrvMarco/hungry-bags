@@ -140,15 +140,15 @@ export default {
 
     computed: {
         sum(){
-             let sum = 0;
-        this.myCart.forEach(elm => {
-                // console.log(elm.price);
-                sum += elm.price
-        })
-        
-        this.price = sum.toFixed(2)
-        // console.log(this.myCart)
-        return this.shared.totalCartPrice = sum.toFixed(2)
+            let sum = 0;
+            this.myCart.forEach(elm => {
+                    // console.log(elm.price);
+                    sum += elm.price
+            })
+            
+            this.price = sum.toFixed(2)
+            // console.log(this.myCart)
+            return this.shared.totalCartPrice = sum.toFixed(2)
 
         },
 
