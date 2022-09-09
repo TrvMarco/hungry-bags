@@ -40,4 +40,9 @@ class OrderController extends Controller
 
         return $newOrder;
     }
+
+    public function index(){
+        $order = Order::latest()->with(['items'])->first();
+        return $order;
+    }
 }
