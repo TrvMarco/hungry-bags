@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container backoffice_menu_container p-4">
+{{-- backoffice menu container --}}
+<div class="container p-4">
     <div class="row justify-content-center">
         <div class="col-md-8 d-flex">
             <div class="col-4">
@@ -19,7 +20,7 @@
                     <h5 class="card-title"><strong>{{ $user->name }}</strong></h5>
                     <p class="card-text"><strong>Indirizzo:</strong> {{ $user->address}}</p>
                     <p class="card-text"><small><strong>P.iva:</strong> {{ $user->vat }}</small></p>
-                    <a href="{{route('admin.users.edit', $user)}}" class="btn btn-primary black-btn border-radius-20px ">Modifica Profilo</a>
+                    <a href="{{route('admin.users.edit', $user)}}" class="btn btn-primary beige-btn border-radius-20px ">Modifica Profilo</a>
                     </div>
                 </div>
             </div>
@@ -50,7 +51,7 @@
                             @endforeach
                         <a class="btn btn-primary visualizza-menu-btn" href="{{route('admin.items.index')}}">Visualizza menu</a>
                         <br>
-                        <a class="btn btn-primary inserisci-piatto-btn" href="{{route('admin.items.create')}}">Inserisci il tuo piatto</a>
+                        <a class="btn btn-primary beige-btn" href="{{route('admin.items.create')}}">Inserisci il tuo piatto</a>
                     </div>
                 </div>            
             </div>

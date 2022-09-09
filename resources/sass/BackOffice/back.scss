@@ -11,11 +11,11 @@ ul {
 //      ----------------        CONTAINERS
 main {
     // background: linear-gradient(45deg,var(--third-color), var(--primary-color));
-    background-image: url("https://thumbs.dreamstime.com/b/greek-food-background-traditional-different-greek-dishes-set-greek-food-background-traditional-different-greek-dishes-set-top-view-178761927.jpg");
-    background-color: #eee1b3;
+    background-image: url("https://www.mixerplanet.com/wp-content/uploads/2022/03/shutterstock_506516848.jpg");
+    background-color: #ffffff;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: top;
 }
 
 // .backoffice_navbar{
@@ -31,7 +31,7 @@ main {
 }
 
 .backoffice_menu_container {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.65);
     border-radius: 0.9375rem;
     // -webkit-box-shadow: 5px 5px 10px 0px #1a1a1ade;
     // -moz-box-shadow: 5px 5px 10px 0px #1a1a1ade;
@@ -126,6 +126,10 @@ main {
     background: white;
 }
 
+.color-black {
+    color: #111214;
+}
+
 .color-white {
     color: white;
 }
@@ -138,23 +142,42 @@ main {
     border: 1px solid #111214;
 }
 
+.border-1px {
+    border: 1px solid black;
+}
+
+.margin-top-card {
+    margin-top: 100px;
+}
+
+.beige-btn {
+    background-color: #eee1b3;
+    border: 1px solid black;
+    border-radius: 20px;
+    color: #111214;
+}
+
+.beige-btn:hover {
+    background-color: #111214;
+    border-color: #eee1b3;
+    color: #eee1b3;
+}
+
 .black-btn {
     background-color: #111214;
     border-color: #111214;
     border-radius: 20px;
-}
-
-.black-btn:hover {
-    background-color: #2a99bc;
-    border-color: #2a99bc;
     color: #eee1b3;
 }
 
-
-
-.color-black {
+.black-btn:hover {
+    background-color: #eee1b3;
+    border-color: #111214;
     color: #111214;
 }
+
+
+
 
 .margin-login-card {
     margin: 90px 0px 0px 0px;
@@ -182,24 +205,30 @@ main {
     border-color: black;
     margin: 5px 0px;
     background-color: #000000;
-    color: rgb(255, 255, 255);
+    color: #eee1b3;
     border: 1px solid #000000;
 }
 
 .visualizza-menu-btn:hover,
 .inserisci-piatto-btn:hover, .inserisci-img-btn:hover {
-    background-color: #2a99bc;
-    border-color: #2a99bc;
-    color: #eee1b3;
+    background-color: #eee1b3;
+    border-color: #111214;
+    color: #111214;
 }
 
 .inserisci-img-btn {
-    border-radius: 20px;
-    border-color: #111214;
-    margin: 15px 0px;
-    background-color: #111214;
-    color: white;
+    border-radius: 50px;
+    margin: 5px 0px 15px 0px;
     border: 1px solid #111214;
+    background-color: #eee1b3;
+    color: #111214;
+}
+
+.inserisci-img-btn:hover {
+    margin: 5px 0px 15px 0px;
+    border: 1px solid #111214;
+    background-color: #111214;
+    color: #eee1b3;
 }
 
 .house {

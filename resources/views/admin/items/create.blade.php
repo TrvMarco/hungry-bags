@@ -74,7 +74,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary black-btn">Crea piatto</button>
+            <button type="submit" class="btn btn-primary beige-btn">Crea piatto</button>
             
         </form>
     </div>
