@@ -41,12 +41,12 @@
                                     data: {nonce : payload.nonce},
                                     success: function (data) {
                                         console.log(data)
-                                        window.location.href = '/';
+                                        window.location.href = '/list-order';
                                         console.log('success',payload.nonce)
                                     },
                                     error: function (data) {
                                         console.log(data)
-                                        window.location.href = '/';
+                                        window.location.href = '/list-order';
                                         console.log('error',payload.nonce)
                                     }
                                 });
