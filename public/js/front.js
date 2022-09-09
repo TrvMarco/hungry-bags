@@ -2333,6 +2333,8 @@ __webpack_require__.r(__webpack_exports__);
       items: [],
       user: [],
       virtualCart: [],
+      // prova con il count per carrello 
+      // count : [],
       shared: _shared__WEBPACK_IMPORTED_MODULE_0__["default"]
     };
   },
@@ -2347,7 +2349,13 @@ __webpack_require__.r(__webpack_exports__);
 
     if (this.virtualCart.length === 0 && JSON.parse(localStorage.getItem('prodotto')) != null) {
       this.virtualCart = JSON.parse(localStorage.getItem('prodotto'));
-      this.shared.count = this.virtualCart.length;
+      this.shared.count = this.virtualCart.length; // const count = {};
+      // this.virtualCart.forEach(element => {
+      // count[element.name] = (count[element.name] || 0) + 1;
+      // console.log(element.id);
+      // });
+      // this.count.splice(0,1)
+      // this.count.push(count);
     } // if(JSON.parse(localStorage.getItem('prodotto')) != null){
     //     console.log('ok');
     // }
@@ -2359,18 +2367,32 @@ __webpack_require__.r(__webpack_exports__);
       // se l'elemento che inserisco ha lo stesso user_id del primo elemento lo inserisce altrimenti esce un alert elemento non dello stesso ristorante 
       // console.log(this.virtualCart[0].user_id)
       if (this.virtualCart.length === 0 || item.user_id === this.virtualCart[0].user_id) {
+        // se l'elemento non è contenuto nell'array pushalo , altrimenti aumenta la quantità di 1 
         this.virtualCart.push(item);
         localStorage.setItem('prodotto', JSON.stringify(this.virtualCart));
         console.log(JSON.parse(localStorage.getItem('prodotto')));
-        this.shared.count = this.virtualCart.length;
+        this.shared.count = this.virtualCart.length; // const count = {};
+        // this.virtualCart.forEach(element => {
+        // count[element.name] = (count[element.name] || 0) + 1;
+        // console.log(element.id);
+        // });
+        // this.count.splice(0,1)
+        // this.count.push(count);
+        // console.log(count);
+        // 👇️ {one: 3, two: 2, three: 1}
       } else {
-        alert("elemento non dello stesso ristorante");
+        var popup = document.getElementById("myPopup");
+        popup.classList.add("show");
+        setTimeout(function () {
+          popup.classList.add("none");
+        }, 3000);
+        popup.classList.remove("none"); // alert("elemento non dello stesso ristorante")
       }
     },
     deleteItem: function deleteItem(id) {
-      console.log(id);
-      console.log(this.virtualCart); //elimino un elemento dall'array myCart
-
+      // console.log(id)
+      // console.log(this.virtualCart);
+      //elimino un elemento dall'array myCart
       this.virtualCart.splice(id, 1); // assegno nuovamente l'array allo storage 
 
       this.shared.count = this.virtualCart.length;
@@ -3383,11 +3405,11 @@ var render = function render() {
     staticClass: "menu_item_box p-2"
   }, [_vm._m(0), _vm._v(" "), _c("hr"), _vm._v(" "), _vm.virtualCart.length > 0 ? _c("div", {
     staticClass: "px-4"
-  }, _vm._l(_vm.virtualCart, function (item, id) {
+  }, [_vm._l(_vm.virtualCart, function (item, id) {
     return _c("div", {
       key: id,
       staticClass: "d-flex justify-content-between align-items-center my-2"
-    }, [_c("span", [_vm._v(_vm._s(id) + " - " + _vm._s(item.name))]), _vm._v(" "), _c("div", {
+    }, [_c("span", [_vm._v(_vm._s(id) + " - " + _vm._s(item.name) + " - " + _vm._s(item.id))]), _vm._v(" "), _c("div", {
       staticClass: "d-flex align-items-center"
     }, [_c("span", {
       staticClass: "mx-3"
@@ -3399,7 +3421,12 @@ var render = function render() {
         }
       }
     })])])]);
-  }), 0) : _c("div", {
+  }), _vm._v(" "), _c("div", {
+    staticClass: "popup text-center",
+    attrs: {
+      id: "myPopup"
+    }
+  }, [_vm._v("puoi fare ordini solo dallo stesso ristorante ")])], 2) : _c("div", {
     staticClass: "text-center p-4"
   }, [_c("h5", [_vm._v("Il carrello é momentaneamente vuoto!")])])]) : _vm._e()])]), _vm._v(" "), _vm.items.length == 0 ? _c("div", {
     staticClass: "row text-center"
@@ -3622,7 +3649,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".menu_item_box[data-v-2ff820ae] {\n  min-height: 10.625rem;\n  background-color: beige;\n  border-radius: 0.625rem;\n  box-shadow: 9px 6px 19px -7px #000000;\n}\n.menu_item_box .item_box_description[data-v-2ff820ae] {\n  font-size: 0.8125rem;\n}\n.menu_item_box .item_box_image[data-v-2ff820ae] {\n  width: 9.375rem;\n  height: 9.375rem;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.menu_item_box .item_box_image img[data-v-2ff820ae] {\n  border-radius: 0.625rem;\n  overflow: hidden;\n}\n.add_cart_plus[data-v-2ff820ae] {\n  font-size: 1.25rem;\n  color: rgba(62, 196, 184, 0.938);\n  cursor: pointer;\n  transition: all 0.5s;\n}\n.add_cart_plus[data-v-2ff820ae]:hover {\n  transform: scale(1.5);\n}\n.gap[data-v-2ff820ae] {\n  row-gap: 1.875rem;\n}\n.minus_class[data-v-2ff820ae] {\n  background-color: #b40404;\n  padding: 0.1875rem;\n  color: white;\n  border-radius: 50%;\n}", ""]);
+exports.push([module.i, ".menu_item_box[data-v-2ff820ae] {\n  min-height: 10.625rem;\n  background-color: beige;\n  border-radius: 0.625rem;\n  box-shadow: 9px 6px 19px -7px #000000;\n}\n.menu_item_box .item_box_description[data-v-2ff820ae] {\n  font-size: 0.8125rem;\n}\n.menu_item_box .item_box_image[data-v-2ff820ae] {\n  width: 9.375rem;\n  height: 9.375rem;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.menu_item_box .item_box_image img[data-v-2ff820ae] {\n  border-radius: 0.625rem;\n  overflow: hidden;\n}\n.add_cart_plus[data-v-2ff820ae] {\n  font-size: 1.25rem;\n  color: rgba(62, 196, 184, 0.938);\n  cursor: pointer;\n  transition: all 0.5s;\n}\n.add_cart_plus[data-v-2ff820ae]:hover {\n  transform: scale(1.5);\n}\n.gap[data-v-2ff820ae] {\n  row-gap: 1.875rem;\n}\n.minus_class[data-v-2ff820ae] {\n  background-color: #b40404;\n  padding: 0.1875rem;\n  color: white;\n  border-radius: 50%;\n}\n.popup[data-v-2ff820ae] {\n  display: none;\n}\n.show[data-v-2ff820ae] {\n  text-transform: uppercase;\n  color: #b40404;\n  font-size: 1rem;\n  display: block;\n  padding: 0.9375rem 0px;\n}\n.none[data-v-2ff820ae] {\n  display: none;\n}", ""]);
 
 // exports
 
@@ -21587,7 +21614,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\valen\Desktop\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Giuseppe\Desktop\BOOLEAN\ESERCIZI\PHP\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
