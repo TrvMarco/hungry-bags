@@ -10,6 +10,7 @@
                 <h5>{{user.address}}</h5>
             </div>
         </div>
+        <!-- Stampa contenuto menù e carrello -->
         <div class="row gap">
             <div class="col-6">
             <div v-for="item,id in items" :key="id" class="col my-3">

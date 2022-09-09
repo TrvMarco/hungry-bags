@@ -1,5 +1,8 @@
 <template>
   <main>
+    <div id="spinner" class="container">
+        <LoadingSpinner/>
+    </div>
     <div class="container pt-4">
         <div class="row">
             <div class="col-12 p-4 text-center">
@@ -32,8 +35,14 @@
 </template>
 
 <script>
+
+import LoadingSpinner from '../components/singlecomponent/LoadingSpinner'
+
 export default {
     name: 'RestaurantList',
+    components:{
+        LoadingSpinner
+    },
     data(){
         return{
             restaurants: []
@@ -44,6 +53,9 @@ export default {
         .then((response) => {
             this.restaurants = response.data
         })
+        .finally(() => {
+            document.getElementById('spinner').style.display = 'none';
+        });
     }
 }
 </script>
