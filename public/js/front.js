@@ -2195,10 +2195,10 @@ __webpack_require__.r(__webpack_exports__);
         _this.Dataclient.items;
         console.log(_this.Dataclient);
         localStorage.clear();
+        window.location.href = '/payment';
       })["catch"](function (er) {
         console.log(er);
       });
-      window.location.href = '/payment';
     }
   },
   computed: {
@@ -3409,7 +3409,7 @@ var render = function render() {
     return _c("div", {
       key: id,
       staticClass: "d-flex justify-content-between align-items-center my-2"
-    }, [_c("span", [_vm._v(_vm._s(id) + " - " + _vm._s(item.name) + " - " + _vm._s(item.id))]), _vm._v(" "), _c("div", {
+    }, [_c("span", [_vm._v(_vm._s(item.name))]), _vm._v(" "), _c("div", {
       staticClass: "d-flex align-items-center"
     }, [_c("span", {
       staticClass: "mx-3"
@@ -21614,7 +21614,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Giuseppe\Desktop\BOOLEAN\ESERCIZI\PHP\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\valen\Desktop\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
