@@ -1950,6 +1950,19 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         text: "politica sui cookie",
         url: ""
+      }],
+      linksBrands: [{
+        text: "McDonalds",
+        url: ""
+      }, {
+        text: "Burger King",
+        url: ""
+      }, {
+        text: "Kfc",
+        url: ""
+      }, {
+        text: "Starbucks",
+        url: ""
       }]
     };
   }
@@ -2491,7 +2504,20 @@ var render = function render() {
         href: link.url
       }
     }, [_vm._v(_vm._s(link.text))])]);
-  }), 0), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2)])]);
+  }), 0), _vm._v(" "), _vm._m(0)]), _vm._v(" "), _c("div", {
+    staticClass: "brands-list"
+  }, [_c("h2", [_vm._v("I brand più richiesti al momento")]), _vm._v(" "), _c("ul", {
+    staticClass: "brands"
+  }, _vm._l(_vm.linksBrands, function (link) {
+    return _c("li", {
+      key: link.text,
+      staticClass: "my-2"
+    }, [_c("a", {
+      attrs: {
+        href: link.url
+      }
+    }, [_vm._v(_vm._s(link.text))])]);
+  }), 0)]), _vm._v(" "), _vm._m(1)])]);
 };
 
 var staticRenderFns = [function () {
@@ -2519,15 +2545,6 @@ var staticRenderFns = [function () {
       alt: ""
     }
   })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "brands-list"
-  }, [_c("h2", [_vm._v("I brand più richiesti al momento")]), _vm._v(" "), _c("div", {
-    staticClass: "brands"
-  }, [_c("p", [_vm._v("McDonalds")]), _vm._v(" "), _c("p", [_vm._v("Burger King")]), _vm._v(" "), _c("p", [_vm._v("Kfc")]), _vm._v(" "), _c("p", [_vm._v("Starbucks")])])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
@@ -3495,7 +3512,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "footer[data-v-cc917e4c] {\n  background-color: #111214;\n  color: white;\n}\nfooter .container[data-v-cc917e4c] {\n  padding-top: 3.125rem;\n}\nul[data-v-cc917e4c] {\n  list-style: none;\n  line-height: 30px;\n}\n.brands[data-v-cc917e4c] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  width: 40%;\n}\n.list ul li a[data-v-cc917e4c] {\n  position: relative;\n  color: #ffffff;\n  text-decoration: none;\n}\na[data-v-cc917e4c]::before {\n  content: \"\";\n  position: absolute;\n  width: 100%;\n  height: 2px;\n  border-radius: 2px;\n  background-color: #ffffff;\n  bottom: 0;\n  left: 0;\n  transform-origin: right;\n  transform: scaleX(0);\n  transition: transform 0.3s ease-in-out;\n}\na[data-v-cc917e4c]:hover::before {\n  transform-origin: left;\n  transform: scaleX(1);\n}\n.wrapper[data-v-cc917e4c] {\n  display: inline-flex;\n  list-style: none;\n}\n.wrapper .icon[data-v-cc917e4c] {\n  position: relative;\n  background: #ffffff;\n  border-radius: 50%;\n  padding: 15px;\n  margin: 10px;\n  width: 50px;\n  height: 50px;\n  font-size: 18px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);\n  cursor: pointer;\n  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n  color: #111214;\n}\n.wrapper .tooltip[data-v-cc917e4c] {\n  position: absolute;\n  top: 0;\n  font-size: 14px;\n  background: #ffffff;\n  color: #ffffff;\n  padding: 5px 8px;\n  border-radius: 5px;\n  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);\n  opacity: 0;\n  pointer-events: none;\n  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.wrapper .tooltip[data-v-cc917e4c]::before {\n  position: absolute;\n  content: \"\";\n  height: 8px;\n  width: 8px;\n  background: #ffffff;\n  bottom: -3px;\n  left: 50%;\n  transform: translate(-50%) rotate(45deg);\n  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.wrapper .icon:hover .tooltip[data-v-cc917e4c] {\n  top: -45px;\n  opacity: 1;\n  visibility: visible;\n  pointer-events: auto;\n}\n.wrapper .icon:hover span[data-v-cc917e4c],\n.wrapper .icon:hover .tooltip[data-v-cc917e4c] {\n  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);\n}\n.wrapper .facebook[data-v-cc917e4c]:hover,\n.wrapper .facebook:hover .tooltip[data-v-cc917e4c],\n.wrapper .facebook:hover .tooltip[data-v-cc917e4c]::before {\n  background: #1877F2;\n  color: #ffffff;\n}\n.wrapper .twitter[data-v-cc917e4c]:hover,\n.wrapper .twitter:hover .tooltip[data-v-cc917e4c],\n.wrapper .twitter:hover .tooltip[data-v-cc917e4c]::before {\n  background: #1DA1F2;\n  color: #ffffff;\n}\n.wrapper .instagram[data-v-cc917e4c]:hover,\n.wrapper .instagram:hover .tooltip[data-v-cc917e4c],\n.wrapper .instagram:hover .tooltip[data-v-cc917e4c]::before {\n  background: #E4405F;\n  color: #ffffff;\n}\n.brands-list[data-v-cc917e4c] {\n  padding-top: 2.5rem;\n}\n.social[data-v-cc917e4c] {\n  display: flex;\n  justify-content: flex-end;\n}\n.flag[data-v-cc917e4c] {\n  width: 1.875rem;\n  height: 1.25rem;\n}\n.apps[data-v-cc917e4c] {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-evenly;\n}\n.lang-select[data-v-cc917e4c] {\n  padding-top: 1.25rem;\n}\n.lang[data-v-cc917e4c] {\n  padding-left: 1.25rem;\n  padding-right: 1.25rem;\n}\n.bottom[data-v-cc917e4c] {\n  display: flex;\n  flex-direction: row-reverse;\n  justify-content: space-between;\n}\n.pointer[data-v-cc917e4c]:hover {\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, "footer[data-v-cc917e4c] {\n  background-color: #111214;\n  color: white;\n}\nfooter .container[data-v-cc917e4c] {\n  padding-top: 3.125rem;\n}\nul[data-v-cc917e4c] {\n  list-style: none;\n  line-height: 30px;\n}\n.brands[data-v-cc917e4c] {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  width: 40%;\n  -webkit-padding-start: 0;\n          padding-inline-start: 0;\n}\n.list ul li a[data-v-cc917e4c], .brands-list .brands li a[data-v-cc917e4c] {\n  position: relative;\n  color: #ffffff;\n  text-decoration: none;\n}\na[data-v-cc917e4c]::before {\n  content: \"\";\n  position: absolute;\n  width: 100%;\n  height: 2px;\n  border-radius: 2px;\n  background-color: #ffffff;\n  bottom: 0;\n  left: 0;\n  transform-origin: right;\n  transform: scaleX(0);\n  transition: transform 0.3s ease-in-out;\n}\na[data-v-cc917e4c]:hover::before {\n  transform-origin: left;\n  transform: scaleX(1);\n}\n.wrapper[data-v-cc917e4c] {\n  display: inline-flex;\n  list-style: none;\n}\n.wrapper .icon[data-v-cc917e4c] {\n  position: relative;\n  background: #ffffff;\n  border-radius: 50%;\n  padding: 15px;\n  margin: 10px;\n  width: 50px;\n  height: 50px;\n  font-size: 18px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);\n  cursor: pointer;\n  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n  color: #111214;\n}\n.wrapper .tooltip[data-v-cc917e4c] {\n  position: absolute;\n  top: 0;\n  font-size: 14px;\n  background: #ffffff;\n  color: #ffffff;\n  padding: 5px 8px;\n  border-radius: 5px;\n  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);\n  opacity: 0;\n  pointer-events: none;\n  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.wrapper .tooltip[data-v-cc917e4c]::before {\n  position: absolute;\n  content: \"\";\n  height: 8px;\n  width: 8px;\n  background: #ffffff;\n  bottom: -3px;\n  left: 50%;\n  transform: translate(-50%) rotate(45deg);\n  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n}\n.wrapper .icon:hover .tooltip[data-v-cc917e4c] {\n  top: -45px;\n  opacity: 1;\n  visibility: visible;\n  pointer-events: auto;\n}\n.wrapper .icon:hover span[data-v-cc917e4c],\n.wrapper .icon:hover .tooltip[data-v-cc917e4c] {\n  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);\n}\n.wrapper .facebook[data-v-cc917e4c]:hover,\n.wrapper .facebook:hover .tooltip[data-v-cc917e4c],\n.wrapper .facebook:hover .tooltip[data-v-cc917e4c]::before {\n  background: #1877F2;\n  color: #ffffff;\n}\n.wrapper .twitter[data-v-cc917e4c]:hover,\n.wrapper .twitter:hover .tooltip[data-v-cc917e4c],\n.wrapper .twitter:hover .tooltip[data-v-cc917e4c]::before {\n  background: #1DA1F2;\n  color: #ffffff;\n}\n.wrapper .instagram[data-v-cc917e4c]:hover,\n.wrapper .instagram:hover .tooltip[data-v-cc917e4c],\n.wrapper .instagram:hover .tooltip[data-v-cc917e4c]::before {\n  background: #E4405F;\n  color: #ffffff;\n}\n.brands-list[data-v-cc917e4c] {\n  padding-top: 2.5rem;\n}\n.social[data-v-cc917e4c] {\n  display: flex;\n  justify-content: flex-end;\n}\n.flag[data-v-cc917e4c] {\n  width: 1.875rem;\n  height: 1.25rem;\n}\n.apps[data-v-cc917e4c] {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-evenly;\n}\n.lang-select[data-v-cc917e4c] {\n  padding-top: 1.25rem;\n}\n.lang[data-v-cc917e4c] {\n  padding-left: 1.25rem;\n  padding-right: 1.25rem;\n}\n.bottom[data-v-cc917e4c] {\n  display: flex;\n  flex-direction: row-reverse;\n  justify-content: space-between;\n}\n.pointer[data-v-cc917e4c]:hover {\n  cursor: pointer;\n}", ""]);
 
 // exports
 

@@ -27,12 +27,11 @@
         </div>
         <div class="brands-list ">
             <h2>I brand più richiesti al momento</h2>
-            <div class="brands">
-                <p>McDonalds</p>
-                <p>Burger King</p>
-                <p>Kfc</p>
-                <p>Starbucks</p>
-            </div>
+            <ul class="brands">
+                <li v-for="link in linksBrands" :key="link.text" class="my-2">
+                  <a :href="link.url">{{link.text}}</a>
+                </li>
+            </ul>
         </div>
         <div class="bottom">
         <div class="social">
@@ -101,6 +100,16 @@ export default {
          url: "",},
          {text: "politica sui cookie",
          url: "",},
+      ],
+      linksBrands: [
+        {text: "McDonalds",
+         url: "",},
+         {text: "Burger King",
+         url: "",},
+         {text: "Kfc",
+         url: "",},
+         {text: "Starbucks",
+         url: "",},
       ]
       
       }
@@ -128,9 +137,11 @@ ul {
   flex-direction: row;
   justify-content: space-between;
   width: 40%;
+  padding-inline-start: 0;
 }
 
-.list ul li a {
+
+.list ul li a, .brands-list .brands li a  {
   position: relative;
   color: #ffffff;
   text-decoration: none;
