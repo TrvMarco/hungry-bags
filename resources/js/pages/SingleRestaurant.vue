@@ -39,9 +39,9 @@
             </div>
           
             <!-- BOX TOTALE -->
-            <div class="col my-3">
+            <div class="col my-3 sticky-top">
                 <!-- CONFERMA ORDINE -->
-                <div v-if="items.length > 0" class="menu_item_box p-2">
+                <div v-if="items.length > 0" class="menu_item_box p-2 sticky-top">
                     <h4 class="text-center pt-2"><i class="fa-solid fa-cart-shopping"></i> Il tuo carrello : </h4>
                     <hr>
                     <div v-if="virtualCart.length >0 " class="px-4">

@@ -57,25 +57,20 @@
                     </div>
                 </div>            
             </div>
-
             {{-- SECONDO BLOCCO HOME --}}
             <div class="col-6 pt-4">
-
-
                 <div class="card w-100">
-                    <div class="card-header">{{ __('Il tuo Menù') }}</div>
+                    <div class="card-header">{{ __('I tuoi Ordini') }}</div>
                     <div class="card-body">
-                            @foreach ($orders as $order)
-                                <div class="card-text d-flex item_preview justify-content-between align-items-center">
-                                </div>
-                            @endforeach
-                        <a href="{{route('admin.items.index')}}">visualizza menu</a>
-                        <br>
-                        <a href="{{route('admin.items.create')}}">inserisci il tuo piatto</a>
+                        @foreach ($orders as $order)
+                            <div class="card-text d-flex item_preview justify-content-between align-items-center">
+                                <p>Ordine N: <small>{{$order->id}}</small></p>
+                                <p>{{$order->total_price}}&#x20AC;</p>
+                            </div>
+                        @endforeach
+                        <a href="{{route('admin.orders.index')}}">Visualizza tutti gli ordini</a>
                     </div>
-                </div>            
-
-
+                </div>
             </div>
         </div>
     </div>
