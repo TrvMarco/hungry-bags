@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Type;
 use App\User;
 use App\Item;
+use App\Order;
 
 class HomeController extends Controller
 {
@@ -22,6 +23,13 @@ class HomeController extends Controller
         $user = Auth::user();
         $items = $user->items;
         $types = $user->types;
-        return view('admin.home', compact('types', 'user', 'items'));
+        $user_id = Auth::id();
+
+        $orders = Order::with(['items' => function($el) use($user_id) {
+            $el->where('user_id', $user_id);
+        }])->get();
+
+
+        return view('admin.home', compact('types', 'user', 'items', 'orders'));
     }
 }
