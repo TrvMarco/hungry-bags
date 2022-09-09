@@ -40,7 +40,6 @@
           
             <!-- BOX TOTALE -->
             <div class="col my-3">
-
                 <!-- CONFERMA ORDINE -->
                 <div v-if="items.length > 0" class="menu_item_box p-2">
                     <h4 class="text-center pt-2"><i class="fa-solid fa-cart-shopping"></i> Il tuo carrello : </h4>
@@ -48,7 +47,7 @@
                     <div v-if="virtualCart.length >0 " class="px-4">
                         
                         <div   class="d-flex justify-content-between align-items-center my-2" v-for="item,id in virtualCart" :key="id">
-                            <span>{{id}} - {{item.name}} - {{item.id}}</span>
+                            <span>{{item.name}}</span>
                             <div class="d-flex align-items-center">
                                 <span class="mx-3">{{item.price.toFixed(2)}}&#8364;</span>
                                 <span><i class="fa-solid fa-minus minus_class " @click="deleteItem(id)"></i></span>
@@ -74,6 +73,8 @@
         
         
     </div>
+    
+            
   </main>
 </template>
 
@@ -242,9 +243,5 @@ export default {
     .none{
        
         display: none;
-    }
-
-    
-
-     
+    } 
 </style>
