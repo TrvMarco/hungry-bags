@@ -29,7 +29,7 @@
                                 <!-- <div><i class="fa-solid fa-minus " @click="deleteItem(item)"></i></div> -->
                                 <div>
                                     <i class="fa-solid fa-circle-plus add_cart_plus" @click="addToCart(item)"></i>
-                                    <div id="myPopup" class="popup">ristorante non selezionabile</div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -37,8 +37,10 @@
                 </div>
             </div>
             </div>
+          
             <!-- BOX TOTALE -->
             <div class="col my-3">
+
                 <!-- CONFERMA ORDINE -->
                 <div class="menu_item_box p-2">
                     <h4 class="text-center pt-2">il tuo carrello : </h4>
@@ -46,13 +48,14 @@
                     <div v-if="virtualCart.length >0 " class="px-4">
                         
                         <div   class="d-flex justify-content-between align-items-center my-2" v-for="item,id in virtualCart" :key="id">
-                            <span>{{id}} - {{item.name}}</span>
+                            <span>{{id}} - {{item.name}} - {{item.id}}</span>
                             <div class="d-flex align-items-center">
                                 <span class="mx-3">{{item.price.toFixed(2)}}&#8364;</span>
                                 <span><i class="fa-solid fa-minus minus_class " @click="deleteItem(id)"></i></span>
                             </div>
                         
                         </div>
+                        <div id="myPopup" class="popup text-center">puoi fare ordini solo dallo stesso ristorante </div>
                     </div>
                     <div v-else class="text-center">
                         <h4> inserisci i tuoi piatti preferiti ! </h4> 
@@ -63,6 +66,7 @@
             </div>
             
         </div>
+
         
         
         <div v-if="items.length == 0 " class="row text-center">
@@ -85,6 +89,8 @@ export default {
             items: [],
             user:[],
             virtualCart:[],
+            // prova con il count per carrello 
+            // count : [],
             shared,
         }
     },
@@ -95,18 +101,28 @@ export default {
             this.user = response.data;
             // console.log(localStorage.items)
             // console.log(response.data)
+            
         })
     //    console.log(JSON.parse(localStorage.getItem('prodotto')).length)
          if(this.virtualCart.length === 0 && JSON.parse(localStorage.getItem('prodotto')) != null ){
                 this.virtualCart = JSON.parse(localStorage.getItem('prodotto'));
                 this.shared.count = this.virtualCart.length;
+
+                // const count = {};
+
+                // this.virtualCart.forEach(element => {
+                // count[element.name] = (count[element.name] || 0) + 1;
+                // console.log(element.id);
+                // });
+
+                // this.count.splice(0,1)
+                // this.count.push(count);
+
             }
         // if(JSON.parse(localStorage.getItem('prodotto')) != null){
         //     console.log('ok');
         // }
-            
-
-       
+        
         
         
        
@@ -121,33 +137,45 @@ export default {
             // se l'elemento che inserisco ha lo stesso user_id del primo elemento lo inserisce altrimenti esce un alert elemento non dello stesso ristorante 
             // console.log(this.virtualCart[0].user_id)
             if(this.virtualCart.length === 0 || item.user_id === this.virtualCart[0].user_id){
+                    // se l'elemento non è contenuto nell'array pushalo , altrimenti aumenta la quantità di 1 
                 this.virtualCart.push(item);
                 localStorage.setItem('prodotto', JSON.stringify(this.virtualCart));
                 console.log(JSON.parse(localStorage.getItem('prodotto')));
                 this.shared.count = this.virtualCart.length;
-                let popup = document.getElementById("myPopup");
-                popup.classList.add("popup");
+
+                // const count = {};
+
+                // this.virtualCart.forEach(element => {
+                // count[element.name] = (count[element.name] || 0) + 1;
+                // console.log(element.id);
+                // });
+                // this.count.splice(0,1)
+                // this.count.push(count);
+                // console.log(count);
+                
+                // 👇️ {one: 3, two: 2, three: 1}
+                
                 
             }else{ 
-              
-               
+            
+            
                 let popup = document.getElementById("myPopup");
                 popup.classList.add("show");
-                 setTimeout(function() { popup.classList.add("none");}, 3000);
+                setTimeout(function() { popup.classList.add("none");}, 3000);
                 popup.classList.remove("none")
                 // alert("elemento non dello stesso ristorante")
             } 
         },
         deleteItem(id){
-            console.log(id)
+            // console.log(id)
             
-            console.log(this.virtualCart);
+            // console.log(this.virtualCart);
             //elimino un elemento dall'array myCart
             this.virtualCart.splice(id,1); 
             // assegno nuovamente l'array allo storage 
             this.shared.count = this.virtualCart.length;
             localStorage.setItem('prodotto', JSON.stringify(this.virtualCart))
-           
+        
         
         },
     },
@@ -204,12 +232,18 @@ export default {
     }
 
     .popup{
+     
         display: none;
     }
     .show{
+        text-transform: uppercase;
+        color: #b40404;
+        font-size: 1rem;
         display: block;
+        padding: .9375rem 0px;
     }
     .none{
+       
         display: none;
     }
 
