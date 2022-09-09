@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Order;
+use App\Item;
+
 class OrderController extends Controller
 {
     public function store(Request $request)
@@ -17,9 +19,8 @@ class OrderController extends Controller
             'phone' => 'required|numeric',
             'total_price' => 'between:0,500.00'
         ]);
-
+        
         $data = $request->all();
-
         $newOrder = new Order();
         $newOrder->client_name = $data['client_name'];
         $newOrder->client_surname = $data['client_surname'];
@@ -29,7 +30,19 @@ class OrderController extends Controller
         $newOrder->status = true;
         $newOrder->save();
 
-        return $newOrder;
+        $quantity = 2 ;
 
+        if(isset($data['items'])){
+            foreach($data['items'] as $singleItem){
+                $newOrder->items()->attach($singleItem['id']);
+            }
+        }
+
+        return $newOrder;
+    }
+
+    public function index(){
+        $order = Order::latest()->with(['items'])->first();
+        return $order;
     }
 }
