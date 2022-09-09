@@ -10,8 +10,8 @@
                     <div class="row justify-content-center">
                         <div v-for="type in types" :key="type.id">
                             <div class="col-2 d-flex p-2">
-                                <div class="type_box transform">
-                                    <div class="box_img" @click="searchByType(type.name)">
+                                <div class="type_box" @click="addDiv(type.id)" :class="prova.includes(type.id) ? 'scale' : '' "> 
+                                    <div id="box_img" @click="searchByType(type.name)">
                                         {{type.name}}
                                     </div>
                                 </div>
@@ -22,7 +22,7 @@
                 <!-- Prova restaurants -->
                 <div class="row justify-content-center pt-4">
                         <div class="col-6 col-md-2 pb-3" v-for="restaurant,id in filterRestaurant" :key="id">
-                                <transition appear name="fade">
+                            <transition appear name="fade">
                             <div class="restaurant_card">
                                 <router-link class="router_link" :to="{ name: 'single-restaurant', params: { user: restaurant.name} }">
                                     <div class="restaurant_name">
@@ -31,7 +31,7 @@
                                     <img class="img-fluid" :src="`../storage/${restaurant.image}`" alt="">
                                 </router-link>
                             </div>
-                                </transition>
+                            </transition>
                         </div>
                 </div>
                 <!-- <div class="row justify-content-center pt-4">
@@ -41,7 +41,6 @@
                 </div> -->
             </div>
         </div>
-    </div>
   </section>
 </template>
 
@@ -55,6 +54,7 @@ export default {
             restaurants: [],
             restaurantByType: [],
             showBox: false,
+            prova: []
         };
     },
     created() {
@@ -79,33 +79,18 @@ export default {
                     }
                 }
             }
-            // console.log(this.restaurantByType)
-
-            // this.showBox = true;
-            // // this.restaurantByType = [];
-            // this.restaurants.forEach((elm)=>{
-            //     // console.log(elm.types);
-            //     let singleRestTypesArray = elm.types;
-            //     singleRestTypesArray.forEach((singleElm)=>{
-            //         // console.log(singleElm.name)
-            //         if(singleElm.name === payload){
-            //             // console.log(`${payload} = ${elm.name}`)
-            //             if(!this.restaurantByType.includes(elm)){
-            //                 this.restaurantByType.push(elm);
-            //             }else{
-            //                 for (let i = 0; i < this.restaurantByType.length; i++) {
-            //                     console.log(this.restaurantByType[i].types[0].name)
-            //                     this.restaurantByType[i].types.map(ol => {
-            //                         if(payload == ol.name){
-            //                             this.restaurantByType.splice(i, 1)
-            //                         }
-            //                     })
-                                
-            //                 }
-            //             }
-            //         }
-            //     })
-            // })
+        },
+        addDiv(elm){
+            if(!this.prova.includes(elm)){
+                this.prova.push(elm)
+            }else{
+                for (let i = 0; i < this.prova.length; i++) {
+                    if(elm === this.prova[i]){
+                        this.prova.splice(i, 1)
+                    }
+                }
+            }
+            console.log(this.prova)
         }
     },
     computed: {
@@ -129,12 +114,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .scale{
+        transition: all 0.5s;
+        transform: scale(1.1);
+        background-color: #2a2a29 !important;
+        color: #eee1b3;
+        box-shadow: 5px 5px 15px 1px #111214;
+    }
     .type_box{
-        background: #eee1b3;
+        background-color: #eee1b3;
         border-radius: 30px;
         transition: all 0.08s;
 
-        .box_img{
+        input{
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+
+        #box_img{
             min-height: 35px;
             min-width: 50px;
             padding: 0px 15px;
@@ -165,7 +168,6 @@ export default {
         border-top: 1px solid #111214;
         border-bottom: 1px solid #111214;
     }
-
     // PROVA RESTAURANTS
     
     .restaurant_card{
