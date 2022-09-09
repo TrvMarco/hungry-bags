@@ -2074,7 +2074,8 @@ __webpack_require__.r(__webpack_exports__);
       types: [],
       restaurants: [],
       restaurantByType: [],
-      showBox: false
+      showBox: false,
+      prova: []
     };
   },
   created: function created() {
@@ -2097,32 +2098,20 @@ __webpack_require__.r(__webpack_exports__);
             this.restaurantByType.splice(i, 1);
           }
         }
-      } // console.log(this.restaurantByType)
-      // this.showBox = true;
-      // // this.restaurantByType = [];
-      // this.restaurants.forEach((elm)=>{
-      //     // console.log(elm.types);
-      //     let singleRestTypesArray = elm.types;
-      //     singleRestTypesArray.forEach((singleElm)=>{
-      //         // console.log(singleElm.name)
-      //         if(singleElm.name === payload){
-      //             // console.log(`${payload} = ${elm.name}`)
-      //             if(!this.restaurantByType.includes(elm)){
-      //                 this.restaurantByType.push(elm);
-      //             }else{
-      //                 for (let i = 0; i < this.restaurantByType.length; i++) {
-      //                     console.log(this.restaurantByType[i].types[0].name)
-      //                     this.restaurantByType[i].types.map(ol => {
-      //                         if(payload == ol.name){
-      //                             this.restaurantByType.splice(i, 1)
-      //                         }
-      //                     })
-      //                 }
-      //             }
-      //         }
-      //     })
-      // })
+      }
+    },
+    addDiv: function addDiv(elm) {
+      if (!this.prova.includes(elm)) {
+        this.prova.push(elm);
+      } else {
+        for (var i = 0; i < this.prova.length; i++) {
+          if (elm === this.prova[i]) {
+            this.prova.splice(i, 1);
+          }
+        }
+      }
 
+      console.log(this.prova);
     }
   },
   computed: {
@@ -2848,9 +2837,17 @@ var render = function render() {
     }, [_c("div", {
       staticClass: "col-2 d-flex p-2"
     }, [_c("div", {
-      staticClass: "type_box transform"
+      staticClass: "type_box",
+      "class": _vm.prova.includes(type.id) ? "scale" : "",
+      on: {
+        click: function click($event) {
+          return _vm.addDiv(type.id);
+        }
+      }
     }, [_c("div", {
-      staticClass: "box_img",
+      attrs: {
+        id: "box_img"
+      },
       on: {
         click: function click($event) {
           return _vm.searchByType(type.name);
@@ -3549,7 +3546,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".type_box[data-v-c1d090d6] {\n  background: #eee1b3;\n  border-radius: 30px;\n  transition: all 0.08s;\n}\n.type_box .box_img[data-v-c1d090d6] {\n  min-height: 35px;\n  min-width: 50px;\n  padding: 0px 15px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 30px;\n}\n.type_box img[data-v-c1d090d6] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.type_box .link-text[data-v-c1d090d6] {\n  text-decoration: none;\n  color: black;\n}\n.type_box[data-v-c1d090d6]:hover, .on_click[data-v-c1d090d6] {\n  transform: scale(1.1);\n  box-shadow: 5px 5px 15px 1px #111214;\n}\n.type[data-v-c1d090d6] {\n  background-image: url(" + escape(__webpack_require__(/*! ../../../../public/image/provabg.jpg */ "./public/image/provabg.jpg")) + ");\n  border-top: 1px solid #111214;\n  border-bottom: 1px solid #111214;\n}\n.restaurant_card[data-v-c1d090d6] {\n  height: 9.375rem;\n  overflow: hidden;\n  position: relative;\n  border-radius: 0.625rem;\n}\n.restaurant_card:hover img[data-v-c1d090d6] {\n  transform: scale(1.2);\n}\n.restaurant_card img[data-v-c1d090d6] {\n  opacity: 0.9;\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: all 0.5s;\n}\n.restaurant_name[data-v-c1d090d6] {\n  position: absolute;\n  z-index: 10;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  color: inherit;\n}\n.restaurant_name h3[data-v-c1d090d6] {\n  text-decoration: none;\n  color: #fff;\n  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;\n  border-radius: 0.625rem;\n}\n.fade-enter-active[data-v-c1d090d6],\n.fade-leave-active[data-v-c1d090d6] {\n  transition: opacity 0.5s;\n}\n.fade-enter[data-v-c1d090d6],\n.fade-leave-to[data-v-c1d090d6] {\n  opacity: 0;\n}", ""]);
+exports.push([module.i, ".scale[data-v-c1d090d6] {\n  transition: all 0.5s;\n  transform: scale(1.1);\n  background-color: #2a2a29 !important;\n  color: #eee1b3;\n  box-shadow: 5px 5px 15px 1px #111214;\n}\n.type_box[data-v-c1d090d6] {\n  background-color: #eee1b3;\n  border-radius: 30px;\n  transition: all 0.08s;\n}\n.type_box input[data-v-c1d090d6] {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n.type_box #box_img[data-v-c1d090d6] {\n  min-height: 35px;\n  min-width: 50px;\n  padding: 0px 15px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 30px;\n}\n.type_box img[data-v-c1d090d6] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.type_box .link-text[data-v-c1d090d6] {\n  text-decoration: none;\n  color: black;\n}\n.type_box[data-v-c1d090d6]:hover, .on_click[data-v-c1d090d6] {\n  transform: scale(1.1);\n  box-shadow: 5px 5px 15px 1px #111214;\n}\n.type[data-v-c1d090d6] {\n  background-image: url(" + escape(__webpack_require__(/*! ../../../../public/image/provabg.jpg */ "./public/image/provabg.jpg")) + ");\n  border-top: 1px solid #111214;\n  border-bottom: 1px solid #111214;\n}\n.restaurant_card[data-v-c1d090d6] {\n  height: 9.375rem;\n  overflow: hidden;\n  position: relative;\n  border-radius: 0.625rem;\n}\n.restaurant_card:hover img[data-v-c1d090d6] {\n  transform: scale(1.2);\n}\n.restaurant_card img[data-v-c1d090d6] {\n  opacity: 0.9;\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: all 0.5s;\n}\n.restaurant_name[data-v-c1d090d6] {\n  position: absolute;\n  z-index: 10;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  color: inherit;\n}\n.restaurant_name h3[data-v-c1d090d6] {\n  text-decoration: none;\n  color: #fff;\n  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;\n  border-radius: 0.625rem;\n}\n.fade-enter-active[data-v-c1d090d6],\n.fade-leave-active[data-v-c1d090d6] {\n  transition: opacity 0.5s;\n}\n.fade-enter[data-v-c1d090d6],\n.fade-leave-to[data-v-c1d090d6] {\n  opacity: 0;\n}", ""]);
 
 // exports
 
