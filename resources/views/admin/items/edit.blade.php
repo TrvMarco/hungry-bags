@@ -76,6 +76,8 @@
                 <div class="mb-3"><small>I campi contrassegnati con * sono obbligatori</small></div>
         
                 <button type="submit" class="btn btn-warning">Modifica piatto</button>
+                <a href="{{route('admin.home')}}" class="btn btn-primary"> Home</a>
+                <a href="{{route('admin.items.index')}}" class="btn btn-primary"> Torna al menù</a>
                 
             </form>
     </div>
