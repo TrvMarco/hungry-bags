@@ -23,6 +23,8 @@ Route::get('items/{user}', 'Api\ItemController@show');
 
 Route::get('users', 'Api\UserController@index');
 
+Route::get('orders', 'Api\OrderController@index');
+
 // chiamate post
 Route::post('users', 'Api\UserController@index');
 
