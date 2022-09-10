@@ -3400,9 +3400,9 @@ var render = function render() {
       }
     })])])])])])]);
   }), 0), _vm._v(" "), _c("div", {
-    staticClass: "col my-3"
+    staticClass: "col my-3 sticky-top"
   }, [_vm.items.length > 0 ? _c("div", {
-    staticClass: "menu_item_box p-2"
+    staticClass: "menu_item_box p-2 sticky-top"
   }, [_vm._m(0), _vm._v(" "), _c("hr"), _vm._v(" "), _vm.virtualCart.length > 0 ? _c("div", {
     staticClass: "px-4"
   }, [_vm._l(_vm.virtualCart, function (item, id) {
@@ -21614,7 +21614,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\valen\Desktop\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Giuseppe\Desktop\BOOLEAN\ESERCIZI\PHP\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
