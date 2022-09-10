@@ -40,7 +40,7 @@
            
             <td>
               <div class="d-flex justify-content-center">
-                <a href="{{route('admin.items.show', $order->id)}}" class="btn btn-primary mx-2 btn-sm">Visualizza Ricevuta</a>
+                <a href="{{route('admin.orders.show', $order->id)}}" class="btn btn-primary mx-2 btn-sm">Visualizza Ricevuta</a>
                 {{-- <a href="{{route('admin.items.edit', $order->id)}}" class="btn btn-warning mx-2 btn-sm">Modifica</a> --}}
                 {{-- bottone elimina --}}
                 <!-- Button trigger modal -->

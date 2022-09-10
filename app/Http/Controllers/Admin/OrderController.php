@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Order;
 use App\User;
+use App\Item;
 use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
@@ -52,9 +53,18 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Order $order)
     {
-        //
+        $user= Auth::user();
+        // if($order->id !== Auth::id()) {
+        //     abort(403);
+        // }
+
+        $items = Item::all();
+        // dd($order->items);
+        $orderItems = $order->items->toArray();
+        // dd($orderItem);
+        return view('admin.orders.show', compact('order', 'items','orderItems','user'));
     }
 
     /**
