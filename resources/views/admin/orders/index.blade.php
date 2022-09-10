@@ -8,60 +8,48 @@
             <h2>Non hai nessun ordine</h2>
       @else
       <div class="d-flex justify-content-between align-items-center">
-        <div><a href="{{route('admin.home')}}"><i class="fa-solid fa-arrow-left"></i></a></div>
-        
-        <h1 class="text-center p-3">I tuoi ordini</h1>
-        <div class="d-flex flex-column align-items-center">
-            <div>
-            <a href="{{route('admin.items.create')}}"><i class="fa-solid fa-plus"></i></a> 
-            </div>
-            <p> <small>inserisci nuovo piatto</small> </p>
+        <div>
+          <a href="{{route('admin.home')}}"><i class="fa-solid fa-arrow-left"></i></a>
         </div>
+        <h1 class="text-center p-3">Storico ordini</h1>
+        <div></div>
       </div>
       
       <div class="row">
         <table class="table">
           <thead>
-            <tr>
-              <th scope="col">Foto del piatto</th>
-              <th scope="col">Nome del piatto</th>
-              <th scope="col" class="text-center">Visibile nel Menù</th>
+            <tr >
+              <th scope="col">Ordine</th>
+              <th scope="col">Cliente</th>
+              <th scope="col">Totale ordine</th>
               <th scope="col" class="text-center">Azioni</th>
           </tr>
         </thead>
         <tbody>
-          @foreach($items as $item)
+          @foreach($orders as $order)
           <tr>
-            <th scope="row">
-              @if ($item->image)
-              <img class="img-fluid menu_item_img" src="{{ asset('storage/' . $item->image)}}" alt="{{$item->name}}">
-              @else
-              <div class="item_img_preview_box mr-3">
-                <img class="bags-blue" src="{{asset('images/logo-busta-blu-50x50.png')}}" alt="">
-              </div>
-              @endif
-              
-            </th>
-            <td>{{$item->name}}</td>
-            <td class="text-center">
-              @if ($item->is_visible)
-              <div class="menu_eye_green"><i class="fa-solid fa-eye"></i></div>
-              @else
-              <div class="menu_eye_red"><i class="fa-solid fa-eye-slash"></i></div>
-              @endif
+            <td >
+              {{$order->id}}
             </td>
             <td>
+              {{$order->client_name}} {{$order->client_surname}}
+            </td>
+            <td class="">
+              {{$order->total_price}}€
+            </td>
+           
+            <td>
               <div class="d-flex justify-content-center">
-                <a href="{{route('admin.items.show', $item->id)}}" class="btn btn-primary mx-2 btn-sm">Visualizza</a>
-                <a href="{{route('admin.items.edit', $item->id)}}" class="btn btn-warning mx-2 btn-sm">Modifica</a>
+                <a href="{{route('admin.orders.show', $order->id)}}" class="btn btn-primary mx-2 btn-sm">Visualizza Ricevuta</a>
+                {{-- <a href="{{route('admin.items.edit', $order->id)}}" class="btn btn-warning mx-2 btn-sm">Modifica</a> --}}
                 {{-- bottone elimina --}}
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#staticBackdrop{{$item->id}}">
+                {{-- <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#staticBackdrop{{$order->id}}">
                   cancella
-                </button>
+                </button> --}}
 
                 <!-- Modal -->
-                <div class="modal fade" id="staticBackdrop{{$item->id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" id="staticBackdrop{{$order->id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -71,12 +59,12 @@
                         </button>
                       </div>
                       <div class="modal-body text-center">
-                        Vuoi davvero cancellare <strong>{{$item->name}}</strong>  ? 
+                        Vuoi davvero cancellare <strong>{{$order->name}}</strong>  ? 
                         
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">No</button>
-                        <form action="{{route('admin.items.destroy', $item->id)}}" method="POST">
+                        <form action="{{route('admin.items.destroy', $order->id)}}" method="POST">
                           @csrf
                           @method('DELETE')
                           <button type="submit" class="btn btn-danger btn-sm">Si</button>
