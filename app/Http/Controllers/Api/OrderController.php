@@ -41,7 +41,7 @@ class OrderController extends Controller
             }
         }
         
-        Mail::to($newOrder->items->user->email)->send(new SendMail());
+        // Mail::to($newOrder->items->user()->email)->send(new SendMail($newOrder));
         
 
         return $newOrder;

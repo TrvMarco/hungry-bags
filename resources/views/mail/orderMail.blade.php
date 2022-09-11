@@ -1,20 +1,18 @@
 @component('mail::message')
-# Nuovo ordine
+# Nuovo commento
 
-Lista ordine: 
+Post commentato: 
 <ul>
-    @foreach ($order as $el)
-        @foreach ($el->items as $item)
-            <li>{{$item->name}}</li>
-        @endforeach
-    @endforeach 
+    @foreach ($order->items as $item)
+        <li>{{$item->name}}</li>
+    @endforeach
 </ul>
 
-
 @component('mail::button', ['url' => route('admin.orders.index')])
-visualizza gli ordini
+Visualizza Commenti
 @endcomponent
 
 Grazie,<br>
 {{ config('app.name') }}
 @endcomponent
+
