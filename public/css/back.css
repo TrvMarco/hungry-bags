@@ -11014,6 +11014,12 @@ main {
   height: 1.875rem;
 }
 
+.home_page {
+  text-decoration: none;
+  font-size: 1.25rem;
+  padding-right: 0.625rem;
+}
+
 .menu_box_home {
   min-height: 26.5625rem;
   max-height: 26.5625rem;

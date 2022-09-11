@@ -26,9 +26,12 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm backoffice_navbar">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('admin.home') }}">
-                    <h3>HungryBags</h3>
-                </a>
+                <div class="header_home">
+                    <a class="navbar-brand" href="/"><i class="fa-solid fa-house home_page"></i></a>
+                    <a class="navbar-brand" href="{{ route('admin.home') }}">
+                        <h3 class="mb-0">HungryBags</h3>
+                    </a>
+                </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
