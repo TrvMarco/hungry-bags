@@ -2,9 +2,12 @@
     <header>
         <div class="container-fluid">
             <div class="row p-3 text-white">
-                <div class="col-6">
+                <div class="col-6 d-flex">
                     <!-- Qui andrà img e logo -->
                     <a href="/" class="link-default"><h1>HungryBags</h1></a>
+                    <div class="logo pl-3">
+                        <img class="logo img-fluid" src="../../../../public/image/logo.png" alt="">
+                    </div>
                 </div>
                 <div class="col-6 d-flex justify-content-end align-items-center">
                     <div class="mr-3">
@@ -57,6 +60,14 @@ export default {
 <style lang='scss' scoped>
     header{
         
+        h1{
+            margin-bottom: 0;
+        }
+
+        .logo{
+            height: 3.125rem;
+        }
+
         .container-fluid{
             background-color: #111214;
 

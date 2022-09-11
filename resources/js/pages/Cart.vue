@@ -41,7 +41,7 @@
                     <hr>
                     <div class="d-flex justify-content-between px-4">
                         <h5 class="text-uppercase">Totale</h5>
-                        <span v-show="totalCartPrice">{{sum}}&#8364;</span>
+                        <span v-show="totalCartPrice"><strong>{{sum}}&#8364;</strong></span>
                     </div>
                 </div>
                 <!-- DATI CLIENTE -->

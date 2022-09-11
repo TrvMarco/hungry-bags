@@ -6,7 +6,7 @@
                 <h1>I nostri ristoranti</h1>
             </div>
         </div>
-        <div class="row">
+        <div class="row pb-4">
             <div class="col-6 col-md-3 pb-3" v-for="restaurant,id in restaurants" :key="id">
                 <div class="restaurant_card">
                     <router-link class="router_link" :to="{ name: 'single-restaurant', params: { user: restaurant.name} }">
