@@ -1,6 +1,8 @@
 <template>
-  <div class="container">
-    <div class="col-12 ">
+  <section class="order_list pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
         <div class="payment">
             <h1 class="text-center">Il pagamento è avvenuto con successo!!</h1>
         </div>
@@ -33,7 +35,9 @@
             <router-link :to="{ name: 'home'}" class="btn btn-dark">Torna nella home</router-link>
         </div>
     </div>
+        </div>
   </div>
+  </section>
 </template>
 
 <script>
@@ -54,7 +58,8 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-.container {
+
+.container{
     background-color: beige;
 }
 
