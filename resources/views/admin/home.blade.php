@@ -51,9 +51,10 @@
                                     </div>
                                 </div>
                             @endforeach
-                        <a href="{{route('admin.items.index')}}">visualizza menu</a>
-                        <br>
-                        <a href="{{route('admin.items.create')}}">inserisci il tuo piatto</a>
+                            <div class="d-flex justify-content-between"> 
+                                <span class="pt-2"><a class="home_link" href="{{route('admin.items.index')}}">visualizza menu</a></span>
+                                <span><a href="{{route('admin.items.create')}}">inserisci il tuo piatto</a></span>
+                            </div>
                     </div>
                 </div>            
             </div>
