@@ -129,7 +129,7 @@ export default {
                 this.Dataclient.items;
                 console.log(this.Dataclient);
                 localStorage.clear();
-                window.location.href = '/payment';    
+                window.location.href = '/payment';
             })
             .catch((er) => {
                 console.log(er);

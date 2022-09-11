@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMail;
 
 use App\Order;
 use App\Item;
+use App\User;
 
 class OrderController extends Controller
 {
@@ -37,6 +40,9 @@ class OrderController extends Controller
                 $newOrder->items()->attach($singleItem['id']);
             }
         }
+        
+        // Mail::to($newOrder->items->user()->email)->send(new SendMail($newOrder));
+        
 
         return $newOrder;
     }
