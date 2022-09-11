@@ -23,7 +23,7 @@ main{
 // }
 
 .backoffice_maincontainer, .backoffice_container{
-    min-height: calc(100vh - 4.1875rem);
+    min-height: calc(100vh - 3.6875rem);
     display: flex;
     align-content: center;
     justify-content: center;
@@ -65,7 +65,6 @@ main{
     min-height: 26.5625rem;
     max-height: 26.5625rem;
 }
-
 
 //      ----------------        ITEM INDEX
 .menu_item_img{
