@@ -1,35 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="container">
+<section class="container backoffice_menu_container p-4 text-dark">
 
     {{-- ristorante  --}}
     <div>
         {{-- <img class="card-img-top " src="{{ asset('storage/' . $user->image)}}" alt="Card image cap"> --}}
-        <p class="text-white">{{$user->name}}</p>
-        <p class="text-white">indirizzo : {{$user->address}}</p>
+        <p>{{$user->name}}</p>
+        <p>indirizzo : {{$user->address}}</p>
     </div>
     
     {{-- dati ricevuta  --}}
     <div >
-    <h3 class="text-white">Ricevuta n° : {{$order->id}}</h3>
-    <h3 class="text-white">{{$order->client_name}} {{$order->client_surname}}</h3>
-    <h3 class="text-white">{{$order->address}}</h3>
+    <h3>Ricevuta n° : {{$order->id}}</h3>
+    <h3>{{$order->client_name}} {{$order->client_surname}}</h3>
+    <h3>{{$order->address}}</h3>
     </div>
 
     {{-- dati item  --}}
     <div>
         {{-- @dd($orderItems) --}}
         @foreach ($orderItems as $orderItem)
-        <p class="text-white"> {{$orderItem['name']}}</p>
-        <p class="text-white"> {{$orderItem['price']}}€</p>
+        <p> {{$orderItem['name']}}</p>
+        <p> {{$orderItem['price']}}€</p>
         @endforeach
     </div>
     
     {{-- prezzo totale  --}}
     <div>
-        <p class="text-white">Prezzo totale:</p>
-        <p class="text-white">{{$order->total_price}} €</p>
+        <p><strong>Prezzo totale:</strong></p>
+        <p><strong>{{$order->total_price}} €</strong></p>
     </div>
 
 </section>
