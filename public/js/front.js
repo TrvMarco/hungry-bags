@@ -2397,6 +2397,11 @@ __webpack_require__.r(__webpack_exports__);
 
       this.shared.count = this.virtualCart.length;
       localStorage.setItem('prodotto', JSON.stringify(this.virtualCart));
+    },
+    clearCart: function clearCart() {
+      localStorage.clear('prodotto');
+      this.virtualCart = [];
+      this.shared.count = this.virtualCart.length;
     }
   },
   computed: {}
@@ -3484,7 +3489,21 @@ var render = function render() {
         }
       }
     })])])]);
-  }), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", {
+    staticClass: "text-center pt-2"
+  }, [_c("a", {
+    staticClass: "btn btn-success btn-sm",
+    attrs: {
+      href: "/check-out"
+    }
+  }, [_vm._v("Procedi al check-out")]), _vm._v(" "), _c("button", {
+    staticClass: "btn btn-danger btn-sm",
+    on: {
+      click: function click($event) {
+        return _vm.clearCart();
+      }
+    }
+  }, [_vm._v("Svuota il carrello")])]), _vm._v(" "), _c("div", {
     staticClass: "popup text-center",
     attrs: {
       id: "myPopup"
@@ -3493,7 +3512,7 @@ var render = function render() {
     staticClass: "text-center p-4"
   }, [_c("h5", [_vm._v("Il carrello é momentaneamente vuoto!")])])]) : _vm._e()])]), _vm._v(" "), _vm.items.length == 0 ? _c("div", {
     staticClass: "row text-center"
-  }, [_vm._m(2)]) : _vm._e()])]);
+  }, [_vm._m(1)]) : _vm._e()])]);
 };
 
 var staticRenderFns = [function () {
@@ -3505,23 +3524,6 @@ var staticRenderFns = [function () {
   }, [_c("i", {
     staticClass: "fa-solid fa-cart-shopping"
   }), _vm._v(" Il tuo carrello : ")]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "text-center pt-2"
-  }, [_c("a", {
-    staticClass: "btn btn-success btn-sm",
-    attrs: {
-      href: "/check-out"
-    }
-  }, [_vm._v("Procedi al check-out")]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-success btn-sm",
-    attrs: {
-      href: "/check-out"
-    }
-  }, [_vm._v("Svuota il carrello")])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
@@ -21772,7 +21774,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\samsung\Desktop\hungry-bags\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\valen\Desktop\hungry-bags\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
