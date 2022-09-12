@@ -31,10 +31,10 @@
                 <div class="card w-100 menu_box_home">
                     <div class="card-header">{{ __('Il tuo Menù') }}</div>
                     <div class="card-body">
-                            @for($i = 0; $i < 5; $i++)
+                            @foreach ($items as $item)
                                 <div class="card-text d-flex item_preview justify-content-between align-items-center">
                                     <div class="d-flex align-items-center">
-                                        @if ($items[$i]->image)
+                                        @if ($item->image)
                                             <div class="item_img_preview_box mr-3">
                                                 <img class="img-fluid center" src="{{ asset('storage/' . $item->image)}}" alt="">
                                             </div>
@@ -44,16 +44,16 @@
                                             </div>
                                         @endif
                                         
-                                        <div>{{ $items[$i]->name }}</div>
+                                        <div>{{ $item->name }}</div>
                                     </div>
                                     <div>
-                                        {{$items[$i]->price}}&#x20AC;
+                                        {{$item->price}}&#x20AC;
                                     </div>
                                 </div>
-                                @endfor
-                            <div class="d-flex justify-content-between"> 
-                                <span class="pt-2"><a class="home_link" href="{{route('admin.items.index')}}">visualizza menu</a></span>
-                                <span><a href="{{route('admin.items.create')}}">inserisci il tuo piatto</a></span>
+                            @endforeach
+                            <div class="d-flex justify-content-between pt-3"> 
+                                <span class="pt-2"><a class="btn btn-success btn-sm" href="{{route('admin.items.index')}}">Visualizza menu</a></span>
+                                <span><a class="btn btn-primary btn-sm" href="{{route('admin.items.create')}}">Inserisci il tuo piatto</a></span>
                             </div>
                     </div>
                 </div>            
@@ -63,13 +63,13 @@
                 <div class="card w-100">
                     <div class="card-header">{{ __('I tuoi Ordini') }}</div>
                     <div class="card-body">
-                        @for($i = 0; $i < 4; $i++)
+                        @foreach ($orders as $order)
                             <div class="card-text d-flex item_preview justify-content-between align-items-center">
-                                <p>Ordine N: <small>{{$orders[$i]->id}}</small></p>
-                                <p>{{$orders[$i]->total_price}}&#x20AC;</p>
+                                <p>Ordine N: <small>{{$order->id}}</small></p>
+                                <p>{{$order->total_price}}&#x20AC;</p>
                             </div>
-                        @endfor
-                        <a href="{{route('admin.orders.index')}}">Visualizza tutti gli ordini</a>
+                        @endforeach
+                        <a class="btn btn-success btn-sm" href="{{route('admin.orders.index')}}">Visualizza tutti gli ordini</a>
                     </div>
                 </div>
             </div>

@@ -26,7 +26,7 @@ class HomeController extends Controller
         $types = $user->types;
         $orders = Order::whereHas('items', function($el) use($user_id) {
             $el->where('user_id', $user_id);
-        })->with(['items'])->orderBy('id', 'desc')->get();
+        })->with(['items'])->get();
         return view('admin.home', compact('types', 'user', 'items', 'orders'));
     }
 }
