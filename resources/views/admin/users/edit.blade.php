@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Modifica') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('admin.users.update', $user->id) }}" enctype="multipart/form-data">
@@ -13,7 +13,7 @@
                         @method('PUT')
 
                         {{-- NOME --}}
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome Attività*') }}</label>
                             
                             <div class="col-md-6">
@@ -24,10 +24,10 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
 
                         {{-- VAT --}}
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="vat" class="col-md-4 col-form-label text-md-right">{{ __('P.iva*') }}</label>
                             
                             <div class="col-md-6">
@@ -38,10 +38,10 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
 
                         {{-- ADDRESS --}}
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo*') }}</label>
                             
 
@@ -55,14 +55,14 @@
                             </div>
                         </div>
                       
-                        <hr>
+                        <hr> --}}
 
                         {{-- IMMAGINE --}} 
                         <div class="form-group row">
                             <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Immagine') }}</label>
                             @if ($user->image)
                                 <div>
-                                    <img src="{{asset("storage/{$user->image}")}}" alt="immagine">
+                                    <img class="img-thumbnail" src="{{asset("storage/{$user->image}")}}" alt="immagine">
                                 </div>
                             @endif
                             <div class="col-md-6">
@@ -86,6 +86,9 @@
                                     <label class="form-check-label" for="{{$type->id}}">{{$type->name}}</label>
                                 </div>
                                 @endforeach
+                                @error('types')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
 

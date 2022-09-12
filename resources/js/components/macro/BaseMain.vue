@@ -5,11 +5,16 @@
 </template>
 
 <script>
+
+
+
 export default {
     name:'BaseMain',
 }
 </script>
 
-<style>
-
+<style style="scss" scoped>
+    main{
+      min-height: 80vh;
+    }
 </style>

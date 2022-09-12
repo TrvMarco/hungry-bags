@@ -2,3 +2,22 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// Font
+// @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+// * {
+//     font-family: 'Questrial', sans-serif;
+// }
+
+@import url('https://fonts.googleapis.com/css2?family=Questrial&family=Roboto:wght@700&display=swap');
+*{
+    font-family: 'Questrial', sans-serif;
+}
+
+main{
+    background-color: rgba(226, 226, 226, 0.76);
+}
+
+h1,h2,h3,h4,h5{
+    font-weight: bold;
+}

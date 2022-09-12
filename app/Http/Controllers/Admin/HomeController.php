@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Type;
 use App\User;
+use App\Item;
+use App\Order;
 
 class HomeController extends Controller
 {
@@ -17,9 +19,14 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
+    {   
         $user = Auth::user();
+        $user_id = Auth::id();
+        $items = $user->items;
         $types = $user->types;
-        return view('admin.home', compact('types', 'user'));
+        $orders = Order::whereHas('items', function($el) use($user_id) {
+            $el->where('user_id', $user_id);
+        })->with(['items'])->get();
+        return view('admin.home', compact('types', 'user', 'items', 'orders'));
     }
 }

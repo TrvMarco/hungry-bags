@@ -13,6 +13,7 @@
 import BaseHeader from '../components/macro/BaseHeader.vue'
 import BaseMain from '../components/macro/BaseMain.vue'
 import BaseFooter from '../components/macro/BaseFooter.vue'
+import shared from '../shared'
 
 export default {
   name: 'App',
@@ -20,7 +21,13 @@ export default {
     BaseHeader,
     BaseMain,
     BaseFooter,
-  }
+  },
+  data(){
+        return{
+            shared,
+        }
+    },
+  
 }
 </script>
 

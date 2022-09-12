@@ -13,11 +13,11 @@
 
                         {{-- NOME --}}
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome Attività*') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome Attività *') }}</label>
                             
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                <p class="campo-obbligatorio">Campo obbligatorio</p>
+                                
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -29,11 +29,11 @@
                         
                         {{-- E-MAIL --}}
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-mail*') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-mail *') }}</label>
                             
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-                                <p class="campo-obbligatorio">Campo obbligatorio</p>
+                                
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -44,11 +44,10 @@
 
                         {{-- PASSWORD --}}
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password*') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password *') }}</label>
                             
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                                <p class="campo-obbligatorio">Campo obbligatorio</p>
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -59,21 +58,20 @@
 
                         {{-- CONFIRM PASSWORD --}}
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password*') }}</label>
-                            
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password *') }}</label>
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                                <p class="campo-obbligatorio">Campo obbligatorio</p>
+                                
                             </div>
                         </div>
 
                         {{-- VAT --}}
                         <div class="form-group row">
-                            <label for="vat" class="col-md-4 col-form-label text-md-right">{{ __('P.iva*') }}</label>
+                            <label for="vat" class="col-md-4 col-form-label text-md-right">{{ __('P.iva *') }}</label>
                             
+
                             <div class="col-md-6">
-                                <input id="vat" type="text" class="form-control @error('vat') is-invalid @enderror" name="vat" value="{{ old('vat') }}" required autocomplete="vat" autofocus>
-                                <p class="campo-obbligatorio">Campo obbligatorio</p>
+                                <input id="vat" type="text" maxlength="11" class="form-control @error('vat') is-invalid @enderror" name="vat" value="{{ old('vat') }}" required autocomplete="vat" autofocus>
                                 @error('vat')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -84,12 +82,11 @@
 
                         {{-- ADDRESS --}}
                         <div class="form-group row">
-                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo*') }}</label>
+                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo *') }}</label>
                             
 
                             <div class="col-md-6">
                                 <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
-                                <p class="campo-obbligatorio">Campo obbligatorio</p>
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -98,6 +95,13 @@
                             </div>
                         </div>
                       
+                        {{-- CAMPI OBBLIGATORI --}}
+                        <div class="form-group row justify-content-center">
+                            <div class="col-md-6 text-muted">
+                                <small>I campi contrassegnati con * sono obbligatori.</small>
+                            </div>
+                        </div>
+
                         <hr>
 
                         {{-- IMMAGINE --}} 
@@ -116,14 +120,17 @@
                         {{-- TIPOLOGIES --}}
                         
                         <div class="form-group row">
-                            <label for="types" class="col-md-4 col-form-label text-md-right">{{ __('Tipologie') }}</label>
-                            <div class="col-md-6">
+                            <label for="types" class="col-md-4 col-form-label text-md-right">{{ __('Tipologie *') }}</label>
+                            <div class="col-md-6 type_checkbox">
                                 @foreach ($types as $type)
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="{{$type->id}}" value="{{$type->id}}" name="types[]" {{in_array($type->id, old('types', [])) ? 'checked' : ''}}>
                                     <label class="form-check-label" for="{{$type->id}}">{{$type->name}}</label>
                                 </div>
                                 @endforeach
+                                @error('types')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
 

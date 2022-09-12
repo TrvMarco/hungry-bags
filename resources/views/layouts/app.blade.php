@@ -16,16 +16,22 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    {{-- Fontawesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/back.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm backoffice_navbar">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('admin.home') }}">
-                    <h3>HungryBags</h3>
-                </a>
+                <div class="header_home">
+                    <a class="navbar-brand" href="/"><i class="fa-solid fa-house home_page"></i></a>
+                    <a class="navbar-brand" href="{{ route('admin.home') }}">
+                        <h3 class="mb-0">HungryBags</h3>
+                    </a>
+                </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -81,7 +87,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 backoffice_maincontainer">
             @yield('content')
         </main>
     </div>

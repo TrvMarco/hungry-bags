@@ -14,3 +14,4 @@ const app = new Vue({
     render: h => h(App),
     router
 });
+

@@ -1,0 +1,127 @@
+@import '../variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
+//      ----------------        RESET 
+ul{
+    padding-left: 0;
+}
+
+//      ----------------        CONTAINERS
+main{
+    // background: linear-gradient(45deg,var(--third-color), var(--primary-color));
+    background-image: url('../../../public/image/img-backoffice.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:bottom;
+}
+
+// .backoffice_navbar{
+//     height: 4.1875rem;
+// }
+
+.backoffice_maincontainer, .backoffice_container{
+    min-height: calc(100vh - 3.6875rem);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.backoffice_menu_container{
+    background-color:rgba(255, 255, 255, 0.8);
+    border-radius: .9375rem;
+    -webkit-box-shadow: 5px 5px 10px 0px #1a1a1ade;
+    -moz-box-shadow: 5px 5px 10px 0px #1a1a1ade;
+    -o-box-shadow: 5px 5px 10px 0px #1a1a1ade;
+    box-shadow: 5px 5px 10px 0px #1a1a1ade;
+}
+
+//      ----------------        REGISTER BLADE
+.type_checkbox{
+    overflow-y: auto;
+    height: 12.5rem;
+}
+
+
+//      ----------------        HOME BLADE
+.card_image{
+    width: 1.875rem;
+}
+
+.item_img_preview_box{
+    width: 1.875rem;
+    height: 1.875rem;
+}
+
+.home_page{
+    text-decoration: none;
+    font-size: 1.25rem;
+    padding-right: .625rem;
+}
+
+.menu_box_home{
+    min-height: 26.5625rem;
+    max-height: 26.5625rem;
+}
+
+//      ----------------        ITEM INDEX
+.menu_item_img{
+    height: 2.5rem
+}
+
+.menu_eye_green{
+    color: rgb(0, 212, 0);
+}
+
+.menu_eye_red{
+    color: rgb(163, 19, 19);
+}
+
+.item_menu_box{
+    height: 9.375rem;
+    width: 9.375rem;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+//      ----------------        ITEM EDIT
+.edit_img{
+    max-width: 25rem;
+}
+
+
+.bags-blue{
+    width: 1.875rem;
+  }
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  .grey{
+    background-color: #888;
+  }
+

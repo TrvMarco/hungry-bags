@@ -1,0 +1,165 @@
+<template>
+    <section class="hero text-white p-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 sx">
+                    <div id="slider">
+                        <figure>
+                            <img src="https://cdn.pixabay.com/photo/2016/04/26/03/55/salmon-1353598_960_720.jpg">
+                            <img src="https://www.calcionewsweb.it/wp-content/uploads/2019/12/pizza-e-diarrea.jpg">
+                            <img src="https://media-assets.vanityfair.it/photos/614c937cf483bafb5f49cb11/4:3/w_1144,h_858,c_limit/hamburger-2.jpg">
+                            <img src="https://www.outincanberra.com.au/wp-content/uploads/2021/04/meat.jpg">
+                            <img src="https://cdn.pixabay.com/photo/2016/04/26/03/55/salmon-1353598_960_720.jpg">
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 p-5 dx" style="width:100%">
+                    <h2>Hai fame?<br>
+                    Su HungryBags puoi ordinare tutto il cibo che vuoi con consegna a domicilio!</h2>
+                    <div class="input-container">
+                        <div class="flag-container">
+                            <i class="fa-regular fa-flag flag"></i>
+                        </div>
+                        <div class="text-container">
+                            <input class="input-text" placeholder="Qual'è la tua posizione?" type="text">
+                        </div>
+                        <div class="position-container">
+                            <div class="position">
+                                <i class="fa-solid fa-location-dot position-icon"></i>
+                                <span class="position-text">Posizione attuale</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+<script>
+export default {
+  name: "HeroSection",
+ 
+};
+</script>
+
+<style lang="scss" scoped>
+    .hero{
+        // background-color: #111214;
+        background: linear-gradient(#111214 50%,#eee1b3);
+
+        img{
+            box-shadow: 0px 0px 10px #000;
+            // box-shadow: inset 0px 0px 50px 23px #000000;
+        }
+
+        .input-container {
+            display: flex;
+            max-width: 540px;
+            width: 100%;
+            font-size: 16px;
+            align-items: center;
+            height: 50px;
+            margin: 25px 0px 0px 0px;
+
+            .flag-container {
+                background: #eee1b3;
+                height: 40px;
+                width: 40px;
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+
+                .flag {
+                    color: black;
+                }
+            }
+            // Questo rimuove il bordo input
+            .input-text {
+                border: none;
+                height: 40px;
+                padding: 3px 10px;
+            }
+            // Questo rimuove il bordo input al click
+            .input-text:focus {
+                outline: none 
+            }
+
+            .position-container {
+                display: flex;
+                cursor: pointer;
+
+                .position {
+                    background: #eee1b3;
+                    height: 40px;
+                    min-width: 40px;
+                    border-top-right-radius: 8px;
+                    border-bottom-right-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0px 10px;
+
+                    .position-icon {
+                        color: black;
+                        margin: 0px 8px 0px 0px;
+                        font-size: 20px;
+                    }
+
+                    .position-text {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+
+#slider figure img{
+  height:300px;
+  width:20%;
+  float: left;
+}
+
+#slider{
+    overflow: hidden;
+}
+#slider figure{
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slider infinite;
+}
+@keyframes slider{
+    0%{
+        left: 0;
+    }
+    20%{
+        left: 0;
+    }
+    25%{
+        left: -100%;
+    }
+    45%{
+        left: -100%;
+    }
+    50%{
+        left: -200%;
+    }
+    70%{
+        left: -200%;
+    }
+    75%{
+        left: -300%;
+    }
+    95%{
+        left: -300%;
+    }
+    100%{
+        left: -400%;
+    }
+}
+</style>

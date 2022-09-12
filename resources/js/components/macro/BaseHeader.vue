@@ -1,142 +1,106 @@
 <template>
-    <header class="header">
-        <div class="header__top">
-            <!-- LOGO busta header -->
-
-            <router-link class="link" :to="{name:'home'}">
-            <img class="logo-header" src="./img/logo-busta-blu.png" alt="">
-            </router-link>
-
-            <!-- Scritta HB LOGO header -->
-            <router-link class="link container-home" :to="{name:'home'}">
-            <img class="name-header " src="./img/hb-text-logo.png" alt="">
-            </router-link>
-            <!-- CARRELLO header -->
-            <div class="cart-btn">
-                <div class="circle-black">
-                    <i class="cart-img fa-solid fa-cart-shopping container-fluid"></i>
+    <header>
+        <div class="container-fluid">
+            <div class="row p-3 text-white">
+                <div class="col-6 d-flex">
+                    <!-- Qui andrà img e logo -->
+                    <a href="/" class="link-default"><h1>HungryBags</h1></a>
+                    <div class="logo pl-3">
+                        <img class="logo img-fluid" src="../../../../public/image/logo.png" alt="">
+                    </div>
+                </div>
+                <div class="col-6 d-flex justify-content-end align-items-center">
+                    <div class="mr-3">
+                        <a href="/login" class="btn btn-sm reserved_area">Area Ristoratore</a>
+                    </div>
+                    <div class="cart">
+                        <a href="/check-out" class="link-default cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <span class="items-count"><strong>{{shared.count}}</strong></span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Link menu blu Header bottom -->
-        <div class="header__bottom">
-            <a class="link" href="#">Chi siamo</a>
-            <a class="link" href="#">Contattaci</a>
-            <a class="link" href="/admin/home">LOGIN</a>
-            <router-link class="link" :to="{name:'restaurant-area'}">Area Ristoratori</router-link>
         </div>
     </header>
 </template>
 
 <script>
+
+import HeroSection from '../sections/HeroSection.vue';
+import shared from '../../shared'
+
 export default {
-    name: 'BaseHeader'
+    name: 'BaseHeader',
+    data(){
+        return{
+            shared,
+        }
+    },
+    created() {
+
+         if( JSON.parse(localStorage.getItem('prodotto')) != null ){
+                this.shared.count  = JSON.parse(localStorage.getItem('prodotto')).length;
+            }
+        // if(JSON.parse(localStorage.getItem('prodotto')) != null){
+        //     console.log('ok');
+        // }
+    },
+    computed: {
+         count(){
+            if(JSON.parse(localStorage.getItem('prodotto')) != null){
+                return shared.count = JSON.parse(localStorage.getItem('prodotto')).length;
+            } else {
+                return shared.count = 0;
+            }
+        }
+    }
 }
 
 </script>
 
-<style lang='scss'>
-
-    .header {
-        min-height: 100px;
-
-        .logo-header {
-            width: 65px;
-            margin-bottom: 10px;
-            margin-left: 10px;
-            cursor: pointer;
+<style lang='scss' scoped>
+    header{
+        
+        h1{
+            margin-bottom: 0;
         }
 
-        .container-home {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-
+        .logo{
+            height: 3.125rem;
         }
 
-        // Questo fa tremare la busta dell'header
-        .logo-header:hover {
-            animation: shake 0.5s;
-            animation-iteration-count: infinite;
-        }
-        // Questo fa tremare la busta dell'header
-        @keyframes shake {
-            0% { transform: translate(1px, 1px) rotate(0deg); }
-            10% { transform: translate(-1px, -2px) rotate(-1deg); }
-            20% { transform: translate(-3px, 0px) rotate(1deg); }
-            30% { transform: translate(3px, 2px) rotate(0deg); }
-            40% { transform: translate(1px, -1px) rotate(1deg); }
-            50% { transform: translate(-1px, 2px) rotate(-1deg); }
-            60% { transform: translate(-3px, 1px) rotate(0deg); }
-            70% { transform: translate(3px, 1px) rotate(-1deg); }
-            80% { transform: translate(-1px, -1px) rotate(1deg); }
-            90% { transform: translate(1px, 2px) rotate(0deg); }
-            100% { transform: translate(1px, -2px) rotate(-1deg); }
-        }
+        .container-fluid{
+            background-color: #111214;
 
-        .name-header {
-            width: 70%;
-            cursor: pointer;
-        }
-
-        .cart-btn{
-            cursor: pointer;
-            margin-right: 10px;
-
-            .circle-black {
-                background: black;
-                width: 70px;
-                height: 70px;
-                border-radius: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin:0;
-                cursor: pointer;
-            }
-
-            .cart-img {
-                color: var(--secondary-color);
-                font-size: 30px;
-                margin: 3px 0px 0px 3px;
-            }
-
-            .cart-img:hover {
-                color: rgb(255, 230, 0);
-            }
-        }
-
-        &__top {
-            height: 130px;
-            width: 100%;
-            background: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        &__bottom {
-            min-height: 40px;
-            width: 100%;
-            background: var(--secondary-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-
-            .link {
-                color: black;
-                font-size: 22px;
+            .link-default{
                 text-decoration: none;
-                color: inherit;
-                margin: 5px 25px 0px 25px;
-                border-bottom: 5px solid var(--secondary-color);
+                color: #eee1b3
             }
-            // Hover links header
-            .link:hover {
-                border-bottom: 5px solid var(--primary-color);
+
+            .cart{
+                position:relative;
+                font-size: 1.5rem;
+                .items-count{
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    top: -7px;
+                    right: -12px;
+                    color: #fff;
+                    background-color: rgb(161, 9, 9);
+                    width: 1.25rem;
+                    height: 1.25rem;
+                    border-radius: 30px;
+                    font-size: .9375rem;
+                    
+                }
             }
+
+            .reserved_area{
+                background-color: #eee1b3;
+                color: #111214;
+            }
+           
         }
-    };
+    }
 </style>
