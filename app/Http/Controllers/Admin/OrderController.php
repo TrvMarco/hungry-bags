@@ -22,7 +22,7 @@ class OrderController extends Controller
         $user_id = Auth::id();
         $orders = Order::whereHas('items', function($el) use($user_id) {
             $el->where('user_id', $user_id);
-        })->with(['items'])->get();
+        })->with(['items'])->orderBy('id', 'desc')->get();
         return view('admin.orders.index', compact('orders','user'));
     }
 

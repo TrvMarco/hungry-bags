@@ -55,6 +55,7 @@
                         </div>
                         <div class="text-center pt-2">
                             <a class="btn btn-success btn-sm" href="/check-out">Procedi al check-out</a>
+                            <!-- <button class="btn btn-success btn-sm" href="/check-out">Svuota il carrello</button> -->
                         </div>
                         <div id="myPopup" class="popup text-center">puoi fare ordini solo dallo stesso ristorante </div>
                     </div>
